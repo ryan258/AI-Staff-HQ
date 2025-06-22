@@ -7,30 +7,30 @@
 ### 🎬 **Storytelling Handbooks**
 *Documentary production and narrative development*
 
-- **Historical Documentary Handbook** *(Coming Soon)* - Complete guide to historical content creation
-- **Narrative Structure Guide** *(Coming Soon)* - Story frameworks for different formats
-- **Character Development Framework** *(Coming Soon)* - Creating compelling personalities
+- **[Historical Documentary Handbook](storytelling/historical-documentary-handbook.md)** 🚧 *Under Development (v1.4.0)* - Complete guide to historical content creation
+- **[Narrative Structure Guide](storytelling/narrative-structure-guide.md)** 🚧 *Under Development (v1.4.0)* - Story frameworks for different formats
+- **[Character Development Framework](storytelling/character-development-framework.md)** 🚧 *Under Development (v1.4.0)* - Creating compelling personalities
 
 ### 🤖 **AI Workflows Handbooks**  
 *Advanced AI integration and optimization*
 
-- **Prompt Engineering Mastery** *(Coming Soon)* - Advanced techniques for AI interaction
-- **AI Staff Management** *(Coming Soon)* - Coordinating multiple AI specialists effectively
-- **Automation Playbook** *(Coming Soon)* - Systematic workflow optimization
+- **[Prompt Engineering Mastery](ai-workflows/prompt-engineering-mastery.md)** 🚧 *Under Development (v1.3.0)* - Advanced techniques for AI interaction
+- **[AI Staff Management](ai-workflows/ai-staff-management.md)** 🚧 *Under Development (v1.3.0)* - Coordinating multiple AI specialists effectively
+- **[Automation Playbook](ai-workflows/automation-playbook.md)** 🚧 *Under Development (v1.3.0)* - Systematic workflow optimization
 
 ### 🎯 **Brand Strategy Handbooks**
 *Comprehensive brand development and positioning*
 
-- **Brand Voice Development** *(Coming Soon)* - Creating consistent, compelling brand personality
-- **Content Strategy Framework** *(Coming Soon)* - Strategic approach to content planning
-- **Personal Branding Guide** *(Coming Soon)* - Building professional reputation and authority
+- **[Brand Voice Development](brand-strategy/brand-voice-development.md)** 🚧 *Under Development (v1.2.0)* - Creating consistent, compelling brand personality
+- **[Content Strategy Framework](brand-strategy/content-strategy-framework.md)** 🚧 *Under Development (v1.2.0)* - Strategic approach to content planning
+- **[Personal Branding Guide](brand-strategy/personal-branding-guide.md)** 🚧 *Under Development (v1.2.0)* - Building professional reputation and authority
 
 ### 💼 **Business Handbooks**
 *Strategic business development and optimization*
 
-- **Client Workflow Optimization** *(Coming Soon)* - Streamlining client relationships
-- **Project Management Systems** *(Coming Soon)* - Coordinating complex initiatives
-- **Productivity Frameworks** *(Coming Soon)* - Personal and team efficiency systems
+- **[Client Workflow Optimization](business/client-workflow-optimization.md)** 🚧 *Under Development (v1.3.0)* - Streamlining client relationships
+- **[Project Management Systems](business/project-management-systems.md)** 🚧 *Under Development (v1.3.0)* - Coordinating complex initiatives
+- **[Productivity Frameworks](business/productivity-frameworks.md)** 🚧 *Under Development (v1.3.0)* - Personal and team efficiency systems
 
 ---
 

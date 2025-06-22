@@ -7,26 +7,26 @@
 ### 🧠 **Core Principles**
 *Fundamental concepts that guide all work and decision-making*
 
-- **[Systems Thinking](core-principles/systems-thinking.md)** - Understanding interconnections and emergent properties
-- **Creative Problem Solving** *(Coming Soon)* - Systematic approaches to innovation and solution development
-- **Energy Management** *(Coming Soon)* - Optimizing personal and team productivity cycles
-- **Cognitive Load Optimization** *(Coming Soon)* - Managing mental resources for peak performance
+- **[Systems Thinking](core-principles/systems-thinking.md)** ✅ *Complete* - Understanding interconnections and emergent properties
+- **[Creative Problem Solving](core-principles/creative-problem-solving.md)** 🚧 *Under Development (v1.2.0)* - Systematic approaches to innovation and solution development
+- **[Energy Management](core-principles/energy-management.md)** 🚧 *Under Development (v1.2.0)* - Optimizing personal and team productivity cycles
+- **[Cognitive Load Optimization](core-principles/cognitive-load-optimization.md)** 🚧 *Under Development (v1.2.0)* - Managing mental resources for peak performance
 
 ### 🔗 **Frameworks**
 *Structured approaches to complex challenges and decision-making*
 
-- **Decision Making Frameworks** *(Coming Soon)* - Systematic approaches to choices and trade-offs
-- **Creativity Frameworks** *(Coming Soon)* - Structured methods for generating and developing ideas
-- **Learning Frameworks** *(Coming Soon)* - Efficient approaches to skill and knowledge acquisition
-- **Productivity Frameworks** *(Coming Soon)* - Systems for optimizing output and effectiveness
+- **[Decision Making Frameworks](frameworks/decision-making-frameworks.md)** 🚧 *Under Development (v1.2.0)* - Systematic approaches to choices and trade-offs
+- **[Creativity Frameworks](frameworks/creativity-frameworks.md)** 🚧 *Under Development (v1.2.0)* - Structured methods for generating and developing ideas
+- **[Learning Frameworks](frameworks/learning-frameworks.md)** 🚧 *Under Development (v1.2.0)* - Efficient approaches to skill and knowledge acquisition
+- **[Productivity Frameworks](frameworks/productivity-frameworks.md)** 🚧 *Under Development (v1.2.0)* - Systems for optimizing output and effectiveness
 
 ### 📖 **Reference**
 *Quick access resources and implementation guides*
 
-- **Tool Recommendations** *(Coming Soon)* - Curated list of software, services, and resources
-- **Resource Library** *(Coming Soon)* - Books, courses, and learning materials
-- **Glossary** *(Coming Soon)* - Definitions and explanations of key terms
-- **Quick Reference Sheets** *(Coming Soon)* - Checklists and summary guides
+- **[Tool Recommendations](reference/tool-recommendations.md)** 🚧 *Under Development (v1.2.0)* - Curated list of software, services, and resources
+- **[Resource Library](reference/resource-library.md)** 🚧 *Under Development (v1.2.0)* - Books, courses, and learning materials
+- **[Glossary](reference/glossary.md)** 🚧 *Under Development (v1.2.0)* - Definitions and explanations of key terms
+- **[Quick Reference Sheets](reference/quick-reference-sheets.md)** 🚧 *Under Development (v1.2.0)* - Checklists and summary guides
 
 ---
 

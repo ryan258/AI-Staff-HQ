@@ -7,25 +7,25 @@
 ### 🔄 **Automation Workflows**
 *Streamlined processes for efficiency and consistency*
 
-- **Content Creation Pipeline** *(Coming Soon)* - End-to-end content production workflow
-- **Research Aggregation Workflow** *(Coming Soon)* - Systematic information gathering and synthesis
-- **Social Media Automation** *(Coming Soon)* - Automated posting and engagement workflows
-- **Client Communication Flows** *(Coming Soon)* - Streamlined client interaction processes
+- **[Content Creation Pipeline](automation/content-creation-pipeline.md)** 🚧 *Under Development (v1.1.0)* - End-to-end content production workflow
+- **[Research Aggregation Workflow](automation/research-aggregation-workflow.md)** 🚧 *Under Development (v1.1.0)* - Systematic information gathering and synthesis
+- **[Social Media Automation](automation/social-media-automation.md)** 🚧 *Under Development (v1.1.0)* - Automated posting and engagement workflows
+- **[Client Communication Flows](automation/client-communication-flows.md)** 🚧 *Under Development (v1.1.0)* - Streamlined client interaction processes
 
 ### 🎯 **Project Type Workflows**
 *Specialized processes for specific project categories*
 
-- **[Brand Development Workflow](project-types/brand-development-workflow.md)** - Complete brand creation process
-- **Content Campaign Workflow** *(Coming Soon)* - Multi-channel campaign execution
-- **Video Production Workflow** *(Coming Soon)* - Documentary and video content creation
-- **Consultation Workflow** *(Coming Soon)* - Client advisory and strategy sessions
+- **[Brand Development Workflow](project-types/brand-development-workflow.md)** ✅ *Complete* - Complete brand creation process
+- **[Content Campaign Workflow](project-types/content-campaign-workflow.md)** 🚧 *Under Development (v1.2.0)* - Multi-channel campaign execution
+- **[Video Production Workflow](project-types/video-production-workflow.md)** 🚧 *Under Development (v1.2.0)* - Documentary and video content creation
+- **[Consultation Workflow](project-types/consultation-workflow.md)** 🚧 *Under Development (v1.2.0)* - Client advisory and strategy sessions
 
 ### 📊 **Analytics Workflows**
 *Data-driven optimization and performance tracking*
 
-- **Performance Tracking Workflow** *(Coming Soon)* - Systematic results monitoring
-- **Knowledge Gap Analysis** *(Coming Soon)* - Identifying and addressing blind spots
-- **ROI Measurement Framework** *(Coming Soon)* - Value assessment and optimization
+- **[Performance Tracking Workflow](analytics/performance-tracking-workflow.md)** 🚧 *Under Development (v1.3.0)* - Systematic results monitoring
+- **[Knowledge Gap Analysis](analytics/knowledge-gap-analysis.md)** 🚧 *Under Development (v1.3.0)* - Identifying and addressing blind spots
+- **[ROI Measurement Framework](analytics/roi-measurement-framework.md)** 🚧 *Under Development (v1.3.0)* - Value assessment and optimization
 
 ---
 

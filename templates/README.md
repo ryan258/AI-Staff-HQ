@@ -7,25 +7,25 @@
 ### 🎭 **Persona Templates**
 *Create and customize AI staff members*
 
-- **[New Staff Member Template](persona/new-staff-member-template.md)** - Complete framework for creating new AI specialists
-- **Persona Development Framework** *(Coming Soon)* - Advanced persona customization techniques
-- **Skill Integration Template** *(Coming Soon)* - Adding new capabilities to existing staff
+- **[New Staff Member Template](persona/new-staff-member-template.md)** ✅ *Complete* - Complete framework for creating new AI specialists
+- **[Persona Development Framework](persona/persona-development-framework.md)** 🚧 *Under Development (v1.1.0)* - Advanced persona customization techniques
+- **[Skill Integration Template](persona/skill-integration-template.md)** 🚧 *Under Development (v1.1.0)* - Adding new capabilities to existing staff
 
 ### 📝 **Content Templates**
 *Standardized formats for content creation*
 
-- **Blog Post Template** *(Coming Soon)* - Structure for engaging blog content
-- **Social Media Templates** *(Coming Soon)* - Platform-specific content formats
-- **Email Templates** *(Coming Soon)* - Professional communication frameworks
-- **Presentation Framework** *(Coming Soon)* - Compelling presentation structure
+- **[Blog Post Template](content/blog-post-template.md)** 🚧 *Under Development (v1.1.0)* - Structure for engaging blog content
+- **[Social Media Templates](content/social-media-templates.md)** 🚧 *Under Development (v1.1.0)* - Platform-specific content formats
+- **[Email Templates](content/email-templates.md)** 🚧 *Under Development (v1.1.0)* - Professional communication frameworks
+- **[Presentation Framework](content/presentation-framework.md)** 🚧 *Under Development (v1.1.0)* - Compelling presentation structure
 
 ### 📋 **Project Templates**
 *Project management and coordination frameworks*
 
-- **Project Brief Template** *(Coming Soon)* - Comprehensive project definition
-- **Client Onboarding Checklist** *(Coming Soon)* - Systematic client integration
-- **Creative Brief Template** *(Coming Soon)* - Strategic creative direction
-- **Retrospective Template** *(Coming Soon)* - Project review and improvement
+- **[Project Brief Template](project/project-brief-template.md)** 🚧 *Under Development (v1.2.0)* - Comprehensive project definition
+- **[Client Onboarding Checklist](project/client-onboarding-checklist.md)** 🚧 *Under Development (v1.2.0)* - Systematic client integration
+- **[Creative Brief Template](project/creative-brief-template.md)** 🚧 *Under Development (v1.2.0)* - Strategic creative direction
+- **[Retrospective Template](project/retrospective-template.md)** 🚧 *Under Development (v1.2.0)* - Project review and improvement
 
 ---
 
