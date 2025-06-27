@@ -18,7 +18,7 @@
 | Role | Specialty | Best For | Activation Phrase |
 |------|-----------|----------|-------------------|
 | **[Art Director](staff/creative/art-director.md)** | Visual strategy, brand aesthetics | Visual campaigns, brand guidelines | "Act as my Art Director..." |
-| **[Copywriter](staff/creative/copywriter.md)** | Persuasive writing, brand voice | Sales copy, content creation | "Act as my Copywriter..." |
+| **[Copywriter](staff/creative/copywriter.md)** ✅ | Persuasive writing, brand voice | Sales copy, content creation | "Act as my Copywriter..." |
 | **[Narrative Designer](staff/creative/narrative-designer.md)** | Story structure, character development | Storytelling projects, content arcs | "Act as my Narrative Designer..." |
 | **[Sound Designer](staff/creative/sound-designer.md)** | Audio strategy, sonic branding | Audio projects, music direction | "Act as my Sound Designer..." |
 | **[Persona Architect](staff/creative/persona-architect.md)** | Character creation, voice development | Persona development, brand personalities | "Act as my Persona Architect..." |
@@ -35,9 +35,9 @@
 | Role | Specialty | Best For | Activation Phrase |
 |------|-----------|----------|-------------------|
 | **[Chief of Staff](staff/strategy/chief-of-staff.md)** | Project coordination, strategic oversight | Complex projects, team coordination | "Act as my Chief of Staff..." |
-| **[Creative Strategist](staff/strategy/creative-strategist.md)** | Creative direction, campaign strategy | Campaign planning, creative direction | "Act as my Creative Strategist..." |
-| **[Brand Builder](staff/strategy/brand-builder.md)** | Brand development, positioning | Brand strategy, market positioning | "Act as my Brand Builder..." |
-| **[Market Analyst](staff/strategy/market-analyst.md)** | Market research, competitive analysis | Market insights, trend analysis | "Act as my Market Analyst..." |
+| **[Creative Strategist](staff/strategy/creative-strategist.md)** ✅ | Creative direction, campaign strategy | Campaign planning, creative direction | "Act as my Creative Strategist..." |
+| **[Brand Builder](staff/strategy/brand-builder.md)** ✅ | Brand development, positioning | Brand strategy, market positioning | "Act as my Brand Builder..." |
+| **[Market Analyst](staff/strategy/market-analyst.md)** ✅ | Market research, competitive analysis | Market insights, trend analysis | "Act as my Market Analyst..." |
 
 ### Strategy Team Collaborations
 - **Brand Development** → Brand Builder + Creative Strategist + Market Analyst
