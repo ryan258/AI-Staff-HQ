@@ -1,6 +1,6 @@
 # 🏢 AI Staff Directory
 
-> _Your complete AI workforce at a glance - 17 specialists ready for deployment_
+> _Your complete AI workforce at a glance - 32 specialists ready for deployment_
 
 ## 🚨 Quick Access Guide
 
@@ -9,6 +9,8 @@
 - **🎨 Creative Emergencies** → [Art Director](staff/creative/art-director.md), [Copywriter](staff/creative/copywriter.md), [Narrative Designer](staff/creative/narrative-designer.md), [Sound Designer](staff/creative/sound-designer.md), [Persona Architect](staff/creative/persona-architect.md)
 - **📊 Strategic Planning** → [Chief of Staff](staff/strategy/chief-of-staff.md), [Creative Strategist](staff/strategy/creative-strategist.md), [Brand Builder](staff/strategy/brand-builder.md), [Market Analyst](staff/strategy/market-analyst.md)
 - **⚙️ Technical Implementation** → [Automation Specialist](staff/technical/automation-specialist.md), [Prompt Engineer](staff/technical/prompt-engineer.md), [Toolmaker](staff/technical/toolmaker.md), [Productivity Architect](staff/technical/productivity-architect.md)
+- **🍳 Culinary Expertise** → [Executive Chef](staff/kitchen/executive-chef.md), [Sous Chef](staff/kitchen/sous-chef.md), [Pastry Chef](staff/kitchen/pastry-chef.md), [Master Bartender](staff/kitchen/master-bartender.md)
+- **🧠 Personal Development** → [Stoic Coach](staff/personal/stoic-coach.md), [Patient Advocate](staff/personal/patient-advocate.md), [Head Librarian](staff/personal/head-librarian.md)
 - **🎯 Specialized Projects** → [Historical Storyteller](staff/specialized/historical-storyteller.md), [Borgesian Beat Comic Futurist](staff/specialized/borgesian-beat-comic-futurist.md)
 
 ---
@@ -76,6 +78,66 @@
 
 ---
 
+## 🍳 Kitchen Department
+
+> _Complete culinary expertise and food content capability_
+
+| Role                                                            | Specialty                                | Best For                            | Activation Phrase                |
+| --------------------------------------------------------------- | ---------------------------------------- | ----------------------------------- | -------------------------------- |
+| **[Executive Chef](staff/kitchen/executive-chef.md)** ✅        | Culinary leadership, menu development    | Fine dining, culinary strategy      | "Act as my Executive Chef..."    |
+| **[Sous Chef](staff/kitchen/sous-chef.md)** ✅                 | Kitchen operations, recipe execution     | Daily cooking, kitchen management   | "Act as my Sous Chef..."         |
+| **[Pastry Chef](staff/kitchen/pastry-chef.md)** ✅             | Baking, desserts, confections            | Pastries, desserts, baked goods    | "Act as my Pastry Chef..."       |
+| **[Grill Master](staff/kitchen/grill-master.md)** ✅           | Grilling, BBQ, outdoor cooking          | Barbecue, grilled foods, smoking   | "Act as my Grill Master..."      |
+| **[Master Bartender](staff/kitchen/master-bartender.md)** ✅   | Mixology, cocktail creation              | Cocktails, bar programs, beverages | "Act as my Master Bartender..."  |
+| **[Wine Sommelier](staff/kitchen/wine-sommelier.md)** ✅       | Wine knowledge, pairing expertise        | Wine selection, food pairings      | "Act as my Wine Sommelier..."    |
+| **[Nutritionist](staff/kitchen/nutritionist.md)** ✅           | Nutritional science, dietary planning    | Healthy eating, diet optimization   | "Act as my Nutritionist..."      |
+| **[Food Scientist](staff/kitchen/food-scientist.md)** ✅       | Food chemistry, molecular gastronomy     | Food innovation, scientific cooking | "Act as my Food Scientist..."    |
+| **[Butcher](staff/kitchen/butcher.md)** ✅                     | Meat preparation, protein expertise      | Meat selection, butchery skills     | "Act as my Butcher..."           |
+| **[Line Cook](staff/kitchen/line-cook.md)** ✅                 | Production cooking, efficiency           | High-volume cooking, food prep      | "Act as my Line Cook..."         |
+| **[Kitchen Porter](staff/kitchen/kitchen-porter.md)** ✅       | Kitchen support, organization            | Kitchen setup, ingredient prep     | "Act as my Kitchen Porter..."    |
+
+### Kitchen Team Collaborations
+
+- **Menu Development** → Executive Chef + Nutritionist + Wine Sommelier + Food Scientist
+- **Special Events** → Executive Chef + Pastry Chef + Master Bartender + Grill Master
+- **Dietary Programs** → Nutritionist + Executive Chef + Food Scientist + Sous Chef
+- **Food Content Creation** → All Kitchen specialists for comprehensive culinary projects
+
+---
+
+## 🧠 Personal Department
+
+> _Personal development and life optimization capability_
+
+| Role                                                         | Specialty                             | Best For                         | Activation Phrase             |
+| ------------------------------------------------------------ | ------------------------------------- | -------------------------------- | ----------------------------- |
+| **[Stoic Coach](staff/personal/stoic-coach.md)** ✅         | Philosophy, mindset, resilience       | Personal growth, mental strength | "Act as my Stoic Coach..."    |
+| **[Patient Advocate](staff/personal/patient-advocate.md)** ✅ | Healthcare navigation, medical support | Medical decisions, health advocacy | "Act as my Patient Advocate..." |
+| **[Head Librarian](staff/personal/head-librarian.md)** ✅   | Research, knowledge organization      | Information research, learning   | "Act as my Head Librarian..." |
+
+### Personal Team Collaborations
+
+- **Life Optimization** → Stoic Coach + Patient Advocate + Head Librarian
+- **Health & Wellness** → Patient Advocate + Nutritionist + Stoic Coach
+- **Learning & Growth** → Head Librarian + Stoic Coach + any specialist for skill development
+
+---
+
+## 💼 Commercialization Department
+
+> _Business development and market entry capability_
+
+| Role                                                        | Specialty                         | Best For                    | Activation Phrase            |
+| ----------------------------------------------------------- | --------------------------------- | --------------------------- | ---------------------------- |
+| **[Literary Agent](staff/commercialization/literary-agent.md)** ✅ | Publishing, book deals, contracts | Book publishing, manuscripts | "Act as my Literary Agent..." |
+
+### Commercialization Collaborations
+
+- **Book Publishing** → Literary Agent + Copywriter + Narrative Designer + Head Librarian
+- **Content Monetization** → Literary Agent + Brand Builder + Creative Strategist
+
+---
+
 ## 🎯 Specialized Department
 
 > _Unique domain experts for specialized content and innovation_
@@ -117,6 +179,30 @@ For complex projects requiring multiple departments:
 Timeline: 6 weeks, Budget: $25K"
 ```
 
+### **Culinary Content Projects**
+
+For food-related business initiatives:
+
+```
+"I'm launching a restaurant brand. Chief of Staff should coordinate:
+- Kitchen Team: Menu development, culinary strategy, food photography
+- Creative Team: Brand identity, marketing materials, storytelling
+- Strategy Team: Market positioning, competitive analysis
+- Technical Team: Operations optimization, digital presence"
+```
+
+### **Lifestyle Content Development**
+
+For personal development and wellness content:
+
+```
+"Creating a wellness platform. Chief of Staff coordinates:
+- Personal Team: Life coaching content, health advocacy
+- Kitchen Team: Nutrition planning, healthy recipes
+- Creative Team: Brand development, content creation
+- Strategy Team: Market positioning, growth strategy"
+```
+
 ### **Sequential Specialist Handoffs**
 
 For projects with clear developmental phases:
@@ -155,14 +241,16 @@ audio brand identity. All coordinate to ensure cohesive brand experience."
 1. **Creative Projects**: Use 2-3 Creative specialists together on brand assets
 2. **Strategic Planning**: Coordinate Strategy team for business analysis
 3. **Technical Optimization**: Deploy Technical team for workflow improvements
-4. **Cross-Reference**: Practice handoffs between specialists within departments
+4. **Culinary Development**: Test Kitchen team for food-related content
+5. **Cross-Reference**: Practice handoffs between specialists within departments
 
 ### **Phase 3: Multi-Department Integration (Week 5-6)**
 
 1. **Brand Development**: Full Strategy + Creative collaboration
 2. **Campaign Creation**: Strategy + Creative + Technical coordination
-3. **Complex Projects**: 5+ specialists working on comprehensive initiatives
-4. **Master Coordination**: Chief of Staff managing enterprise-level projects
+3. **Lifestyle Projects**: Personal + Kitchen + Creative integration
+4. **Complex Projects**: 5+ specialists working on comprehensive initiatives
+5. **Master Coordination**: Chief of Staff managing enterprise-level projects
 
 ### **Phase 4: Advanced Workforce Management (Ongoing)**
 
@@ -175,11 +263,14 @@ audio brand identity. All coordinate to ensure cohesive brand experience."
 
 ## 🎯 Current Workforce Status
 
-### **✅ Complete Operational Capacity (17/17 Specialists)**
+### **✅ Complete Operational Capacity (32/32 Specialists)**
 
 - **🎨 Creative Department (7/7)** - Complete creative production capability
 - **📊 Strategy Department (4/4)** - Full strategic planning and business development
 - **⚙️ Technical Department (4/4)** - Complete technical implementation and optimization
+- **🍳 Kitchen Department (11/11)** - Complete culinary expertise and food content
+- **🧠 Personal Department (3/3)** - Personal development and life optimization
+- **💼 Commercialization Department (1/1)** - Business development and market entry
 - **🎯 Specialized Department (2/2)** - Unique domain expertise for specialized needs
 
 ### **🏆 Full Capability Coverage**
@@ -188,7 +279,10 @@ audio brand identity. All coordinate to ensure cohesive brand experience."
 - **Brand Development** - Complete (Strategy + Creative integration perfected)
 - **Technical Optimization** - Complete (All Technical specialists operational)
 - **Project Coordination** - Complete (Chief of Staff + full specialist integration)
+- **Culinary Expertise** - Complete (Full kitchen brigade operational)
+- **Personal Development** - Complete (Life optimization and growth support)
 - **Specialized Expertise** - Complete (Unique domain coverage operational)
+- **Business Development** - Complete (Commercialization pathway established)
 
 ### **📊 Proven Performance Metrics**
 
@@ -197,6 +291,7 @@ audio brand identity. All coordinate to ensure cohesive brand experience."
 - **Workflow Efficiency**: 60-80% improvement in project completion time
 - **Quality Consistency**: Professional-grade output across all domains
 - **User Satisfaction**: Consistently exceeds expectations for complex projects
+- **Department Synergy**: Optimal cross-department coordination and handoffs
 
 ---
 
@@ -225,7 +320,7 @@ audio brand identity. All coordinate to ensure cohesive brand experience."
 
 ---
 
-**🚀 Your AI workforce is fully operational and ready for complex, enterprise-level projects!**
+**🚀 Your AI workforce is fully operational and ready for complex, enterprise-level projects across all domains!**
 
 👉 **Next Step**: Choose your first project and start with the **[Chief of Staff](staff/strategy/chief-of-staff.md)** for coordination, or jump directly to the specialist best suited for your immediate need.
 
@@ -233,4 +328,4 @@ audio brand identity. All coordinate to ensure cohesive brand experience."
 
 ---
 
-_Built systematically, tested rigorously, optimized continuously. Your complete AI workforce awaits your direction._ 🎯
+_Built systematically, tested rigorously, optimized continuously. Your complete AI workforce of 32 specialists awaits your direction._ 🎯
