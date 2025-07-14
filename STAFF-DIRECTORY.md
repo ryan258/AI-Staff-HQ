@@ -82,19 +82,19 @@
 
 > _Complete culinary expertise and food content capability_
 
-| Role                                                            | Specialty                                | Best For                            | Activation Phrase                |
-| --------------------------------------------------------------- | ---------------------------------------- | ----------------------------------- | -------------------------------- |
-| **[Executive Chef](staff/kitchen/executive-chef.md)** ✅        | Culinary leadership, menu development    | Fine dining, culinary strategy      | "Act as my Executive Chef..."    |
-| **[Sous Chef](staff/kitchen/sous-chef.md)** ✅                 | Kitchen operations, recipe execution     | Daily cooking, kitchen management   | "Act as my Sous Chef..."         |
-| **[Pastry Chef](staff/kitchen/pastry-chef.md)** ✅             | Baking, desserts, confections            | Pastries, desserts, baked goods    | "Act as my Pastry Chef..."       |
-| **[Grill Master](staff/kitchen/grill-master.md)** ✅           | Grilling, BBQ, outdoor cooking          | Barbecue, grilled foods, smoking   | "Act as my Grill Master..."      |
-| **[Master Bartender](staff/kitchen/master-bartender.md)** ✅   | Mixology, cocktail creation              | Cocktails, bar programs, beverages | "Act as my Master Bartender..."  |
-| **[Wine Sommelier](staff/kitchen/wine-sommelier.md)** ✅       | Wine knowledge, pairing expertise        | Wine selection, food pairings      | "Act as my Wine Sommelier..."    |
-| **[Nutritionist](staff/kitchen/nutritionist.md)** ✅           | Nutritional science, dietary planning    | Healthy eating, diet optimization   | "Act as my Nutritionist..."      |
-| **[Food Scientist](staff/kitchen/food-scientist.md)** ✅       | Food chemistry, molecular gastronomy     | Food innovation, scientific cooking | "Act as my Food Scientist..."    |
-| **[Butcher](staff/kitchen/butcher.md)** ✅                     | Meat preparation, protein expertise      | Meat selection, butchery skills     | "Act as my Butcher..."           |
-| **[Line Cook](staff/kitchen/line-cook.md)** ✅                 | Production cooking, efficiency           | High-volume cooking, food prep      | "Act as my Line Cook..."         |
-| **[Kitchen Porter](staff/kitchen/kitchen-porter.md)** ✅       | Kitchen support, organization            | Kitchen setup, ingredient prep     | "Act as my Kitchen Porter..."    |
+| Role                                                         | Specialty                             | Best For                            | Activation Phrase               |
+| ------------------------------------------------------------ | ------------------------------------- | ----------------------------------- | ------------------------------- |
+| **[Executive Chef](staff/kitchen/executive-chef.md)** ✅     | Culinary leadership, menu development | Fine dining, culinary strategy      | "Act as my Executive Chef..."   |
+| **[Sous Chef](staff/kitchen/sous-chef.md)** ✅               | Kitchen operations, recipe execution  | Daily cooking, kitchen management   | "Act as my Sous Chef..."        |
+| **[Pastry Chef](staff/kitchen/pastry-chef.md)** ✅           | Baking, desserts, confections         | Pastries, desserts, baked goods     | "Act as my Pastry Chef..."      |
+| **[Grill Master](staff/kitchen/grill-master.md)** ✅         | Grilling, BBQ, outdoor cooking        | Barbecue, grilled foods, smoking    | "Act as my Grill Master..."     |
+| **[Master Bartender](staff/kitchen/master-bartender.md)** ✅ | Mixology, cocktail creation           | Cocktails, bar programs, beverages  | "Act as my Master Bartender..." |
+| **[Wine Sommelier](staff/kitchen/wine-sommelier.md)** ✅     | Wine knowledge, pairing expertise     | Wine selection, food pairings       | "Act as my Wine Sommelier..."   |
+| **[Nutritionist](staff/kitchen/nutritionist.md)** ✅         | Nutritional science, dietary planning | Healthy eating, diet optimization   | "Act as my Nutritionist..."     |
+| **[Food Scientist](staff/kitchen/food-scientist.md)** ✅     | Food chemistry, molecular gastronomy  | Food innovation, scientific cooking | "Act as my Food Scientist..."   |
+| **[Butcher](staff/kitchen/butcher.md)** ✅                   | Meat preparation, protein expertise   | Meat selection, butchery skills     | "Act as my Butcher..."          |
+| **[Line Cook](staff/kitchen/line-cook.md)** ✅               | Production cooking, efficiency        | High-volume cooking, food prep      | "Act as my Line Cook..."        |
+| **[Kitchen Porter](staff/kitchen/kitchen-porter.md)** ✅     | Kitchen support, organization         | Kitchen setup, ingredient prep      | "Act as my Kitchen Porter..."   |
 
 ### Kitchen Team Collaborations
 
@@ -109,11 +109,11 @@
 
 > _Personal development and life optimization capability_
 
-| Role                                                         | Specialty                             | Best For                         | Activation Phrase             |
-| ------------------------------------------------------------ | ------------------------------------- | -------------------------------- | ----------------------------- |
-| **[Stoic Coach](staff/personal/stoic-coach.md)** ✅         | Philosophy, mindset, resilience       | Personal growth, mental strength | "Act as my Stoic Coach..."    |
+| Role                                                          | Specialty                              | Best For                           | Activation Phrase               |
+| ------------------------------------------------------------- | -------------------------------------- | ---------------------------------- | ------------------------------- |
+| **[Stoic Coach](staff/personal/stoic-coach.md)** ✅           | Philosophy, mindset, resilience        | Personal growth, mental strength   | "Act as my Stoic Coach..."      |
 | **[Patient Advocate](staff/personal/patient-advocate.md)** ✅ | Healthcare navigation, medical support | Medical decisions, health advocacy | "Act as my Patient Advocate..." |
-| **[Head Librarian](staff/personal/head-librarian.md)** ✅   | Research, knowledge organization      | Information research, learning   | "Act as my Head Librarian..." |
+| **[Head Librarian](staff/personal/head-librarian.md)** ✅     | Research, knowledge organization       | Information research, learning     | "Act as my Head Librarian..."   |
 
 ### Personal Team Collaborations
 
@@ -127,8 +127,8 @@
 
 > _Business development and market entry capability_
 
-| Role                                                        | Specialty                         | Best For                    | Activation Phrase            |
-| ----------------------------------------------------------- | --------------------------------- | --------------------------- | ---------------------------- |
+| Role                                                               | Specialty                         | Best For                     | Activation Phrase             |
+| ------------------------------------------------------------------ | --------------------------------- | ---------------------------- | ----------------------------- |
 | **[Literary Agent](staff/commercialization/literary-agent.md)** ✅ | Publishing, book deals, contracts | Book publishing, manuscripts | "Act as my Literary Agent..." |
 
 ### Commercialization Collaborations
@@ -138,20 +138,24 @@
 
 ---
 
-## 🎯 Specialized Department
+## 🎯 **Specialized Department (5 Specialists)**
 
-> _Unique domain experts for specialized content and innovation_
+_Unique domain experts for specialized content and innovation_
 
-| Role                                                                                       | Specialty                                   | Best For                          | Activation Phrase                            |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------- | --------------------------------- | -------------------------------------------- |
-| **[Historical Storyteller](staff/specialized/historical-storyteller.md)** ✅               | Documentary expertise, historical narrative | Historical content, documentaries | "Act as my Historical Storyteller..."        |
-| **[Borgesian Beat Comic Futurist](staff/specialized/borgesian-beat-comic-futurist.md)** ✅ | Sci-fi writing, futuristic narratives       | Science fiction, future scenarios | "Act as my Borgesian Beat Comic Futurist..." |
+- **[Historical Storyteller](specialized/historical-storyteller.md)** ✅
+- **[Borgesian Beat Comic Futurist](specialized/borgesian-beat-comic-futurist.md)** ✅
+- **[Futurist-in-Residence](specialized/futurist-in-residence.md)** ✅
+- **[Transmedia Producer](specialized/transmedia-producer.md)** ✅
+- **[Jorge Luis Borges](specialized/jorge-luis-borges.md)** ✅
 
 ### Specialized Collaborations
 
 - **Documentary Projects** → Historical Storyteller + Narrative Designer + Sound Designer + Audio Producer
 - **Sci-Fi Content Development** → Borgesian Beat Comic Futurist + Art Director + Narrative Designer
 - **Educational Content** → Historical Storyteller + Copywriter + Art Director + Voice Director
+- **Speculative Fiction Projects** → Jorge Luis Borges + Borgesian Beat Comic Futurist + Narrative Designer
+- **Future Strategy Development** → Futurist-in-Residence + Market Analyst + Creative Strategist
+- **Universe Expansion Projects** → Transmedia Producer + Jorge Luis Borges + Creative Strategist + Narrative Designer
 
 ---
 
