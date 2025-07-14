@@ -2,11 +2,11 @@
 
 > _"Why hire when you can architect?"_
 
-Welcome to AI-Staff-HQ, a **fully operational AI workforce system** with **32 specialized professionals** ready to tackle any creative, strategic, technical, culinary, personal, or business challenge. This repository contains everything you need to deploy, manage, and collaborate with your complete AI staff across any AI platform.
+Welcome to AI-Staff-HQ, a **fully operational AI workforce system** with **38 specialized professionals** ready to tackle any creative, strategic, technical, culinary, personal, or business challenge. This repository contains everything you need to deploy, manage, and collaborate with your complete AI staff across any AI platform.
 
 ## 🚀 What This Is
 
-**AI-Staff-HQ** is not just a collection of prompts—it's a **complete knowledge management ecosystem** with a fully staffed AI workforce that transforms how you work with artificial intelligence. Instead of starting from scratch every time, you have a persistent team of **32 specialists** who know their roles, understand your standards, and can collaborate with each other on complex projects.
+**AI-Staff-HQ** is not just a collection of prompts—it's a **complete knowledge management ecosystem** with a fully staffed AI workforce that transforms how you work with artificial intelligence. Instead of starting from scratch every time, you have a persistent team of **38 specialists** who know their roles, understand your standards, and can collaborate with each other on complex projects.
 
 ### The Problem This Solves
 
@@ -19,7 +19,7 @@ Welcome to AI-Staff-HQ, a **fully operational AI workforce system** with **32 sp
 
 ### The Solution
 
-- ✅ **Complete AI Workforce** - 32 fully operational specialists across all business and life domains
+- ✅ **Complete AI Workforce** - 38 fully operational specialists across all business and life domains
 - ✅ **Cross-Department Collaboration** - Specialists that work together seamlessly on complex projects
 - ✅ **Systematic Knowledge Base** - Comprehensive expertise accessible on any AI platform
 - ✅ **Proven Workflows** - Battle-tested processes for real-world business challenges
@@ -28,7 +28,7 @@ Welcome to AI-Staff-HQ, a **fully operational AI workforce system** with **32 sp
 
 ---
 
-## ⚡ Your Complete AI Workforce (32 Specialists)
+## ⚡ Your Complete AI Workforce (38 Specialists)
 
 ### 🎨 **Creative Department (7 Specialists)**
 
@@ -90,12 +90,18 @@ _Business development and market entry capability_
 
 - 📖 **[Literary Agent](staff/commercialization/literary-agent.md)** - Publishing, book deals, and contracts
 
-### 🎯 **Specialized Department (2 Specialists)**
+### 🎯 **Specialized Department (8 Specialists)**
 
 _Unique domain experts for specialized content and innovation_
 
 - 📚 **[Historical Storyteller](staff/specialized/historical-storyteller.md)** - Documentary expertise and historical narrative
-- 🚀 **[Borgesian Beat Comic Futurist](staff/specialized/borgesian-beat-comic-futurist.md)** - Sci-fi writing and futuristic narratives
+- 🚀 **[Borgesian Beat Comic Futurist](staff/specialized/borgesian-beat-comic-futurist.md)** - Sci-fi writing and futuristic narratives (Under Development)
+- 🔮 **[Futurist-in-Residence](staff/specialized/futurist-in-residence.md)** - Strategic foresight and scenario planning
+- 🎬 **[Transmedia Producer](staff/specialized/transmedia-producer.md)** - Cross-platform content strategy
+- 📖 **[Jorge Luis Borges](staff/specialized/jorge-luis-borges.md)** - Literary mastery and philosophical narrative
+- 🌍 **[Cultural Anthropologist](staff/specialized/cultural-anthropologist.md)** - Cultural experience and authenticity
+- 🗺️ **[Local Area Expert](staff/specialized/local-area-expert.md)** - Geographic intelligence and cultural navigation
+- 🎵 **[Music Producer](staff/specialized/music-producer.md)** - Musical composition and arrangement
 
 ---
 
@@ -149,14 +155,14 @@ health optimization, and Productivity Architect for workflow enhancement."
 
 ```
 AI-Staff-HQ/
-├── 👥 staff/           # 32 AI specialists organized by department
+├── 👥 staff/           # 38 AI specialists organized by department
 │   ├── 🎨 creative/    # 7 creative production specialists
 │   ├── 📊 strategy/    # 4 strategic planning specialists  
 │   ├── ⚙️ technical/   # 4 technical implementation specialists
 │   ├── 🍳 kitchen/     # 11 culinary expertise specialists
 │   ├── 🧠 personal/    # 3 personal development specialists
 │   ├── 💼 commercialization/ # 1 business development specialist
-│   └── 🎯 specialized/ # 2 unique domain specialists
+│   └── 🎯 specialized/ # 8 unique domain specialists
 ├── 📖 handbooks/       # Deep expertise and methodologies
 ├── 🛠️ templates/       # Reusable frameworks and formats
 ├── ⚡ workflows/       # Multi-step processes and proven patterns
@@ -292,6 +298,6 @@ This is a **battle-tested system** used for real business and personal projects,
 
 ---
 
-**🏆 You now have a complete AI workforce of 32 specialists ready to tackle any business, personal, or creative challenge. Time to put them to work across your entire life!**
+**🏆 You now have a complete AI workforce of 38 specialists ready to tackle any business, personal, or creative challenge. Time to put them to work across your entire life!**
 
 _Built with systematic thinking, tested with real projects, optimized for maximum impact across all domains of life._ 🚀

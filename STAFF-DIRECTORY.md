@@ -1,6 +1,6 @@
 # 🏢 AI Staff Directory
 
-> _Your complete AI workforce at a glance - 32 specialists ready for deployment_
+> _Your complete AI workforce at a glance - 38 specialists ready for deployment_
 
 ## 🚨 Quick Access Guide
 
@@ -11,7 +11,7 @@
 - **⚙️ Technical Implementation** → [Automation Specialist](staff/technical/automation-specialist.md), [Prompt Engineer](staff/technical/prompt-engineer.md), [Toolmaker](staff/technical/toolmaker.md), [Productivity Architect](staff/technical/productivity-architect.md)
 - **🍳 Culinary Expertise** → [Executive Chef](staff/kitchen/executive-chef.md), [Sous Chef](staff/kitchen/sous-chef.md), [Pastry Chef](staff/kitchen/pastry-chef.md), [Master Bartender](staff/kitchen/master-bartender.md)
 - **🧠 Personal Development** → [Stoic Coach](staff/personal/stoic-coach.md), [Patient Advocate](staff/personal/patient-advocate.md), [Head Librarian](staff/personal/head-librarian.md)
-- **🎯 Specialized Projects** → [Historical Storyteller](staff/specialized/historical-storyteller.md), [Borgesian Beat Comic Futurist](staff/specialized/borgesian-beat-comic-futurist.md)
+- **🎯 Specialized Projects** → [Historical Storyteller](staff/specialized/historical-storyteller.md), [Cultural Anthropologist](staff/specialized/cultural-anthropologist.md), [Music Producer](staff/specialized/music-producer.md)
 
 ---
 
@@ -138,15 +138,18 @@
 
 ---
 
-## 🎯 **Specialized Department (5 Specialists)**
+## 🎯 **Specialized Department (8 Specialists)**
 
 _Unique domain experts for specialized content and innovation_
 
-- **[Historical Storyteller](specialized/historical-storyteller.md)** ✅
-- **[Borgesian Beat Comic Futurist](specialized/borgesian-beat-comic-futurist.md)** ✅
-- **[Futurist-in-Residence](specialized/futurist-in-residence.md)** ✅
-- **[Transmedia Producer](specialized/transmedia-producer.md)** ✅
-- **[Jorge Luis Borges](specialized/jorge-luis-borges.md)** ✅
+- **[Historical Storyteller](specialized/historical-storyteller.md)** ✅ Production Ready
+- **[Borgesian Beat Comic Futurist](specialized/borgesian-beat-comic-futurist.md)** 🚧 Under Development (v1.4.0)
+- **[Futurist-in-Residence](specialized/futurist-in-residence.md)** ✅ Production Ready
+- **[Transmedia Producer](specialized/transmedia-producer.md)** ✅ Production Ready
+- **[Jorge Luis Borges](specialized/jorge-luis-borges.md)** ✅ Production Ready
+- **[Cultural Anthropologist](specialized/cultural-anthropologist.md)** ✅ Production Ready
+- **[Local Area Expert](specialized/local-area-expert.md)** ✅ Production Ready
+- **[Music Producer](specialized/music-producer.md)** ✅ Production Ready
 
 ### Specialized Collaborations
 
@@ -156,6 +159,9 @@ _Unique domain experts for specialized content and innovation_
 - **Speculative Fiction Projects** → Jorge Luis Borges + Borgesian Beat Comic Futurist + Narrative Designer
 - **Future Strategy Development** → Futurist-in-Residence + Market Analyst + Creative Strategist
 - **Universe Expansion Projects** → Transmedia Producer + Jorge Luis Borges + Creative Strategist + Narrative Designer
+- **Cultural Experience Projects** → Cultural Anthropologist + Executive Chef + Wine Sommelier + Creative Strategist
+- **Musical Content Development** → Music Producer + Sound Designer + Audio Producer + Copywriter
+- **Location-Based Projects** → Local Area Expert + Market Analyst + Brand Builder + Creative Strategist
 
 ---
 
@@ -267,7 +273,7 @@ audio brand identity. All coordinate to ensure cohesive brand experience."
 
 ## 🎯 Current Workforce Status
 
-### **✅ Complete Operational Capacity (32/32 Specialists)**
+### **✅ Complete Operational Capacity (38/38 Specialists)**
 
 - **🎨 Creative Department (7/7)** - Complete creative production capability
 - **📊 Strategy Department (4/4)** - Full strategic planning and business development
@@ -275,7 +281,7 @@ audio brand identity. All coordinate to ensure cohesive brand experience."
 - **🍳 Kitchen Department (11/11)** - Complete culinary expertise and food content
 - **🧠 Personal Department (3/3)** - Personal development and life optimization
 - **💼 Commercialization Department (1/1)** - Business development and market entry
-- **🎯 Specialized Department (2/2)** - Unique domain expertise for specialized needs
+- **🎯 Specialized Department (8/8)** - Unique domain expertise for specialized needs
 
 ### **🏆 Full Capability Coverage**
 
@@ -332,4 +338,4 @@ audio brand identity. All coordinate to ensure cohesive brand experience."
 
 ---
 
-_Built systematically, tested rigorously, optimized continuously. Your complete AI workforce of 32 specialists awaits your direction._ 🎯
+_Built systematically, tested rigorously, optimized continuously. Your complete AI workforce of 38 specialists awaits your direction._ 🎯
