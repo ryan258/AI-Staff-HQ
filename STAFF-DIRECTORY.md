@@ -1,12 +1,12 @@
 # 🏢 AI Staff Directory
 
-> _Your complete AI workforce at a glance - 38 specialists ready for deployment_
+> _Your complete AI workforce at a glance - 39 specialists ready for deployment_
 
 ## 🚨 Quick Access Guide
 
 **Need immediate help?** Jump to the right specialist:
 
-- **🎨 Creative Emergencies** → [Art Director](staff/creative/art-director.md), [Copywriter](staff/creative/copywriter.md), [Narrative Designer](staff/creative/narrative-designer.md), [Sound Designer](staff/creative/sound-designer.md), [Persona Architect](staff/creative/persona-architect.md)
+- **🎨 Creative Emergencies** → [Art Director](staff/creative/art-director.md), [Copywriter](staff/creative/copywriter.md), [Narrative Designer](staff/creative/narrative-designer.md), [Sound Designer](staff/creative/sound-designer.md), [Persona Architect](staff/creative/persona-architect.md), [Medium Expert](staff/creative/medium-expert.md)
 - **📊 Strategic Planning** → [Chief of Staff](staff/strategy/chief-of-staff.md), [Creative Strategist](staff/strategy/creative-strategist.md), [Brand Builder](staff/strategy/brand-builder.md), [Market Analyst](staff/strategy/market-analyst.md)
 - **⚙️ Technical Implementation** → [Automation Specialist](staff/technical/automation-specialist.md), [Prompt Engineer](staff/technical/prompt-engineer.md), [Toolmaker](staff/technical/toolmaker.md), [Productivity Architect](staff/technical/productivity-architect.md)
 - **🍳 Culinary Expertise** → [Executive Chef](staff/kitchen/executive-chef.md), [Sous Chef](staff/kitchen/sous-chef.md), [Pastry Chef](staff/kitchen/pastry-chef.md), [Master Bartender](staff/kitchen/master-bartender.md)
@@ -28,12 +28,14 @@
 | **[Persona Architect](staff/creative/persona-architect.md)** ✅   | Character creation, voice development    | Persona development, brand personalities | "Act as my Persona Architect..."  |
 | **[Audio Producer](staff/creative/audio-producer.md)** ✅         | Audio production, podcast development    | Podcast creation, audio content          | "Act as my Audio Producer..."     |
 | **[Voice Director](staff/creative/voice-director.md)** ✅         | Voice coaching, performance optimization | Voice training, speaking improvement     | "Act as my Voice Director..."     |
+| **[Medium Expert](staff/creative/medium-expert.md)** ✅           | Medium platform strategy, content architecture | Long-form content, thought leadership | "Act as my Medium Expert..."      |
 
 ### Creative Team Collaborations
 
 - **Visual Content Creation** → Art Director + Copywriter + Narrative Designer
 - **Brand Campaign Development** → Art Director + Copywriter + Creative Strategist + Persona Architect
 - **Audio Content Production** → Sound Designer + Audio Producer + Voice Director + Narrative Designer
+- **Thought Leadership Content** → Medium Expert + Copywriter + Narrative Designer
 - **Complete Brand Experience** → All Creative specialists coordinated through Chief of Staff
 
 ---
@@ -273,9 +275,9 @@ audio brand identity. All coordinate to ensure cohesive brand experience."
 
 ## 🎯 Current Workforce Status
 
-### **✅ Complete Operational Capacity (38/38 Specialists)**
+### **✅ Complete Operational Capacity (39/39 Specialists)**
 
-- **🎨 Creative Department (7/7)** - Complete creative production capability
+- **🎨 Creative Department (8/8)** - Complete creative production capability
 - **📊 Strategy Department (4/4)** - Full strategic planning and business development
 - **⚙️ Technical Department (4/4)** - Complete technical implementation and optimization
 - **🍳 Kitchen Department (11/11)** - Complete culinary expertise and food content

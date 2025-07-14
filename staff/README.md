@@ -4,7 +4,7 @@
 
 ## 🏢 Department Overview
 
-### 🎨 **Creative Department (7 Specialists)**
+### 🎨 **Creative Department (8 Specialists)**
 
 _Complete creative production capability from concept to delivery_
 
@@ -15,6 +15,7 @@ _Complete creative production capability from concept to delivery_
 - **[Persona Architect](creative/persona-architect.md)** - Character creation and voice development ✅
 - **[Audio Producer](creative/audio-producer.md)** - Audio production and podcast development ✅
 - **[Voice Director](creative/voice-director.md)** - Voice coaching and performance optimization ✅
+- **[Medium Expert](creative/medium-expert.md)** - Medium platform strategy and content architecture ✅
 
 ### 📊 **Strategy Department (4 Specialists)**
 
@@ -83,7 +84,7 @@ _Unique domain experts for specialized content and innovation_
 
 ### **For New Users**
 
-1. **Browse the departments** above to understand available expertise across all 38 specialists
+1. **Browse the departments** above to understand available expertise across all 39 specialists
 2. **Pick a specialist** that matches your current need from the complete operational workforce
 3. **Read their full profile** to understand their capabilities and communication style
 4. **Try a simple activation** using their recommended patterns
@@ -127,7 +128,7 @@ Productivity Architect → Automation Specialist + Prompt Engineer → Toolmaker
 ### **Multi-Media Content Production**
 
 ```
-Creative Strategist → Narrative Designer → Art Director + Copywriter + Sound Designer + Audio Producer + Voice Director
+Creative Strategist → Narrative Designer → Art Director + Copywriter + Sound Designer + Audio Producer + Voice Director + Medium Expert
 ```
 
 ### **Cross-Department Enterprise Projects**
@@ -140,7 +141,7 @@ Chief of Staff coordinates: Strategy Team (analysis) → Creative Team (executio
 
 ## 📈 Workforce Expansion & Customization
 
-Your 38-specialist workforce is complete and operational, but you can still:
+Your 39-specialist workforce is complete and operational, but you can still:
 
 ### **Specialist Customization**
 
@@ -173,7 +174,7 @@ Ready to add new departments? Use the **[Persona Template](../templates/persona/
 
 ### **✅ Complete Operational Departments**
 
-- **🎨 Creative Production (7/7)** - Full creative capability from concept to execution
+- **🎨 Creative Production (8/8)** - Full creative capability from concept to execution
 - **📊 Strategic Planning (4/4)** - Complete business strategy and market analysis
 - **⚙️ Technical Implementation (4/4)** - Full automation and system optimization
 - **🍳 Culinary Excellence (11/11)** - Complete kitchen brigade and food expertise
@@ -195,7 +196,7 @@ Ready to add new departments? Use the **[Persona Template](../templates/persona/
 - **Project Success Rate**: 95%+ completion with high quality standards
 - **Specialist Integration**: Seamless cross-department collaboration proven
 - **Workflow Efficiency**: 60-80% improvement in project completion time
-- **Quality Consistency**: Professional-grade output across all 38 specialists
+- **Quality Consistency**: Professional-grade output across all 39 specialists
 
 ---
 
@@ -213,7 +214,7 @@ Ready to add new departments? Use the **[Persona Template](../templates/persona/
 - **Power Pairs** - High-impact 2-specialist combinations for rapid results
 - **Department Trios** - 3-specialist teams for balanced department representation
 - **Cross-Functional Squads** - 4-6 specialists from multiple departments for complex projects
-- **Full Workforce Deployment** - Enterprise-level projects utilizing most or all 38 specialists
+- **Full Workforce Deployment** - Enterprise-level projects utilizing most or all 39 specialists
 
 ---
 
@@ -225,6 +226,6 @@ Ready to add new departments? Use the **[Persona Template](../templates/persona/
 
 ---
 
-**🚀 Your complete AI workforce is operational and ready for any challenge. Time to put all 38 specialists to work!**
+**🚀 Your complete AI workforce is operational and ready for any challenge. Time to put all 39 specialists to work!**
 
 _Built systematically, tested rigorously, optimized continuously._ 🎯

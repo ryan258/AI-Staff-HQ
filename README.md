@@ -2,11 +2,11 @@
 
 > _"Why hire when you can architect?"_
 
-Welcome to AI-Staff-HQ, a **fully operational AI workforce system** with **38 specialized professionals** ready to tackle any creative, strategic, technical, culinary, personal, or business challenge. This repository contains everything you need to deploy, manage, and collaborate with your complete AI staff across any AI platform.
+Welcome to AI-Staff-HQ, a **fully operational AI workforce system** with **39 specialized professionals** ready to tackle any creative, strategic, technical, culinary, personal, or business challenge. This repository contains everything you need to deploy, manage, and collaborate with your complete AI staff across any AI platform.
 
 ## 🚀 What This Is
 
-**AI-Staff-HQ** is not just a collection of prompts—it's a **complete knowledge management ecosystem** with a fully staffed AI workforce that transforms how you work with artificial intelligence. Instead of starting from scratch every time, you have a persistent team of **38 specialists** who know their roles, understand your standards, and can collaborate with each other on complex projects.
+**AI-Staff-HQ** is not just a collection of prompts—it's a **complete knowledge management ecosystem** with a fully staffed AI workforce that transforms how you work with artificial intelligence. Instead of starting from scratch every time, you have a persistent team of **39 specialists** who know their roles, understand your standards, and can collaborate with each other on complex projects.
 
 ### The Problem This Solves
 
@@ -28,9 +28,9 @@ Welcome to AI-Staff-HQ, a **fully operational AI workforce system** with **38 sp
 
 ---
 
-## ⚡ Your Complete AI Workforce (38 Specialists)
+## ⚡ Your Complete AI Workforce (39 Specialists)
 
-### 🎨 **Creative Department (7 Specialists)**
+### 🎨 **Creative Department (8 Specialists)**
 
 _Complete creative production capability from concept to delivery_
 
@@ -41,6 +41,7 @@ _Complete creative production capability from concept to delivery_
 - 🎭 **[Persona Architect](staff/creative/persona-architect.md)** - Character creation and voice development
 - 🎙️ **[Audio Producer](staff/creative/audio-producer.md)** - Audio production and podcast development
 - 🗣️ **[Voice Director](staff/creative/voice-director.md)** - Voice coaching and performance optimization
+- 📰 **[Medium Expert](staff/creative/medium-expert.md)** - Medium platform strategy and content architecture
 
 ### 📊 **Strategy Department (4 Specialists)**
 
@@ -155,8 +156,8 @@ health optimization, and Productivity Architect for workflow enhancement."
 
 ```
 AI-Staff-HQ/
-├── 👥 staff/           # 38 AI specialists organized by department
-│   ├── 🎨 creative/    # 7 creative production specialists
+├── 👥 staff/           # 39 AI specialists organized by department
+│   ├── 🎨 creative/    # 8 creative production specialists
 │   ├── 📊 strategy/    # 4 strategic planning specialists  
 │   ├── ⚙️ technical/   # 4 technical implementation specialists
 │   ├── 🍳 kitchen/     # 11 culinary expertise specialists
@@ -298,6 +299,6 @@ This is a **battle-tested system** used for real business and personal projects,
 
 ---
 
-**🏆 You now have a complete AI workforce of 38 specialists ready to tackle any business, personal, or creative challenge. Time to put them to work across your entire life!**
+**🏆 You now have a complete AI workforce of 39 specialists ready to tackle any business, personal, or creative challenge. Time to put them to work across your entire life!**
 
 _Built with systematic thinking, tested with real projects, optimized for maximum impact across all domains of life._ 🚀
