@@ -1,6 +1,6 @@
 # 📖 AI Staff Usage Guide
 
-> *Master the art of working with your complete AI workforce of 38 specialists*
+> *Master the art of working with your complete AI workforce of 39 specialists*
 
 ## 🎯 Core Concepts
 
@@ -15,7 +15,7 @@ They are **persistent personas** with:
 - **Context Retention** - They remember their roles and your standards across all domains
 - **Collaborative Intelligence** - They can work together on complex projects spanning multiple life areas
 - **Systematic Approach** - Consistent quality across all interactions and departments
-- **Scalable Expertise** - 38 specialists covering business, personal, and lifestyle optimization
+- **Scalable Expertise** - 39 specialists covering business, personal, and lifestyle optimization
 - **Complete Life Coverage** - From business strategy to personal wellness to culinary expertise
 
 ---

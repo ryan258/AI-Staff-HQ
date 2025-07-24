@@ -1,6 +1,6 @@
 # 🏢 AI-Staff-HQ Directory
 
-> _Your complete AI-Staff-HQ at a glance - 38 specialists ready for deployment_
+> _Your complete AI-Staff-HQ at a glance - 39 specialists ready for deployment_
 
 ## 🚨 Quick Access Guide
 
@@ -145,7 +145,7 @@
 _Unique domain experts for specialized content and innovation_
 
 - **[Historical Storyteller](specialized/historical-storyteller.md)** ✅ Production Ready
-- **[Borgesian Beat Comic Futurist](specialized/borgesian-beat-comic-futurist.md)** 🚧 Under Development (v1.4.0)
+- **[Borgesian Beat Comic Futurist](specialized/borgesian-beat-comic-futurist.md)** ✅ Production Ready
 - **[Futurist-in-Residence](specialized/futurist-in-residence.md)** ✅ Production Ready
 - **[Transmedia Producer](specialized/transmedia-producer.md)** ✅ Production Ready
 - **[Jorge Luis Borges](specialized/jorge-luis-borges.md)** ✅ Production Ready
@@ -275,7 +275,7 @@ audio brand identity. All coordinate to ensure cohesive brand experience."
 
 ## 🎯 Current Workforce Status
 
-### **✅ Complete Operational Capacity (38/38 Specialists)**
+### **✅ Complete Operational Capacity (39/39 Specialists)**
 
 - **🎨 Creative Department (8/8)** - Complete creative production capability
 - **📊 Strategy Department (4/4)** - Full strategic planning and business development
