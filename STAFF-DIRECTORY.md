@@ -19,16 +19,16 @@
 
 > _Complete creative production capability from concept to delivery_
 
-| Role                                                              | Specialty                                | Best For                                 | Activation Phrase                 |
-| ----------------------------------------------------------------- | ---------------------------------------- | ---------------------------------------- | --------------------------------- |
-| **[Art Director](staff/creative/art-director.md)** ✅             | Visual strategy, brand aesthetics        | Visual campaigns, brand guidelines       | "Act as my Art Director..."       |
-| **[Copywriter](staff/creative/copywriter.md)** ✅                 | Persuasive writing, brand voice          | Sales copy, content creation             | "Act as my Copywriter..."         |
-| **[Narrative Designer](staff/creative/narrative-designer.md)** ✅ | Story structure, character development   | Storytelling projects, content arcs      | "Act as my Narrative Designer..." |
-| **[Sound Designer](staff/creative/sound-designer.md)** ✅         | Audio strategy, sonic branding           | Audio projects, music direction          | "Act as my Sound Designer..."     |
-| **[Persona Architect](staff/creative/persona-architect.md)** ✅   | Character creation, voice development    | Persona development, brand personalities | "Act as my Persona Architect..."  |
-| **[Audio Producer](staff/creative/audio-producer.md)** ✅         | Audio production, podcast development    | Podcast creation, audio content          | "Act as my Audio Producer..."     |
-| **[Voice Director](staff/creative/voice-director.md)** ✅         | Voice coaching, performance optimization | Voice training, speaking improvement     | "Act as my Voice Director..."     |
-| **[Medium Expert](staff/creative/medium-expert.md)** ✅           | Medium platform strategy, content architecture | Long-form content, thought leadership | "Act as my Medium Expert..."      |
+| Role                                                              | Specialty                                      | Best For                                 | Activation Phrase                 |
+| ----------------------------------------------------------------- | ---------------------------------------------- | ---------------------------------------- | --------------------------------- |
+| **[Art Director](staff/creative/art-director.md)** ✅             | Visual strategy, brand aesthetics              | Visual campaigns, brand guidelines       | "Act as my Art Director..."       |
+| **[Copywriter](staff/creative/copywriter.md)** ✅                 | Persuasive writing, brand voice                | Sales copy, content creation             | "Act as my Copywriter..."         |
+| **[Narrative Designer](staff/creative/narrative-designer.md)** ✅ | Story structure, character development         | Storytelling projects, content arcs      | "Act as my Narrative Designer..." |
+| **[Sound Designer](staff/creative/sound-designer.md)** ✅         | Audio strategy, sonic branding                 | Audio projects, music direction          | "Act as my Sound Designer..."     |
+| **[Persona Architect](staff/creative/persona-architect.md)** ✅   | Character creation, voice development          | Persona development, brand personalities | "Act as my Persona Architect..."  |
+| **[Audio Producer](staff/creative/audio-producer.md)** ✅         | Audio production, podcast development          | Podcast creation, audio content          | "Act as my Audio Producer..."     |
+| **[Voice Director](staff/creative/voice-director.md)** ✅         | Voice coaching, performance optimization       | Voice training, speaking improvement     | "Act as my Voice Director..."     |
+| **[Medium Expert](staff/creative/medium-expert.md)** ✅           | Medium platform strategy, content architecture | Long-form content, thought leadership    | "Act as my Medium Expert..."      |
 
 ### Creative Team Collaborations
 
@@ -340,4 +340,4 @@ audio brand identity. All coordinate to ensure cohesive brand experience."
 
 ---
 
-_Built systematically, tested rigorously, optimized continuously. Your complete AI workforce of 38 specialists awaits your direction._ 🎯
+_Built systematically, tested rigorously, optimized continuously. Your complete AI workforce of 39 specialists awaits your direction._ 🎯
