@@ -1,6 +1,6 @@
-# 🏢 AI Staff Directory
+# 🏢 AI-Staff-HQ Directory
 
-> _Your complete AI workforce at a glance - 39 specialists ready for deployment_
+> _Your complete AI-Staff-HQ at a glance - 38 specialists ready for deployment_
 
 ## 🚨 Quick Access Guide
 
@@ -275,7 +275,7 @@ audio brand identity. All coordinate to ensure cohesive brand experience."
 
 ## 🎯 Current Workforce Status
 
-### **✅ Complete Operational Capacity (39/39 Specialists)**
+### **✅ Complete Operational Capacity (38/38 Specialists)**
 
 - **🎨 Creative Department (8/8)** - Complete creative production capability
 - **📊 Strategy Department (4/4)** - Full strategic planning and business development

@@ -1,10 +1,10 @@
 # 📖 AI Staff Usage Guide
 
-> *Master the art of working with your complete AI workforce of 32 specialists*
+> *Master the art of working with your complete AI workforce of 38 specialists*
 
 ## 🎯 Core Concepts
 
-### **Your AI Staff Are Not Just Prompts**
+### **Your AI-Staff-HQ Are Not Just Prompts**
 They are **persistent personas** with:
 - **Defined expertise** and knowledge domains across all life areas
 - **Consistent personalities** and communication styles  
@@ -15,7 +15,7 @@ They are **persistent personas** with:
 - **Context Retention** - They remember their roles and your standards across all domains
 - **Collaborative Intelligence** - They can work together on complex projects spanning multiple life areas
 - **Systematic Approach** - Consistent quality across all interactions and departments
-- **Scalable Expertise** - 32 specialists covering business, personal, and lifestyle optimization
+- **Scalable Expertise** - 38 specialists covering business, personal, and lifestyle optimization
 - **Complete Life Coverage** - From business strategy to personal wellness to culinary expertise
 
 ---
@@ -24,16 +24,16 @@ They are **persistent personas** with:
 
 ### **Single Specialist Activation**
 ```
-"Acting as [ROLE] from my AI staff, [SPECIFIC REQUEST]."
+"Acting as [ROLE] from my AI-Staff-HQ, [SPECIFIC REQUEST]."
 
 Examples:
-"Acting as the Art Director from my AI staff, I need visual direction 
+"Acting as the Art Director from my AI-Staff-HQ, I need visual direction 
 for a personal branding campaign targeting developers."
 
-"Acting as the Executive Chef from my AI staff, plan a week of 
+"Acting as the Executive Chef from my AI-Staff-HQ, plan a week of 
 healthy meals for someone with a busy schedule."
 
-"Acting as the Stoic Coach from my AI staff, help me develop 
+"Acting as the Stoic Coach from my AI-Staff-HQ, help me develop 
 resilience for handling workplace stress."
 ```
 
@@ -363,7 +363,7 @@ Moving from specialist to management:
 
 ## 🎮 Integration with Knowledge Multiverse
 
-Your AI staff are the **active agents** in your complete life optimization system:
+Your AI-Staff-HQ are the **active agents** in your complete life optimization system:
 
 - **Knowledge Cards** → Specialists embody expertise areas across all life domains
 - **Skill Combos** → Multi-specialist collaborations create unique capabilities

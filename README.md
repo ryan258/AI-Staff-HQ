@@ -2,11 +2,11 @@
 
 > _"Why hire when you can architect?"_
 
-Welcome to AI-Staff-HQ, a **fully operational AI workforce system** with **39 specialized professionals** ready to tackle any creative, strategic, technical, culinary, personal, or business challenge. This repository contains everything you need to deploy, manage, and collaborate with your complete AI staff across any AI platform.
+Welcome to AI-Staff-HQ, a **fully operational AI workforce system** with **38 specialized professionals** ready to tackle any creative, strategic, technical, culinary, personal, or business challenge. This repository contains everything you need to deploy, manage, and collaborate with your complete AI staff across any AI platform.
 
 ## 🚀 What This Is
 
-**AI-Staff-HQ** is not just a collection of prompts—it's a **complete knowledge management ecosystem** with a fully staffed AI workforce that transforms how you work with artificial intelligence. Instead of starting from scratch every time, you have a persistent team of **39 specialists** who know their roles, understand your standards, and can collaborate with each other on complex projects.
+**AI-Staff-HQ** is not just a collection of prompts—it's a **complete knowledge management ecosystem** with a fully staffed AI workforce that transforms how you work with artificial intelligence. Instead of starting from scratch every time, you have a persistent team of **38 specialists** who know their roles, understand your standards, and can collaborate with each other on complex projects.
 
 ### The Problem This Solves
 
@@ -28,7 +28,7 @@ Welcome to AI-Staff-HQ, a **fully operational AI workforce system** with **39 sp
 
 ---
 
-## ⚡ Your Complete AI Workforce (39 Specialists)
+## ⚡ Your Complete AI Workforce (38 Specialists)
 
 ### 🎨 **Creative Department (8 Specialists)**
 
@@ -119,7 +119,7 @@ _Unique domain experts for specialized content and innovation_
 ### **Example Single Specialist Activation:**
 
 ```
-"Acting as the Art Director from my AI staff, I need visual direction
+"Acting as the Art Director from my AI-Staff-HQ, I need visual direction
 for a B2B SaaS brand targeting CTOs. The product is a security platform,
 and I want to convey trustworthiness while avoiding generic tech aesthetics."
 ```

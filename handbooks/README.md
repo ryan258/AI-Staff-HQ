@@ -11,7 +11,7 @@
 - **[Narrative Structure Guide](storytelling/narrative-structure-guide.md)** 🚧 *Under Development (v1.4.0)* - Story frameworks for different formats
 - **[Character Development Framework](storytelling/character-development-framework.md)** 🚧 *Under Development (v1.4.0)* - Creating compelling personalities
 
-### 🤖 **AI Workflows Handbooks**  
+### 🤖 **AI-Staff-HQ Handbooks**  
 *Advanced AI integration and optimization*
 
 - **[Prompt Engineering Mastery](ai-workflows/prompt-engineering-mastery.md)** 🚧 *Under Development (v1.3.0)* - Advanced techniques for AI interaction
@@ -41,11 +41,11 @@ Handbooks are **comprehensive guides** that go beyond basic templates to provide
 - **Strategic frameworks** for approaching complex challenges
 - **Step-by-step methodologies** for consistent execution
 - **Best practices** learned from real-world experience
-- **Integration guidance** for working with AI specialists
+- **Integration guidance** for working with AI-Staff-HQ
 - **Quality standards** and performance optimization
 
-### **Relationship to AI Staff**
-Handbooks serve as **knowledge bases** that your AI specialists can reference:
+### **Relationship to AI-Staff-HQ**
+Handbooks serve as **knowledge bases** that your AI-Staff-HQ can reference:
 - **Historical Storyteller** uses storytelling handbooks for project guidance
 - **Brand Builder** references brand strategy handbooks for consistency
 - **Automation Specialist** applies workflow handbooks for optimization
@@ -72,7 +72,7 @@ Handbooks serve as **knowledge bases** that your AI specialists can reference:
 ### **Content Standards**
 - **Actionable Guidance** - Specific steps and recommendations
 - **Strategic Context** - Why the methodology works
-- **Integration Points** - How to coordinate with AI specialists
+- **Integration Points** - How to coordinate with AI-Staff-HQ
 - **Quality Metrics** - How to measure success
 - **Troubleshooting** - Common challenges and solutions
 
@@ -81,7 +81,7 @@ Handbooks serve as **knowledge bases** that your AI specialists can reference:
 - **User Feedback** - Incorporation of real-world usage insights
 - **Best Practice Updates** - Integration of new learning and techniques
 - **Cross-Reference Optimization** - Ensure handbooks work well together
-- **AI Staff Integration** - Update specialist capabilities based on handbook content
+- **AI-Staff-HQ Integration** - Update specialist capabilities based on handbook content
 
 ---
 
