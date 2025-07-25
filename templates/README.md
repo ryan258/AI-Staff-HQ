@@ -25,10 +25,10 @@ _Structured approaches for content creation and communication_
 
 _Complete frameworks for project planning and execution_
 
-- **[Project Brief Template](project/project-brief-template.md)** 🚧 _Under Development (v1.2.0)_ - Comprehensive project definition
-- **[Creative Brief Template](project/creative-brief-template.md)** 🚧 _Under Development (v1.2.0)_ - Creative project specifications
-- **[Retrospective Template](project/retrospective-template.md)** 🚧 _Under Development (v1.2.0)_ - Project review and improvement
-- **[Client Onboarding Template](project/client-onboarding-template.md)** 🚧 _Under Development (v1.2.0)_ - Systematic client engagement
+- **[Project Brief Template](project/project-brief-template.md)** ✅ _Complete (v1.2.0)_ - Comprehensive project definition
+- **[Creative Brief Template](project/creative-brief-template.md)** ✅ _Complete (v1.2.0)_ - Creative project specifications
+- **[Retrospective Template](project/retrospective-template.md)** ✅ _Complete (v1.2.0)_ - Project review and improvement
+- **[Client Onboarding Checklist](project/client-onboarding-checklist.md)** ✅ _Complete (v1.2.0)_ - Systematic client engagement
 
 ---
 

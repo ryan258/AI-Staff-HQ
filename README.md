@@ -6,7 +6,7 @@ Welcome to AI-Staff-HQ, a **fully operational AI workforce system** with **39 sp
 
 ## 🚀 What This Is
 
-**AI-Staff-HQ** is not just a collection of prompts—it's a **complete knowledge management ecosystem** with a fully staffed AI workforce that transforms how you work with artificial intelligence. Instead of starting from scratch every time, you have a persistent team of **9 specialists** who know their roles, understand your standards, and can collaborate with each other on complex projects.
+**AI-Staff-HQ** is not just a collection of prompts—it's a **complete knowledge management ecosystem** with a fully staffed AI workforce that transforms how you work with artificial intelligence. Instead of starting from scratch every time, you have a persistent team of **39 specialists** who know their roles, understand your standards, and can collaborate with each other on complex projects.
 
 ### The Problem This Solves
 
@@ -23,6 +23,7 @@ Welcome to AI-Staff-HQ, a **fully operational AI workforce system** with **39 sp
 - ✅ **Cross-Department Collaboration** - Specialists that work together seamlessly on complex projects
 - ✅ **Systematic Knowledge Base** - Comprehensive expertise accessible on any AI platform
 - ✅ **Proven Workflows** - Battle-tested processes for real-world business challenges
+- ✅ **Complete Template System** - Professional frameworks for project management, creative briefs, client onboarding, and retrospectives
 - ✅ **Scalable Excellence** - Consistent high-quality output across all specialist domains
 - ✅ **Full Life Coverage** - From business strategy to personal wellness to culinary expertise
 
@@ -114,7 +115,8 @@ _Unique domain experts for specialized content and innovation_
 2. **Select Your Specialist(s)** - Check the [Staff Directory](STAFF-DIRECTORY.md) for the right expert(s)
 3. **Import This Repo** - Load it into your preferred AI interface
 4. **Activate Your Team** - Use their specific activation prompts
-5. **Coordinate Complex Projects** - Let specialists collaborate on multi-faceted challenges
+5. **Use Complete Templates** - Deploy Project Brief, Creative Brief, Client Onboarding, and Retrospective templates for systematic excellence
+6. **Coordinate Complex Projects** - Let specialists collaborate on multi-faceted challenges
 
 ### **Example Single Specialist Activation:**
 
@@ -165,7 +167,7 @@ AI-Staff-HQ/
 │   ├── 💼 commercialization/ # 1 business development specialist
 │   └── 🎯 specialized/ # 8 unique domain specialists
 ├── 📖 handbooks/       # Deep expertise and methodologies
-├── 🛠️ templates/       # Reusable frameworks and formats
+├── 🛠️ templates/       # Complete reusable frameworks and formats
 ├── ⚡ workflows/       # Multi-step processes and proven patterns
 ├── 🧠 knowledge-base/  # Core principles and frameworks
 └── 🎮 meta/           # System maintenance and evolution
