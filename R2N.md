@@ -1,10 +1,10 @@
 # 🥷 Novice to Ninja: Rock that AI-Staff-HQ!
 
-> _The Ultimate Claude Desktop Guide to Mastering Your 17-Specialist AI Workforce_
+> _The Ultimate Claude Desktop Guide to Mastering Your 39-Specialist AI Workforce_
 
 ## 🎯 Welcome to Your AI Workforce Journey!
 
-Congratulations! You've just gained access to the most comprehensive AI workforce system ever created. You're about to transform from someone who asks AI for help to someone who **commands a 17-specialist enterprise team** that can tackle any business challenge.
+Congratulations! You've just gained access to the most comprehensive AI workforce system ever created. You're about to transform from someone who asks AI for help to someone who **commands a 39-specialist enterprise team** that can tackle any business challenge.
 
 This guide assumes you're using **Claude Desktop** with your **Chief of Staff Claude project** loaded. Let's turn you into an AI workforce ninja! 🥷
 
@@ -14,7 +14,7 @@ This guide assumes you're using **Claude Desktop** with your **Chief of Staff Cl
 
 ### **Step 1: Load Your Complete Workforce**
 
-In Claude Desktop, make sure your AI-Staff-HQ project is active. You should see your complete repository with all 17 specialists ready to go.
+In Claude Desktop, make sure your AI-Staff-HQ project is active. You should see your complete repository with all 39 specialists ready to go.
 
 ### **Step 2: Test Your Chief of Staff**
 
@@ -24,7 +24,7 @@ Let's make sure everything's working:
 "Acting as the Chief of Staff from my AI-Staff-HQ, give me a quick status report on my available workforce and suggest a simple first project to test our capabilities."
 ```
 
-If your Chief of Staff responds with knowledge of your 17 specialists and suggests a starter project, you're ready to rock! 🎸
+If your Chief of Staff responds with knowledge of your 39 specialists and suggests a starter project, you're ready to rock! 🎸
 
 ---
 
@@ -99,6 +99,30 @@ Now you're learning to make specialists work together as a team.
 #### **🏆 Level 2 Achievement Unlocked: "Department Commander"**
 
 _Successfully coordinate multi-specialist projects within single departments_
+
+---
+
+## Template Mastery: Systematic Excellence
+
+### **🎯 Goal: Leverage Template-Driven Workflows**
+
+Now that you're comfortable coordinating individual specialists and departmental teams, it's time to systematize your projects using **template-driven workflows**.
+
+#### **Mission 2.5: The Project Brief Template**
+
+```
+"Chief of Staff, use the [project/project-brief-template.md] to define a project for a new client. Involve the Market Analyst to analyze the competitive landscape and the Brand Builder to develop initial positioning."
+```
+
+#### **Mission 2.6: The Creative Brief Template**
+
+```
+"Chief of Staff, use the [project/creative-brief-template.md] to kick off a content campaign. Engage the Creative Strategist to define the core message and the Art Director to establish the visual direction."
+```
+
+#### **🏆 Level 2.5 Achievement Unlocked: "Template Coordinator"**
+
+_Successfully initiated a multi-specialist project using a template._
 
 ---
 
@@ -394,7 +418,7 @@ Develop new specialist roles and capabilities that push the boundaries of what's
 
 You've completed the journey from novice to ninja. You now possess the skills to:
 
-✅ **Command 17 specialists** with confidence and precision
+✅ **Command 39 specialists** with confidence and precision
 ✅ **Orchestrate complex projects** that rival professional agencies  
 ✅ **Create custom workflows** for your specific business needs
 ✅ **Innovate breakthrough solutions** through specialist combinations
