@@ -32,6 +32,18 @@
 - **[Project Management Systems](business/project-management-systems.md)** ✅ Production Ready - Coordinating complex initiatives
 - **[Productivity Frameworks](business/productivity-frameworks.md)** ✅ Production Ready - Personal and team efficiency systems
 
+### 📚 **General Handbooks**
+*Universal guides and cross-disciplinary methods*
+
+- **[Business Strategy](business-strategy.md)** - Core principles of business planning and execution.
+- **[Creative Writing](creative-writing.md)** - Techniques for crafting compelling written content.
+- **[Developer Handbook](developer-handbook.md)** - Best practices for software development.
+- **[Game Design](game-design.md)** - Principles of game mechanics and player engagement.
+- **[Kitchen Synergies](kitchen-synergies.md)** - Collaborative workflows for culinary teams.
+- **[Methods and Workflows](methods-and-workflows.md)** - General-purpose strategies for efficient work.
+- **[Specialized Niches](specialized-niches.md)** - Guides for operating in unique market segments.
+- **[Universal](universal.md)** - Foundational principles applicable to all domains.
+
 ---
 
 ## 🎯 How Handbooks Work

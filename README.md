@@ -176,6 +176,7 @@ AI-Staff-HQ/
 ├── 🛠️ templates/       # Complete reusable frameworks and formats
 ├── ⚡ workflows/       # Multi-step processes and proven patterns
 ├── 🧠 knowledge-base/  # Core principles and frameworks
+├── 🗣️ voices/          # Voice and tone guides for consistent communication
 └── 🎮 meta/           # System maintenance and evolution
 ```
 

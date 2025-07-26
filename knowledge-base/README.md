@@ -68,21 +68,38 @@ The knowledge base captures and preserves valuable insights from your AI-Staff-H
 
 ### **Core Principles** _(Operational)_
 
-- **[Systems Thinking](core-principles/systems-thinking.md)** ✅ - Understanding interconnections and leverage points across your AI-Staff-HQ
-- **[Strategic Frameworks](core-principles/strategic-frameworks.md)** ✅ Production Ready - Systematic approaches to complex business challenges
+- **[Cognitive Load Optimization](core-principles/cognitive-load-optimization.md)** - Principles for managing information and preventing burnout.
+- **[Creative Problem Solving](core-principles/creative-problem-solving.md)** - Frameworks for innovative thinking.
+- **[Energy Management](core-principles/energy-management.md)** - Strategies for maintaining high performance.
 - **[Quality Standards](core-principles/quality-standards.md)** ✅ Production Ready - Excellence benchmarks for all specialist work
+- **[Strategic Frameworks](core-principles/strategic-frameworks.md)** ✅ Production Ready - Systematic approaches to complex business challenges
+- **[Systems Thinking](core-principles/systems-thinking.md)** ✅ - Understanding interconnections and leverage points across your AI-Staff-HQ
 
-### **Reference Systems** _(Development in Progress)_
+### **Frameworks** _(Development in Progress)_
 
-- **[Decision Frameworks](frameworks/decision-making-frameworks.md)** ✅ Production Ready - Systematic approaches to complex choices
-- **[Performance Metrics](frameworks/performance-measurement.md)** ✅ Production Ready - Tracking and optimization systems
-- **[Resource Library](reference/resource-library.md)** ✅ Production Ready - Curated resources for continuous learning
+- **[Creativity Frameworks](frameworks/creativity-frameworks.md)** - Methods for generating and developing ideas.
+- **[Decision Making Frameworks](frameworks/decision-making-frameworks.md)** ✅ Production Ready - Systematic approaches to complex choices
+- **[Learning Frameworks](frameworks/learning-frameworks.md)** - Techniques for rapid skill acquisition.
+- **[Performance Measurement](frameworks/performance-measurement.md)** ✅ Production Ready - Tracking and optimization systems
+- **[Productivity Frameworks](frameworks/productivity-frameworks.md)** - Models for efficient work.
 
 ### **Integration Methodologies** _(Future Development)_
 
-- **AI-Staff-HQ Optimization** ✅ Production Ready - Advanced specialist coordination methodologies
-- **Enterprise Knowledge Management** ✅ Production Ready - Scaling knowledge systems for organizational use
-- **Innovation Acceleration** ✅ Production Ready - Frameworks for breakthrough thinking and execution
+- **[AI-Staff-HQ Optimization](integration-methodologies/ai-staff-hq-optimization.md)** ✅ Production Ready - Advanced specialist coordination methodologies
+- **[Enterprise Knowledge Management](integration-methodologies/enterprise-knowledge-management.md)** ✅ Production Ready - Scaling knowledge systems for organizational use
+- **[Innovation Acceleration](integration-methodologies/innovation-acceleration.md)** ✅ Production Ready - Frameworks for breakthrough thinking and execution
+
+### **Reference**
+
+- **[Glossary](reference/glossary.md)** - Definitions of key terms and concepts.
+- **[Quick Reference Sheets](reference/quick-reference-sheets.md)** - Cheat sheets for common tasks.
+- **[Resource Library](reference/resource-library.md)** ✅ Production Ready - Curated resources for continuous learning
+- **[Tool Recommendations](reference/tool-recommendations.md)** - Suggested tools for various tasks.
+
+### **Research**
+
+- **[Creative Trends](research/creative-trends/)** - Analysis of emerging trends in creative fields.
+- **[Market Intelligence](research/market-intelligence/)** - Reports and analysis on market dynamics.
 
 ---
 
