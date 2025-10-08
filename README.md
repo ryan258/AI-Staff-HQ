@@ -176,6 +176,13 @@ This repository is designed around **systematic knowledge management**:
 
 See the [**Integration Notes**](https://www.google.com/search?q=meta/INTEGRATION-NOTES.md) for the complete system
 
+### **💡 AI Perspectives on This Project**
+
+Want to understand the system from an AI's viewpoint?
+
+- [**Claude's Insights**](claude-insights.md) \- Comprehensive architectural analysis, strategic recommendations, and deep dive into what makes this system work (500+ lines)
+- [**Gemini's Insights**](insights.md) \- Analysis of v1.5.0 enhancements, learning systems, and evolution to v2.0
+
 ## **🚀 Getting Started Checklist**
 
 ### **Phase 1: Individual Specialist Mastery**
