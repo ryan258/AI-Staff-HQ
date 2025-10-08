@@ -30,6 +30,12 @@ _Data-driven optimization and performance tracking using your complete specialis
 - **[Knowledge Gap Analysis](analytics/knowledge-gap-analysis.md)** 🚧 _Under Development (v1.3.0)_ - Identifying and addressing blind spots
 - **[ROI Measurement Framework](analytics/roi-measurement-framework.md)** 🚧 _Under Development (v1.3.0)_ - Value assessment and optimization
 
+### 🤖 **Autonomous Workflows**
+
+_Set-and-forget workflows managed by your Chief of Staff with minimal user intervention_
+
+- **[Autonomous Weekly Content Pipeline](autonomous/weekly-content-pipeline.md)** ✅ _New (v1.3.0)_ - Fully automated weekly content generation from ideation to distribution.
+
 ---
 
 ## 🎯 How Workflows Function with Your AI Workforce
