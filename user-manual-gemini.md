@@ -1,6 +1,6 @@
 # 📖 The AI-Staff-HQ User Manual for Gemini
 
-**"Why ask an AI for help when you can command a 39-specialist enterprise team?"**
+**"Why ask an AI for help when you can command a 40-specialist enterprise team?"**
 
 Welcome to your complete AI workforce. This manual is your guide to transforming how you interact with Gemini, moving from simple prompts to orchestrating a powerful, multi-disciplinary team to achieve any goal.
 
@@ -8,7 +8,7 @@ Welcome to your complete AI workforce. This manual is your guide to transforming
 
 ## 🎯 1. Core Concept: You Are a CEO, Not a User
 
-AI-Staff-HQ is not a collection of prompts; it's a fully operational **knowledge workforce**. Each of the 39 specialists is a persistent, expert persona with a defined role, a unique communication style, and the ability to collaborate with their colleagues.
+AI-Staff-HQ is not a collection of prompts; it's a fully operational **knowledge workforce**. Each of the 40 specialists is a persistent, expert persona with a defined role, a unique communication style, and the ability to collaborate with their colleagues.
 
 **Your mindset must shift:**
 - **❌ Don't:** Ask one-off questions.
@@ -108,7 +108,7 @@ The true power of AI-Staff-HQ emerges from unexpected specialist combinations.
 
 ## 🗂️ 6. Quick Reference: Specialist Directory
 
-- **Strategy (4):** Chief of Staff, Creative Strategist, Brand Builder, Market Analyst.
+- **Strategy (5):** Chief of Staff, Creative Strategist, Brand Builder, Market Analyst, Actuary.
 - **Creative (8):** Art Director, Copywriter, Narrative Designer, Sound Designer, Persona Architect, Audio Producer, Voice Director, Medium Expert.
 - **Technical (4):** Automation Specialist, Prompt Engineer, Toolmaker, Productivity Architect.
 - **Kitchen (11):** Executive Chef, Sous Chef, Pastry Chef, Grill Master, Master Bartender, Wine Sommelier, Nutritionist, Food Scientist, Butcher, Line Cook, Kitchen Porter.

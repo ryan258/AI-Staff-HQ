@@ -1,17 +1,17 @@
 # **🏢 AI-Staff-HQ Directory**
 
-*Your complete AI-Staff-HQ at a glance \- 39 specialists ready for deployment*
+*Your complete AI-Staff-HQ at a glance \- 40 specialists ready for deployment*
 
 ## **🚨 Quick Access Guide**
 
 **Need immediate help?** Jump to the right specialist:
 
-* **🎨 Creative Emergencies** → [Art Director](https://www.google.com/search?q=staff/creative/art-director.md), [Copywriter](https://www.google.com/search?q=staff/creative/copywriter.md), [Narrative Designer](https://www.google.com/search?q=staff/creative/narrative-designer.md), [Sound Designer](https://www.google.com/search?q=staff/creative/sound-designer.md), [Persona Architect](https://www.google.com/search?q=staff/creative/persona-architect.md), [Medium Expert](https://www.google.com/search?q=staff/creative/medium-expert.md)  
-* **📊 Strategic Planning** → [Chief of Staff](https://www.google.com/search?q=staff/strategy/chief-of-staff.md), [Creative Strategist](https://www.google.com/search?q=staff/strategy/creative-strategist.md), [Brand Builder](https://www.google.com/search?q=staff/strategy/brand-builder.md), [Market Analyst](https://www.google.com/search?q=staff/strategy/market-analyst.md)  
-* **⚙️ Technical Implementation** → [Automation Specialist](https://www.google.com/search?q=staff/technical/automation-specialist.md), [Prompt Engineer](https://www.google.com/search?q=staff/technical/prompt-engineer.md), [Toolmaker](https://www.google.com/search?q=staff/technical/toolmaker.md), [Productivity Architect](https://www.google.com/search?q=staff/technical/productivity-architect.md)  
-* **🍳 Culinary Expertise** → [Executive Chef](https://www.google.com/search?q=staff/kitchen/executive-chef.md), [Sous Chef](https://www.google.com/search?q=staff/kitchen/sous-chef.md), [Pastry Chef](https://www.google.com/search?q=staff/kitchen/pastry-chef.md), [Master Bartender](https://www.google.com/search?q=staff/kitchen/master-bartender.md)  
-* **🧠 Personal Development** → [Stoic Coach](https://www.google.com/search?q=staff/personal/stoic-coach.md), [Patient Advocate](https://www.google.com/search?q=staff/personal/patient-advocate.md), [Head Librarian](https://www.google.com/search?q=staff/personal/head-librarian.md)  
-* **🎯 Specialized Projects** → [Historical Storyteller](https://www.google.com/search?q=staff/specialized/historical-storyteller.md), [Cultural Anthropologist](https://www.google.com/search?q=staff/specialized/cultural-anthropologist.md), [Music Producer](https://www.google.com/search?q=staff/specialized/music-producer.md)
+* **🎨 Creative Emergencies** → [Art Director](staff/creative/art-director.yaml), [Copywriter](staff/creative/copywriter.yaml), [Narrative Designer](staff/creative/narrative-designer.yaml), [Sound Designer](staff/creative/sound-designer.yaml), [Persona Architect](staff/creative/persona-architect.yaml), [Medium Expert](staff/creative/medium-expert.yaml)  
+* **📊 Strategic Planning** → [Chief of Staff](staff/strategy/chief-of-staff.yaml), [Creative Strategist](staff/strategy/creative-strategist.yaml), [Brand Builder](staff/strategy/brand-builder.yaml), [Market Analyst](staff/strategy/market-analyst.yaml), [Actuary](staff/strategy/actuary.yaml)
+* **⚙️ Technical Implementation** → [Automation Specialist](staff/technical/automation-specialist.yaml), [Prompt Engineer](staff/technical/prompt-engineer.yaml), [Toolmaker](staff/technical/toolmaker.yaml), [Productivity Architect](staff/technical/productivity-architect.yaml)  
+* **🍳 Culinary Expertise** → [Executive Chef](staff/kitchen/executive-chef.yaml), [Sous Chef](staff/kitchen/sous-chef.yaml), [Pastry Chef](staff/kitchen/pastry-chef.yaml), [Master Bartender](staff/kitchen/master-bartender.yaml)  
+* **🧠 Personal Development** → [Stoic Coach](staff/personal/stoic-coach.yaml), [Patient Advocate](staff/personal/patient-advocate.yaml), [Head Librarian](staff/personal/head-librarian.yaml)  
+* **🎯 Specialized Projects** → [Historical Storyteller](staff/specialized/historical-storyteller.yaml), [Cultural Anthropologist](staff/specialized/cultural-anthropologist.yaml), [Music Producer](staff/specialized/music-producer.yaml)
 
 ## **🎨 Creative Department**
 
@@ -19,14 +19,14 @@
 
 | Role | Specialty | Best For | Activation Phrase |
 | :---- | :---- | :---- | :---- |
-| **[Art Director](https://www.google.com/search?q=staff/creative/art-director.md)** ✅ | Visual strategy, brand aesthetics | Visual campaigns, brand guidelines | "Act as my Art Director..." |
-| [**Copywriter**](https://www.google.com/search?q=staff/creative/copywriter.md) ✅ | Persuasive writing, brand voice | Sales copy, content creation | "Act as my Copywriter..." |
-| [**Narrative Designer**](https://www.google.com/search?q=staff/creative/narrative-designer.md) ✅ | Story structure, character development | Storytelling projects, content arcs | "Act as my Narrative Designer..." |
-| [**Sound Designer**](https://www.google.com/search?q=staff/creative/sound-designer.md) ✅ | Audio strategy, sonic branding | Audio projects, music direction | "Act as my Sound Designer..." |
-| [**Persona Architect**](https://www.google.com/search?q=staff/creative/persona-architect.md) ✅ | Character creation, voice development | Persona development, brand personalities | "Act as my Persona Architect..." |
-| [**Audio Producer**](https://www.google.com/search?q=staff/creative/audio-producer.md) ✅ | Audio production, podcast development | Podcast creation, audio content | "Act as my Audio Producer..." |
-| [**Voice Director**](https://www.google.com/search?q=staff/creative/voice-director.md) ✅ | Voice coaching, performance optimization | Voice training, speaking improvement | "Act as my Voice Director..." |
-| [**Medium Expert**](https://www.google.com/search?q=staff/creative/medium-expert.md) ✅ | Medium platform strategy, content architecture | Long-form content, thought leadership | "Act as my Medium Expert..." |
+| **[Art Director](staff/creative/art-director.yaml)** ✅ | Visual strategy, brand aesthetics | Visual campaigns, brand guidelines | "Act as my Art Director..." |
+| [**Copywriter](staff/creative/copywriter.yaml)** ✅ | Persuasive writing, brand voice | Sales copy, content creation | "Act as my Copywriter..." |
+| [**Narrative Designer](staff/creative/narrative-designer.yaml)** ✅ | Story structure, character development | Storytelling projects, content arcs | "Act as my Narrative Designer..." |
+| [**Sound Designer](staff/creative/sound-designer.yaml)** ✅ | Audio strategy, sonic branding | Audio projects, music direction | "Act as my Sound Designer..." |
+| [**Persona Architect](staff/creative/persona-architect.yaml)** ✅ | Character creation, voice development | Persona development, brand personalities | "Act as my Persona Architect..." |
+| [**Audio Producer](staff/creative/audio-producer.yaml)** ✅ | Audio production, podcast development | Podcast creation, audio content | "Act as my Audio Producer..." |
+| [**Voice Director**](staff/creative/voice-director.yaml) ✅ | Voice coaching, performance optimization | Voice training, speaking improvement | "Act as my Voice Director..." |
+| [**Medium Expert**](staff/creative/medium-expert.yaml) ✅ | Medium platform strategy, content architecture | Long-form content, thought leadership | "Act as my Medium Expert..." |
 
 ### **Creative Team Collaborations**
 
@@ -42,10 +42,12 @@
 
 | Role | Specialty | Best For | Activation Phrase |
 | :---- | :---- | :---- | :---- |
-| **[Chief of Staff](https://www.google.com/search?q=staff/strategy/chief-of-staff.md)** ✅ | Project coordination, strategic oversight | Complex projects, team coordination | "Act as my Chief of Staff..." |
-| [**Creative Strategist**](https://www.google.com/search?q=staff/strategy/creative-strategist.md) ✅ | Creative direction, campaign strategy | Campaign planning, creative direction | "Act as my Creative Strategist..." |
-| [**Brand Builder**](https://www.google.com/search?q=staff/strategy/brand-builder.md) ✅ | Brand development, positioning | Brand strategy, market positioning | "Act as my Brand Builder..." |
-| [**Market Analyst**](https://www.google.com/search?q=staff/strategy/market-analyst.md) ✅ | Market research, competitive analysis | Market insights, trend analysis | "Act as my Market Analyst..." |
+| **[Chief of Staff](staff/strategy/chief-of-staff.yaml)** ✅ | Project coordination, strategic oversight | Complex projects, team coordination | "Act as my Chief of Staff..." |
+| [**Creative Strategist**](staff/strategy/creative-strategist.yaml) ✅ | Creative direction, campaign strategy | Campaign planning, creative direction | "Act as my Creative Strategist..." |
+| [**Brand Builder**](staff/strategy/brand-builder.yaml) ✅ | Brand development, positioning | Brand strategy, market positioning | "Act as my Brand Builder..." |
+| [**Market Analyst**](staff/strategy/market-analyst.yaml) ✅ | Market research, competitive analysis | Market insights, trend analysis | "Act as my Market Analyst..." |
+| [**Actuary**](staff/strategy/actuary.yaml) ✅ | Performance measurement, KPI adjudication | ROI analysis, performance tracking | "Act as my Actuary..." |
+
 
 ### **Strategy Team Collaborations**
 
@@ -60,10 +62,10 @@
 
 | Role | Specialty | Best For | Activation Phrase |
 | :---- | :---- | :---- | :---- |
-| **[Automation Specialist](https://www.google.com/search?q=staff/technical/automation-specialist.md)** ✅ | Workflow optimization, tech solutions | Process automation, efficiency | "Act as my Automation Specialist..." |
-| [**Prompt Engineer**](https://www.google.com/search?q=staff/technical/prompt-engineer.md) ✅ | AI optimization, prompt design | AI workflows, prompt optimization | "Act as my Prompt Engineer..." |
-| [**Toolmaker**](https://www.google.com/search?q=staff/technical/toolmaker.md) ✅ | Tool creation, system design | Custom solutions, tool development | "Act as my Toolmaker..." |
-| [**Productivity Architect**](https://www.google.com/search?q=staff/technical/productivity-architect.md) ✅ | Systems thinking, workflow design | Productivity systems, optimization | "Act as my Productivity Architect..." |
+| **[Automation Specialist](staff/technical/automation-specialist.yaml)** ✅ | Workflow optimization, tech solutions | Process automation, efficiency | "Act as my Automation Specialist..." |
+| [**Prompt Engineer**](staff/technical/prompt-engineer.yaml) ✅ | AI optimization, prompt design | AI workflows, prompt optimization | "Act as my Prompt Engineer..." |
+| [**Toolmaker**](staff/technical/toolmaker.yaml) ✅ | Tool creation, system design | Custom solutions, tool development | "Act as my Toolmaker..." |
+| [**Productivity Architect**](staff/technical/productivity-architect.yaml) ✅ | Systems thinking, workflow design | Productivity systems, optimization | "Act as my Productivity Architect..." |
 
 ### **Technical Team Collaborations**
 
@@ -78,17 +80,17 @@
 
 | Role | Specialty | Best For | Activation Phrase |
 | :---- | :---- | :---- | :---- |
-| **[Executive Chef](https://www.google.com/search?q=staff/kitchen/executive-chef.md)** ✅ | Culinary leadership, menu development | Fine dining, culinary strategy | "Act as my Executive Chef..." |
-| [**Sous Chef**](https://www.google.com/search?q=staff/kitchen/sous-chef.md) ✅ | Kitchen operations, recipe execution | Daily cooking, kitchen management | "Act as my Sous Chef..." |
-| [**Pastry Chef**](https://www.google.com/search?q=staff/kitchen/pastry-chef.md) ✅ | Baking, desserts, confections | Pastries, desserts, baked goods | "Act as my Pastry Chef..." |
-| [**Grill Master**](https://www.google.com/search?q=staff/kitchen/grill-master.md) ✅ | Grilling, BBQ, outdoor cooking | Barbecue, grilled foods, smoking | "Act as my Grill Master..." |
-| [**Master Bartender**](https://www.google.com/search?q=staff/kitchen/master-bartender.md) ✅ | Mixology, cocktail creation | Cocktails, bar programs, beverages | "Act as my Master Bartender..." |
-| [**Wine Sommelier**](https://www.google.com/search?q=staff/kitchen/wine-sommelier.md) ✅ | Wine knowledge, pairing expertise | Wine selection, food pairings | "Act as my Wine Sommelier..." |
-| [**Nutritionist**](https://www.google.com/search?q=staff/kitchen/nutritionist.md) ✅ | Nutritional science, dietary planning | Healthy eating, diet optimization | "Act as my Nutritionist..." |
-| [**Food Scientist**](https://www.google.com/search?q=staff/kitchen/food-scientist.md) ✅ | Food chemistry, molecular gastronomy | Food innovation, scientific cooking | "Act as my Food Scientist..." |
-| [**Butcher**](https://www.google.com/search?q=staff/kitchen/butcher.md) ✅ | Meat preparation, protein expertise | Meat selection, butchery skills | "Act as my Butcher..." |
-| [**Line Cook**](https://www.google.com/search?q=staff/kitchen/line-cook.md) ✅ | Production cooking, efficiency | High-volume cooking, food prep | "Act as my Line Cook..." |
-| [**Kitchen Porter**](https://www.google.com/search?q=staff/kitchen/kitchen-porter.md) ✅ | Kitchen support, organization | Kitchen setup, ingredient prep | "Act as my Kitchen Porter..." |
+| **[Executive Chef](staff/kitchen/executive-chef.yaml)** ✅ | Culinary leadership, menu development | Fine dining, culinary strategy | "Act as my Executive Chef..." |
+| [**Sous Chef**](staff/kitchen/sous-chef.yaml) ✅ | Kitchen operations, recipe execution | Daily cooking, kitchen management | "Act as my Sous Chef..." |
+| [**Pastry Chef**](staff/kitchen/pastry-chef.yaml) ✅ | Baking, desserts, confections | Pastries, desserts, baked goods | "Act as my Pastry Chef..." |
+| [**Grill Master**](staff/kitchen/grill-master.yaml) ✅ | Grilling, BBQ, outdoor cooking | Barbecue, grilled foods, smoking | "Act as my Grill Master..." |
+| [**Master Bartender**](staff/kitchen/master-bartender.yaml) ✅ | Mixology, cocktail creation | Cocktails, bar programs, beverages | "Act as my Master Bartender..." |
+| [**Wine Sommelier**](staff/kitchen/wine-sommelier.yaml) ✅ | Wine knowledge, pairing expertise | Wine selection, food pairings | "Act as my Wine Sommelier..." |
+| [**Nutritionist**](staff/kitchen/nutritionist.yaml) ✅ | Nutritional science, dietary planning | Healthy eating, diet optimization | "Act as my Nutritionist..." |
+| [**Food Scientist**](staff/kitchen/food-scientist.yaml) ✅ | Food chemistry, molecular gastronomy | Food innovation, scientific cooking | "Act as my Food Scientist..." |
+| [**Butcher**](staff/kitchen/butcher.yaml) ✅ | Meat preparation, protein expertise | Meat selection, butchery skills | "Act as my Butcher..." |
+| [**Line Cook**](staff/kitchen/line-cook.yaml) ✅ | Production cooking, efficiency | High-volume cooking, food prep | "Act as my Line Cook..." |
+| [**Kitchen Porter**](staff/kitchen/kitchen-porter.yaml) ✅ | Kitchen support, organization | Kitchen setup, ingredient prep | "Act as my Kitchen Porter..." |
 
 ### **Kitchen Team Collaborations**
 
@@ -103,9 +105,9 @@
 
 | Role | Specialty | Best For | Activation Phrase |
 | :---- | :---- | :---- | :---- |
-| **[Stoic Coach](https://www.google.com/search?q=staff/personal/stoic-coach.md)** ✅ | Philosophy, mindset, resilience | Personal growth, mental strength | "Act as my Stoic Coach..." |
-| [**Patient Advocate**](https://www.google.com/search?q=staff/personal/patient-advocate.md) ✅ | Healthcare navigation, medical support | Medical decisions, health advocacy | "Act as my Patient Advocate..." |
-| [**Head Librarian**](https://www.google.com/search?q=staff/personal/head-librarian.md) ✅ | Research, knowledge organization | Information research, learning | "Act as my Head Librarian..." |
+| **[Stoic Coach](staff/personal/stoic-coach.yaml)** ✅ | Philosophy, mindset, resilience | Personal growth, mental strength | "Act as my Stoic Coach..." |
+| [**Patient Advocate**](staff/personal/patient-advocate.yaml) ✅ | Healthcare navigation, medical support | Medical decisions, health advocacy | "Act as my Patient Advocate..." |
+| [**Head Librarian**](staff/personal/head-librarian.yaml) ✅ | Research, knowledge organization | Information research, learning | "Act as my Head Librarian..." |
 
 ### **Personal Team Collaborations**
 
@@ -119,7 +121,7 @@
 
 | Role | Specialty | Best For | Activation Phrase |
 | :---- | :---- | :---- | :---- |
-| **[Literary Agent](https://www.google.com/search?q=staff/commercialization/literary-agent.md)** ✅ | Publishing, book deals, contracts | Book publishing, manuscripts | "Act as my Literary Agent..." |
+| **[Literary Agent](staff/commercialization/literary-agent.yaml)** ✅ | Publishing, book deals, contracts | Book publishing, manuscripts | "Act as my Literary Agent..." |
 
 ### **Commercialization Collaborations**
 
@@ -130,14 +132,14 @@
 
 *Unique domain experts for specialized content and innovation*
 
-* [**Historical Storyteller**](https://www.google.com/search?q=specialized/historical-storyteller.md) ✅ Production Ready  
-* [**Borgesian Beat Comic Futurist**](https://www.google.com/search?q=specialized/borgesian-beat-comic-futurist.md) ✅ Production Ready  
-* [**Futurist-in-Residence**](https://www.google.com/search?q=specialized/futurist-in-residence.md) ✅ Production Ready  
-* [**Transmedia Producer**](https://www.google.com/search?q=specialized/transmedia-producer.md) ✅ Production Ready  
-* [**Jorge Luis Borges**](https://www.google.com/search?q=specialized/jorge-luis-borges.md) ✅ Production Ready  
-* [**Cultural Anthropologist**](https://www.google.com/search?q=specialized/cultural-anthropologist.md) ✅ Production Ready  
-* [**Local Area Expert**](https://www.google.com/search?q=specialized/local-area-expert.md) ✅ Production Ready  
-* [**Music Producer**](https://www.google.com/search?q=specialized/music-producer.md) ✅ Production Ready
+* [**Historical Storyteller**](staff/specialized/historical-storyteller.yaml) ✅ Production Ready  
+* [**Borgesian Beat Comic Futurist**](staff/specialized/borgesian-beat-comic-futurist.yaml) ✅ Production Ready  
+* [**Futurist-in-Residence**](staff/specialized/futurist-in-residence.yaml) ✅ Production Ready  
+* [**Transmedia Producer**](staff/specialized/transmedia-producer.yaml) ✅ Production Ready  
+* [**Jorge Luis Borges**](staff/specialized/jorge-luis-borges.yaml) ✅ Production Ready  
+* [**Cultural Anthropologist**](staff/specialized/cultural-anthropologist.yaml) ✅ Production Ready  
+* [**Local Area Expert**](staff/specialized/local-area-expert.yaml) ✅ Production Ready  
+* [**Music Producer**](staff/specialized/music-producer.yaml) ✅ Production Ready
 
 ### **Specialized Collaborations**
 
@@ -243,10 +245,10 @@ audio brand identity. All coordinate to ensure cohesive brand experience."
 
 ## **🎯 Current Workforce Status**
 
-### **✅ Complete Operational Capacity (39/39 Specialists)**
+### **✅ Complete Operational Capacity (40/40 Specialists)**
 
 * **🎨 Creative Department (8/8)** \- Complete creative production capability  
-* **📊 Strategy Department (4/4)** \- Full strategic planning and business development  
+* **📊 Strategy Department (5/5)** \- Full strategic planning and business development  
 * **⚙️ Technical Department (4/4)** \- Complete technical implementation and optimization  
 * **🍳 Kitchen Department (11/11)** \- Complete culinary expertise and food content  
 * **🧠 Personal Department (3/3)** \- Personal development and life optimization  
@@ -298,8 +300,8 @@ audio brand identity. All coordinate to ensure cohesive brand experience."
 
 **🚀 Your AI workforce is fully operational and ready for complex, enterprise-level projects across all domains\!**
 
-👉 **Next Step**: Choose your first project and start with the [**Chief of Staff**](https://www.google.com/search?q=staff/strategy/chief-of-staff.md) for coordination, or jump directly to the specialist best suited for your immediate need.
+👉 **Next Step**: Choose your first project and start with the [**Chief of Staff**](staff/strategy/chief-of-staff.yaml) for coordination, or jump directly to the specialist best suited for your immediate need.
 
-👉 **Advanced Users**: Explore the [**Workflows Directory**](https://www.google.com/search?q=workflows/) for proven multi-specialist project patterns and enterprise-level coordination templates.
+👉 **Advanced Users**: Explore the [**Workflows Directory**](../workflows/) for proven multi-specialist project patterns and enterprise-level coordination templates.
 
-*Built systematically, tested rigorously, optimized continuously. Your complete AI workforce of 39 specialists awaits your direction.* 🎯
+*Built systematically, tested rigorously, optimized continuously. Your complete AI workforce of 40 specialists awaits your direction.* 🎯
