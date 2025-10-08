@@ -115,6 +115,30 @@ LESSONS LEARNED:
 □ What would we do differently with the same project scope?
 ```
 
+#### **KPI Adjudication (Actuary Activation)**
+```
+ACTIVATION PATTERN:
+"Actuary, you have been provided with the project's success criteria and the final performance data. 
+
+1.  For each of the following KPIs, deliver a verdict: 'MET' or 'NOT MET'.
+    - KPI 1: [Description of KPI and its target]
+    - KPI 2: [Description of KPI and its target]
+    - KPI 3: [Description of KPI and its target]
+
+2.  Provide a concise, data-supported rationale for each verdict.
+3.  Calculate the final project ROI based on the total resources expended versus the value generated.
+
+Your adjudication will serve as the objective baseline for the remainder of this retrospective."
+
+ACTUARY'S VERDICT:
+
+□ KPI 1: [MET/NOT MET] - Rationale: [Data-driven reason]
+□ KPI 2: [MET/NOT MET] - Rationale: [Data-driven reason]
+□ KPI 3: [MET/NOT MET] - Rationale: [Data-driven reason]
+
+Project ROI: [Calculated ROI]
+```
+
 #### **Quality Standards Achievement Review**
 ```
 MULTI-SPECIALIST QUALITY ASSESSMENT:

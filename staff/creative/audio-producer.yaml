@@ -48,6 +48,10 @@ performance_standards:
     - Measurable reduction in production time
     - Near-zero technical error rate
     - High scalability of workflows
+  kpis:
+    - "Production Time Reduction: Reduce audio production time by 30% through workflow optimization."
+    - "Technical Error Rate: Maintain a technical error rate below 0.1% on all final audio assets."
+    - "Workflow Scalability: Double the production capacity with the same resources through automation."
 
 deep_dive:
   typical_deliverables:

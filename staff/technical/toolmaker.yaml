@@ -50,6 +50,10 @@ performance_standards:
     - Measurable improvements in workflow efficiency
     - Problem resolution rate
     - ROI on development investment
+  kpis:
+    - "Problem Resolution Rate: Resolve 95% of identified workflow gaps with custom-built tools."
+    - "Development ROI: Deliver a positive ROI on all tool development projects within 6 months."
+    - "User Adoption of Tools: Achieve 80% user adoption for new tools within the first month of deployment."
 
 deep_dive:
   typical_deliverables:

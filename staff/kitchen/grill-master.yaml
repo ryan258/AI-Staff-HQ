@@ -61,3 +61,7 @@ performance_standards:
     - Event Revenue
     - Safety Record
     - Seasonal Utilization
+  kpis:
+    - "Signature Item Sales Mix: Signature grilled items to account for 20% of all entree sales."
+    - "Event Revenue Growth: Increase revenue from outdoor events by 25% year-over-year."
+    - "Food Temperature Consistency: Achieve 99% accuracy in hitting target temperatures for all grilled proteins."

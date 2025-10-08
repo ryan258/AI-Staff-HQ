@@ -128,3 +128,7 @@ performance_standards:
     - Resource Efficiency
     - Strategic Impact
     - Template Effectiveness
+  kpis:
+    - "Project Success Rate: Achieve a 95% project success rate (on-time, on-budget, meeting quality standards)."
+    - "Timeline Adherence: Ensure 90% of all project milestones are met on or before their deadline."
+    - "Resource Efficiency: Improve resource utilization efficiency by 10% quarter-over-quarter."

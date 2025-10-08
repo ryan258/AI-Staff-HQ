@@ -50,6 +50,10 @@ performance_standards:
     - Meaningful network growth
     - Improved cultural knowledge
     - Discovery of "hidden gem" opportunities
+  kpis:
+    - "Event Relevance Score: 85% of curated events are rated as 'highly relevant' by the user."
+    - "Networking ROI: Generate an average of 3 new, meaningful professional connections per attended event."
+    - "Time Saved: Reduce time spent on event discovery and planning by 5 hours per week."
 
 deep_dive:
   typical_deliverables:

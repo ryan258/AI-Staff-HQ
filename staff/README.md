@@ -17,7 +17,7 @@ _Complete creative production capability from concept to delivery_
 - **[Voice Director](creative/voice-director.yaml)** - Voice coaching and performance optimization ✅
 - **[Medium Expert](creative/medium-expert.yaml)** - Medium platform strategy and content architecture ✅
 
-### 📊 **Strategy Department (4 Specialists)**
+### 📊 **Strategy Department (5 Specialists)**
 
 _Complete strategic planning and business development capability_
 
@@ -25,6 +25,7 @@ _Complete strategic planning and business development capability_
 - **[Creative Strategist](strategy/creative-strategist.yaml)** - Creative direction and campaign strategy ✅
 - **[Brand Builder](strategy/brand-builder.yaml)** - Brand development and positioning ✅
 - **[Market Analyst](strategy/market-analyst.yaml)** - Market research and competitive analysis ✅
+- **[Actuary](strategy/actuary.yaml)** - Performance measurement and KPI adjudication ✅
 
 ### ⚙️ **Technical Department (4 Specialists)**
 

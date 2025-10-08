@@ -49,6 +49,10 @@ performance_standards:
     - Quantifiable time saved by running automation scripts
     - Reduced process completion time
     - High success rate of script execution
+  kpis:
+    - "Time Saved Per Week: Save a cumulative 10 hours per week for the team through new automations."
+    - "Process Completion Time Reduction: Reduce end-to-end process completion time for automated workflows by an average of 40%."
+    - "Manual Error Reduction: Decrease manual errors in automated processes by 90%."
 
 deep_dive:
   typical_deliverables:

@@ -60,3 +60,7 @@ performance_standards:
     - Dietary Accommodation Success
     - Wellness Program Participation
     - Health Goal Achievement
+  kpis:
+    - "Healthy Menu Item Mix: Increase the sales mix of designated healthy items by 25%."
+    - "Dietary Accommodation Accuracy: Achieve a 100% accuracy rate in handling special dietary requests."
+    - "Wellness Program Enrollment: Attain a 30% enrollment rate from targeted customers for new wellness programs."

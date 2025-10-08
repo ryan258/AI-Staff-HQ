@@ -51,6 +51,10 @@ performance_standards:
     - Decision support effectiveness
     - Contribution to competitive advantage
     - Accuracy of strategic recommendations
+  kpis:
+    - "Decision Support Effectiveness: 90% of strategic recommendations are accepted and implemented by stakeholders."
+    - "Forecast Accuracy: Achieve 85% accuracy in market trend and sales forecasts."
+    - "Time to Insight: Reduce the time required to generate a comprehensive competitive analysis by 25%."
 
 deep_dive:
   typical_deliverables:

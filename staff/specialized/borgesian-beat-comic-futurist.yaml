@@ -57,3 +57,7 @@ performance_standards:
     - Conceptual Breadth
     - Narrative Impact
     - Cross-Specialist Utility
+  kpis:
+    - "Conceptual Breadth: Generate at least 10 viable, distinct concepts per ideation session."
+    - "Narrative Branching Factor: Create scenarios with an average of 3 or more significant divergent paths."
+    - "Cross-Specialist Adoption: 50% of generated concepts are adopted for development by other specialists."

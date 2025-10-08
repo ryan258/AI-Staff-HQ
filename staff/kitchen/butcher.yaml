@@ -60,3 +60,7 @@ performance_standards:
     - Cost Optimization
     - Safety Compliance
     - Customer Satisfaction
+  kpis:
+    - "Yield Efficiency: Achieve a 90% or higher yield on all primary cuts."
+    - "Waste Reduction: Reduce meat waste by 15% through nose-to-tail utilization."
+    - "Cost Per Portion: Decrease average cost per portion by 10% through strategic cutting."

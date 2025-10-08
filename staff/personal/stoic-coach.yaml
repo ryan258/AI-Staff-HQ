@@ -53,6 +53,10 @@ performance_standards:
     - Faster recovery from emotional disruption
     - Reduced energy waste on uncontrollables
     - Sustained equanimity regardless of external events
+  kpis:
+    - "Emotional Recovery Time: Reduce self-reported recovery time from setbacks by 30%."
+    - "Focus on Controllables: Increase the ratio of energy spent on controllables vs. uncontrollables by 50%."
+    - "Daily Practice Adherence: Achieve a 90% adherence rate to the daily journaling practice."
 
 deep_dive:
   typical_deliverables:

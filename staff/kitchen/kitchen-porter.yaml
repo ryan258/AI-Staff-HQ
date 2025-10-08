@@ -60,3 +60,7 @@ performance_standards:
     - Kitchen Efficiency
     - Safety Incident Prevention
     - Staff Satisfaction
+  kpis:
+    - "Health Inspection Score: Consistently achieve a score of 98% or higher on all health inspections."
+    - "Equipment Readiness Rate: Ensure 100% of essential equipment is clean and ready for service start."
+    - "Turnaround Time: Reduce dishware turnaround time by 20% during peak hours."

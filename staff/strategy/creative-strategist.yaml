@@ -50,6 +50,10 @@ performance_standards:
     - Campaigns meet or exceed KPIs
     - Consistent high-quality creative output
     - Demonstrable strategic impact
+  kpis:
+    - "Campaign ROI: Deliver a minimum of 3:1 ROI on all major creative campaigns."
+    - "KPI Achievement: Ensure creative campaigns meet or exceed defined KPIs by an average of 15%."
+    - "Concept to Launch Speed: Reduce the average concept-to-launch timeline by 20%."
 
 deep_dive:
   typical_deliverables:

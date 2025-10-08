@@ -60,3 +60,7 @@ performance_standards:
     - Cost-Benefit Analysis
     - Customer Satisfaction
     - Operational Efficiency
+  kpis:
+    - "Innovation Adoption Rate: 75% of developed techniques are successfully adopted into the main menu."
+    - "Recipe Consistency Improvement: Improve recipe consistency by 30% as measured by standardized quality checks."
+    - "Shelf-Life Extension: Increase the shelf-life of key prep components by an average of 2 days."

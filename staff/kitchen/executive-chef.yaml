@@ -59,3 +59,7 @@ performance_standards:
     - Food Cost Percentage
     - Kitchen Productivity
     - Staff Retention
+  kpis:
+    - "Food Cost Percentage: Maintain a food cost of 28-32% while upholding quality standards."
+    - "Customer Satisfaction Score: Achieve an average food quality rating of 4.8/5.0 or higher."
+    - "Staff Turnover Rate: Reduce kitchen staff turnover by 15% annually through effective leadership."

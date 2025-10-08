@@ -51,3 +51,7 @@ performance_standards:
     - Critical Reception
     - Accessibility
     - Cultural Impact
+  kpis:
+    - "Audience Retention Rate: Maintain an average 70% watch/read completion rate on all historical content."
+    - "Factual Accuracy: Achieve a 100% factual accuracy rate upon peer review by external historians."
+    - "Educational Effectiveness: Users show a 50% increase in knowledge of the topic in post-content quizzes."

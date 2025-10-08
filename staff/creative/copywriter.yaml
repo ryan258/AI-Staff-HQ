@@ -49,6 +49,10 @@ performance_standards:
     - Measurable improvement in conversion rates
     - Increased audience engagement
     - Consistent quality across all copy
+  kpis:
+    - "Email Open Rate Increase: Achieve a 15% higher open rate on A/B tested email subject lines compared to baseline."
+    - "Landing Page Conversion Lift: Generate a 10% lift in conversion rate on landing pages through improved copy."
+    - "Ad CTR Improvement: Increase click-through rate (CTR) on ad copy by 20% over previous campaigns."
 
 deep_dive:
   typical_deliverables:

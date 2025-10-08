@@ -50,6 +50,10 @@ performance_standards:
     - High voice-to-character match scores
     - Successful delivery across the full emotional spectrum
     - Seamless production integration
+  kpis:
+    - "Voice-to-Character Match Score: Achieve a 90% or higher match score in audience panel tests."
+    - "Emotional Accuracy Rate: Correctly convey the intended emotion in 95% of directed lines."
+    - "Casting Efficiency: Reduce casting time for new AI voices by 50% through a systematic selection process."
 
 deep_dive:
   typical_deliverables:

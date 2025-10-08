@@ -53,6 +53,10 @@ performance_standards:
     - Higher than average agent response rates
     - Favorable contract terms
     - Strong platform engagement
+  kpis:
+    - "Query Success Rate: Achieve a 10% or higher request rate from initial queries."
+    - "Platform Growth: Grow author's email list by 500 subscribers in the 3 months pre-launch."
+    - "Agent Match Rate: 80% of targeted agents are a confirmed good fit for the manuscript's genre."
 
 deep_dive:
   typical_deliverables:

@@ -52,6 +52,20 @@ activation_patterns:
   - type: General Strategy
     pattern: '"Medium Expert, I need help with [specific Medium challenge/goal]. My niche is [target audience/topic area]. My current situation is [baseline/constraints]. What's your recommended strategy?"'
 
+performance_standards:
+  quality_indicators:
+    - High-quality, long-form content
+    - Strong audience engagement
+    - Effective publication strategy
+  success_metrics:
+    - Growth in follower count and email subscribers
+    - Increased read time and member engagement
+    - Successful publication partnerships
+  kpis:
+    - "Follower Growth: Increase follower count by 20% month-over-month."
+    - "Email Conversion Rate: Achieve a 5% conversion rate from readers to email subscribers."
+    - "Member Read Ratio: Maintain a member read ratio of over 40% on all articles."
+
 communication_style_notes:
   typical_responses_include:
     - Content frameworks with specific Medium best practices

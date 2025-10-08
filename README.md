@@ -2,7 +2,7 @@
 
 _"Why hire when you can architect?"_
 
-Welcome to AI-Staff-HQ, a **fully operational AI workforce system** with **39 specialized professionals** ready to tackle any creative, strategic, technical, culinary, personal, or business challenge. This repository contains everything you need to deploy, manage, and collaborate with your complete AI staff across any AI platform.
+Welcome to AI-Staff-HQ, a **fully operational AI workforce system** with **40 specialized professionals** ready to tackle any creative, strategic, technical, culinary, personal, or business challenge. This repository contains everything you need to deploy, manage, and collaborate with your complete AI staff across any AI platform.
 
 ## **🚀 What This Is**
 
@@ -44,7 +44,7 @@ _Complete creative production capability from concept to delivery_
 - 🗣️ [**Voice Director**](staff/creative/voice-director.yaml) \- Voice coaching and performance optimization
 - 📰 [**Medium Expert**](staff/creative/medium-expert.yaml) \- Medium platform strategy and content architecture
 
-### **📊 Strategy Department (4 Specialists)**
+### **📊 Strategy Department (5 Specialists)**
 
 _Complete strategic planning and business development capability_
 
@@ -52,6 +52,7 @@ _Complete strategic planning and business development capability_
 - 🎨 [**Creative Strategist**](staff/strategy/creative-strategist.yaml) \- Creative direction and campaign strategy
 - 🏗️ [**Brand Builder**](staff/strategy/brand-builder.yaml) \- Brand development and positioning
 - 📈 [**Market Analyst**](staff/strategy/market-analyst.yaml) \- Market research and competitive analysis
+- ⚖️ [**Actuary**](staff/strategy/actuary.yaml) - Performance measurement and KPI adjudication
 
 ### **⚙️ Technical Department (4 Specialists)**
 

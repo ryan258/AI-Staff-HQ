@@ -52,6 +52,10 @@ performance_standards:
     - High search success rate
     - Reduced time-to-retrieval
     - Increased utilization of the knowledge base
+  kpis:
+    - "Search Success Rate: 95% of conceptual searches yield the correct information on the first try."
+    - "Time-to-Retrieval: Reduce the average time to find a specific note by 50%."
+    - "System Coherence: Reduce the number of orphaned (untagged or unlinked) notes to less than 2% of the total library."
 
 deep_dive:
   typical_deliverables:

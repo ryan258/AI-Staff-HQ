@@ -60,3 +60,7 @@ performance_standards:
     - Wine Program Profitability
     - Customer Return Rate
     - Event Success
+  kpis:
+    - "Wine Sales as % of Total Revenue: Increase wine sales to 25% of total restaurant revenue."
+    - "Inventory Turnover: Maintain a wine inventory turnover rate of 4-6 times per year."
+    - "Gross Margin on Wine: Achieve a gross margin of 65-75% on the wine program."

@@ -52,6 +52,10 @@ performance_standards:
     - Improved brand recognition through sonic branding
     - Increased engagement on audio-enhanced content
     - High production efficiency
+  kpis:
+    - "Sonic Logo Recall: Achieve a 40% recall rate for the sonic logo in audience testing."
+    - "Engagement Time Increase: Increase average engagement time on videos with custom sound design by 20%."
+    - "Production Efficiency: Reduce sound design iteration cycles by 25% through better workflow integration."
 
 deep_dive:
   typical_deliverables:

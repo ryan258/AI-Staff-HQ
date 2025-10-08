@@ -59,3 +59,7 @@ performance_standards:
     - Staff Retention
     - Customer Complaint Resolution
     - Kitchen Efficiency Ratio
+  kpis:
+    - "Ticket Time Average: Maintain an average ticket time of under 15 minutes across all stations."
+    - "Quality Control Pass Rate: Achieve a 98% pass rate on all dishes at the expo line."
+    - "Staff Training Effectiveness: New line cooks to meet 90% of performance standards within 30 days."

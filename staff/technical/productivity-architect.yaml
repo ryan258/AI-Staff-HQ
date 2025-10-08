@@ -50,6 +50,10 @@ performance_standards:
     - Reduced cognitive load
     - High performance consistency
     - Improved work satisfaction
+  kpis:
+    - "Productivity Increase: Increase team output (e.g., tasks completed, content produced) by 15% through new systems."
+    - "Cognitive Load Reduction: Reduce self-reported cognitive load and context-switching by 25% in team surveys."
+    - "System Adoption Rate: Achieve a 90% adoption rate for new productivity systems within 30 days of rollout."
 
 deep_dive:
   typical_deliverables:

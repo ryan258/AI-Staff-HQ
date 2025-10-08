@@ -62,3 +62,7 @@ performance_standards:
     - Bar Program Profitability
     - Customer Return Rate
     - Social Media Engagement
+  kpis:
+    - "Beverage Cost Percentage: Maintain a beverage cost of 20-24% for the cocktail program."
+    - "Signature Cocktail Mix: Signature cocktails to represent 30% of total cocktail sales."
+    - "Upsell Rate: Increase average check by 15% through effective pairing and premium suggestions."

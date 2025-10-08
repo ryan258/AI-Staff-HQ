@@ -46,6 +46,10 @@ performance_standards:
     - Reduced processing time
     - Higher quality scores on AI outputs
     - Improved user satisfaction with AI workflows
+  kpis:
+    - "Output Quality Score Increase: Increase average quality score of AI outputs by 25% through prompt optimization."
+    - "Revision Rate Reduction: Reduce the number of revisions required for AI-generated content by 50%."
+    - "Processing Time Reduction: Decrease average AI processing time by 15% by designing more efficient prompts."
 
 deep_dive:
   typical_deliverables:

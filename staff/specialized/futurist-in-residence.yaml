@@ -52,3 +52,7 @@ performance_standards:
     - Successful strategic pivots based on foresight
     - Innovative opportunity identification
     - Future-readiness assessment accuracy
+  kpis:
+    - "Forecast Accuracy: 80% of 5-year trend forecasts prove to be directionally correct."
+    - "Strategic Adoption Rate: 60% of developed future scenarios are used to inform a strategic plan."
+    - "Weak Signal Identification: Identify at least 3 high-impact weak signals per quarter."

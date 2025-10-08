@@ -51,6 +51,10 @@ performance_standards:
     - Improved brand recognition through character
     - High voice consistency scores
     - Increased audience engagement with persona-driven content
+  kpis:
+    - "Brand Character Recognition: Achieve a 30% increase in brand character recognition in audience surveys."
+    - "Voice Consistency Score: Maintain a 98% consistency score in automated voice analysis across all content."
+    - "Engagement Lift: Increase audience interaction with persona-driven content by 25%."
 
 deep_dive:
   typical_deliverables:

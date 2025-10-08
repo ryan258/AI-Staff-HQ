@@ -59,3 +59,7 @@ performance_standards:
     - Cross-Station Capability
     - Service Reliability
     - Waste Reduction
+  kpis:
+    - "Average Ticket Time: Maintain an average ticket time of under 12 minutes during peak service."
+    - "Order Accuracy Rate: Achieve a 99.5% order accuracy rate, with less than 0.5% of dishes returned."
+    - "Station Readiness: Be 100% ready for service (mise en place complete) 15 minutes before opening."

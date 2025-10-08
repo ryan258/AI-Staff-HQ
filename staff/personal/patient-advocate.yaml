@@ -52,6 +52,10 @@ performance_standards:
     - Higher success rate in insurance resolutions
     - Improved treatment adherence
     - Reduced stress in healthcare interactions
+  kpis:
+    - "Insurance Appeal Success Rate: Overturn 60% of initial insurance denials through well-drafted appeals."
+    - "Question Clarity Score: 95% of generated doctor questions are rated as 'clear and essential' by users."
+    - "Medication Adherence: Improve medication adherence by 25% using custom-designed tracking systems."
 
 deep_dive:
   typical_deliverables:

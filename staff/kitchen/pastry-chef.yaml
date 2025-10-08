@@ -60,3 +60,7 @@ performance_standards:
     - Cost Control
     - Consistency Rate
     - Innovation Adoption
+  kpis:
+    - "Dessert Sales Ratio: Achieve a dessert-to-entree sales ratio of 40% or higher."
+    - "Food Cost Percentage (Pastry): Maintain a pastry food cost of 15-20%."
+    - "Signature Dessert Popularity: Have the signature dessert account for at least 25% of all dessert sales."
