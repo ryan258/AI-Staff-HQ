@@ -4,14 +4,11 @@
 
 ## 🔄 Workflow Categories
 
-### 🔄 **Automation Workflows**
+### 🤖 **Python Automations**
 
-_Streamlined processes for efficiency and consistency using your Technical Department_
+_Executable Python scripts for automating complex tasks and workflows._
 
-- **[Content Creation Pipeline](automation/content-creation-pipeline.md)** 🚧 _Under Development (v1.1.0)_ - End-to-end content production workflow
-- **[Research Aggregation Workflow](automation/research-aggregation-workflow.md)** 🚧 _Under Development (v1.1.0)_ - Systematic information gathering and synthesis
-- **[Social Media Automation](automation/social-media-automation.md)** 🚧 _Under Development (v1.1.0)_ - Automated posting and engagement workflows
-- **[Client Communication Flows](automation/client-communication-flows.md)** 🚧 _Under Development (v1.1.0)_ - Streamlined client interaction processes
+- **[Example: Summarize New Articles](automations/summarize_new_articles.py)** ✅ _New (v1.4.0)_ - A script that watches a directory and uses AI to summarize new text files.
 
 ### 🎯 **Project Type Workflows**
 

@@ -37,6 +37,8 @@ activation_patterns:
     pattern: "Toolmaker, design an integration between [system A] and [system B] to achieve [specific outcome]."
   - type: Complex Problem Solving
     pattern: "Toolmaker, architect a solution for [technical challenge] given these [constraints]."
+  - type: Script Generation
+    pattern: "Toolmaker, write a Python script that [description of script functionality] and save it to `tools/scripts/[script_name].py`."
 
 performance_standards:
   quality_indicators:
