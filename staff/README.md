@@ -8,75 +8,75 @@
 
 _Complete creative production capability from concept to delivery_
 
-- **[Art Director](creative/art-director.md)** - Visual strategy and brand aesthetics ✅
-- **[Copywriter](creative/copywriter.md)** - Persuasive writing and brand voice ✅
-- **[Narrative Designer](creative/narrative-designer.md)** - Story structure and character development ✅
-- **[Sound Designer](creative/sound-designer.md)** - Audio strategy and sonic branding ✅
-- **[Persona Architect](creative/persona-architect.md)** - Character creation and voice development ✅
-- **[Audio Producer](creative/audio-producer.md)** - Audio production and podcast development ✅
-- **[Voice Director](creative/voice-director.md)** - Voice coaching and performance optimization ✅
-- **[Medium Expert](creative/medium-expert.md)** - Medium platform strategy and content architecture ✅
+- **[Art Director](creative/art-director.yaml)** - Visual strategy and brand aesthetics ✅
+- **[Copywriter](creative/copywriter.yaml)** - Persuasive writing and brand voice ✅
+- **[Narrative Designer](creative/narrative-designer.yaml)** - Story structure and character development ✅
+- **[Sound Designer](creative/sound-designer.yaml)** - Audio strategy and sonic branding ✅
+- **[Persona Architect](creative/persona-architect.yaml)** - Character creation and voice development ✅
+- **[Audio Producer](creative/audio-producer.yaml)** - Audio production and podcast development ✅
+- **[Voice Director](creative/voice-director.yaml)** - Voice coaching and performance optimization ✅
+- **[Medium Expert](creative/medium-expert.yaml)** - Medium platform strategy and content architecture ✅
 
 ### 📊 **Strategy Department (4 Specialists)**
 
 _Complete strategic planning and business development capability_
 
-- **[Chief of Staff](strategy/chief-of-staff.md)** - Project coordination and strategic oversight ✅
-- **[Creative Strategist](strategy/creative-strategist.md)** - Creative direction and campaign strategy ✅
-- **[Brand Builder](strategy/brand-builder.md)** - Brand development and positioning ✅
-- **[Market Analyst](strategy/market-analyst.md)** - Market research and competitive analysis ✅
+- **[Chief of Staff](strategy/chief-of-staff.yaml)** - Project coordination and strategic oversight ✅
+- **[Creative Strategist](strategy/creative-strategist.yaml)** - Creative direction and campaign strategy ✅
+- **[Brand Builder](strategy/brand-builder.yaml)** - Brand development and positioning ✅
+- **[Market Analyst](strategy/market-analyst.yaml)** - Market research and competitive analysis ✅
 
 ### ⚙️ **Technical Department (4 Specialists)**
 
 _Complete technical implementation and optimization capability_
 
-- **[Automation Specialist](technical/automation-specialist.md)** - Workflow optimization and tech solutions ✅
-- **[Prompt Engineer](technical/prompt-engineer.md)** - AI optimization and prompt design ✅
-- **[Toolmaker](technical/toolmaker.md)** - Tool creation and system design ✅
-- **[Productivity Architect](technical/productivity-architect.md)** - Systems thinking and workflow design ✅
+- **[Automation Specialist](technical/automation-specialist.yaml)** - Workflow optimization and tech solutions ✅
+- **[Prompt Engineer](technical/prompt-engineer.yaml)** - AI optimization and prompt design ✅
+- **[Toolmaker](technical/toolmaker.yaml)** - Tool creation and system design ✅
+- **[Productivity Architect](technical/productivity-architect.yaml)** - Systems thinking and workflow design ✅
 
 ### 🍳 **Kitchen Department (11 Specialists)**
 
 _Complete culinary expertise and food content capability_
 
-- **[Executive Chef](kitchen/executive-chef.md)** - Culinary leadership and menu development ✅
-- **[Sous Chef](kitchen/sous-chef.md)** - Kitchen operations and recipe execution ✅
-- **[Pastry Chef](kitchen/pastry-chef.md)** - Baking, desserts, and confections ✅
-- **[Grill Master](kitchen/grill-master.md)** - Grilling, BBQ, and outdoor cooking ✅
-- **[Master Bartender](kitchen/master-bartender.md)** - Mixology and cocktail creation ✅
-- **[Wine Sommelier](kitchen/wine-sommelier.md)** - Wine knowledge and pairing expertise ✅
-- **[Nutritionist](kitchen/nutritionist.md)** - Nutritional science and dietary planning ✅
-- **[Food Scientist](kitchen/food-scientist.md)** - Food chemistry and molecular gastronomy ✅
-- **[Butcher](kitchen/butcher.md)** - Meat preparation and protein expertise ✅
-- **[Line Cook](kitchen/line-cook.md)** - Production cooking and efficiency ✅
-- **[Kitchen Porter](kitchen/kitchen-porter.md)** - Kitchen support and organization ✅
+- **[Executive Chef](kitchen/executive-chef.yaml)** - Culinary leadership and menu development ✅
+- **[Sous Chef](kitchen/sous-chef.yaml)** - Kitchen operations and recipe execution ✅
+- **[Pastry Chef](kitchen/pastry-chef.yaml)** - Baking, desserts, and confections ✅
+- **[Grill Master](kitchen/grill-master.yaml)** - Grilling, BBQ, and outdoor cooking ✅
+- **[Master Bartender](kitchen/master-bartender.yaml)** - Mixology and cocktail creation ✅
+- **[Wine Sommelier](kitchen/wine-sommelier.yaml)** - Wine knowledge and pairing expertise ✅
+- **[Nutritionist](kitchen/nutritionist.yaml)** - Nutritional science and dietary planning ✅
+- **[Food Scientist](kitchen/food-scientist.yaml)** - Food chemistry and molecular gastronomy ✅
+- **[Butcher](kitchen/butcher.yaml)** - Meat preparation and protein expertise ✅
+- **[Line Cook](kitchen/line-cook.yaml)** - Production cooking and efficiency ✅
+- **[Kitchen Porter](kitchen/kitchen-porter.yaml)** - Kitchen support and organization ✅
 
 ### 🧠 **Personal Department (3 Specialists)**
 
 _Personal development and life optimization capability_
 
-- **[Stoic Coach](personal/stoic-coach.md)** - Philosophy, mindset, and resilience ✅
-- **[Patient Advocate](personal/patient-advocate.md)** - Healthcare navigation and medical support ✅
-- **[Head Librarian](personal/head-librarian.md)** - Research and knowledge organization ✅
+- **[Stoic Coach](personal/stoic-coach.yaml)** - Philosophy, mindset, and resilience ✅
+- **[Patient Advocate](personal/patient-advocate.yaml)** - Healthcare navigation and medical support ✅
+- **[Head Librarian](personal/head-librarian.yaml)** - Research and knowledge organization ✅
 
 ### 💼 **Commercialization Department (1 Specialist)**
 
 _Business development and market entry capability_
 
-- **[Literary Agent](commercialization/literary-agent.md)** - Publishing, book deals, and contracts ✅
+- **[Literary Agent](commercialization/literary-agent.yaml)** - Publishing, book deals, and contracts ✅
 
 ### 🎯 **Specialized Department (8 Specialists)**
 
 _Unique domain experts for specialized content and innovation_
 
-- **[Historical Storyteller](specialized/historical-storyteller.md)** - Documentary expertise and historical narrative ✅
-- **[Borgesian Beat Comic Futurist](specialized/borgesian-beat-comic-futurist.md)** - Sci-fi writing and futuristic narratives 🚧
-- **[Futurist-in-Residence](specialized/futurist-in-residence.md)** - Strategic foresight and scenario planning ✅
-- **[Transmedia Producer](specialized/transmedia-producer.md)** - Cross-platform content strategy ✅
-- **[Jorge Luis Borges](specialized/jorge-luis-borges.md)** - Literary mastery and philosophical narrative ✅
-- **[Cultural Anthropologist](specialized/cultural-anthropologist.md)** - Cultural experience and authenticity ✅
-- **[Local Area Expert](specialized/local-area-expert.md)** - Geographic intelligence and cultural navigation ✅
-- **[Music Producer](specialized/music-producer.md)** - Musical composition and arrangement ✅
+- **[Historical Storyteller](specialized/historical-storyteller.yaml)** - Documentary expertise and historical narrative ✅
+- **[Borgesian Beat Comic Futurist](specialized/borgesian-beat-comic-futurist.yaml)** - Sci-fi writing and futuristic narratives 🚧
+- **[Futurist-in-Residence](specialized/futurist-in-residence.yaml)** - Strategic foresight and scenario planning ✅
+- **[Transmedia Producer](specialized/transmedia-producer.yaml)** - Cross-platform content strategy ✅
+- **[Jorge Luis Borges](specialized/jorge-luis-borges.yaml)** - Literary mastery and philosophical narrative ✅
+- **[Cultural Anthropologist](specialized/cultural-anthropologist.yaml)** - Cultural experience and authenticity ✅
+- **[Local Area Expert](specialized/local-area-expert.yaml)** - Geographic intelligence and cultural navigation ✅
+- **[Music Producer](specialized/music-producer.yaml)** - Musical composition and arrangement ✅
 
 ---
 
@@ -91,16 +91,16 @@ _Unique domain experts for specialized content and innovation_
 
 ### **For Complex Projects**
 
-1. **Start with the [Chief of Staff](strategy/chief-of-staff.md)** for coordination of multi-specialist projects
+1. **Start with the [Chief of Staff](strategy/chief-of-staff.yaml)** for coordination of multi-specialist projects
 2. **Identify required departments** for your project scope across Creative, Strategy, Technical, and Specialized teams
 3. **Use multi-specialist activation patterns** for seamless collaboration
 4. **Follow the workflows** outlined in each specialist's profile for proven project patterns
 
 ### **For System Building**
 
-1. **Begin with [Automation Specialist](technical/automation-specialist.md)** for process optimization and workflow design
-2. **Work with [Productivity Architect](technical/productivity-architect.md)** for comprehensive system design
-3. **Coordinate through [Chief of Staff](strategy/chief-of-staff.md)** for implementation and quality assurance
+1. **Begin with [Automation Specialist](technical/automation-specialist.yaml)** for process optimization and workflow design
+2. **Work with [Productivity Architect](technical/productivity-architect.yaml)** for comprehensive system design
+3. **Coordinate through [Chief of Staff](strategy/chief-of-staff.yaml)** for implementation and quality assurance
 4. **Track performance** and iterate based on results using the complete technical team
 
 ---
