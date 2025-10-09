@@ -66,6 +66,7 @@
 | [**Prompt Engineer**](staff/technical/prompt-engineer.yaml) ✅ | AI optimization, prompt design | AI workflows, prompt optimization | "Act as my Prompt Engineer..." |
 | [**Toolmaker**](staff/technical/toolmaker.yaml) ✅ | Tool creation, system design | Custom solutions, tool development | "Act as my Toolmaker..." |
 | [**Productivity Architect**](staff/technical/productivity-architect.yaml) ✅ | Systems thinking, workflow design | Productivity systems, optimization | "Act as my Productivity Architect..." |
+| [**SEO Specialist**](staff/technical/seo-specialist.yaml) ✅ | Search engine optimization | Content visibility, organic traffic | "Act as my SEO Specialist..." |
 
 ### **Technical Team Collaborations**
 
@@ -127,6 +128,19 @@
 
 * **Book Publishing** → Literary Agent \+ Copywriter \+ Narrative Designer \+ Head Librarian  
 * **Content Monetization** → Literary Agent \+ Brand Builder \+ Creative Strategist
+
+## **💵 Finance Department**
+
+*Financial analysis and guidance to support business decisions*
+
+| Role | Specialty | Best For | Activation Phrase |
+| :---- | :---- | :---- | :---- |
+| **[Financial Analyst](staff/finance/financial-analyst.yaml)** ✅ | Financial modeling and analysis | Investment decisions, budgeting | "Act as my Financial Analyst..." |
+
+### **Finance Team Collaborations**
+
+* **Investment Analysis** → Financial Analyst \+ Market Analyst \+ Actuary
+* **Budgeting and Forecasting** → Financial Analyst \+ Chief of Staff
 
 ## **🎯 Specialized Department (8 Specialists)**
 
