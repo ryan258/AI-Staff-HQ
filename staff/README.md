@@ -4,7 +4,7 @@
 
 ## 🏢 Department Overview
 
-### 🎨 **Creative Department (8 Specialists)**
+### 🎨 **Creative Department**
 
 _Complete creative production capability from concept to delivery_
 
@@ -17,7 +17,7 @@ _Complete creative production capability from concept to delivery_
 - **[Voice Director](creative/voice-director.yaml)** - Voice coaching and performance optimization ✅
 - **[Medium Expert](creative/medium-expert.yaml)** - Medium platform strategy and content architecture ✅
 
-### 📊 **Strategy Department (5 Specialists)**
+### 📊 **Strategy Department**
 
 _Complete strategic planning and business development capability_
 
@@ -27,7 +27,7 @@ _Complete strategic planning and business development capability_
 - **[Market Analyst](strategy/market-analyst.yaml)** - Market research and competitive analysis ✅
 - **[Actuary](strategy/actuary.yaml)** - Performance measurement and KPI adjudication ✅
 
-### ⚙️ **Technical Department (4 Specialists)**
+### ⚙️ **Technical Department**
 
 _Complete technical implementation and optimization capability_
 
@@ -35,8 +35,9 @@ _Complete technical implementation and optimization capability_
 - **[Prompt Engineer](technical/prompt-engineer.yaml)** - AI optimization and prompt design ✅
 - **[Toolmaker](technical/toolmaker.yaml)** - Tool creation and system design ✅
 - **[Productivity Architect](technical/productivity-architect.yaml)** - Systems thinking and workflow design ✅
+- **[SEO Specialist](technical/seo-specialist.yaml)** - Organic visibility and search optimization ✅
 
-### 🍳 **Kitchen Department (11 Specialists)**
+### 🍳 **Kitchen Department**
 
 _Complete culinary expertise and food content capability_
 
@@ -52,7 +53,7 @@ _Complete culinary expertise and food content capability_
 - **[Line Cook](kitchen/line-cook.yaml)** - Production cooking and efficiency ✅
 - **[Kitchen Porter](kitchen/kitchen-porter.yaml)** - Kitchen support and organization ✅
 
-### 🧠 **Personal Department (3 Specialists)**
+### 🧠 **Personal Department**
 
 _Personal development and life optimization capability_
 
@@ -60,13 +61,19 @@ _Personal development and life optimization capability_
 - **[Patient Advocate](personal/patient-advocate.yaml)** - Healthcare navigation and medical support ✅
 - **[Head Librarian](personal/head-librarian.yaml)** - Research and knowledge organization ✅
 
-### 💼 **Commercialization Department (1 Specialist)**
+### 💵 **Finance Department**
+
+_Financial analysis and decision support_
+
+- **[Financial Analyst](finance/financial-analyst.yaml)** - Financial modeling and performance insights ✅
+
+### 💼 **Commercialization Department**
 
 _Business development and market entry capability_
 
 - **[Literary Agent](commercialization/literary-agent.yaml)** - Publishing, book deals, and contracts ✅
 
-### 🎯 **Specialized Department (8 Specialists)**
+### 🎯 **Specialized Department**
 
 _Unique domain experts for specialized content and innovation_
 
@@ -85,7 +92,7 @@ _Unique domain experts for specialized content and innovation_
 
 ### **For New Users**
 
-1. **Browse the departments** above to understand available expertise across all 39 specialists
+1. **Browse the departments** above to understand available expertise across the full specialist roster
 2. **Pick a specialist** that matches your current need from the complete operational workforce
 3. **Read their full profile** to understand their capabilities and communication style
 4. **Try a simple activation** using their recommended patterns
@@ -142,7 +149,7 @@ Chief of Staff coordinates: Strategy Team (analysis) → Creative Team (executio
 
 ## 📈 Workforce Expansion & Customization
 
-Your 39-specialist workforce is complete and operational, but you can still:
+Your specialist workforce is complete and operational, but you can still:
 
 ### **Specialist Customization**
 
@@ -175,29 +182,30 @@ Ready to add new departments? Use the **[Persona Template](../templates/persona/
 
 ### **✅ Complete Operational Departments**
 
-- **🎨 Creative Production (8/8)** - Full creative capability from concept to execution
-- **📊 Strategic Planning (4/4)** - Complete business strategy and market analysis
-- **⚙️ Technical Implementation (4/4)** - Full automation and system optimization
-- **🍳 Culinary Excellence (11/11)** - Complete kitchen brigade and food expertise
-- **🧠 Personal Development (3/3)** - Life optimization and personal growth support
-- **💼 Business Development (1/1)** - Commercialization and market entry capability
-- **🎯 Specialized Expertise (8/8)** - Unique domain knowledge for specialized content
+- **🎨 Creative Production** - Full creative capability from concept to execution
+- **📊 Strategic Planning** - Complete business strategy and market analysis
+- **⚙️ Technical Implementation** - Full automation and system optimization
+- **🍳 Culinary Excellence** - Complete kitchen brigade and food expertise
+- **🧠 Personal Development** - Life optimization and personal growth support
+- **💵 Financial Analysis** - Budgeting, forecasting, and performance insights
+- **💼 Commercialization** - Market entry and partnership development
+- **🎯 Specialized Expertise** - Unique domain knowledge for specialized content
 
 ### **🏆 Proven Multi-Specialist Projects**
 
-- **Brand Development** - Strategy + Creative teams (6-8 specialists)
-- **Content Marketing Campaigns** - All departments coordinated (15+ specialists)
-- **Technical Optimization Initiatives** - Technical + Strategy teams (6-8 specialists)
-- **Documentary/Educational Content** - Creative + Specialized teams (10+ specialists)
-- **Culinary Content Creation** - Kitchen + Creative teams (12+ specialists)
-- **Cultural Experience Design** - Specialized + Kitchen + Creative teams (15+ specialists)
+- **Brand Development** - Strategy and Creative teams coordinating end-to-end
+- **Content Marketing Campaigns** - Cross-department collaboration spanning research through distribution
+- **Technical Optimization Initiatives** - Technical and Strategy teams driving workflow upgrades
+- **Documentary/Educational Content** - Creative and Specialized teams shaping narrative-rich programs
+- **Culinary Content Creation** - Kitchen and Creative teams developing experiential food concepts
+- **Cultural Experience Design** - Specialized, Kitchen, and Creative teams delivering immersive engagements
 
 ### **📊 Performance Excellence**
 
 - **Project Success Rate**: 95%+ completion with high quality standards
 - **Specialist Integration**: Seamless cross-department collaboration proven
 - **Workflow Efficiency**: 60-80% improvement in project completion time
-- **Quality Consistency**: Professional-grade output across all 39 specialists
+- **Quality Consistency**: Professional-grade output across the full specialist roster
 
 ---
 
@@ -215,7 +223,7 @@ Ready to add new departments? Use the **[Persona Template](../templates/persona/
 - **Power Pairs** - High-impact 2-specialist combinations for rapid results
 - **Department Trios** - 3-specialist teams for balanced department representation
 - **Cross-Functional Squads** - 4-6 specialists from multiple departments for complex projects
-- **Full Workforce Deployment** - Enterprise-level projects utilizing most or all 39 specialists
+- **Full Workforce Deployment** - Enterprise-level projects utilizing the entire roster
 
 ---
 
@@ -227,6 +235,6 @@ Ready to add new departments? Use the **[Persona Template](../templates/persona/
 
 ---
 
-**🚀 Your complete AI workforce is operational and ready for any challenge. Time to put all 39 specialists to work!**
+**🚀 Your complete AI workforce is operational and ready for any challenge. Time to put the full roster to work!**
 
 _Built systematically, tested rigorously, optimized continuously._ 🎯

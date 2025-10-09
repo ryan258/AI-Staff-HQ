@@ -8,15 +8,15 @@ To create the most comprehensive, adaptable, and powerful AI workforce system, e
 
 ## **🚀 Current Status: Version 1.5.0 (October 2025)**
 
-### **✅ Production Ready (42 Specialists Operational)**
+### **✅ Production Ready (Specialist Roster Operational)**
 
-The AI-Staff-HQ now consists of 42 specialists, including the new **Actuary** for performance measurement. All specialist profiles have been migrated to a dynamic YAML format, allowing for easier updates and future programmatic integration.
+The AI-Staff-HQ now fields a fully staffed roster of specialists, including the new **Actuary** for performance measurement. Most specialist profiles have been migrated to a dynamic YAML format, allowing for easier updates and future programmatic integration, with remaining legacy files in the process of being upgraded.
 
 ### **🏆 Major Achievements in v1.5.0**
 
 This version represents a major leap forward in the system's intelligence and autonomy.
 
-- **Dynamic Specialist Profiles:** All 42 specialist profiles have been converted from static Markdown to a structured YAML format. This makes them machine-readable and programmatically updatable, laying the foundation for a self-optimizing system.
+- **Dynamic Specialist Profiles:** The specialist profiles are being converted from static Markdown to a structured YAML format. The majority already follow the new schema, making them machine-readable and programmatically updatable, and the remaining profiles are scheduled for upgrade.
 
 - **Quantifiable Performance (KPIs):** Every specialist now has a `kpis` section with measurable performance targets. This moves the system from qualitative goals to quantitative, data-driven outcomes.
 
@@ -32,6 +32,7 @@ This version represents a major leap forward in the system's intelligence and au
 
 - **Learning Loop is Manual:** While the infrastructure for learning is in place (logs, KPIs, Actuary), the process of updating specialist profiles based on performance is still a manual user- or Gemini-driven task.
 - **Continue to expand the library of autonomous workflows:** The autonomous workflow concept has been proven, but the library of such workflows can be expanded.
+- **Schema Parity Work in Progress:** A subset of legacy specialist profiles still need to be migrated to the enriched YAML structure referenced above.
 
 ## **🗺️ Roadmap: Next 12 Months**
 
