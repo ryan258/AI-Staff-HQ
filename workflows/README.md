@@ -8,7 +8,10 @@
 
 _Executable Python scripts for automating complex tasks and workflows._
 
-- **[Example: Summarize New Articles](automations/summarize_new_articles.py)** ✅ _New (v1.4.0)_ - A script that watches a directory and uses AI to summarize new text files.
+- **[Summarize New Articles](automations/summarize_new_articles.py)** ✅ _New (v1.4.0)_ - A script that watches a directory and uses AI to summarize new text files.
+- **[Aether Brew Launch](automations/aether_brew_launch.py)** ✅ _New (v1.5.0)_ - A script to automate the launch of the Aether Brew brand.
+- **[Daily News Summarizer](automations/daily_news_summarizer.py)** ✅ _New (v1.5.0)_ - A script that fetches the latest news from an RSS feed and generates a summary.
+- **[Social Media Trend Tracker](automations/social_media_trend_tracker.py)** ✅ _New (v1.5.0)_ - A script that uses a public API to track trending topics.
 
 ### 🎯 **Project Type Workflows**
 
@@ -32,6 +35,10 @@ _Data-driven optimization and performance tracking using your complete specialis
 _Set-and-forget workflows managed by your Chief of Staff with minimal user intervention_
 
 - **[Autonomous Weekly Content Pipeline](autonomous/weekly-content-pipeline.md)** ✅ _New (v1.3.0)_ - Fully automated weekly content generation from ideation to distribution.
+- **[Self-Healing Workflow](autonomous/self-healing-workflow.md)** ✅ _New (v1.5.0)_ - An autonomous workflow for identifying and proposing solutions to performance gaps.
+- **[Dynamic Onboarding Workflow](autonomous/dynamic-onboarding.md)** ✅ _New (v1.5.0)_ - An autonomous workflow for creating a personalized onboarding experience for new users.
+- **[Autonomous Content Creation Workflow](autonomous/autonomous-content-creation.md)** ✅ _New (v1.5.0)_ - An autonomous workflow for generating a blog post, from idea to final draft.
+- **[Automated Project Scoping](autonomous/automated-project-scoping.md)** ✅ _New (v1.5.0)_ - An autonomous workflow for automatically generating a project brief from a high-level goal.
 
 ---
 
@@ -39,7 +46,7 @@ _Set-and-forget workflows managed by your Chief of Staff with minimal user inter
 
 ### **Purpose and AI Specialist Integration**
 
-Workflows are **executable processes** that coordinate your 17 AI specialists to provide:
+Workflows are **executable processes** that coordinate your 42 AI specialists to provide:
 
 - **Sequential specialist coordination** for complex multi-phase projects
 - **Decision points and specialist assignments** based on project requirements and complexity
@@ -54,7 +61,7 @@ Workflows systematically coordinate your entire AI workforce:
 - **Strategic Planning** - Strategy Department (Chief of Staff, Creative Strategist, Brand Builder, Market Analyst)
 - **Creative Execution** - Creative Department (Art Director, Copywriter, Narrative Designer, Sound Designer, Persona Architect, Audio Producer, Voice Director)
 - **Technical Implementation** - Technical Department (Automation Specialist, Prompt Engineer, Toolmaker, Productivity Architect)
-- **Specialized Expertise** - Specialized Department (Historical Storyteller, Borgesian Beat Comic Futurist)
+- **Specialized Expertise** - Specialized Department (Historical Storyteller, Borgesian Beat Comic Futurist, Futurist-in-Residence, Transmedia Producer, Jorge Luis Borges, Cultural Anthropologist, Local Area Expert, Music Producer)
 
 ### **Multi-Department Workflow Types**
 
@@ -62,7 +69,9 @@ Workflows systematically coordinate your entire AI workforce:
 - **Parallel Workflows** - Simultaneous specialist tracks that converge (e.g., Creative + Technical working simultaneously)
 - **Conditional Workflows** - Specialist assignment based on project criteria or client decisions
 - **Iterative Workflows** - Specialist review cycles for improvement and refinement
-- **Enterprise Workflows** - Complex combinations utilizing most or all 17 specialists
+### **Enterprise Workflows**
+
+- Complex combinations utilizing most or all 42 specialists
 
 ---
 
@@ -96,7 +105,7 @@ Workflows systematically coordinate your entire AI workforce:
 
 ## 🎮 Workflow Gaming Elements with AI Workforce
 
-### **Achievement Integration with 17 Specialists**
+### **Achievement Integration with 42 Specialists**
 
 Workflows contribute to your Knowledge Multiverse progression through specialist mastery:
 
@@ -241,4 +250,4 @@ Chief of Staff coordinates: Strategy Department (analysis and planning)
 
 👉 **Start with the [Brand Development Workflow](project-types/brand-development-workflow.md)** to see multi-department coordination in action, or begin with simpler single-department workflows to build your coordination skills.
 
-_Workflows transform your 17 specialists from individual experts into a coordinated powerhouse. Master workflow orchestration to unlock enterprise-level capability with AI workforce efficiency._ ⚡
+_Workflows transform your 42 specialists from individual experts into a coordinated powerhouse. Master workflow orchestration to unlock enterprise-level capability with AI workforce efficiency._ ⚡

@@ -310,16 +310,16 @@ For existing brand optimization:
 ## 📚 Related Resources
 
 ### **Templates**
-- **[Project Brief Template](../../templates/project/project-brief-template.md)** *(Coming Soon)*
-- **[Creative Brief Template](../../templates/project/creative-brief-template.md)** *(Coming Soon)*
+- **[Project Brief Template](../../templates/project/project-brief-template.md)**
+- **[Creative Brief Template](../../templates/project/creative-brief-template.md)**
 - **Brand Guidelines Template** *(Coming Soon)*
 
 ### **Specialists**
-- **[Chief of Staff](../../staff/strategy/chief-of-staff.md)** - Project coordination
-- **[Brand Builder](../../staff/strategy/brand-builder.md)** *(Coming Soon)* - Strategic development
-- **[Art Director](../../staff/creative/art-director.md)** - Visual identity
-- **[Copywriter](../../staff/creative/copywriter.md)** *(Coming Soon)* - Messaging framework
-- **[Market Analyst](../../staff/strategy/market-analyst.md)** *(Coming Soon)* - Research and analysis
+- **[Chief of Staff](../../staff/strategy/chief-of-staff.yaml)** - Project coordination
+- **[Brand Builder](../../staff/strategy/brand-builder.yaml)** - Strategic development
+- **[Art Director](../../staff/creative/art-director.yaml)** - Visual identity
+- **[Copywriter](../../staff/creative/copywriter.yaml)** - Messaging framework
+- **[Market Analyst](../../staff/strategy/market-analyst.yaml)** - Research and analysis
 
 ### **Handbooks**
 - **Brand Strategy Development Handbook** *(Coming Soon)*

@@ -1,38 +1,34 @@
 # 💡 Creative Problem Solving
 
-> *"Creativity is intelligence having fun."* - Often attributed to Einstein
+> A guide to systematic approaches for creative breakthrough and innovation.
 
-## 🚧 Development Status
-**Under Development** - Expected v1.2.0
+## 🎯 Overview
 
-## 🎯 Planned Core Concepts
-
-### **Creative Problem-Solving Framework**
-- Problem definition and reframing techniques
-- Divergent and convergent thinking strategies
-- Creative constraint utilization and limitation design
-- Cross-domain insight application and synthesis
-- Innovation measurement and validation methods
-
-### **Systematic Creativity Methods**
-- Design thinking and human-centered approaches
-- SCAMPER and systematic innovation techniques
-- Lateral thinking and perspective shifting
-- Analogical reasoning and metaphorical thinking
-- Collaborative creativity and group innovation
-
-### **Integration with AI Workforce**
-- Creative brief development and specialist coordination
-- Cross-specialist ideation and synthesis techniques
-- Innovation workflow design and optimization
-- Creative quality assurance and evaluation
-- Breakthrough thinking pattern recognition
-
-## 🤝 Specialist Applications
-- **Creative Strategist** - Innovation strategy development
-- **Art Director** - Visual problem-solving techniques
-- **Narrative Designer** - Creative story solutions
-- **All specialists** - Enhanced creative capability
+**Purpose**: To provide a structured process for creative problem solving, enabling individuals and teams to generate innovative solutions to complex challenges.
 
 ---
-**Coming Soon: Systematic approaches to creative breakthrough and innovation.**
+
+## 🔄 The Creative Problem-Solving Process
+
+The creative problem-solving process can be broken down into four main stages:
+
+1.  **Clarify**: Understand the problem and formulate the right questions.
+2.  **Ideate**: Generate a wide range of ideas.
+3.  **Develop**: Refine and develop the most promising ideas.
+4.  **Implement**: Put the solution into action.
+
+## 🧠 Divergent and Convergent Thinking
+
+Creative problem solving involves a balance of divergent and convergent thinking.
+
+-   **Divergent Thinking**: The process of generating multiple, unique ideas or solutions. This is about quantity over quality.
+-   **Convergent Thinking**: The process of evaluating and selecting the best idea or solution from a set of alternatives. This is about quality over quantity.
+
+## 🤖 AI Workforce Applications
+
+The AI-Staff-HQ can be used to facilitate the creative problem-solving process:
+
+-   **Clarify**: Use the `Market Analyst` to research the problem and the `Brand Builder` to reframe it.
+-   **Ideate**: Use the `Creative Strategist` and other creative specialists to brainstorm a wide range of ideas.
+-   **Develop**: Use the `Productivity Architect` to refine and develop the most promising ideas.
+-   **Implement**: Use the `Chief of Staff` to create an implementation plan and coordinate the team.

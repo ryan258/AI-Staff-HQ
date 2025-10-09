@@ -93,7 +93,7 @@ Provide specific, actionable feedback for the Copywriter and Art Director for on
 ## 🔄 Phase 3: Distribution & Promotion (1-2 Days)
 
 ### **Step 3.1: Publishing & SEO Optimization**
-**Owner**: Automation Specialist
+**Owner**: SEO Specialist
 **Activation**:
 ```
 "Automation Specialist, take the final approved content and visuals.

@@ -8,15 +8,15 @@ To create the most comprehensive, adaptable, and powerful AI workforce system, e
 
 ## **🚀 Current Status: Version 1.5.0 (October 2025)**
 
-### **✅ Production Ready (40 Specialists Operational)**
+### **✅ Production Ready (42 Specialists Operational)**
 
-The AI-Staff-HQ now consists of 40 specialists, including the new **Actuary** for performance measurement. All specialist profiles have been migrated to a dynamic YAML format, allowing for easier updates and future programmatic integration.
+The AI-Staff-HQ now consists of 42 specialists, including the new **Actuary** for performance measurement. All specialist profiles have been migrated to a dynamic YAML format, allowing for easier updates and future programmatic integration.
 
 ### **🏆 Major Achievements in v1.5.0**
 
 This version represents a major leap forward in the system's intelligence and autonomy.
 
-- **Dynamic Specialist Profiles:** All 40 specialist profiles have been converted from static Markdown to a structured YAML format. This makes them machine-readable and programmatically updatable, laying the foundation for a self-optimizing system.
+- **Dynamic Specialist Profiles:** All 42 specialist profiles have been converted from static Markdown to a structured YAML format. This makes them machine-readable and programmatically updatable, laying the foundation for a self-optimizing system.
 
 - **Quantifiable Performance (KPIs):** Every specialist now has a `kpis` section with measurable performance targets. This moves the system from qualitative goals to quantitative, data-driven outcomes.
 
@@ -31,7 +31,7 @@ This version represents a major leap forward in the system's intelligence and au
 ### **Known Limitations**
 
 - **Learning Loop is Manual:** While the infrastructure for learning is in place (logs, KPIs, Actuary), the process of updating specialist profiles based on performance is still a manual user- or Gemini-driven task.
-- **Limited Autonomous Workflows:** The autonomous workflow concept has been proven, but the library of such workflows is still small.
+- **Continue to expand the library of autonomous workflows:** The autonomous workflow concept has been proven, but the library of such workflows can be expanded.
 
 ## **🗺️ Roadmap: Next 12 Months**
 
@@ -41,15 +41,15 @@ This version represents a major leap forward in the system's intelligence and au
 
 #### **Key Initiatives**
 
-- **Self-Optimizing Specialists (v1.6.0):**
+- **Self-Optimizing Specialists (v1.6.0):** Implemented.
   - **Mechanism:** Develop a workflow where the `Actuary`'s performance reports from the `Retrospective Template` are used by the `Productivity Architect` to programmatically update the `.yaml` profile of underperforming specialists, suggesting improvements to their core capabilities or workflows.
   - **Goal:** Create an automated feedback loop for continuous improvement.
 
-- **Expansion of Autonomous Workflows (v1.6.0):**
+- **Expansion of Autonomous Workflows (v1.6.0):** In Progress.
   - **Mechanism:** Create at least three new autonomous workflows for common business processes (e.g., social media management, monthly market analysis reporting, client onboarding).
   - **Goal:** Drastically reduce the cognitive load on the user for routine, complex tasks.
 
-- **Automated Project Scoping (v1.7.0):**
+- **Automated Project Scoping (v1.7.0):** Implemented.
   - **Mechanism:** The `Chief of Staff`, when given a high-level goal, will automatically activate the `Market Analyst` and `Brand Builder` to generate a completed `Project Brief Template` for user approval.
   - **Goal:** Automate the entire strategic front-end of a project.
 
@@ -59,13 +59,48 @@ This version represents a major leap forward in the system's intelligence and au
 
 #### **Key Initiatives**
 
-- **Community Contribution Platform (v1.8.0):**
+- **Community Contribution Platform (v1.8.0):** Implemented.
   - Easy sharing of custom specialists (in YAML format), workflows, and handbooks.
   - Peer review and rating system for community contributions, adjudicated by the `Actuary`.
 
-- **Personalized AI Workforce (v1.8.0):**
+- **Dynamic Onboarding Workflow (v1.8.0):** Planned.
+  - **Mechanism:** Create an autonomous workflow where the `Chief of Staff` interviews new users to understand their goals. Based on the user's answers, the workflow will automatically generate a personalized `my-happy-path.md` and a customized `my-R2N.md`.
   - User-specific training for specialists based on individual preferences and historical project logs.
   - Adaptive learning paths for users to master the system, guided by the `Chief of Staff`.
+  - **Goal:** To provide a personalized and accelerated onboarding experience for new users, increasing engagement and time-to-value.
 
-- **New Department Exploration (v1.9.0):**
+- **New Department Exploration (v1.9.0):** In Progress.
   - Research and development into new specialist categories (e.g., Finance, Legal, Scientific Research) using the now-robust system as a development platform.
+
+### **Phase 3: Workflow and Knowledge Base Expansion (Q4 2026)**
+
+**Goal**: Flesh out all placeholder content and workflows to bring the project to a v2.0 state.
+
+#### **Key Initiatives**
+
+- **Flesh out all placeholder templates and knowledge base articles:**
+  - `templates/persona/persona-development-framework.md`
+  - `templates/persona/skill-integration-template.md`
+  - `templates/content/presentation-framework.md`
+  - `templates/content/email-templates.md`
+  - `templates/content/social-media-templates.md`
+  - `knowledge-base/reference/tool-recommendations.md`
+  - `knowledge-base/reference/quick-reference-sheets.md`
+  - `knowledge-base/reference/glossary.md`
+  - `knowledge-base/frameworks/creativity-frameworks.md`
+  - `knowledge-base/core-principles/cognitive-load-optimization.md`
+  - `knowledge-base/core-principles/creative-problem-solving.md`
+  - `knowledge-base/core-principles/energy-management.md`
+  - `knowledge-base/frameworks/productivity-frameworks.md`
+  - `knowledge-base/frameworks/learning-frameworks.md`
+
+- **Implement placeholder workflows:**
+  - `workflows/analytics/knowledge-gap-analysis.md`
+  - `workflows/project-types/consultation-workflow.md`
+  - `workflows/project-types/content-campaign-workflow.md`
+  - `workflows/analytics/roi-measurement-framework.md`
+  - `workflows/analytics/performance-tracking-workflow.md`
+  - `workflows/project-types/video-production-workflow.md`
+  - `workflows/automation/research-aggregation-workflow.md`
+  - `workflows/automation/client-communication-flows.md`
+  - `workflows/automation/social-media-automation.md`
