@@ -136,4 +136,21 @@ The true power of AI-Staff-HQ emerges from unexpected specialist combinations.
     - **Cause:** Long, complex conversations can sometimes cause context drift.
     - **Solution:** Gently remind it of its role. "A quick reminder, you are the **Art Director**. With that in mind, let's refine the color palette."
 
+---
+
+## 🤖 8. The Self-Healing System
+
+The AI-Staff-HQ is more than just a collection of specialists; it's a system that learns. The **Self-Healing Workflow** is an autonomous capability that allows the system to identify its own weaknesses and propose solutions.
+
+### **How It Works**
+
+1.  **Performance Review:** After a project, a `Retrospective` is conducted. The `Actuary` specialist analyzes the project's KPIs.
+2.  **Problem Identification:** If the `Actuary` delivers a "NOT MET" verdict for a specific KPI, the Self-Healing Workflow is automatically triggered.
+3.  **Root Cause Analysis:** The `Productivity Architect` is activated to analyze the failure, reviewing the project logs and the responsible specialist's configuration.
+4.  **Solution Proposal:** The `Productivity Architect` proposes a specific, programmatic change to the specialist's `.yaml` file to address the performance gap.
+5.  **User Approval:** This proposed change is presented to you for approval. You have the final say on whether to implement the change.
+6.  **Implementation:** If you approve, the `Toolmaker` automatically updates the specialist's file.
+
+This workflow transforms the AI-Staff-HQ from a system that simply follows orders to one that actively seeks to improve itself, making your entire AI workforce more effective over time.
+
 This manual is your starting point. The more you use your AI-Staff-HQ, the more you will discover its power. Now go build amazing things.

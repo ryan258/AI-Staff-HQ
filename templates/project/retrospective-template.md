@@ -139,6 +139,32 @@ ACTUARY'S VERDICT:
 Project ROI: [Calculated ROI]
 ```
 
+#### **SELF-HEALING WORKFLOW ACTIVATION (AUTONOMOUS)**
+```
+ACTIVATION LOGIC:
+IF any KPI verdict is 'NOT MET', THEN initiate the Self-Healing Workflow.
+
+WORKFLOW TRIGGER:
+"Productivity Architect, a retrospective has identified a performance issue. You are activated to initiate the 'Self-Healing' workflow.
+
+**Project Context:**
+- **Project:** [Project Name]
+- **Retrospective Log:** [Link to `logs/YYYY-MM-DD_project-retrospective.md`]
+
+**Performance Gap:**
+- **Specialist:** [Name of Specialist with NOT MET KPI]
+- **KPI Not Met:** [Description of the specific KPI]
+- **Actuary's Rationale:** [Rationale from the Actuary's verdict]
+
+**Your Task:**
+1.  **Analyze:** Review the retrospective log and the specialist's YAML file (`staff/.../[specialist].yaml`).
+2.  **Diagnose:** Identify the likely root cause of the performance gap.
+3.  **Propose Solution:** Formulate a precise, programmatic change to the specialist's YAML file to address this gap. The change should be a direct modification to improve future performance (e.g., adding a skill, refining a quality standard, or adjusting an activation pattern).
+4.  **Submit for Approval:** Document your proposed change in a new file at `temp/proposed_change.md` in a clear 'before-and-after' format.
+
+This is an autonomous function. Proceed with the analysis and proposal without further instruction."
+```
+
 #### **Quality Standards Achievement Review**
 ```
 MULTI-SPECIALIST QUALITY ASSESSMENT:
