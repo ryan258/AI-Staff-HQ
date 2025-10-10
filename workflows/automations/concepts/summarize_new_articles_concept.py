@@ -1,5 +1,6 @@
 # Conceptual Python Automation Script
 # Created by: Automation Specialist
+# Status: Prototype / illustrative only (see workflows/README.md)
 
 import os
 import time

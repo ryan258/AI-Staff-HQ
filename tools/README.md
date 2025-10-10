@@ -15,3 +15,10 @@ Contains functional scripts (e.g., Python, JavaScript) built by the **Toolmaker*
 **Example Use Case:**
 > "Toolmaker, I need a Python script that watches a folder and automatically renames files based on a specific pattern. Please place it in the `tools/scripts` directory."
 
+### Dependencies & Safety Defaults
+
+- Python scripts list their optional packages in `tools/requirements.txt` (`pandas`, `pillow`, `feedparser`).
+- Destructive operations are disabled by default:
+  - `csv_cleaner.py` creates backups when writing in place and supports `--output` destinations.
+  - `image_resizer.py` writes resized assets to a `resized/` directory unless explicitly told to overwrite.
+  - `file_organizer.py` runs in dry-run mode until `--execute` is provided.

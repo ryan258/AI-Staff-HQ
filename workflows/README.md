@@ -8,7 +8,7 @@
 
 _Executable Python scripts for automating complex tasks and workflows._
 
-- **[Summarize New Articles](automations/summarize_new_articles.py)** ✅ _New (v1.4.0)_ - A script that watches a directory and uses AI to summarize new text files.
+- **[Summarize New Articles (Concept)](automations/concepts/summarize_new_articles_concept.py)** 🧪 _Prototype (v1.4.0)_ - Conceptual watcher script illustrating future AI summarization.
 - **[Aether Brew Launch](automations/aether_brew_launch.py)** ✅ _New (v1.5.0)_ - A script to automate the launch of the Aether Brew brand.
 - **[Daily News Summarizer](automations/daily_news_summarizer.py)** ✅ _New (v1.5.0)_ - A script that fetches the latest news from an RSS feed and generates a summary.
 - **[Social Media Trend Tracker](automations/social_media_trend_tracker.py)** ✅ _New (v1.5.0)_ - A script that uses a public API to track trending topics.
@@ -18,17 +18,17 @@ _Executable Python scripts for automating complex tasks and workflows._
 _Specialized processes for specific project categories using multi-department coordination_
 
 - **[Brand Development Workflow](project-types/brand-development-workflow.md)** ✅ _Complete_ - Complete brand creation process (Strategy + Creative teams)
-- **[Content Campaign Workflow](project-types/content-campaign-workflow.md)** 🚧 _Under Development (v1.2.0)_ - Multi-channel campaign execution
-- **[Video Production Workflow](project-types/video-production-workflow.md)** 🚧 _Under Development (v1.2.0)_ - Documentary and video content creation
-- **[Consultation Workflow](project-types/consultation-workflow.md)** 🚧 _Under Development (v1.2.0)_ - Client advisory and strategy sessions
+- **[Content Campaign Workflow](project-types/content-campaign-workflow.md)** 🧪 _Prototype – concept document pending resourcing_ - Multi-channel campaign execution
+- **[Video Production Workflow](project-types/video-production-workflow.md)** 🧪 _Prototype – concept document pending resourcing_ - Documentary and video content creation
+- **[Consultation Workflow](project-types/consultation-workflow.md)** 🧪 _Prototype – concept document pending resourcing_ - Client advisory and strategy sessions
 
 ### 📊 **Analytics Workflows**
 
 _Data-driven optimization and performance tracking using your complete specialist ecosystem_
 
-- **[Performance Tracking Workflow](analytics/performance-tracking-workflow.md)** 🚧 _Under Development (v1.3.0)_ - Systematic results monitoring
-- **[Knowledge Gap Analysis](analytics/knowledge-gap-analysis.md)** 🚧 _Under Development (v1.3.0)_ - Identifying and addressing blind spots
-- **[ROI Measurement Framework](analytics/roi-measurement-framework.md)** 🚧 _Under Development (v1.3.0)_ - Value assessment and optimization
+- **[Performance Tracking Workflow](analytics/performance-tracking-workflow.md)** 🧪 _Prototype – concept document pending resourcing_ - Systematic results monitoring
+- **[Knowledge Gap Analysis](analytics/knowledge-gap-analysis.md)** 🧪 _Prototype – concept document pending resourcing_ - Identifying and addressing blind spots
+- **[ROI Measurement Framework](analytics/roi-measurement-framework.md)** 🧪 _Prototype – concept document pending resourcing_ - Value assessment and optimization
 
 ### 🤖 **Autonomous Workflows**
 

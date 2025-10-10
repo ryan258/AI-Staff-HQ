@@ -1,20 +1,24 @@
 # 🎬 Video Production Workflow
 
-## 🚧 Development Status
-**Under Development** - Expected v1.2.0
+## 🧪 Prototype Status
+**Structure Drafted** – Playbook outlined, awaiting case-study validation and asset library.
 
-## Planned Production Process
-- Concept development and scripting
-- Pre-production planning and coordination
-- Production management and quality control
-- Post-production and optimization
-- Distribution and performance tracking
+## Scope Overview
+- Documentary and brand storytelling formats
+- Pre-production alignment across Creative + Specialized teams
+- Production schedule templates and QA checklists
+- Post-production review loops and distribution planning
 
-### Specialist Integration
-- Historical Storyteller → Documentary content
-- Narrative Designer → Story structure
-- Art Director → Visual direction
-- Sound Designer → Audio production
+## Current State
+- Core phases listed (concept → distribution)
+- Specialist integration map stubbed (Historical Storyteller, Narrative Designer, Art Director, Sound Designer)
+- No checklists, timelines, or tooling files delivered yet
+
+## Next Steps
+1. Capture best practices from recent video engagements (Aether Brew, doc pilots)
+2. Draft detailed phase checklists and approval gates per specialist
+3. Produce sample briefs and calendar templates
+4. Test the workflow on a pilot project and iterate before marking production-ready
 
 ---
-**Coming Soon: Video production workflows for documentary and creative content.**
+**Note:** Retain this status until deliverables above are produced. Update `workflows/README.md` when the workflow graduates to “In Development” or “Production Ready.”

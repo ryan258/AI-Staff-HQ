@@ -1,20 +1,23 @@
-# 💼 Consultation Workflow
+# $(basename "$f" .md | sed 's/-/ /g' | sed 's/\b./\u&/g')
 
-## 🚧 Development Status
-**Under Development** - Expected v1.2.0
+## 🧪 Prototype Status
+**Concept Document** – Vision captured, awaiting resourcing and detailed design.
 
-## Planned Consultation Process
-- Client needs assessment and discovery
-- Strategic analysis and recommendation development
-- Presentation and proposal creation
-- Implementation planning and support
-- Follow-up and relationship management
+## Scope Overview
+- Outline the intended outcomes and departmental touchpoints
+- Capture success metrics and data requirements
+- Note key dependencies, risks, and open questions
 
-### Specialist Integration
-- Chief of Staff → Project coordination
-- Market Analyst → Research and analysis
-- Brand Builder → Strategic recommendations
-- Creative Strategist → Implementation planning
+## Current State
+- High-level bullet list from initial roadmap or strategy discussion
+- No executable assets or templates committed
+- Requires alignment across Strategy, Creative, and Technical leads
+
+## Next Steps
+1. Confirm owner and delivery timeline with Chief of Staff
+2. Facilitate working session to expand requirements and acceptance criteria
+3. Document draft workflow stages, tooling, and handoffs
+4. Validate plan via pilot engagement before promoting to “In Development”
 
 ---
-**Coming Soon: Consultation workflows that deliver transformative client value.**
+**Note:** Keep this file as a living concept brief until a project team is assigned. Update status headings as progress is made.
