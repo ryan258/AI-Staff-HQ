@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <style>
+      .bg { fill: #0b1120; }
+      .title { fill: #0ea5e9; font-size: 56px; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; }
+      .label { fill: #f8fafc; font-size: 36px; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 600; }
+      .metric { fill: #e2e8f0; font-size: 28px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+      .subtitle { fill: #94a3b8; font-size: 24px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+      .panel { fill: #111c32; stroke: #1e293b; stroke-width: 2; rx: 24; ry: 24; }
+      .divider { stroke: #1f2937; stroke-width: 4; stroke-dasharray: 14 12; }
+    </style>
+  </defs>
+  <rect class="bg" width="1080" height="1080"/>
+  <text x="540" y="120" text-anchor="middle" class="title">AI Workflow ROI — Ember &amp; Oak Brand Identity</text>
+
+  <rect x="80" y="180" width="440" height="780" class="panel"/>
+  <text x="300" y="240" text-anchor="middle" class="label">Before ▶ One-Shot Prompt</text>
+  <text x="120" y="310" class="subtitle">Prompt</text>
+  <text x="120" y="350" class="metric">"Create a brand identity for a coffee subscription..."</text>
+  <text x="120" y="410" class="subtitle">Result</text>
+  <text x="120" y="450" class="metric">• Generic positioning ("premium beans to your door")</text>
+  <text x="120" y="490" class="metric">• Visual notes limited to "earth tones" and latte art</text>
+  <text x="120" y="530" class="metric">• No sequencing, proof points, or iteration plan</text>
+  <text x="120" y="590" class="subtitle">Impact</text>
+  <text x="120" y="630" class="metric">Time: 15 minutes</text>
+  <text x="120" y="670" class="metric">Quality: 4/10 (stakeholders rejected)</text>
+  <text x="120" y="710" class="metric">Reusability: None</text>
+  <text x="120" y="770" class="subtitle">Why It Fails</text>
+  <text x="120" y="810" class="metric">• No customer insight</text>
+  <text x="120" y="850" class="metric">• Cannot scale or iterate</text>
+
+  <line x1="540" y1="200" x2="540" y2="920" class="divider"/>
+
+  <rect x="560" y="180" width="440" height="780" class="panel"/>
+  <text x="780" y="240" text-anchor="middle" class="label">After ▶ AI-Staff-HQ Workflow</text>
+  <text x="600" y="310" class="subtitle">Phases</text>
+  <text x="600" y="350" class="metric">1. Market Analyst → customer rituals &amp; triggers</text>
+  <text x="600" y="390" class="metric">2. Brand Strategist → positioning pillars</text>
+  <text x="600" y="430" class="metric">3. Art Director → modular system visuals</text>
+  <text x="600" y="470" class="metric">4. Copywriter → launch messaging suite</text>
+  <text x="600" y="510" class="metric">5. Automation Specialist → tracking &amp; distribution</text>
+  <text x="600" y="570" class="subtitle">Impact</text>
+  <text x="600" y="610" class="metric">Time: 2 hours (coordinated sprint)</text>
+  <text x="600" y="650" class="metric">Quality: 9/10 (adopted as launch assets)</text>
+  <text x="600" y="690" class="metric">Reusability: High (pillars + visuals reused twice)</text>
+  <text x="600" y="750" class="subtitle">Why It Works</text>
+  <text x="600" y="790" class="metric">• Context discipline and role clarity</text>
+  <text x="600" y="830" class="metric">• Decisions documented, ready to iterate</text>
+  <text x="600" y="870" class="metric">• Proof points tied to research and metrics</text>
+</svg>

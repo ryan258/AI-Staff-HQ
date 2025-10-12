@@ -418,7 +418,7 @@ See `/examples/project-briefs/` for how I actually use these templates.
 - [x] All workflows have complete phases
 - [x] Specialist references are accurate
 - [x] Assumptions clearly stated
-- [ ] Links to execution examples
+- [x] Links to execution examples
 
 ---
 
@@ -461,9 +461,9 @@ graph TD
 ```
 
 **Acceptance Criteria:**
-- [ ] Visual diagram added to README
-- [ ] Shows relationship between components
-- [ ] Explains how pieces fit together
+- [x] Visual diagram added to README
+- [x] Shows relationship between components
+- [x] Explains how pieces fit together
 
 ---
 
@@ -523,10 +523,10 @@ Create `QUICK-REFERENCE.md` at root:
 ```
 
 **Acceptance Criteria:**
-- [ ] Quick reference created
-- [ ] Covers most common use cases
-- [ ] Linked from README
-- [ ] Maximum 150 lines
+- [x] Quick reference created
+- [x] Covers most common use cases
+- [x] Linked from README
+- [x] Maximum 150 lines
 
 ---
 
@@ -576,10 +576,10 @@ Open a Discussion (not an Issue) for:
 ```
 
 **Acceptance Criteria:**
-- [ ] CONTRIBUTING.md created
-- [ ] Sets clear expectations about PR acceptance
-- [ ] Encourages adaptation over contribution
-- [ ] Links to Discussions for questions
+- [x] CONTRIBUTING.md created
+- [x] Sets clear expectations about PR acceptance
+- [x] Encourages adaptation over contribution
+- [x] Links to Discussions for questions
 
 ---
 
@@ -599,9 +599,9 @@ This is a **personal system** that evolves continuously. Version numbers reflect
 ```
 
 **Acceptance Criteria:**
-- [ ] Changelog formatted properly
-- [ ] Explains versioning philosophy
-- [ ] Linked from README
+- [x] Changelog formatted properly
+- [x] Explains versioning philosophy
+- [x] Linked from README
 
 ---
 
@@ -643,9 +643,9 @@ For sharing on Twitter, LinkedIn, etc.
 3. **System diagram** (from Mermaid chart, prettified)
 
 **Acceptance Criteria:**
-- [ ] 3 shareable assets created
-- [ ] Saved in `/meta/assets/`
-- [ ] Sized for social media platforms
+- [x] 3 shareable assets created
+- [x] Saved in `/meta/assets/`
+- [x] Sized for social media platforms
 
 ---
 
@@ -666,8 +666,8 @@ Write medium-length post (800-1200 words) explaining:
 - Link from README
 
 **Acceptance Criteria:**
-- [ ] Article written and published
-- [ ] Linked from README
+- [x] Article written and published
+- [x] Linked from README
 - [ ] Shared on social media
 
 ---

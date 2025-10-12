@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <style>
+      .bg { fill: #111827; }
+      .title { fill: #f97316; font-size: 54px; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; }
+      .subtitle { fill: #fbbf24; font-size: 28px; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 600; }
+      .step-box { fill: #1f2937; stroke: #f97316; stroke-width: 2; rx: 18; ry: 18; }
+      .step-title { fill: #f8fafc; font-size: 30px; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 600; }
+      .step-body { fill: #e2e8f0; font-size: 24px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+      .arrow { stroke: #f97316; stroke-width: 6; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L6,3 z" fill="#f97316" />
+    </marker>
+  </defs>
+  <rect class="bg" width="1080" height="1080"/>
+  <text x="540" y="120" text-anchor="middle" class="title">5-Step Workflow Playbook</text>
+  <text x="540" y="170" text-anchor="middle" class="subtitle">Example: Systems Thinking Blog Post</text>
+
+  <rect x="120" y="220" width="840" height="120" class="step-box"/>
+  <text x="160" y="270" class="step-title">1 ▸ Activate Insight Sprint</text>
+  <text x="160" y="310" class="step-body">Chief of Staff → Market Analyst for interview synthesis + missing executive objections.</text>
+
+  <line x1="540" y1="340" x2="540" y2="370" class="arrow"/>
+
+  <rect x="120" y="370" width="840" height="120" class="step-box"/>
+  <text x="160" y="420" class="step-title">2 ▸ Map Narrative Backbone</text>
+  <text x="160" y="460" class="step-body">Brand Strategist frames hook → shift → system → action; callout box defined.</text>
+
+  <line x1="540" y1="490" x2="540" y2="520" class="arrow"/>
+
+  <rect x="120" y="520" width="840" height="120" class="step-box"/>
+  <text x="160" y="570" class="step-title">3 ▸ Draft, Verify, Tighten</text>
+  <text x="160" y="610" class="step-body">Copywriter delivers 1,200 words; Data Analyst confirms proof points; Prompt Engineer trims context bloat.</text>
+
+  <line x1="540" y1="640" x2="540" y2="670" class="arrow"/>
+
+  <rect x="120" y="670" width="840" height="120" class="step-box"/>
+  <text x="160" y="720" class="step-title">4 ▸ Finalize & Publish</text>
+  <text x="160" y="760" class="step-body">Chief of Staff QA + Automation Specialist wires tracking → publish + announce.</text>
+
+  <line x1="540" y1="790" x2="540" y2="820" class="arrow"/>
+
+  <rect x="120" y="820" width="840" height="140" class="step-box"/>
+  <text x="160" y="870" class="step-title">5 ▸ Measure & Iterate</text>
+  <text x="160" y="910" class="step-body">Data Analyst monitors metrics; Chief of Staff logs learnings; next sprint queued in knowledge base.</text>
+</svg>

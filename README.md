@@ -116,6 +116,35 @@ This repository is designed around **systematic knowledge management**:
 - **Expertise Stacking** \- Combine your custom specialists for unique capabilities.
 - **Complex Project Management** \- Use the `Chief of Staff` to coordinate projects requiring multiple specialists.
 
+## **🏗️ System Architecture**
+
+```mermaid
+graph TD
+    A[You] -->|Activate| B[Chief of Staff]
+    B -->|Coordinates| C[Strategy Department]
+    B -->|Coordinates| D[Creative Department]
+    B -->|Coordinates| E[Technical Department]
+
+    C --> F[Market Analyst]
+    D --> G[Art Director]
+    E --> H[Automation Specialist]
+    E --> I[Prompt Engineer]
+
+    J[Your Custom Specialists] -.->|Integrate| B
+
+    K[Templates] -->|Structure thinking| A
+    L[Workflows] -->|Guide execution| B
+    M[Knowledge Base] -->|Informs| C
+    M -->|Informs| D
+    M -->|Informs| E
+```
+
+**How It Works:**
+- You activate core specialists directly or route through the Chief of Staff for multi-specialist coordination.
+- The Chief of Staff orchestrates departments, ensuring Strategy, Creative, and Technical teams stay aligned.
+- Your custom specialists plug into the system without friction, following the same coordination protocols.
+- Templates provide structure for decisions, workflows guide execution, and the knowledge base keeps every specialist informed.
+
 ## **🚀 Getting Started Checklist**
 
 Prefer a guided overview? Start with [`GETTING-STARTED.md`](GETTING-STARTED.md) for tailored entry paths before working through this checklist.
@@ -172,6 +201,8 @@ This is a framework for building your own AI workforce. The core components have
 - Open an issue for bugs or documentation improvements.
 - Submit pull requests for workflow enhancements.
 - Share your most effective specialist combinations and project patterns.
+- Review the [Contributing Guidelines](CONTRIBUTING.md) before proposing changes.
+- Track major shifts in the [Version History](meta/VERSION-HISTORY.md).
 
 ## **🎯 Next Steps**
 
@@ -183,7 +214,9 @@ This is a framework for building your own AI workforce. The core components have
 
 👉 **Advanced Users**: Dive into the example [**Workflows**](workflows/) and adapt them for your custom team.
 
-👉 **System Builders**: Explore the [**Knowledge Base**](knowledge-base/) and [**Templates**](templates/) to customize the framework for maximum effectiveness. Start with the Project Brief (Simple) template for fast initiatives, and graduate to the comprehensive version when you need full multi-specialist coordination.
+👉 **System Builders**: Explore the [**Knowledge Base**](knowledge-base/), [**Templates**](templates/), and the [**Quick Reference Guide**](QUICK-REFERENCE.md) to customize the framework for maximum effectiveness. Start with the Project Brief (Simple) template for fast initiatives, and graduate to the comprehensive version when you need full multi-specialist coordination.
+
+👉 **Launch Prep**: Read the [launch article](meta/articles/ai-staff-hq-launch.md) and reuse the shareable assets in `meta/assets/` when you introduce your fork.
 
 **🏆 You now have a framework for building a complete AI workforce tailored to your needs. Time to start architecting!**
 

@@ -2,6 +2,14 @@
 
 A concise record of milestone releases.
 
+## How to Read This Changelog
+
+This is a personal system that evolves continuously. Version numbers mark major philosophical shifts, not feature releases.
+
+- **Current:** `v2.0.0` — Lean framework optimized for personal use.
+- **Previous:** `v1.5.0` — Comprehensive 39-specialist system.
+- **Earlier:** `v1.0.x` series — Experimental builds refining structure, templates, and knowledge capture.
+
 ## v2.0.0 - The Lean Framework (Oct 2025)
 - **Project Refactor:** The project has been significantly refactored to be a lean and extensible framework.
 - **Core Team:** The specialist roster has been streamlined to a core team of 5 essential specialists.
