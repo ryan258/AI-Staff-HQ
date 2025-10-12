@@ -1,4 +1,6 @@
-# 🥷 The Path to Mastery
+# 🥷 The Path to Mastery *(Archived)*
+
+> **Archived:** The mastery progression now lives in `GETTING-STARTED.md`. This version remains for reference.
 
 *A Quick Start Guide to Commanding Your AI Workforce*
 

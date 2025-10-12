@@ -1,4 +1,6 @@
-# 🚀 The Happy Path: An End-to-End Project Walkthrough
+# 🚀 The Happy Path: An End-to-End Project Walkthrough *(Archived)*
+
+> **Archived:** This walkthrough is kept for historical context. For the current onboarding guide, see `GETTING-STARTED.md`.
 
 This document provides a practical, step-by-step walkthrough of the most effective way to use the AI-Staff-HQ framework to build your own team and execute a project.
 

@@ -1,4 +1,6 @@
-# 📖 The AI-Staff-HQ User Manual for Gemini
+# 📖 The AI-Staff-HQ User Manual for Gemini *(Archived)*
+
+> **Archived:** Platform setup guidance now appears in `GETTING-STARTED.md` under “Platform-Specific Notes.”
 
 **"Why ask an AI for help when you can build your own AI workforce?"**
 
@@ -91,4 +93,3 @@ The `templates/project/` directory contains the keys to enterprise-level executi
 - **Strategy (2):** Chief of Staff, Market Analyst.
 - **Creative (1):** Art Director.
 - **Technical (2):** Automation Specialist, Prompt Engineer.
-

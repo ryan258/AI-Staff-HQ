@@ -118,6 +118,8 @@ This repository is designed around **systematic knowledge management**:
 
 ## **🚀 Getting Started Checklist**
 
+Prefer a guided overview? Start with [`GETTING-STARTED.md`](GETTING-STARTED.md) for tailored entry paths before working through this checklist.
+
 ### **Phase 1: Your First Specialist**
 
 - \[ \] **Read the `prompt-engineering-mastery.md` handbook.**
@@ -176,6 +178,8 @@ This is a framework for building your own AI workforce. The core components have
 **Ready to build your AI workforce?**
 
 👉 **Immediate Action**: Start with the [**Getting Started Checklist**](#-getting-started-checklist) to create your first specialist.
+
+👉 **Need Onboarding Options?** Jump into [`GETTING-STARTED.md`](GETTING-STARTED.md) for role-specific paths and a condensed mastery progression.
 
 👉 **Advanced Users**: Dive into the example [**Workflows**](workflows/) and adapt them for your custom team.
 
