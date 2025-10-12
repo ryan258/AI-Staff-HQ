@@ -183,7 +183,7 @@ This is a framework for building your own AI workforce. The core components have
 
 👉 **Advanced Users**: Dive into the example [**Workflows**](workflows/) and adapt them for your custom team.
 
-👉 **System Builders**: Explore the [**Knowledge Base**](knowledge-base/) and [**Templates**](templates/) to customize the framework for maximum effectiveness.
+👉 **System Builders**: Explore the [**Knowledge Base**](knowledge-base/) and [**Templates**](templates/) to customize the framework for maximum effectiveness. Start with the Project Brief (Simple) template for fast initiatives, and graduate to the comprehensive version when you need full multi-specialist coordination.
 
 **🏆 You now have a framework for building a complete AI workforce tailored to your needs. Time to start architecting!**
 

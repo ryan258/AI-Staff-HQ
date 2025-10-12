@@ -16,7 +16,8 @@ _Frameworks for creating and customizing AI specialists._
 
 _A framework for enterprise-level project coordination with your AI workforce._
 
-- **[Project Brief Template](project/project-brief-template.md)** ✅ _Complete_ - A comprehensive project definition template to use with your custom specialists.
+- **[Project Brief (Simple)](project/project-brief-simple.md)** ✅ _Complete_ - 60-line snapshot for fast-moving projects and lightweight coordination.
+- **[Project Brief (Comprehensive)](project/project-brief-comprehensive.md)** ✅ _Complete_ - Full multi-specialist brief with detailed context sections and quality gates.
 
 ---
 
@@ -31,4 +32,3 @@ _A framework for enterprise-level project coordination with your AI workforce._
 ### **Creating Your Own Templates**
 
 You are encouraged to create your own templates for recurring tasks and workflows. Use the existing templates as a starting point, and feel free to adapt them to your specific needs.
-

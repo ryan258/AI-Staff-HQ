@@ -31,14 +31,14 @@ For builders ready to craft their own workforce.
 - **Content Marketing:** Start with `examples/project-briefs/simple-blog-post-brief.md`, then follow `examples/workflows/blog-post-execution-transcript.md`, and reuse assets from `examples/specialists/completed-copywriter.yaml`.
 - **Brand Launch:** Review `examples/project-briefs/brand-launch-brief.md`, study the before/after comparison in `examples/before-after/prompt-vs-workflow-comparison.md`, then run `examples/workflows/brand-development-execution-transcript.md`.
 - **Analytics & Optimization:** Pair `examples/specialists/completed-data-analyst.yaml` with the ROI framework in `examples/before-after/roi-analysis.md`, and route insights through the Chief of Staff for cross-team action.
-- **Template Customization:** Use `templates/project/project-brief-template.md` alongside the insights in `examples/specialists/notes-on-creation.md` to craft domain-specific processes.
+- **Template Customization:** Start with `templates/project/project-brief-simple.md` for quick wins, or expand into `templates/project/project-brief-comprehensive.md` alongside the insights in `examples/specialists/notes-on-creation.md` to craft domain-specific processes.
 
 ## The Mastery Progression
 A condensed version of the path from `R2N.md`—use it to gauge your next milestone.
 - **Level 1 · Practitioner:** Execute single tasks with the five core specialists until activation prompts feel natural.
 - **Level 2 · Creator:** Build one custom specialist using the persona template and document activation patterns.
 - **Level 3 · Orchestrator:** Run a departmental project with the Chief of Staff coordinating 2–3 specialists.
-- **Level 4 · Commander:** Deliver a cross-department initiative using the Project Brief template and explicit handoffs.
+- **Level 4 · Commander:** Deliver a cross-department initiative using the Project Brief templates (simple or comprehensive) and explicit handoffs.
 - **Level 5 · Architect:** Invent your own workflow, measure ROI, and feed improvements back into specialists, briefs, and transcripts.
 
 ## Platform-Specific Notes

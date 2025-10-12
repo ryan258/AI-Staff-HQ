@@ -35,9 +35,9 @@ Add new section immediately after the "What This Is" section:
 ```
 
 **Acceptance Criteria:**
-- [ ] New section added before "Your Core AI Workforce"
-- [ ] Sets clear expectations about personal vs. public infrastructure
-- [ ] Provides concrete "getting started" guidance
+- [x] New section added before "Your Core AI Workforce"
+- [x] Sets clear expectations about personal vs. public infrastructure
+- [x] Provides concrete "getting started" guidance
 
 ---
 
@@ -55,10 +55,10 @@ Create a new top-level document explaining the "why" behind design choices.
 - Personal system shared publicly vs. public product
 
 **Acceptance Criteria:**
-- [ ] Created at root level
-- [ ] Linked from README after the new framing section
-- [ ] Explains design decisions that might seem "incomplete"
-- [ ] 500-800 words maximum
+- [x] Created at root level
+- [x] Linked from README after the new framing section
+- [x] Explains design decisions that might seem "incomplete"
+- [x] 500-800 words maximum
 
 ---
 
@@ -89,9 +89,9 @@ examples/
 ```
 
 **Acceptance Criteria:**
-- [ ] Directory created with README explaining purpose
-- [ ] README states: "These are reference examples, not templates to copy"
-- [ ] Each subdirectory has its own explanatory README
+- [x] Directory created with README explaining purpose
+- [x] README states: "These are reference examples, not templates to copy"
+- [x] Each subdirectory has its own explanatory README
 
 ---
 
@@ -110,10 +110,10 @@ examples/
 - Integration notes with core specialists
 
 **Acceptance Criteria:**
-- [ ] Three complete, battle-tested specialist YAMLs
-- [ ] Each has accompanying `notes-on-creation.md`
-- [ ] Demonstrates different types of specialists
-- [ ] Shows different levels of complexity
+- [x] Three complete, battle-tested specialist YAMLs
+- [x] Each has accompanying `notes-on-creation.md`
+- [x] Demonstrates different types of specialists
+- [x] Shows different levels of complexity
 
 ---
 
@@ -161,10 +161,10 @@ examples/
 ```
 
 **Acceptance Criteria:**
-- [ ] Two real project briefs, one simple, one complex
-- [ ] Both show selective usage of template
-- [ ] Include retrospective notes on what worked
-- [ ] Demonstrate time/quality ROI
+- [x] Two real project briefs, one simple, one complex
+- [x] Both show selective usage of template
+- [x] Include retrospective notes on what worked
+- [x] Demonstrate time/quality ROI
 
 ---
 
@@ -226,10 +226,10 @@ examples/
 ```
 
 **Acceptance Criteria:**
-- [ ] Two complete workflow transcripts
-- [ ] Show real prompts and responses (summarized)
-- [ ] Include decision points and reasoning
-- [ ] Honest retrospective on effectiveness
+- [x] Two complete workflow transcripts
+- [x] Show real prompts and responses (summarized)
+- [x] Include decision points and reasoning
+- [x] Honest retrospective on effectiveness
 
 ---
 
@@ -297,10 +297,10 @@ Show concrete value proposition.
 ```
 
 **Acceptance Criteria:**
-- [ ] Side-by-side comparison of real outputs
-- [ ] Honest assessment of time/quality tradeoffs
-- [ ] Clear ROI analysis
-- [ ] Explains when this approach is overkill
+- [x] Side-by-side comparison of real outputs
+- [x] Honest assessment of time/quality tradeoffs
+- [x] Clear ROI analysis
+- [x] Explains when this approach is overkill
 
 ---
 
@@ -354,10 +354,10 @@ For: People ready to build their own workforce
 - Update all links
 
 **Acceptance Criteria:**
-- [ ] Single, clear onboarding document
-- [ ] Multiple entry points based on learning style
-- [ ] Links to examples for each path
-- [ ] Old docs archived with redirect notice
+- [x] Single, clear onboarding document
+- [x] Multiple entry points based on learning style
+- [x] Links to examples for each path
+- [x] Old docs archived with redirect notice
 
 ---
 
@@ -394,10 +394,10 @@ See `/examples/project-briefs/` for how I actually use these templates.
 ```
 
 **Acceptance Criteria:**
-- [ ] Simple template created (50-75 lines)
-- [ ] Comprehensive template renamed and clarified
-- [ ] Usage notes added to both
-- [ ] README.md updated with guidance on which to use
+- [x] Simple template created (50-75 lines)
+- [x] Comprehensive template renamed and clarified
+- [x] Usage notes added to both
+- [x] README.md updated with guidance on which to use
 
 ---
 
@@ -415,9 +415,9 @@ See `/examples/project-briefs/` for how I actually use these templates.
 - Link to examples showing completed versions
 
 **Acceptance Criteria:**
-- [ ] All workflows have complete phases
-- [ ] Specialist references are accurate
-- [ ] Assumptions clearly stated
+- [x] All workflows have complete phases
+- [x] Specialist references are accurate
+- [x] Assumptions clearly stated
 - [ ] Links to execution examples
 
 ---

@@ -1,6 +1,17 @@
-# 📋 Project Brief Template
+# 📋 Project Brief — Comprehensive Version
 
 > *A comprehensive project definition for successful execution with your custom AI workforce.*
+
+## 💡 Template Usage Notes
+
+**This template is a thinking tool, not a form to fill out.**
+
+You don't need to complete every section. Use what serves your project:
+- ✅ Delete sections that don't apply
+- ✅ Add sections for your specific needs
+- ✅ Treat checkboxes as thought prompts, not requirements
+
+See `/examples/project-briefs/` for how I actually use these templates.
 
 ## 📋 Complete Project Brief Framework
 

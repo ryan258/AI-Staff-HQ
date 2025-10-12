@@ -9,6 +9,19 @@
 **Specialists Required**: Chief of Staff, and your custom specialists (e.g., `Copywriter`, `SEO Specialist`).
 **Deliverables**: A fully produced, distributed, and analyzed piece of content (e.g., blog post, video script, white paper).
 
+## ⚙️ Workflow Assumptions
+
+To run this workflow you should have:
+- **Chief of Staff** (core) to coordinate phases and approvals.
+- **Market Analyst** (core) or equivalent to surface insights and performance themes.
+- **Copywriter** (custom) for drafting and revisions.
+- **SEO Specialist** (custom) or Prompt Engineer to handle search strategy and publishing.
+- **Art Director** (core) for supporting visuals.
+- **Automation Specialist** (core) to schedule distribution.
+- **Data Analyst** (core) to measure performance and recommend optimization.
+
+Create or adapt specialists using the persona template if any role is missing. Substitute comparable custom roles where appropriate.
+
 ---
 
 ## 📋 Pre-Workflow Checklist
@@ -89,3 +102,27 @@ Ensure all on-page SEO elements are perfectly configured."
 "Market Analyst, set up a performance dashboard for the new content piece.
 Track the KPIs defined by the Chief of Staff."
 ```
+
+### **Step 4.2: Optimization Sprint**
+**Owner**: Copywriter & SEO Specialist  
+**Activation**:
+```
+"Copywriter, using the latest performance insights, draft iteration notes and proposed copy tweaks.
+SEO Specialist, recommend on-page or distribution adjustments to test over the next cycle."
+```
+
+### **Step 4.3: Knowledge Base Update**
+**Owner**: Chief of Staff  
+**Activation**:
+```
+"Chief of Staff, log key learnings, winning prompts, and asset links in the knowledge base.
+Note follow-up actions for the next content cycle."
+```
+
+---
+
+## 📝 Workflow Notes
+
+- If you do not have an SEO Specialist, pair the Copywriter with the Prompt Engineer or Market Analyst for publishing and optimization tasks.
+- Run this pipeline in parallel by staggering phases—e.g., Phase 1 for the next asset while Phase 3 runs for the current one.
+- Reference `examples/workflows/blog-post-execution-transcript.md` for a real transcript of this workflow in action.
