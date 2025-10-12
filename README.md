@@ -25,6 +25,33 @@ Welcome to AI-Staff-HQ, a framework for building your own AI workforce. This rep
 - ✅ **Core Template System** - Professional frameworks for creating new specialists and managing projects.
 - ✅ **Scalable Excellence** - A system for achieving consistent, high-quality output from your AI team.
 
+## 🎯 Understanding This Repository
+
+**This is cognitive infrastructure as code** - my personal AI operating system, made public to share a methodology.
+
+### What This Repo IS:
+- ✅ **A paradigm demonstration:** See how to move from one-off prompts to orchestrated AI workflows
+- ✅ **Personal infrastructure:** Optimized for context window management and systematic thinking
+- ✅ **A starting point:** Fork it, strip what you don't need, rebuild it for your context
+- ✅ **A methodology:** Learn the patterns, then create your own version
+
+### What This Repo IS NOT:
+- ❌ **Not turnkey:** Templates are thinking frameworks to fill out, not pre-made solutions
+- ❌ **Not complete:** Workflows are blueprints you complete as you need them
+- ❌ **Not prescriptive:** Your AI workforce should look different than mine
+- ❌ **Not a product:** This is personal infrastructure shared publicly
+
+### If You're New Here:
+**Don't try to use everything.** 
+1. Pick ONE specialist that matches your needs
+2. Use ONE template for a real project
+3. Follow ONE workflow from start to finish
+4. Build from there
+
+**The goal isn't to clone this - it's to inspire you to build your own.**
+
+Read the design rationale in [PHILOSOPHY.md](PHILOSOPHY.md).
+
 ## **⚡ Your Core AI Workforce**
 
 This is your starting lineup. These specialists form the foundation of your AI workforce and provide examples of how to structure your own custom agents.
