@@ -1,166 +1,40 @@
 # 👥 AI Staff Directory
 
-> _Your specialized AI workforce organized by department_
+> _Your extensible AI workforce, organized by department._
 
-## 🏢 Department Overview
+## 🏢 Core Team
 
-### 🎨 **Creative Department**
+This is your starting lineup. These specialists form the foundation of your AI workforce and provide examples of how to structure your own custom agents.
 
-_Complete creative production capability from concept to delivery_
+### **📊 Strategy Department**
 
-- **[Art Director](creative/art-director.yaml)** - Visual strategy and brand aesthetics ✅
-- **[Copywriter](creative/copywriter.yaml)** - Persuasive writing and brand voice ✅
-- **[Narrative Designer](creative/narrative-designer.yaml)** - Story structure and character development ✅
-- **[Sound Designer](creative/sound-designer.yaml)** - Audio strategy and sonic branding ✅
-- **[Persona Architect](creative/persona-architect.yaml)** - Character creation and voice development ✅
-- **[Audio Producer](creative/audio-producer.yaml)** - Audio production and podcast development ✅
-- **[Voice Director](creative/voice-director.yaml)** - Voice coaching and performance optimization ✅
-- **[Medium Expert](creative/medium-expert.yaml)** - Medium platform strategy and content architecture ✅
+- **[Chief of Staff](strategy/chief-of-staff.yaml)** - Project coordination and strategic oversight.
+- **[Market Analyst](strategy/market-analyst.yaml)** - Market research and competitive analysis.
 
-### 📊 **Strategy Department**
+### **🎨 Creative Department**
 
-_Complete strategic planning and business development capability_
+- **[Art Director](creative/art-director.yaml)** - Visual strategy and brand aesthetics.
 
-- **[Chief of Staff](strategy/chief-of-staff.yaml)** - Project coordination and strategic oversight ✅
-- **[Creative Strategist](strategy/creative-strategist.yaml)** - Creative direction and campaign strategy ✅
-- **[Brand Builder](strategy/brand-builder.yaml)** - Brand development and positioning ✅
-- **[Market Analyst](strategy/market-analyst.yaml)** - Market research and competitive analysis ✅
-- **[Actuary](strategy/actuary.yaml)** - Performance measurement and KPI adjudication ✅
+### **⚙️ Technical Department**
 
-### ⚙️ **Technical Department**
-
-_Complete technical implementation and optimization capability_
-
-- **[Automation Specialist](technical/automation-specialist.yaml)** - Workflow optimization and tech solutions ✅
-- **[Prompt Engineer](technical/prompt-engineer.yaml)** - AI optimization and prompt design ✅
-- **[Toolmaker](technical/toolmaker.yaml)** - Tool creation and system design ✅
-- **[Productivity Architect](technical/productivity-architect.yaml)** - Systems thinking and workflow design ✅
-- **[SEO Specialist](technical/seo-specialist.yaml)** - Organic visibility and search optimization ✅
-
-### 🍳 **Kitchen Department**
-
-_Complete culinary expertise and food content capability_
-
-- **[Executive Chef](kitchen/executive-chef.yaml)** - Culinary leadership and menu development ✅
-- **[Sous Chef](kitchen/sous-chef.yaml)** - Kitchen operations and recipe execution ✅
-- **[Pastry Chef](kitchen/pastry-chef.yaml)** - Baking, desserts, and confections ✅
-- **[Grill Master](kitchen/grill-master.yaml)** - Grilling, BBQ, and outdoor cooking ✅
-- **[Master Bartender](kitchen/master-bartender.yaml)** - Mixology and cocktail creation ✅
-- **[Wine Sommelier](kitchen/wine-sommelier.yaml)** - Wine knowledge and pairing expertise ✅
-- **[Nutritionist](kitchen/nutritionist.yaml)** - Nutritional science and dietary planning ✅
-- **[Food Scientist](kitchen/food-scientist.yaml)** - Food chemistry and molecular gastronomy ✅
-- **[Butcher](kitchen/butcher.yaml)** - Meat preparation and protein expertise ✅
-- **[Line Cook](kitchen/line-cook.yaml)** - Production cooking and efficiency ✅
-- **[Kitchen Porter](kitchen/kitchen-porter.yaml)** - Kitchen support and organization ✅
-
-### 🧠 **Personal Department**
-
-_Personal development and life optimization capability_
-
-- **[Stoic Coach](personal/stoic-coach.yaml)** - Philosophy, mindset, and resilience ✅
-- **[Patient Advocate](personal/patient-advocate.yaml)** - Healthcare navigation and medical support ✅
-- **[Head Librarian](personal/head-librarian.yaml)** - Research and knowledge organization ✅
-
-### 💵 **Finance Department**
-
-_Financial analysis and decision support_
-
-- **[Financial Analyst](finance/financial-analyst.yaml)** - Financial modeling and performance insights ✅
-
-### 💼 **Commercialization Department**
-
-_Business development and market entry capability_
-
-- **[Literary Agent](commercialization/literary-agent.yaml)** - Publishing, book deals, and contracts ✅
-
-### 🎯 **Specialized Department**
-
-_Unique domain experts for specialized content and innovation_
-
-- **[Historical Storyteller](specialized/historical-storyteller.yaml)** - Documentary expertise and historical narrative ✅
-- **[Borgesian Beat Comic Futurist](specialized/borgesian-beat-comic-futurist.yaml)** - Sci-fi writing and futuristic narratives 🚧
-- **[Futurist-in-Residence](specialized/futurist-in-residence.yaml)** - Strategic foresight and scenario planning ✅
-- **[Transmedia Producer](specialized/transmedia-producer.yaml)** - Cross-platform content strategy ✅
-- **[Jorge Luis Borges](specialized/jorge-luis-borges.yaml)** - Literary mastery and philosophical narrative ✅
-- **[Cultural Anthropologist](specialized/cultural-anthropologist.yaml)** - Cultural experience and authenticity ✅
-- **[Local Area Expert](specialized/local-area-expert.yaml)** - Geographic intelligence and cultural navigation ✅
-- **[Music Producer](specialized/music-producer.yaml)** - Musical composition and arrangement ✅
-
----
-
-## 🚀 Quick Start Guide
-
-### **For New Users**
-
-1. **Browse the departments** above to understand available expertise across the full specialist roster
-2. **Pick a specialist** that matches your current need from the complete operational workforce
-3. **Read their full profile** to understand their capabilities and communication style
-4. **Try a simple activation** using their recommended patterns
-
-### **For Complex Projects**
-
-1. **Start with the [Chief of Staff](strategy/chief-of-staff.yaml)** for coordination of multi-specialist projects
-2. **Identify required departments** for your project scope across Creative, Strategy, Technical, and Specialized teams
-3. **Use multi-specialist activation patterns** for seamless collaboration
-4. **Follow the workflows** outlined in each specialist's profile for proven project patterns
-
-### **For System Building**
-
-1. **Begin with [Automation Specialist](technical/automation-specialist.yaml)** for process optimization and workflow design
-2. **Work with [Productivity Architect](technical/productivity-architect.yaml)** for comprehensive system design
-3. **Coordinate through [Chief of Staff](strategy/chief-of-staff.yaml)** for implementation and quality assurance
-4. **Track performance** and iterate based on results using the complete technical team
-
----
-
-## 🤝 Department Collaboration Patterns
-
-### **Creative Production Campaigns**
-
-```
-Chief of Staff → Creative Strategist → Art Director + Copywriter + Narrative Designer → Sound Designer + Audio Producer
-```
-
-### **Complete Brand Development**
-
-```
-Market Analyst → Brand Builder → Creative Strategist → Art Director + Copywriter + Persona Architect → Chief of Staff (coordination)
-```
-
-### **Technical System Optimization**
-
-```
-Productivity Architect → Automation Specialist + Prompt Engineer → Toolmaker → Chief of Staff (oversight)
-```
-
-### **Multi-Media Content Production**
-
-```
-Creative Strategist → Narrative Designer → Art Director + Copywriter + Sound Designer + Audio Producer + Voice Director + Medium Expert
-```
-
-### **Cross-Department Enterprise Projects**
-
-```
-Chief of Staff coordinates: Strategy Team (analysis) → Creative Team (execution) → Technical Team (optimization) → Specialized Team (unique expertise)
-```
+- **[Automation Specialist](technical/automation-specialist.yaml)** - Workflow optimization and tech solutions.
+- **[Prompt Engineer](technical/prompt-engineer.yaml)** - AI optimization and prompt design.
 
 ---
 
 ## 📈 Workforce Expansion & Customization
 
-Your specialist workforce is complete and operational, but you can still:
+Your specialist workforce is designed to be extended. You can create new specialists and departments to suit your needs.
 
-### **Specialist Customization**
+### **Creating a New Specialist**
 
-- Adapt any specialist for your specific industry or business model
-- Refine activation patterns based on your communication preferences
-- Optimize integration protocols for your workflow requirements
-- Enhance performance standards to match your quality expectations
+1. **Copy the template:** Start by copying the `new-staff-member-template.md` from the `templates/persona` directory to the appropriate department in the `staff` directory.
+2. **Define the specialist:** Fill out the `yaml` file with the specialist's role, skills, activation patterns, and performance standards.
+3. **Use the Prompt Engineer:** The `Prompt Engineer` can help you design effective prompts and workflows for your new specialist.
 
 ### **Department Expansion**
 
-Ready to add new departments? Use the **[Persona Template](../templates/persona/new-staff-member-template.md)** to create additional specialists.
+Ready to add new departments? Simply create a new directory in the `staff` folder and add your new specialist `yaml` files.
 
 **Popular next departments:**
 
@@ -169,72 +43,3 @@ Ready to add new departments? Use the **[Persona Template](../templates/persona/
 - **Operations Department**: Operations Manager, Quality Assurance Specialist, Vendor Manager, Process Improvement Expert
 - **Research Department**: Data Analyst, Competitive Intelligence Specialist, Trend Researcher, Consumer Insights Expert
 
-### **Advanced Integration Patterns**
-
-- **Industry-Specific Workflows** - Customize specialist combinations for your specific sector
-- **Project-Type Templates** - Create reusable patterns for your most common project types
-- **Quality Assurance Protocols** - Build systematic review processes using multiple specialists
-- **Performance Optimization** - Track and improve multi-specialist coordination effectiveness
-
----
-
-## 🎯 Current Workforce Capabilities
-
-### **✅ Complete Operational Departments**
-
-- **🎨 Creative Production** - Full creative capability from concept to execution
-- **📊 Strategic Planning** - Complete business strategy and market analysis
-- **⚙️ Technical Implementation** - Full automation and system optimization
-- **🍳 Culinary Excellence** - Complete kitchen brigade and food expertise
-- **🧠 Personal Development** - Life optimization and personal growth support
-- **💵 Financial Analysis** - Budgeting, forecasting, and performance insights
-- **💼 Commercialization** - Market entry and partnership development
-- **🎯 Specialized Expertise** - Unique domain knowledge for specialized content
-
-### **🏆 Proven Multi-Specialist Projects**
-
-- **Brand Development** - Strategy and Creative teams coordinating end-to-end
-- **Content Marketing Campaigns** - Cross-department collaboration spanning research through distribution
-- **Technical Optimization Initiatives** - Technical and Strategy teams driving workflow upgrades
-- **Documentary/Educational Content** - Creative and Specialized teams shaping narrative-rich programs
-- **Culinary Content Creation** - Kitchen and Creative teams developing experiential food concepts
-- **Cultural Experience Design** - Specialized, Kitchen, and Creative teams delivering immersive engagements
-
-### **📊 Performance Excellence**
-
-- **Project Success Rate**: 95%+ completion with high quality standards
-- **Specialist Integration**: Seamless cross-department collaboration proven
-- **Workflow Efficiency**: 60-80% improvement in project completion time
-- **Quality Consistency**: Professional-grade output across the full specialist roster
-
----
-
-## 🔧 Advanced Usage Patterns
-
-### **Department Mastery Progression**
-
-1. **Single Specialist** - Master individual specialist interactions (Week 1-2)
-2. **Department Teams** - Coordinate 2-4 specialists within one department (Week 3-4)
-3. **Cross-Department** - Manage projects across 2-3 departments (Week 5-6)
-4. **Enterprise Coordination** - Lead complex projects using 10+ specialists (Week 7+)
-
-### **Specialist Combination Strategies**
-
-- **Power Pairs** - High-impact 2-specialist combinations for rapid results
-- **Department Trios** - 3-specialist teams for balanced department representation
-- **Cross-Functional Squads** - 4-6 specialists from multiple departments for complex projects
-- **Full Workforce Deployment** - Enterprise-level projects utilizing the entire roster
-
----
-
-**Need help choosing the right specialist combination?**
-
-👉 **Check the [Complete Staff Directory](../STAFF-DIRECTORY.md)** for detailed comparison tables and advanced activation examples.
-
-👉 **Explore the [Workflows Directory](../workflows/)** for proven multi-specialist project patterns and coordination templates.
-
----
-
-**🚀 Your complete AI workforce is operational and ready for any challenge. Time to put the full roster to work!**
-
-_Built systematically, tested rigorously, optimized continuously._ 🎯

@@ -1,6 +1,6 @@
 # 🥷 The Path to Mastery
 
-*A Quick Start Guide to Commanding Your 42-Specialist AI Workforce*
+*A Quick Start Guide to Commanding Your AI Workforce*
 
 This guide provides a structured path for developing your skills from a beginner practitioner to a master of AI workforce orchestration.
 
@@ -11,38 +11,34 @@ This guide provides a structured path for developing your skills from a beginner
 ### **Level 1: Practitioner (Single Specialist Tasks)**
 
 - **Goal:** Master direct interaction with individual specialists.
-- **Mission:** Activate 5 different specialists for simple, well-defined tasks.
+- **Mission:** Activate the 5 core specialists for simple, well-defined tasks.
 - **Example:**
   > "*Acting as the **Art Director** from my AI-Staff-HQ, I need a color palette for a small coffee shop that wants to feel cozy but modern. The target audience is remote workers and students.*"
 
-### **Level 2: Orchestrator (Departmental Projects)**
+### **Level 2: Creator (Building Your First Specialist)**
+
+- **Goal:** Create your first custom specialist.
+- **Mission:** Use the `new-staff-member-template.md` to create a new specialist that is relevant to your work.
+- **Example:**
+  > "*I need a `UX Designer` specialist. I will copy the template and use the `Prompt Engineer` to help me define its skills and activation patterns.*"
+
+### **Level 3: Orchestrator (Departmental Projects)**
 
 - **Goal:** Coordinate 2-3 specialists from the same department to achieve a larger goal.
-- **Mission:** Use the **Chief of Staff** to lead a project contained within a single department (e.g., Strategy, Creative, Technical).
+- **Mission:** Use the **Chief of Staff** to lead a project contained within a single department, using a mix of core and custom specialists.
 - **Example:**
-  > "*Chief of Staff, coordinate a market analysis project. Have the **Market Analyst** research the meal kit delivery space, then have the **Brand Builder** identify three positioning opportunities based on that research.*"
+  > "*Chief of Staff, coordinate a market analysis project. Have the **Market Analyst** research the meal kit delivery space, then have my new **UX Designer** create a wireframe for a new meal kit app.*"
 
-### **Level 3: Commander (Cross-Departmental Initiatives)**
+### **Level 4: Commander (Cross-Departmental Initiatives)**
 
 - **Goal:** Lead complex projects that require collaboration between multiple departments.
-- **Mission:** Use the **Chief of Staff** and the **Project Brief Template** to run an initiative involving at least two departments (e.g., Strategy + Creative).
+- **Mission:** Use the **Chief of Staff** and the **Project Brief Template** to run an initiative involving at least two departments.
 - **Example:**
   > "*Chief of Staff, I'm launching a new productivity app. Use the **Project Brief Template** to coordinate the **Strategy Department** for market positioning and the **Creative Department** for the initial brand identity.*"
 
-### **Level 4: Architect (Autonomous Operations)**
+### **Level 5: Architect (System Innovation)**
 
-- **Goal:** Leverage the full power of the system with minimal intervention.
-- **Mission:** Initiate an **Autonomous Workflow**, such as the `Autonomous Weekly Content Pipeline`, and manage it only at the designated Approval Gates.
+- **Goal:** Design your own workflows and specialist combinations.
+- **Mission:** Design a new, reusable workflow for a recurring task in your own work.
 - **Example:**
-  > "*Chief of Staff, initiate the **Autonomous Weekly Content Pipeline**. Our goal is to establish thought leadership in the AI productivity space. Proceed with the weekly cycle and present the topic proposals and final content packages for my approval.*"
-
-### **Level 5: Master (System Innovation & Measurement)**
-
-- **Goal:** Move beyond using the system to actively improving and measuring it.
-- **Mission:** Design a new, reusable workflow and use the **Actuary** to measure its performance.
-- **Example:**
-  > "*Chief of Staff, I have designed a new workflow for rapid-response social media campaigns. We will run it for two weeks. Coordinate with the **Actuary** to track the performance of this new workflow against our standard campaign KPIs, and deliver a verdict on its effectiveness in the project retrospective.*"
-
----
-
-By progressing through these levels, you will naturally and effectively master the full capabilities of your 42-specialist AI workforce.
+  > "*Chief of Staff, I have designed a new workflow for rapid-response social media campaigns. We will run it for two weeks. I will create a custom `Actuary` specialist to track the performance of this new workflow against our standard campaign KPIs.*"

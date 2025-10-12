@@ -1,107 +1,56 @@
 # **🗺️ AI-Staff-HQ: Product Roadmap**
 
-_The Future of Your AI Workforce - Version 1.5.0_
+_The Future of Your AI Workforce - Version 2.0.0_
 
 ## **🎯 Vision**
 
-To create the most comprehensive, adaptable, and powerful AI workforce system, enabling users to command a diverse team of specialized AI agents for any creative, strategic, technical, or personal challenge. Our goal is to transform individual AI interaction into enterprise-level AI orchestration.
+To create the most comprehensive, adaptable, and powerful framework for building and managing a custom AI workforce, enabling users to command a diverse team of specialized AI agents for any creative, strategic, technical, or personal challenge.
 
-## **🚀 Current Status: Version 1.5.0 (October 2025)**
+## **🚀 Current Status: Version 2.0.0 (October 2025)**
 
-### **✅ Production Ready (Specialist Roster Operational)**
+### **✅ Lean and Extensible**
 
-The AI-Staff-HQ now fields a fully staffed roster of specialists, including the new **Actuary** for performance measurement. Most specialist profiles have been migrated to a dynamic YAML format, allowing for easier updates and future programmatic integration, with remaining legacy files in the process of being upgraded.
+The AI-Staff-HQ has been refactored to be a lean and extensible framework. The focus is now on providing a solid foundation for users to build their own custom AI workforce.
 
-### **🏆 Major Achievements in v1.5.0**
+### **🏆 Major Achievements in v2.0.0**
 
-This version represents a major leap forward in the system's intelligence and autonomy.
-
-- **Dynamic Specialist Profiles:** The specialist profiles are being converted from static Markdown to a structured YAML format. The majority already follow the new schema, making them machine-readable and programmatically updatable, and the remaining profiles are scheduled for upgrade.
-
-- **Quantifiable Performance (KPIs):** Every specialist now has a `kpis` section with measurable performance targets. This moves the system from qualitative goals to quantitative, data-driven outcomes.
-
-- **New Specialist - The Actuary:** To make KPIs meaningful, the **Actuary** has been added to the Strategy Department. This specialist's sole function is to provide impartial, data-driven adjudication of performance against KPIs, ensuring true accountability.
-
-- **Autonomous Workflows:** A new `autonomous` workflow category has been introduced. These workflows are designed to be managed by the Chief of Staff with minimal user intervention, requiring sign-off only at key approval gates. The first example, the `Autonomous Weekly Content Pipeline`, is now live.
-
-- **Memory & Logging System:** The creation of the `/logs` directory provides a persistent memory for the workforce. By storing and reviewing project retrospectives, the Chief of Staff can now apply learnings from past projects to future initiatives.
-
-- **Tangible Technical Outputs:** The new `/tools` and `/workflows/automations` directories provide a home for concrete outputs from the Technical Department, such as executable Python scripts and automation plans.
+- **Core Team:** The project now includes a core team of 5 essential specialists that serve as examples and a starting point for any workforce.
+- **Bring Your Own Staff:** The project is now designed around the 'bring your own staff' philosophy, with clear instructions and templates for creating new specialists.
+- **Streamlined Documentation:** All documentation has been updated to reflect the new lean and extensible approach.
 
 ### **Known Limitations**
 
-- **Learning Loop is Manual:** While the infrastructure for learning is in place (logs, KPIs, Actuary), the process of updating specialist profiles based on performance is still a manual user- or Gemini-driven task.
-- **Continue to expand the library of autonomous workflows:** The autonomous workflow concept has been proven, but the library of such workflows can be expanded.
-- **Schema Parity Work in Progress:** A subset of legacy specialist profiles still need to be migrated to the enriched YAML structure referenced above.
+- **Limited Examples:** While the core team provides a good starting point, more examples of different types of specialists would be beneficial.
+- **Manual Validation:** The process of creating new specialists is still manual and relies on the user to ensure consistency and quality.
 
 ## **🗺️ Roadmap: Next 12 Months**
 
-### **Phase 1: System Intelligence & Automation (Q4 2025 - Q1 2026)**
+### **Phase 1: Community & Tooling (Q4 2025 - Q1 2026)**
 
-**Goal**: Close the learning loop to create a truly self-optimizing system and expand autonomous capabilities.
-
-#### **Key Initiatives**
-
-- **Self-Optimizing Specialists (v1.6.0):** Implemented.
-  - **Mechanism:** Develop a workflow where the `Actuary`'s performance reports from the `Retrospective Template` are used by the `Productivity Architect` to programmatically update the `.yaml` profile of underperforming specialists, suggesting improvements to their core capabilities or workflows.
-  - **Goal:** Create an automated feedback loop for continuous improvement.
-
-- **Expansion of Autonomous Workflows (v1.6.0):** In Progress.
-  - **Mechanism:** Create at least three new autonomous workflows for common business processes (e.g., social media management, monthly market analysis reporting, client onboarding).
-  - **Goal:** Drastically reduce the cognitive load on the user for routine, complex tasks.
-
-- **Automated Project Scoping (v1.7.0):** Implemented.
-  - **Mechanism:** The `Chief of Staff`, when given a high-level goal, will automatically activate the `Market Analyst` and `Brand Builder` to generate a completed `Project Brief Template` for user approval.
-  - **Goal:** Automate the entire strategic front-end of a project.
-
-### **Phase 2: Ecosystem & Personalization (Q2 2026 - Q3 2026)**
-
-**Goal**: Foster a thriving community, enable deep personalization, and explore new frontiers of AI workforce application.
+**Goal**: Foster a thriving community and provide tools for building and validating custom specialists.
 
 #### **Key Initiatives**
 
-- **Community Contribution Platform (v1.8.0):** Implemented.
-  - Easy sharing of custom specialists (in YAML format), workflows, and handbooks.
-  - Peer review and rating system for community contributions, adjudicated by the `Actuary`.
+- **Community Contribution Platform:**
+  - **Mechanism:** Create a clear process for users to share their custom specialists, workflows, and handbooks.
+  - **Goal:** Build a rich library of community-created resources.
 
-- **Dynamic Onboarding Workflow (v1.8.0):** Planned.
-  - **Mechanism:** Create an autonomous workflow where the `Chief of Staff` interviews new users to understand their goals. Based on the user's answers, the workflow will automatically generate a personalized `my-happy-path.md` and a customized `my-R2N.md`.
-  - User-specific training for specialists based on individual preferences and historical project logs.
-  - Adaptive learning paths for users to master the system, guided by the `Chief of Staff`.
-  - **Goal:** To provide a personalized and accelerated onboarding experience for new users, increasing engagement and time-to-value.
+- **Specialist Validation Tooling:**
+  - **Mechanism:** Develop a linter or validation tool to help users create consistent and effective specialist profiles.
+  - **Goal:** Ensure the quality and consistency of community-created specialists.
 
-- **New Department Exploration (v1.9.0):** In Progress.
-  - Research and development into new specialist categories (e.g., Finance, Legal, Scientific Research) using the now-robust system as a development platform.
+### **Phase 2: Expanding the Core (Q2 2026 - Q3 2026)**
 
-### **Phase 3: Workflow and Knowledge Base Expansion (Q4 2026)**
-
-**Goal**: Flesh out all placeholder content and workflows to bring the project to a v2.0 state.
+**Goal**: Expand the library of core specialists and example workflows.
 
 #### **Key Initiatives**
 
-- **Flesh out all placeholder templates and knowledge base articles:**
-  - `templates/persona/persona-development-framework.md`
-  - `templates/persona/skill-integration-template.md`
-  - `templates/content/presentation-framework.md`
-  - `templates/content/email-templates.md`
-  - `templates/content/social-media-templates.md`
-  - `knowledge-base/reference/tool-recommendations.md`
-  - `knowledge-base/reference/quick-reference-sheets.md`
-  - `knowledge-base/reference/glossary.md`
-  - `knowledge-base/frameworks/creativity-frameworks.md`
-  - `knowledge-base/core-principles/cognitive-load-optimization.md`
-  - `knowledge-base/core-principles/creative-problem-solving.md`
-  - `knowledge-base/core-principles/energy-management.md`
-  - `knowledge-base/frameworks/productivity-frameworks.md`
-  - `knowledge-base/frameworks/learning-frameworks.md`
+- **New Core Specialists:**
+  - **Mechanism:** Add a few more core specialists to the project to provide more examples and cover more domains.
+  - **Goal:** Provide a richer starting point for new users.
 
-- **Implement placeholder workflows:**
-  - `workflows/analytics/knowledge-gap-analysis.md`
-  - `workflows/project-types/consultation-workflow.md`
-  - `workflows/project-types/content-campaign-workflow.md`
-  - `workflows/analytics/roi-measurement-framework.md`
-  - `workflows/analytics/performance-tracking-workflow.md`
-  - `workflows/project-types/video-production-workflow.md`
-  - `workflows/automation/research-aggregation-workflow.md`
-  - `workflows/automation/client-communication-flows.md`
-  - `workflows/automation/social-media-automation.md`
+- **New Example Workflows:**
+  - **Mechanism:** Add more example workflows that showcase different ways to orchestrate specialists.
+  - **Goal:** Inspire users to create their own custom workflows.
+
+

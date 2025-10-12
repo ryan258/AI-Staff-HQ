@@ -1,6 +1,12 @@
 # 📊 AI-Staff-HQ Version History
 
-A concise record of milestone releases. Use in tandem with `meta/STAFF-CHANGELOG.md` for specialist-level details.
+A concise record of milestone releases.
+
+## v2.0.0 - The Lean Framework (Oct 2025)
+- **Project Refactor:** The project has been significantly refactored to be a lean and extensible framework.
+- **Core Team:** The specialist roster has been streamlined to a core team of 5 essential specialists.
+- **Bring Your Own Staff:** The project is now designed around the 'bring your own staff' philosophy, with clear instructions and templates for creating new specialists.
+- **Streamlined Documentation:** All documentation has been updated to reflect the new lean and extensible approach.
 
 ## v1.5.0 – Schema & Autonomy Expansion *(Oct 2025)*
 - Migrated the specialist roster to structured YAML and introduced the Actuary for KPI adjudication.
@@ -21,7 +27,3 @@ A concise record of milestone releases. Use in tandem with `meta/STAFF-CHANGELOG
 - Established repository structure, staff persona templates, and knowledge-base scaffolding.
 - Delivered initial workflows and integration notes to guide early adoption.
 - Set quality standards and collaboration patterns for the founding 17-specialist cohort.
-
----
-
-**Maintenance Note:** Future releases should append to this file with compact summaries. Specialist-specific changes belong in `meta/STAFF-CHANGELOG.md`; workflows and automation scripts should reference originating versions within their own directories.
