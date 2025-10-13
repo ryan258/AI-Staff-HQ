@@ -34,3 +34,8 @@ Use [Discussions](../../discussions) for:
 - Suggestions for clarifying existing docs.
 
 Issues are reserved for concrete bugs or broken references. Thanks for respecting the intent of this project and keeping the core lean.
+
+---
+
+### How to Use This File
+- Link to this guide in the README (already done) so visitors understand contribution boundaries.\n+- When sharing the repo publicly, reference this document in your announcement or launch post.\n+- Update the welcome text if expectations change; keep the “personal system” stance explicit.

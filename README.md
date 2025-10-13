@@ -214,7 +214,7 @@ This is a framework for building your own AI workforce. The core components have
 
 👉 **Advanced Users**: Dive into the example [**Workflows**](workflows/) and adapt them for your custom team.
 
-👉 **System Builders**: Explore the [**Knowledge Base**](knowledge-base/), [**Templates**](templates/), and the [**Quick Reference Guide**](QUICK-REFERENCE.md) to customize the framework for maximum effectiveness. Start with the Project Brief (Simple) template for fast initiatives, and graduate to the comprehensive version when you need full multi-specialist coordination.
+👉 **System Builders**: Explore the [**Knowledge Base**](knowledge-base/), [**Templates**](templates/), and the [**Quick Reference Guide**](docs/QUICK-REFERENCE.md) to customize the framework for maximum effectiveness. Start with the Project Brief (Simple) template for fast initiatives, and graduate to the comprehensive version when you need full multi-specialist coordination.
 
 👉 **Launch Prep**: Read the [launch article](meta/articles/ai-staff-hq-launch.md) and reuse the shareable assets in `meta/assets/` when you introduce your fork.
 

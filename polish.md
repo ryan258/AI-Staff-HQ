@@ -677,9 +677,9 @@ Write medium-length post (800-1200 words) explaining:
 **Repository Quality:**
 - [ ] All links work (run link checker)
 - [ ] No typos in main documents (run spell check)
-- [ ] Code blocks formatted correctly
-- [ ] All YAML files validate
-- [ ] Examples directory is complete
+- [ ] Code blocks formatted correctly (spot check)
+- [ ] All YAML files validate *(manual review; automated validation deferred—install PyYAML when network access is available)*
+- [x] Examples directory is complete
 
 **Documentation Quality:**
 - [ ] README has new framing section

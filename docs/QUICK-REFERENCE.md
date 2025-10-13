@@ -45,7 +45,14 @@
 
 ## Where to Look Next
 
-- **Examples:** `examples/` directory shows real briefs, specialists, and transcripts
-- **Getting Started:** `GETTING-STARTED.md` offers role-based entry paths
-- **Philosophy:** `PHILOSOPHY.md` explains why the system stays lean
-- **Templates:** `templates/` hold structured thinking tools for projects and personas
+- **Examples:** `examples/` directory shows real briefs, specialists, and transcripts.
+- **Getting Started:** `GETTING-STARTED.md` offers role-based entry paths.
+- **Philosophy:** `PHILOSOPHY.md` explains why the system stays lean.
+- **Templates:** `templates/` hold structured thinking tools for projects and personas.
+
+---
+
+### How to Use This File
+- Keep a copy open while you work to remind yourself which specialist to activate and why.
+- Share it with collaborators so they know who to call on inside your AI workforce.
+- Update it whenever your roster or template toolkit changes; commit the changes for future reference.
