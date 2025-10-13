@@ -215,13 +215,13 @@ This is a framework for building your own AI workforce. The core components have
 
 **Ready to build your AI workforce?**
 
-👉 **Immediate Action**: Start with the [**Getting Started Checklist**](#-getting-started-checklist) to create your first specialist.
+👉 **First Time Here?** Start with the [**Getting Started Checklist**](#-getting-started-checklist) or jump straight to [`GETTING-STARTED.md`](GETTING-STARTED.md) for a role-based path.
 
-👉 **Need Onboarding Options?** Jump into [`GETTING-STARTED.md`](GETTING-STARTED.md) for role-specific paths and a condensed mastery progression.
+👉 **Want to See It Working?** Tour the [**examples/**](examples/) directory—specialists → project briefs → workflows → before/after.
 
-👉 **Advanced Users**: Dive into the example [**Workflows**](workflows/) and adapt them for your custom team.
+👉 **Ready to Build?** Use the [**Templates**](templates/) to create your own specialists and briefs, or branch off the finished examples in `examples/specialists/`.
 
-👉 **System Builders**: Explore the [**Knowledge Base**](knowledge-base/), [**Templates**](templates/), and the [**Quick Reference Guide**](docs/QUICK-REFERENCE.md) to customize the framework for maximum effectiveness. Start with the Project Brief (Simple) template for fast initiatives, and graduate to the comprehensive version when you need full multi-specialist coordination.
+👉 **Need Quick Help?** Keep the [**Quick Reference Guide**](docs/QUICK-REFERENCE.md) handy for activation patterns, common mistakes, and template selection.
 
 👉 **Launch Prep**: Read the [launch article](meta/articles/ai-staff-hq-launch.md) and reuse the shareable assets in `meta/assets/` when you introduce your fork.
 
