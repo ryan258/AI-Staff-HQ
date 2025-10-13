@@ -1,5 +1,18 @@
 # Quick Reference Guide
 
+## 5-Second Reference
+
+| Need help with… | Start with |
+|-----------------|------------|
+| Multi-specialist coordination | Chief of Staff |
+| Research & audience insight | Market Analyst |
+| Visual systems & assets | Art Director |
+| Conversion messaging | Copywriter (examples/specialists/completed-copywriter.yaml) |
+| Workflow automation | Automation Specialist |
+| Prompt quality & context discipline | Prompt Engineer |
+
+> Shortcut: If a project touches more than one specialist, begin with the Chief of Staff.
+
 ## Core Specialists
 
 ### Chief of Staff
@@ -16,6 +29,12 @@
 - **Use when:** Visual direction, brand identity, or creative quality is required
 - **Activation:** "Art Director, create [visual deliverable] based on [brief]"
 - **Best for:** Brand systems, hero assets, visual QA
+
+### Copywriter *(example specialist)*
+- **Use when:** You need conversion-ready copy or messaging systems
+- **Activation:** "Copywriter, draft [asset] using [brief/insight link]"
+- **Best for:** Launch assets, nurture sequences, iteration sprints
+- **Reference:** `examples/specialists/completed-copywriter.yaml`
 
 ### Automation Specialist
 - **Use when:** Repetitive processes or integrations need to be systematized

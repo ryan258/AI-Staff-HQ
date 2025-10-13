@@ -18,6 +18,16 @@ Specialists are defined in YAML because the format is human-readable, diff-frien
 
 AI-Staff-HQ assumes you will bring your own staff. That is not gatekeeping; it is an acknowledgment that real leverage comes from composite teams designed around your constraints. If I handed over a pre-populated directory of specialists, you would inherit my edge cases and blind spots. Instead, the framework shows how specialists relate to each other, how knowledge propagates, and where coordination friction hides. You fill the roster with roles that support your workflows, your standards, and your industry. The resulting system feels native because it was built for you, not for a hypothetical average user.
 
+## Essential Five, Extended Library
+
+Version 2.0.0 ships with five specialists in the `staff/` directory—the minimum viable roster I rely on daily. Earlier iterations taught me that **five is usable, thirty-nine is overwhelming**. The solution was a layered approach:
+
+- **Essential Five** (Chief of Staff, Market Analyst, Art Director, Copywriter, Automation Specialist) cover the majority of work without bloating the context window.
+- **Extended Library** lives in `examples/specialists/`. These ready-to-fork specialists (Brand Strategist, Data Analyst, etc.) show how far you can push the pattern when you need more capability.
+- **Create-Your-Own** remains the default. Copy the persona template, adapt it to your domain, and only promote a specialist into `staff/` when it earns a permanent seat on your team.
+
+This balance keeps the core lean for everyday use while giving you real, battle-tested references when you need them.
+
 ## Designing for Context Window Discipline
 
 Every specialist, template, and workflow is tuned for context window efficiency. Large language models are powerful, but they are bounded by memory and cost. The repository structure enforces modularity so you can load only what a task requires. Handbooks distill reusable principles. Workflows reference specialists by name instead of repeating full definitions. Notes capture the minimum viable context to inform the next step. This discipline keeps prompts tight, speeds up iteration, and prevents runaway context windows that erode both performance and budget.

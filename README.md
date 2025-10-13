@@ -54,21 +54,26 @@ Read the design rationale in [PHILOSOPHY.md](PHILOSOPHY.md).
 
 ## **⚡ Your Core AI Workforce**
 
-This is your starting lineup. These specialists form the foundation of your AI workforce and provide examples of how to structure your own custom agents.
+AI-Staff-HQ ships with **five essential specialists** you can activate immediately, plus a library of completed examples you can fork when you need more depth.
 
-### **📊 Strategy Department**
+### The Essential 5 (Start Here)
+These roles cover 80% of the work in my own operations.
 
-- 🏢 [**Chief of Staff**](staff/strategy/chief-of-staff.yaml) \- Project coordination and strategic oversight.
-- 📈 [**Market Analyst**](staff/strategy/market-analyst.yaml) \- Market research and competitive analysis.
+- 🏢 [**Chief of Staff**](staff/strategy/chief-of-staff.yaml) — Project coordination, quality gates, retrospectives  
+- 📈 [**Market Analyst**](staff/strategy/market-analyst.yaml) — Research, audience insight, competitive scans  
+- 🎨 [**Art Director**](staff/creative/art-director.yaml) — Visual identity, creative direction, asset QA  
+- ✍️ [**Copywriter**](examples/specialists/completed-copywriter.yaml) — Conversion copy, messaging systems, iteration loops  
+- ⚡ [**Automation Specialist**](staff/technical/automation-specialist.yaml) — Workflow automation, tooling integration
 
-### **🎨 Creative Department**
+> **Tip:** Activate one of the Essential 5 for your first project, then layer in additional roles as you discover gaps.
 
-- 🎯 [**Art Director**](staff/creative/art-director.yaml) \- Visual strategy and brand aesthetics.
+### Extend the Team (Use When Needed)
+- 📊 [**Brand Strategist**](examples/specialists/completed-brand-strategist.yaml) — Positioning architecture, narrative systems  
+- 📉 [**Data Analyst**](examples/specialists/completed-data-analyst.yaml) — Diagnostics, opportunity sizing, experimentation  
+- 🤖 [**Prompt Engineer**](staff/technical/prompt-engineer.yaml) — Prompt design, context discipline, workflow debugging  
+- 📚 Create your own specialists by copying `templates/persona/new-staff-member-template.md` into `staff/` and tailoring it to your domain.
 
-### **⚙️ Technical Department**
-
-- ⚡ [**Automation Specialist**](staff/technical/automation-specialist.yaml) \- Workflow optimization and tech solutions.
-- 🤖 [**Prompt Engineer**](staff/technical/prompt-engineer.yaml) \- AI optimization and prompt design.
+Need a different capability (e.g., Social Media Manager, UX Researcher)? Use the template, apply the patterns in `examples/specialists/notes-on-creation.md`, and add the new role to your `staff/` directory when it earns its keep.
 
 ## **🎯 How to Build Your AI Workforce**
 

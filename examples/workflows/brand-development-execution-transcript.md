@@ -2,7 +2,7 @@
 
 ## Project Context
 - **Goal:** Rebuild the brand narrative, visuals, and launch assets positioning AI-Staff-HQ as cognitive infrastructure rather than a prompt pack.
-- **Specialists Used:** Chief of Staff, Market Analyst, Brand Strategist, Copywriter, Art Director, Data Analyst, Automation Specialist.
+- **Specialists Used:** Chief of Staff, Market Analyst, Brand Strategist, Copywriter, Art Director, Data Analyst, Automation Specialist. *(Brand Strategist, Copywriter, and Data Analyst reference the completed examples in `examples/specialists/`.)*
 - **Timeline:** Planned 6-week runway; actual 6 weeks + 3-day buffer to finalize before/after assets.
 
 ---

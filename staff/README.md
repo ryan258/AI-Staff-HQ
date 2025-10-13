@@ -15,6 +15,12 @@ This is your starting lineup. These specialists form the foundation of your AI w
 
 - **[Art Director](creative/art-director.yaml)** - Visual strategy and brand aesthetics.
 
+### 🧠 Completed Examples (ready to fork)
+
+- **[Copywriter](../examples/specialists/completed-copywriter.yaml)** - Conversion copy, messaging systems, iteration loops.
+- **[Brand Strategist](../examples/specialists/completed-brand-strategist.yaml)** - Positioning architecture and narrative systems.
+- **[Data Analyst](../examples/specialists/completed-data-analyst.yaml)** - Diagnostics, experiment readouts, opportunity sizing.
+
 ### **⚙️ Technical Department**
 
 - **[Automation Specialist](technical/automation-specialist.yaml)** - Workflow optimization and tech solutions.
@@ -42,4 +48,3 @@ Ready to add new departments? Simply create a new directory in the `staff` folde
 - **Finance Department**: Financial Analyst, Investment Advisor, Budget Coordinator, Revenue Optimization Specialist
 - **Operations Department**: Operations Manager, Quality Assurance Specialist, Vendor Manager, Process Improvement Expert
 - **Research Department**: Data Analyst, Competitive Intelligence Specialist, Trend Researcher, Consumer Insights Expert
-

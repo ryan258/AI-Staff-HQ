@@ -7,7 +7,7 @@ Welcome—this guide gives you three entry ramps into the repository plus quick 
 ### 🚀 Quick Start (15 minutes)
 For hands-on learners who want a win immediately.
 1. **Clone or download the repo.** Load the project into your AI workspace so specialists are in context.
-2. **Activate one core specialist.** Try `"Acting as the Art Director from my AI-Staff-HQ, create a hero image concept for our onboarding email."`
+2. **Activate one of the Essential 5 specialists.** Try `"Acting as the Art Director from my AI-Staff-HQ, create a hero image concept for our onboarding email."`
 3. **Reference a finished specialist.** Skim `examples/specialists/completed-copywriter.yaml` to see how activation patterns are structured.
 4. **Log the result.** Capture what worked in `knowledge-base/` so you can reuse the prompt later.
 

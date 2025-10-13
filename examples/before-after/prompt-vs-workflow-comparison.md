@@ -61,6 +61,43 @@ Build a complete brand identity for “Ember & Oak,” a coffee subscription ser
 - Actionable asset list ready for execution.  
 - Shared understanding across specialists, enabling reuse for future coffee or subscription launches.
 
+## Visual Comparison
+
+### Before Output (excerpt)
+```
+Brand Name: Ember & Oak Coffee
+Tagline: Fresh coffee delivered to your door
+Audience: Coffee drinkers who like convenience
+Visuals: Use browns and whites, include latte art
+Messaging Pillars: Quality, Convenience, Community
+```
+
+### After Output (excerpt)
+```
+=== BRAND STRATEGY FOUNDATION ===
+Strategic Positioning: Precision-crafted ritual for remote operators
+Differentiators:
+- Signal Ritual: Curated roast drops shipped the day beans peak
+- Data Confidence: Roast profiles generated from preference telemetry
+- Time Back: 18 minutes saved per weekday via dialed-in grind & brew guide
+
+Audience Psychographics:
+- Primary: Remote engineers & product leads, 28-42
+- Values: Optimization, craft, predictable excellence
+- Pain Points: Inconsistent flavor, wasted time sourcing beans
+
+=== VISUAL IDENTITY SYSTEM ===
+Logo: Geometric monogram referencing waveform + coffee ring
+Palette: Deep charcoal (#121317), ember accent (#EE7447), fresh crema (#F2E8D8)
+Typography: Headlines—Editorial Serif; Body—Technical Sans; Data—Monospace
+Application Notes: Desk-friendly packaging, modular ritual card inserts
+
+=== MESSAGING SUITE ===
+Landing Hero: "Design your signature brew once—repeat it forever."
+Email Sequence: Signal Ritual, Flavor Design Sprint, Brew Control Room
+CTA Inventory: "Dial in my ritual," "Send the calibration kit," "Benchmark my brew"
+```
+
 **Benefits:**  
 - Strategic foundation with research-backed pillars.  
 - Consistent quality across copy and visuals.  
