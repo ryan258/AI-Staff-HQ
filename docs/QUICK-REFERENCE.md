@@ -69,6 +69,20 @@
 - **Philosophy:** `PHILOSOPHY.md` explains why the system stays lean.
 - **Templates:** `templates/` hold structured thinking tools for projects and personas.
 
+## ❌ Common Mistakes
+
+- **Routing single-specialist tasks through the Chief of Staff**  
+  _Instead:_ Activate the specialist directly. Chief of Staff is for coordination across multiple roles.
+
+- **Trying to use every specialist immediately**  
+  _Instead:_ Start with one or two Essential specialists. Add others once a real project demands it.
+
+- **Treating templates as forms to complete**  
+  _Instead:_ Delete sections that do not apply. Templates are thinking tools, not paperwork.
+
+- **Skipping “Acting as the [Specialist] from my AI-Staff-HQ”**  
+  _Instead:_ Always anchor prompts with that phrase so the model loads the right context.
+
 ---
 
 ### How to Use This File

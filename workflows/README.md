@@ -21,6 +21,12 @@ _Examples of specialized processes for specific project categories using multi-d
 - **[Brand Development Workflow](project-types/brand-development-workflow.md)** ✅ _Complete_ - A complete brand creation process using the core Strategy and Creative specialists.
 - **[Content Creation Pipeline](automation/content-creation-pipeline.md)** ✅ _Complete_ - A systematic, end-to-end workflow for producing high-quality content.
 
+### ⚡ **Simple Workflows**
+
+_Lightweight processes that rely on a single specialist for rapid execution._
+
+- **[Single Blog Post](simple/single-blog-post.md)** ✅ _New_ — Fast copy production using only the Copywriter specialist.
+
 ---
 
 ## 🚀 Workflow Development with Your AI Workforce
@@ -36,4 +42,3 @@ _Examples of specialized processes for specific project categories using multi-d
 ### **Building Your Own Workflows**
 
 You are encouraged to build your own workflows for your recurring tasks. Use the `Chief of Staff` to help you design and orchestrate your custom workflows.
-

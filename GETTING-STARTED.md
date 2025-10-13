@@ -5,11 +5,13 @@ Welcome—this guide gives you three entry ramps into the repository plus quick 
 ## Choose Your Path
 
 ### 🚀 Quick Start (15 minutes)
-For hands-on learners who want a win immediately.
+**For:** People who learn by doing  
+**Goal:** Ship one real deliverable using a single specialist
+
 1. **Clone or download the repo.** Load the project into your AI workspace so specialists are in context.
-2. **Activate one of the Essential 5 specialists.** Try `"Acting as the Art Director from my AI-Staff-HQ, create a hero image concept for our onboarding email."`
-3. **Reference a finished specialist.** Skim `examples/specialists/completed-copywriter.yaml` to see how activation patterns are structured.
-4. **Log the result.** Capture what worked in `knowledge-base/` so you can reuse the prompt later.
+2. **Pick a specialist:** Copywriter (content), Art Director (visual), or Market Analyst (insight).
+3. **Activate immediately:** `"Acting as the Copywriter from my AI-Staff-HQ, write a compelling subject line for tomorrow's customer email about our new analytics feature."`
+4. **Ship it:** Use the output as-is or with light edits; log what worked in `knowledge-base/` so you can reuse the prompt later.
 
 ### 📖 Systematic Learner (1 hour)
 For operators who want to understand the philosophy before executing.
@@ -40,6 +42,8 @@ A condensed version of the path from `R2N.md`—use it to gauge your next milest
 - **Level 3 · Orchestrator:** Run a departmental project with the Chief of Staff coordinating 2–3 specialists.
 - **Level 4 · Commander:** Deliver a cross-department initiative using the Project Brief templates (simple or comprehensive) and explicit handoffs.
 - **Level 5 · Architect:** Invent your own workflow, measure ROI, and feed improvements back into specialists, briefs, and transcripts.
+
+Need the deep dive? The original multi-stage journey now lives in `archive/R2N.md`.
 
 ## Platform-Specific Notes
 - **Gemini / Google AI Studio:** Load the repository, then issue activation prompts exactly as written—Gemini handles long YAML prompts well but benefits from the context discipline noted in `PHILOSOPHY.md`.

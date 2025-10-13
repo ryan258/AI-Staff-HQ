@@ -28,6 +28,16 @@ Version 2.0.0 ships with five specialists in the `staff/` directory—the minimu
 
 This balance keeps the core lean for everyday use while giving you real, battle-tested references when you need them.
 
+## Specialist Detail Levels
+
+Not every specialist requires 200 lines of YAML. The detail level reflects the coordination complexity of the role:
+
+- **Highly detailed (200+ lines):** Orchestrators and core workflow specialists (Chief of Staff, Brand Strategist, Market Analyst) document extensive coordination logic, escalation paths, and quality gates.
+- **Medium detail (100–150 lines):** Focused creative or strategy roles (Art Director, Content Strategist, UX Researcher) articulate deliverables and integration points without overwhelming boilerplate.
+- **Concise (50–100 lines):** Narrow technical roles (Automation Specialist, Data Analyst, Prompt Engineer) need clear activation patterns and guardrails, not novels.
+
+When you create new specialists, match the depth to the responsibility. Too much detail invites drift; too little leaves future-you without context.
+
 ## Designing for Context Window Discipline
 
 Every specialist, template, and workflow is tuned for context window efficiency. Large language models are powerful, but they are bounded by memory and cost. The repository structure enforces modularity so you can load only what a task requires. Handbooks distill reusable principles. Workflows reference specialists by name instead of repeating full definitions. Notes capture the minimum viable context to inform the next step. This discipline keeps prompts tight, speeds up iteration, and prevents runaway context windows that erode both performance and budget.

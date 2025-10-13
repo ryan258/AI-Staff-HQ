@@ -104,14 +104,16 @@ Need a different capability (e.g., Social Media Manager, UX Researcher)? Use the
 ## **🏗️ Repository Structure**
 
 AI-Staff-HQ/
-├── 👥 staff/ \# Your AI specialists, organized by department
-│   ├── 🎨 creative/
-│   ├── 📊 strategy/
-│   └── ⚙️ technical/
-├── 📖 handbooks/ \# Core principles for AI workforce management
-├── 🛠️ templates/ \# Reusable frameworks for creating specialists and projects
-├── ⚡ workflows/ \# Example workflows to adapt for your team
-└── 🧠 knowledge-base/ \# Core principles of the system
+├── 📖 README.md — Start here  
+├── 🎯 GETTING-STARTED.md — Choose a learning path  
+├── 💭 PHILOSOPHY.md — Why it’s designed this way  
+├── ⚡ docs/QUICK-REFERENCE.md — Fast lookups  
+├── 👥 staff/ — Essential specialists (Strategy, Creative, Technical)  
+├── 📚 examples/ — Completed specialists, project briefs, workflows, before/after ROI  
+├── 🛠️ templates/ — Persona + project templates (simple & comprehensive)  
+├── ⚡ workflows/ — System workflows and automation concepts  
+├── 📖 handbooks/ — Deep dives on prompt engineering & coordination  
+└── 🧠 knowledge-base/ — Principles, research, decisions, retrospective logs
 
 ## **🧠 The Knowledge System**
 
@@ -156,7 +158,7 @@ Prefer a guided overview? Start with [`GETTING-STARTED.md`](GETTING-STARTED.md) 
 
 ### **Phase 1: Your First Specialist**
 
-- \[ \] **Read the `prompt-engineering-mastery.md` handbook.**
+- \[ \] **Read the `handbooks/ai-workflows/prompt-engineering-mastery.md` handbook.**
 - \[ \] **Duplicate the `new-staff-member-template.md`** to create your first custom specialist.
 - \[ \] **Use the `Prompt Engineer`** to help you flesh out your new specialist's capabilities.
 - \[ \] **Test your new specialist** with a simple, single-task prompt.
