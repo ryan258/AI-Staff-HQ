@@ -5,53 +5,147 @@
 | Need help with… | Start with |
 |-----------------|------------|
 | Multi-specialist coordination | Chief of Staff |
-| Research & audience insight | Market Analyst |
-| Visual systems & assets | Art Director |
-| Conversion messaging | Copywriter (examples/specialists/completed-copywriter.yaml) |
-| Workflow automation | Automation Specialist |
-| Prompt quality & context discipline | Prompt Engineer |
+| Creative campaigns & strategy | Creative Strategist |
+| Brand development | Brand Builder |
+| Market intelligence | Market Analyst |
+| Data analysis & insights | Data Analyst |
+| Conversion copy | Copywriter |
+| Growth & marketing | Social Media Strategist, SEO Specialist |
+| System architecture | Software Architect |
+| Workflow automation | Automation Specialist, Toolmaker |
+| Health & habits | Health Coach, Habit Architect |
+| Business law & finance | Business Lawyer, Tax Strategist |
 
 > Shortcut: If a project touches more than one specialist, begin with the Chief of Staff.
 
-## Core Specialists
+## 🏢 Current Workforce: 41 Specialists
 
-### Chief of Staff
-- **Use when:** A project needs 2+ specialists or has multiple phases
-- **Activation:** "Chief of Staff, coordinate [project]"
-- **Best for:** Orchestrating cross-specialist workflows, enforcing quality gates
+### 🎯 Epic Tier
+**Chief of Staff** - Strategic coordination and project orchestration across all departments
 
-### Market Analyst
-- **Use when:** You need audience, market, or competitive clarity
-- **Activation:** "Market Analyst, research [topic] and highlight key opportunities"
-- **Best for:** Strategic foundation, evidence-backed positioning, ROI hypotheses
+### 🟦 Strategy Department (8 specialists)
+Core strategic and analytical specialists who provide insights, research, and strategic direction.
 
-### Art Director
-- **Use when:** Visual direction, brand identity, or creative quality is required
-- **Activation:** "Art Director, create [visual deliverable] based on [brief]"
-- **Best for:** Brand systems, hero assets, visual QA
+| Specialist | Use When | Path |
+|------------|----------|------|
+| **Market Analyst** | Market research, competitive analysis | `staff/strategy/market-analyst.yaml` |
+| **Creative Strategist** | Campaign strategy, creative direction | `staff/strategy/creative-strategist.yaml` |
+| **Brand Builder** | Brand architecture, identity development | `staff/strategy/brand-builder.yaml` |
+| **Data Analyst** | Data intelligence, analytics, experimentation | `staff/strategy/data-analyst.yaml` |
+| **Trend Forecaster** | Trend analysis, future insights | `staff/strategy/trend-forecaster.yaml` |
+| **Academic Researcher** | Scholarly research, literature analysis | `staff/strategy/academic-researcher.yaml` |
+| **Learning Scientist** | Learning design, cognitive science | `staff/strategy/learning-scientist.yaml` |
 
-### Copywriter *(example specialist)*
-- **Use when:** You need conversion-ready copy or messaging systems
-- **Activation:** "Copywriter, draft [asset] using [brief/insight link]"
-- **Best for:** Launch assets, nurture sequences, iteration sprints
-- **Reference:** `examples/specialists/completed-copywriter.yaml`
+### 🎨 Producers Department (5 specialists)
+Creative specialists who produce content, experiences, and narratives.
 
-### Automation Specialist
-- **Use when:** Repetitive processes or integrations need to be systematized
-- **Activation:** "Automation Specialist, design a workflow to automate [task]"
-- **Best for:** Operational efficiency, API + automation scripts, tooling audits
+| Specialist | Use When | Path |
+|------------|----------|------|
+| **Art Director** | Visual strategy, brand aesthetics | `staff/creative/art-director.yaml` |
+| **Copywriter** | Conversion copy, brand messaging | `staff/producers/copywriter.yaml` |
+| **Narrative Designer** | Story architecture, narrative systems | `staff/producers/narrative-designer.yaml` |
+| **Community Manager** | Community building, engagement | `staff/producers/community-manager.yaml` |
+| **Event Planner** | Event strategy, experience design | `staff/producers/event-planner.yaml` |
 
-### Prompt Engineer
-- **Use when:** Prompts or workflows need optimization or debugging
-- **Activation:** "Prompt Engineer, refine this prompt/workflow for [goal]"
-- **Best for:** Context discipline, specialist onboarding, LLM troubleshooting
+### 💰 Commerce Department (10 specialists)
+Growth, marketing, and revenue-focused specialists.
+
+| Specialist | Use When | Path |
+|------------|----------|------|
+| **Social Media Strategist** | Social media strategy, growth | `staff/commerce/social-media-strategist.yaml` |
+| **SEO Specialist** | Search optimization, organic growth | `staff/commerce/seo-specialist.yaml` |
+| **Conversion Optimizer** | CRO, revenue optimization | `staff/commerce/conversion-optimizer.yaml` |
+| **Customer Acquisition Specialist** | Growth marketing, acquisition | `staff/commerce/customer-acquisition-specialist.yaml` |
+| **Influencer Strategist** | Influencer marketing, partnerships | `staff/commerce/influencer-strategist.yaml` |
+| **Pricing Strategist** | Pricing strategy, revenue optimization | `staff/commerce/pricing-strategist.yaml` |
+| **Commercial Real Estate Analyst** | Property analysis, investment | `staff/commerce/commercial-real-estate-analyst.yaml` |
+| **Interior Designer** | Interior space design, styling | `staff/commerce/interior-designer.yaml` |
+| **Landscape Architect** | Landscape design, outdoor planning | `staff/commerce/landscape-architect.yaml` |
+| **Real Estate Investor** | RE investment strategy | `staff/commerce/real-estate-investor.yaml` |
+
+### ⚙️ Tech Department (9 specialists)
+Technical specialists who build systems, ensure security, and optimize operations.
+
+| Specialist | Use When | Path |
+|------------|----------|------|
+| **Automation Specialist** | Workflow optimization, tech solutions | `staff/technical/automation-specialist.yaml` |
+| **Prompt Engineer** | AI optimization, prompt design | `staff/technical/prompt-engineer.yaml` |
+| **Software Architect** | System design, technical strategy | `staff/tech/software-architect.yaml` |
+| **Productivity Architect** | Workflow design, personal systems | `staff/tech/productivity-architect.yaml` |
+| **Toolmaker** | Custom tool development | `staff/tech/toolmaker.yaml` |
+| **Operations Manager** | Business operations, process optimization | `staff/tech/operations-manager.yaml` |
+| **Quality Control Specialist** | QA, standards enforcement | `staff/tech/quality-control-specialist.yaml` |
+| **Cybersecurity Specialist** | Security, risk management | `staff/tech/cybersecurity-specialist.yaml` |
+| **Supply Chain Coordinator** | Supply chain, logistics optimization | `staff/tech/supply-chain-coordinator.yaml` |
+
+### 🌿 Health & Lifestyle Department (5 specialists)
+Wellness and personal development specialists.
+
+| Specialist | Use When | Path |
+|------------|----------|------|
+| **Habit Architect** | Behavior design, habit formation | `staff/health-lifestyle/habit-architect.yaml` |
+| **Cognitive Behavioral Therapist** | CBT, mental wellness | `staff/health-lifestyle/cognitive-behavioral-therapist.yaml` |
+| **Stoic Coach** | Stoic philosophy, resilience | `staff/health-lifestyle/stoic-coach.yaml` |
+| **Health Coach** | Holistic health, wellness optimization | `staff/health-lifestyle/health-coach.yaml` |
+| **Meditation Instructor** | Mindfulness, meditation practice | `staff/health-lifestyle/meditation-instructor.yaml` |
+
+### 📚 Knowledge Department (4 specialists)
+Specialized experts in legal, financial, and professional knowledge domains.
+
+| Specialist | Use When | Path |
+|------------|----------|------|
+| **Business Lawyer** | Business law, legal strategy | `staff/knowledge/business-lawyer.yaml` |
+| **Tax Strategist** | Tax planning, optimization | `staff/knowledge/tax-strategist.yaml` |
+| **Investment Advisor** | Investment strategy, wealth management | `staff/knowledge/investment-advisor.yaml` |
+| **Financial Therapist** | Financial psychology, money mindset | `staff/knowledge/financial-therapist.yaml` |
 
 ## Common Workflow Patterns
 
-- **Solo Task:** You → Specialist → Output
-- **Coordinated Project:** You → Chief of Staff → Multiple Specialists → Integrated Output
-- **Iterative Refinement:** Specialist → Output → Your Feedback → Specialist → Improved Output
-- **Template-Driven Sprint:** Chief of Staff → Project Brief → Specialists → Retrospective
+### Pattern 1: Single Specialist Direct
+**When:** Simple, focused task requiring one area of expertise
+```
+You → Specialist → Output
+```
+**Example:** "Copywriter, write a landing page for our new product launch."
+
+### Pattern 2: Chief of Staff Coordination
+**When:** Project requires multiple specialists or cross-functional work
+```
+You → Chief of Staff → Multiple Specialists → Integrated Output
+```
+**Example:** "Chief of Staff, coordinate a brand refresh involving strategy, creative, and content teams."
+
+### Pattern 3: Sequential Workflow
+**When:** Work builds on previous specialist output
+```
+You → Specialist A → Output → Specialist B → Final Output
+```
+**Example:** Market Analyst research → Creative Strategist campaign → Copywriter execution
+
+### Pattern 4: Iterative Refinement
+**When:** Output needs multiple rounds of feedback and improvement
+```
+Specialist → Draft → Your Feedback → Specialist → Refined Output → Repeat
+```
+**Example:** Brand Builder creates identity → feedback → refinement → approval
+
+### Pattern 5: Template-Driven Sprint
+**When:** Using project templates for systematic execution
+```
+You → Chief of Staff → Project Brief Template → Specialists → Quality Gates → Retrospective
+```
+
+## Activation Best Practices
+
+### Standard Activation Format
+```
+"Acting as the [Specialist Name] from my AI-Staff-HQ, [specific request]"
+```
+
+### Examples
+- ✅ "Acting as the Data Analyst from my AI-Staff-HQ, analyze our Q3 customer churn data."
+- ✅ "Acting as the Brand Builder from my AI-Staff-HQ, develop a brand strategy for our new product line."
+- ❌ "Can you help me with data?" (Too vague, no specialist context)
 
 ## Template Selection
 
@@ -62,30 +156,54 @@
 | New specialist | `templates/persona/new-staff-member-template.md` |
 | Custom workflow draft | Duplicate a file in `workflows/` and adapt |
 
+## Department Selection Guide
+
+**Choose Strategy when:** You need insights, research, positioning, or strategic direction
+**Choose Producers when:** You need content, experiences, narratives, or creative production
+**Choose Commerce when:** You need growth, marketing, revenue, or business development
+**Choose Tech when:** You need systems, security, automation, or technical solutions
+**Choose Health/Lifestyle when:** You need wellness, habits, mindset, or personal development
+**Choose Knowledge when:** You need legal, financial, or specialized professional expertise
+
 ## Where to Look Next
 
-- **Examples:** `examples/` directory shows real briefs, specialists, and transcripts.
-- **Getting Started:** `GETTING-STARTED.md` offers role-based entry paths.
-- **Philosophy:** `PHILOSOPHY.md` explains why the system stays lean.
-- **Templates:** `templates/` hold structured thinking tools for projects and personas.
+- **Full Directory:** `staff/README.md` - Complete specialist catalog with descriptions
+- **Implementation Status:** `IMPLEMENTATION-STATUS.md` - Current progress and gaps
+- **Examples:** `examples/` directory shows real briefs, specialists, and transcripts
+- **Getting Started:** `GETTING-STARTED.md` offers role-based entry paths
+- **Templates:** `templates/` hold structured thinking tools for projects and personas
 
 ## ❌ Common Mistakes
 
-- **Routing single-specialist tasks through the Chief of Staff**  
+- **Routing single-specialist tasks through the Chief of Staff**
   _Instead:_ Activate the specialist directly. Chief of Staff is for coordination across multiple roles.
 
-- **Trying to use every specialist immediately**  
-  _Instead:_ Start with one or two Essential specialists. Add others once a real project demands it.
+- **Not using the "Acting as" preamble**
+  _Instead:_ Always start with "Acting as the [Specialist] from my AI-Staff-HQ" to load the right context.
 
-- **Treating templates as forms to complete**  
-  _Instead:_ Delete sections that do not apply. Templates are thinking tools, not paperwork.
+- **Choosing specialists based on title alone**
+  _Instead:_ Read the specialist's capabilities and activation patterns in their YAML file.
 
-- **Skipping “Acting as the [Specialist] from my AI-Staff-HQ”**  
-  _Instead:_ Always anchor prompts with that phrase so the model loads the right context.
+- **Trying to use every specialist immediately**
+  _Instead:_ Start with 2-3 specialists for your current project. Expand as needed.
+
+- **Treating templates as forms to complete**
+  _Instead:_ Delete sections that don't apply. Templates are thinking tools, not paperwork.
+
+## 🎯 Power User Tips
+
+1. **Chain specialists for complex projects:** Market Analyst → Creative Strategist → Copywriter
+2. **Use Chief of Staff for quality gates:** "Ensure all deliverables meet our standards before final delivery"
+3. **Cross-department collaboration:** Combine Strategy + Producers + Commerce for launches
+4. **Specialist synergies:** Habit Architect + Productivity Architect for personal systems
+5. **Reference previous work:** "Use the brand guidelines from Brand Builder's previous output"
 
 ---
 
 ### How to Use This File
-- Keep a copy open while you work to remind yourself which specialist to activate and why.
-- Share it with collaborators so they know who to call on inside your AI workforce.
-- Update it whenever your roster or template toolkit changes; commit the changes for future reference.
+- Keep it open as a reference while working with your AI staff
+- Bookmark specialist paths you use frequently
+- Update when you add new specialists or discover new patterns
+- Share with team members so they know how to activate specialists
+
+_Last updated: 2025-11-08 | Current roster: 41 specialists across 6 departments_

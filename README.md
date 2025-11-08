@@ -52,28 +52,38 @@ Welcome to AI-Staff-HQ, a framework for building your own AI workforce. This rep
 
 Read the design rationale in [PHILOSOPHY.md](PHILOSOPHY.md).
 
-## **⚡ Your Core AI Workforce**
+## **⚡ Your AI Workforce**
 
-AI-Staff-HQ ships with **five essential specialists** you can activate immediately, plus a library of completed examples you can fork when you need more depth.
+AI-Staff-HQ has evolved into **41 high-quality specialists** across 6 departments, organized using MtG color-coded principles. Start simple, expand as needed.
 
-### The Essential 5 (Start Here)
-These roles cover 80% of the work in my own operations.
+### Start Here: Core Team
+These roles cover the majority of strategic, creative, and technical work:
 
-- 🏢 [**Chief of Staff**](staff/strategy/chief-of-staff.yaml) — Project coordination, quality gates, retrospectives  
-- 📈 [**Market Analyst**](staff/strategy/market-analyst.yaml) — Research, audience insight, competitive scans  
-- 🎨 [**Art Director**](staff/creative/art-director.yaml) — Visual identity, creative direction, asset QA  
-- ✍️ [**Copywriter**](examples/specialists/completed-copywriter.yaml) — Conversion copy, messaging systems, iteration loops  
-- ⚡ [**Automation Specialist**](staff/technical/automation-specialist.yaml) — Workflow automation, tooling integration
+- 🏢 [**Chief of Staff**](staff/strategy/chief-of-staff.yaml) — Project coordination, quality gates, cross-department orchestration
+- 📈 [**Market Analyst**](staff/strategy/market-analyst.yaml) — Research, competitive intelligence, audience insights
+- 🎨 [**Creative Strategist**](staff/strategy/creative-strategist.yaml) — Campaign strategy, creative direction
+- 💰 [**Brand Builder**](staff/strategy/brand-builder.yaml) — Brand architecture, identity systems
+- ✍️ [**Copywriter**](staff/producers/copywriter.yaml) — Conversion copy, messaging systems
+- 📊 [**Data Analyst**](staff/strategy/data-analyst.yaml) — Analytics, experimentation, insights
 
-> **Tip:** Activate one of the Essential 5 for your first project, then layer in additional roles as you discover gaps.
+> **Tip:** Start with 2-3 specialists for your first project. Expand to other departments as you discover needs.
 
-### Extend the Team (Use When Needed)
-- 📊 [**Brand Strategist**](examples/specialists/completed-brand-strategist.yaml) — Positioning architecture, narrative systems  
-- 📉 [**Data Analyst**](examples/specialists/completed-data-analyst.yaml) — Diagnostics, opportunity sizing, experimentation  
-- 🤖 [**Prompt Engineer**](staff/technical/prompt-engineer.yaml) — Prompt design, context discipline, workflow debugging  
-- 📚 Create your own specialists by copying `templates/persona/new-staff-member-template.md` into `staff/` and tailoring it to your domain.
+### Full Workforce: 41 Specialists Across 6 Departments
 
-Need a different capability (e.g., Social Media Manager, UX Researcher)? Use the template, apply the patterns in `examples/specialists/notes-on-creation.md`, and add the new role to your `staff/` directory when it earns its keep.
+**🟦 Strategy (8):** Creative Strategist, Brand Builder, Data Analyst, Market Analyst, Trend Forecaster, Academic Researcher, Learning Scientist
+**🎨 Producers (5):** Art Director, Copywriter, Narrative Designer, Community Manager, Event Planner
+**💰 Commerce (10):** Social Media Strategist, SEO Specialist, Conversion Optimizer, Customer Acquisition, Influencer Strategist, Pricing Strategist, Real Estate (4 specialists)
+**⚙️ Tech (9):** Software Architect, Productivity Architect, Automation Specialist, Toolmaker, Operations Manager, Quality Control, Cybersecurity, Supply Chain
+**🌿 Health/Lifestyle (5):** Habit Architect, Cognitive Behavioral Therapist, Stoic Coach, Health Coach, Meditation Instructor
+**📚 Knowledge (4):** Business Lawyer, Tax Strategist, Investment Advisor, Financial Therapist
+
+📋 **Full Directory:** See [staff/README.md](staff/README.md) for complete specialist catalog
+📊 **Implementation Status:** See [IMPLEMENTATION-STATUS.md](IMPLEMENTATION-STATUS.md) for current progress
+
+### Build Your Own
+- 📚 Copy `templates/persona/new-staff-member-template.md` into the appropriate department
+- 🔍 Study existing specialists as examples of depth and structure
+- 🎯 Use the Prompt Engineer to help design new specialists
 
 ## **🎯 How to Build Your AI Workforce**
 
@@ -104,15 +114,22 @@ Need a different capability (e.g., Social Media Manager, UX Researcher)? Use the
 ## **🏗️ Repository Structure**
 
 AI-Staff-HQ/
-├── 📖 README.md — Start here  
-├── 🎯 GETTING-STARTED.md — Choose a learning path  
-├── 💭 PHILOSOPHY.md — Why it’s designed this way  
-├── ⚡ docs/QUICK-REFERENCE.md — Fast lookups  
-├── 👥 staff/ — Essential specialists (Strategy, Creative, Technical)  
-├── 📚 examples/ — Completed specialists, project briefs, workflows, before/after ROI  
-├── 🛠️ templates/ — Persona + project templates (simple & comprehensive)  
-├── ⚡ workflows/ — System workflows and automation concepts  
-├── 📖 handbooks/ — Deep dives on prompt engineering & coordination  
+├── 📖 README.md — Start here
+├── 🎯 GETTING-STARTED.md — Choose a learning path
+├── 💭 PHILOSOPHY.md — Why it's designed this way
+├── ⚡ docs/QUICK-REFERENCE.md — Fast lookups (updated for 41 specialists)
+├── 📊 IMPLEMENTATION-STATUS.md — Current progress and gaps
+├── 👥 staff/ — 41 specialists across 6 MtG color-coded departments
+│   ├── strategy/ — Blue (8 specialists)
+│   ├── producers/ — Red (5 specialists + culinary subdirectory)
+│   ├── commerce/ — Black (10 specialists)
+│   ├── tech/ — Grey/Artifact (9 specialists)
+│   ├── health-lifestyle/ — Green (5 specialists)
+│   └── knowledge/ — White (4 specialists)
+├── 📚 examples/ — Completed specialists, project briefs, workflows
+├── 🛠️ templates/ — Persona + project templates
+├── ⚡ workflows/ — System workflows and automation concepts
+├── 📖 handbooks/ — Deep dives on prompt engineering & coordination
 └── 🧠 knowledge-base/ — Principles, research, decisions, retrospective logs
 
 ## **🧠 The Knowledge System**
@@ -128,29 +145,33 @@ This repository is designed around **systematic knowledge management**:
 ```mermaid
 graph TD
     A[You] -->|Activate| B[Chief of Staff]
-    B -->|Coordinates| C[Strategy Department]
-    B -->|Coordinates| D[Creative Department]
-    B -->|Coordinates| E[Technical Department]
+    B -->|Coordinates| C[🟦 Strategy - 8]
+    B -->|Coordinates| D[🎨 Producers - 5]
+    B -->|Coordinates| E[💰 Commerce - 10]
+    B -->|Coordinates| F[⚙️ Tech - 9]
+    B -->|Coordinates| G[🌿 Health/Lifestyle - 5]
+    B -->|Coordinates| H[📚 Knowledge - 4]
 
-    C --> F[Market Analyst]
-    D --> G[Art Director]
-    E --> H[Automation Specialist]
-    E --> I[Prompt Engineer]
+    C --> C1[Market Analyst<br/>Creative Strategist<br/>Brand Builder<br/>Data Analyst]
+    D --> D1[Copywriter<br/>Narrative Designer<br/>Community Manager]
+    E --> E1[Social Media<br/>SEO<br/>Conversion<br/>Real Estate]
+    F --> F1[Software Architect<br/>Automation<br/>Cybersecurity]
+    G --> G1[Habit Architect<br/>Health Coach<br/>Stoic Coach]
+    H --> H1[Business Lawyer<br/>Tax Strategist<br/>Investment Advisor]
 
-    J[Your Custom Specialists] -.->|Integrate| B
+    I[Your Custom Specialists] -.->|Integrate| B
 
     K[Templates] -->|Structure thinking| A
     L[Workflows] -->|Guide execution| B
-    M[Knowledge Base] -->|Informs| C
-    M -->|Informs| D
-    M -->|Informs| E
+    M[Knowledge Base] -->|Informs All| B
 ```
 
 **How It Works:**
-- You activate core specialists directly or route through the Chief of Staff for multi-specialist coordination.
-- The Chief of Staff orchestrates departments, ensuring Strategy, Creative, and Technical teams stay aligned.
-- Your custom specialists plug into the system without friction, following the same coordination protocols.
-- Templates provide structure for decisions, workflows guide execution, and the knowledge base keeps every specialist informed.
+- You activate specialists directly for single-domain tasks or route through the Chief of Staff for cross-functional coordination
+- The Chief of Staff orchestrates all 6 departments: Strategy, Producers, Commerce, Tech, Health/Lifestyle, and Knowledge
+- Each specialist is fully documented with capabilities, activation patterns, and workflows
+- Your custom specialists integrate seamlessly using the same coordination protocols
+- Templates structure thinking, workflows guide execution, and the knowledge base keeps every specialist informed
 
 ## **🚀 Getting Started Checklist**
 
