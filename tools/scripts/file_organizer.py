@@ -24,7 +24,8 @@ def organize_files(directory: str, *, destination: str | None = None, dry_run: b
 
         extension = item.suffix.lower().lstrip('.') or 'no_extension'
         target_dir = target_root / extension
-        target_dir.mkdir(parents=True, exist_ok=True)
+        if not dry_run:
+            target_dir.mkdir(parents=True, exist_ok=True)
 
         target_path = target_dir / item.name
         counter = 1
