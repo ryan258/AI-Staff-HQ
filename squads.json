@@ -1,0 +1,19 @@
+{
+  "content": {
+    "staff": [
+      "strategy/chief-of-staff.yaml",
+      "strategy/market-analyst.yaml",
+      "producers/copywriter.yaml"
+    ],
+    "dispatcher": "dhp-content.sh"
+  },
+  "creative": {
+    "staff": [
+      "strategy/chief-of-staff.yaml",
+      "producers/narrative-designer.yaml",
+      "strategy/creative-strategist.yaml",
+      "health-lifestyle/meditation-instructor.yaml"
+    ],
+    "dispatcher": "dhp-creative.sh"
+  }
+}
