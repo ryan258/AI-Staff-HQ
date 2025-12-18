@@ -173,7 +173,7 @@ You → Chief of Staff → Project Brief Template → Specialists → Quality Ga
 - **Getting Started:** `GETTING-STARTED.md` offers role-based entry paths
 - **Templates:** `templates/` hold structured thinking tools for projects and personas
 
-## ❌ Common Mistakes
+## ⚠️ Rules of Engagement
 
 - **Routing single-specialist tasks through the Chief of Staff**
   _Instead:_ Activate the specialist directly. Chief of Staff is for coordination across multiple roles.

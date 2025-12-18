@@ -6,7 +6,7 @@ Welcome to AI-Staff-HQ, a framework for building your own AI workforce. This rep
 
 ## **🚀 What This Is**
 
-**AI-Staff-HQ** is not just a collection of prompts—it's an extensible ecosystem for creating and managing your own AI workforce. It provides a set of core specialists, templates, and workflows that you can use as a starting point to build a team of AI assistants that know your projects, understand your standards, and can collaborate with each other.
+**AI-Staff-HQ** is my external brain—an extensible ecosystem for creating and managing my own AI workforce. It provides the core specialists, templates, and workflows I use to build a team of AI assistants that know my projects, understand my standards, and can collaborate with each other.
 
 ### **The Problem This Solves**
 
@@ -25,32 +25,11 @@ Welcome to AI-Staff-HQ, a framework for building your own AI workforce. This rep
 - ✅ **Core Template System** - Professional frameworks for creating new specialists and managing projects.
 - ✅ **Scalable Excellence** - A system for achieving consistent, high-quality output from your AI team.
 
-## 🎯 Understanding This Repository
+**This is cognitive infrastructure as code** - my personal AI operating system.
 
-**This is cognitive infrastructure as code** - my personal AI operating system, made public to share a methodology.
-
-### What This Repo IS:
-- ✅ **A paradigm demonstration:** See how to move from one-off prompts to orchestrated AI workflows
-- ✅ **Personal infrastructure:** Optimized for context window management and systematic thinking
-- ✅ **A starting point:** Fork it, strip what you don't need, rebuild it for your context
-- ✅ **A methodology:** Learn the patterns, then create your own version
-
-### What This Repo IS NOT:
-- ❌ **Not turnkey:** Templates are thinking frameworks to fill out, not pre-made solutions
-- ❌ **Not complete:** Workflows are blueprints you complete as you need them
-- ❌ **Not prescriptive:** Your AI workforce should look different than mine
-- ❌ **Not a product:** This is personal infrastructure shared publicly
-
-### If You're New Here:
-**Don't try to use everything.** 
-1. Pick ONE specialist that matches your needs
-2. Use ONE template for a real project
-3. Follow ONE workflow from start to finish
-4. Build from there
-
-**The goal isn't to clone this - it's to inspire you to build your own.**
-
-Read the design rationale in [PHILOSOPHY.md](PHILOSOPHY.md).
+### Principles:
+- ✅ **Infrastructure:** Optimized for context window management and systematic thinking
+- ✅ **Methodology:** Patterns for moving from one-off prompts to orchestrated workflows
 
 ## **⚡ Your AI Workforce**
 
@@ -208,44 +187,12 @@ Prefer a guided overview? Start with [`GETTING-STARTED.md`](GETTING-STARTED.md) 
 - **Modular Architecture** \- Each specialist you create works independently or collaboratively.
 - **Systematic Integration** \- The framework provides clear protocols for specialist coordination.
 
-## **🔧 Customization & Growth**
+## **🚀 Next Steps**
 
-### **System Optimization**
+👉 **Start Working:** Go to [`GETTING-STARTED.md`](GETTING-STARTED.md) for the Standard Operating Procedure.
 
-- **Specialist Customization** \- Adapt any of the core specialists for your specific industry or needs.
-- **Workflow Development** \- Create custom processes for your unique business and life challenges.
+👉 **Find Help:** Keep the [**Quick Reference Guide**](docs/QUICK-REFERENCE.md) handy for activation patterns.
 
-### **Community Contribution**
-
-- **Share Your Specialists** - Contribute your custom specialists to the community.
-- **Share Your Workflows** \- Contribute proven processes for complex projects.
-
-## **🤝 Community & Support**
-
-This is a framework for building your own AI workforce. The core components have been battle-tested in real business and personal projects.
-
-**Questions? Optimizations? Success Stories?**
-
-- Open an issue for bugs or documentation improvements.
-- Submit pull requests for workflow enhancements.
-- Share your most effective specialist combinations and project patterns.
-- Review the [Contributing Guidelines](CONTRIBUTING.md) before proposing changes.
-- Track major shifts in the [Version History](meta/VERSION-HISTORY.md).
-
-## **🎯 Next Steps**
-
-**Ready to build your AI workforce?**
-
-👉 **First Time Here?** Start with the [**Getting Started Checklist**](#-getting-started-checklist) or jump straight to [`GETTING-STARTED.md`](GETTING-STARTED.md) for a role-based path.
-
-👉 **Want to See It Working?** Tour the [**examples/**](examples/) directory—specialists → project briefs → workflows → before/after.
-
-👉 **Ready to Build?** Use the [**Templates**](templates/) to create your own specialists and briefs, or branch off the finished examples in `examples/specialists/`.
-
-👉 **Need Quick Help?** Keep the [**Quick Reference Guide**](docs/QUICK-REFERENCE.md) handy for activation patterns, common mistakes, and template selection.
-
-👉 **Launch Prep**: Read the [launch article](meta/articles/ai-staff-hq-launch.md) and reuse the shareable assets in `meta/assets/` when you introduce your fork.
-
-**🏆 You now have a framework for building a complete AI workforce tailored to your needs. Time to start architecting!**
+**🏆 I have a framework for building a complete AI workforce tailored to my needs.**
 
 _Built with systematic thinking, designed for extensibility._ 🚀

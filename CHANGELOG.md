@@ -17,6 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Directory Structure:** Consolidated `staff/technical` into `staff/tech` and `staff/creative` into `staff/producers`.
 - **Documentation:** Updated all counts and paths in `README.md`, `staff/README.md`, and `docs/QUICK-REFERENCE.md`.
 - **Specialist Schema:** Standardized quoting for mottos and descriptions in YAML files.
+- **Cognitive Accessibility:** Rewrote `GETTING-STARTED.md` from multi-path learning framework to unambiguous standard operating procedure.
+- **Personal Documentation:** Shifted `README.md` framing from "your workforce" to "MY workforce" - personal infrastructure focus.
+- **Quick Reference:** Reframed "Common Mistakes" as "Rules of Engagement" in `docs/QUICK-REFERENCE.md`.
 
 ### Removed
 - **Community Platform:** Removed "Community Contribution Platform" from roadmap to focus on local tooling.
