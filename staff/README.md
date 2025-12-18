@@ -31,7 +31,7 @@ Core strategic and analytical specialists who provide insights, research, and st
 
 Creative specialists who produce content, experiences, and narratives across all mediums.
 
-- **[Art Director](creative/art-director.yaml)** _(legacy location)_ - Visual strategy and brand aesthetics
+- **[Art Director](producers/art-director.yaml)** - Visual strategy and brand aesthetics
 - **[Copywriter](producers/copywriter.yaml)** - Conversion copy and brand messaging
 - **[Narrative Designer](producers/narrative-designer.yaml)** - Story architecture and narrative systems
 - **[Community Manager](producers/community-manager.yaml)** - Community building and engagement
@@ -66,8 +66,8 @@ Growth, marketing, and revenue-focused specialists who drive business results.
 
 Technical specialists who build systems, ensure security, and optimize operations.
 
-- **[Automation Specialist](technical/automation-specialist.yaml)** _(legacy location)_ - Workflow optimization and tech solutions
-- **[Prompt Engineer](technical/prompt-engineer.yaml)** _(legacy location)_ - AI optimization and prompt design
+- **[Automation Specialist](tech/automation-specialist.yaml)** - Workflow optimization and tech solutions
+- **[Prompt Engineer](tech/prompt-engineer.yaml)** - AI optimization and prompt design
 - **[Software Architect](tech/software-architect.yaml)** - Software system design and technical strategy
 - **[Productivity Architect](tech/productivity-architect.yaml)** - Workflow design and personal systems
 - **[Toolmaker](tech/toolmaker.yaml)** - Custom tool and solution development
@@ -143,10 +143,3 @@ All specialists include:
 
 ---
 
-## 📁 Legacy Directories
-
-Some specialists remain in their original locations for backwards compatibility:
-- `staff/creative/` - Contains Art Director (will be deprecated in favor of `producers/`)
-- `staff/technical/` - Contains Automation Specialist and Prompt Engineer (will be deprecated in favor of `tech/`)
-
-All new specialists are being added to the updated directory structure.

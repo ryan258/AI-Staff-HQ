@@ -235,12 +235,15 @@ staff/
 
 | Document | Status | Last Updated |
 |----------|--------|--------------|
-| **staff/README.md** | ✅ Current | 2025-11-08 |
-| **ROSTER.md** | ✅ Reference | 2025-11-08 |
-| **ROSTER-plan.md** | ✅ Current | 2025-11-08 |
-| **IMPLEMENTATION-STATUS.md** | ✅ Current | 2025-11-08 |
-| **Main README.md** | ⚠️ Needs Update | - |
-| **CHANGELOG** | ⚠️ Needs Creation | - |
+| `README.md` | **Current** | Updated structure and counts |
+| `ROADMAP.md` | **Current** | Removed community platform, focused on local tools |
+| `IMPLEMENTATION-STATUS.md` | **Current** | Updated status and counts |
+| `GETTING-STARTED.md` | **Current** | Verified entry paths |
+| `docs/QUICK-REFERENCE.md` | **Current** | Updated paths and date |
+| `staff/README.md` | **Current** | Updated paths and counts |
+| `ROSTER.md` | **Reference** | List of all planned specialists |
+| `ROSTER-plan.md` | **Reference** | detailed implementation plan |
+| `CHANGELOG` | ⚠️ Needs Creation | - |
 
 ---
 

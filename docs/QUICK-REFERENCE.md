@@ -41,7 +41,7 @@ Creative specialists who produce content, experiences, and narratives.
 
 | Specialist | Use When | Path |
 |------------|----------|------|
-| **Art Director** | Visual strategy, brand aesthetics | `staff/creative/art-director.yaml` |
+| **Art Director** | Visual strategy, brand aesthetics | `staff/producers/art-director.yaml` |
 | **Copywriter** | Conversion copy, brand messaging | `staff/producers/copywriter.yaml` |
 | **Narrative Designer** | Story architecture, narrative systems | `staff/producers/narrative-designer.yaml` |
 | **Community Manager** | Community building, engagement | `staff/producers/community-manager.yaml` |
@@ -68,8 +68,8 @@ Technical specialists who build systems, ensure security, and optimize operation
 
 | Specialist | Use When | Path |
 |------------|----------|------|
-| **Automation Specialist** | Workflow optimization, tech solutions | `staff/technical/automation-specialist.yaml` |
-| **Prompt Engineer** | AI optimization, prompt design | `staff/technical/prompt-engineer.yaml` |
+| **Automation Specialist** | Workflow optimization, tech solutions | `staff/tech/automation-specialist.yaml` |
+| **Prompt Engineer** | AI optimization, prompt design | `staff/tech/prompt-engineer.yaml` |
 | **Software Architect** | System design, technical strategy | `staff/tech/software-architect.yaml` |
 | **Productivity Architect** | Workflow design, personal systems | `staff/tech/productivity-architect.yaml` |
 | **Toolmaker** | Custom tool development | `staff/tech/toolmaker.yaml` |
@@ -206,4 +206,4 @@ You → Chief of Staff → Project Brief Template → Specialists → Quality Ga
 - Update when you add new specialists or discover new patterns
 - Share with team members so they know how to activate specialists
 
-_Last updated: 2025-11-08 | Current roster: 41 specialists across 6 departments_
+_Last updated: 2025-12-18 | Current roster: 41 specialists across 6 departments_

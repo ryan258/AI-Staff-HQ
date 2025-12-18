@@ -31,8 +31,8 @@ The AI-Staff-HQ has been refactored to be a lean and extensible framework. The f
 
 #### **Key Initiatives**
 
-- **Local Validation Tooling:**
-  - **Mechanism:** Develop a CLI linter (`tools/validate_specialist.py`) to help users create consistent specialist profiles locally.
+- **Local Validation Tooling:** (✅ Completed)
+  - **Mechanism:** Use the CLI linter (`tools/validate_specialist.py`) to help users create consistent specialist profiles locally. Run via `uv run tools/validate_specialist.py`.
   - **Goal:** Ensure the quality and consistency of your personal or shared specialists.
 
 - **Documentation & Examples:**
