@@ -123,6 +123,11 @@ This project uses `pytest`:
 uv run pytest
 ```
 
+### Phase 4: Orchestrated Workflows & UI
+- CLI graph: `uv run workflows/graphs/strategy_tech_handoff.py "New product idea" --auto-approve`
+- Streamlit UI (install `uv sync --extra ui`): `uv run streamlit run ui/app.py`
+- More details: `docs/phase4.md`
+
 ## **🏗️ Repository Structure**
 
 AI-Staff-HQ/

@@ -80,11 +80,6 @@ Successfully built personal cognitive infrastructure:
 **Goal**: Enable complex, self-directed multi-agent workflows and provide a user-friendly web interface.
 
 #### **Key Initiatives**
-- **LangGraph Orchestration:**
-  - **Mechanism:** Implement complex workflows (e.g., `strategy-tech-handoff`) as executable state graphs.
-  - **Goal:** "Human-on-the-loop" automation—you approve the handoffs, the graph handles the typing and context passing.
-
-- **Web UI (Streamlit/FastAPI):**
-  - **Mechanism:** A browser-based interface for managing specialists, viewing conversation history, and visual workflow orchestration.
-  - **Goal:** reduce friction for non-technical usage and visualization.
-
+- **LangGraph Orchestration:** ✅ Added `orchestrator/graph_runner.py` and `workflows/graphs/strategy_tech_handoff.py` (human-on-the-loop with approvals, logged runs).
+- **Web UI (Streamlit/FastAPI):** ✅ Streamlit dashboard (`ui/app.py`) to launch the graph, view outputs, and inspect step logs.
+- **Docs & Packaging:** ✅ `docs/phase4.md` with run instructions; optional UI extra in `pyproject.toml`.
