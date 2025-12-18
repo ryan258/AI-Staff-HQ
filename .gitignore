@@ -10,7 +10,7 @@ venv/
 
 # Environment
 .env
-.env.*
+# .env.*
 
 # Knowledge Base
 knowledge-base/research/
