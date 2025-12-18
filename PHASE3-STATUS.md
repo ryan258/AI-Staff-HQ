@@ -105,9 +105,9 @@ All core engine files have been implemented:
    ```
 
 4. **Verify Model Routing**
-   - Check that Chief of Staff uses Claude 3.5 Sonnet
-   - Check that Copywriter uses GPT-4o
-   - Try model override: `--model anthropic/claude-3-opus`
+   - Check that Chief of Staff uses deepseek/deepseek-v3.2-speciale
+   - Check that Copywriter uses deepseek/deepseek-v3.2-speciale
+   - Try model override: `--model deepseek/deepseek-v3.2-speciale`
 
 ### Phase 2: Conversation State (Not Yet Started)
 
@@ -289,9 +289,9 @@ uv run tools/activate.py --list --department tech
 ✅ All core files created
 ✅ Dependencies defined in pyproject.toml
 ✅ Configuration system working
-⏳ Dependencies installed (next: `uv sync`)
-⏳ Can activate specialist (next: test)
-⏳ Gets responses from OpenRouter (next: test)
-⏳ Model routing works correctly (next: verify)
+✅ Dependencies installed
+✅ Can activate specialist
+✅ Gets responses from OpenRouter
+✅ Model routing works correctly
 
-**Status: Ready for testing!**
+**Status: Phase 1 VERIFIED ✅**
