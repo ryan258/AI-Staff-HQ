@@ -69,11 +69,19 @@ class SpecialistAgent:
         # Add user message to conversation
         self.state.add_message(HumanMessage(content=user_input))
 
-        # Invoke LLM with full conversation history
-        response = self.llm.invoke(self.state.messages)
+        try:
+            # Invoke LLM with full conversation history
+            response = self.llm.invoke(self.state.messages)
+            response_text = response.content
+        except Exception as e:
+            # Basic error handling for now - could be enhanced with specific API error checking
+            error_msg = f"Error: Failed to get response from AI model. Details: {str(e)}"
+            # We don't append the error to history, just return it so UI can display it
+            # But maybe we should return it as a system message? 
+            # For now, simply returning the strings.
+            return f"⚠️ {error_msg}"
 
         # Extract and store response
-        response_text = response.content
         self.state.add_message(AIMessage(content=response_text))
         
         # Save state

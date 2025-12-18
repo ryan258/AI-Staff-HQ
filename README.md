@@ -74,21 +74,54 @@ These roles cover the majority of strategic, creative, and technical work:
 4. **Integrate and Test** - Start using your new specialist in a simple workflow.
 5. **Coordinate with the Chief of Staff** - Integrate your new specialist into larger projects.
 
-### **Example: Creating a 'UX Designer' Specialist**
+## Quick Start
 
-1. **Copy the template:** `cp templates/persona/new-staff-member-template.md staff/tech/ux-designer.yaml`
-2. **Define the role:**
-   ```yaml
-   name: UX Designer
-   department: Tech
-   role: User Experience Designer
-   skills:
-     - User Research
-     - Wireframing
-     - Prototyping
-   ```
-3. **Activate your new specialist:**
-   > "Act as my UX Designer. I need you to create a wireframe for a mobile app's login screen."
+1.  **Install Dependencies** (using `uv`):
+    ```bash
+    uv sync
+    ```
+
+2.  **Configure Environment**:
+    ```bash
+    cp .env.example .env
+    # Edit .env and add your OPENROUTER_API_KEY
+    ```
+
+3.  **Run with Interactive Chat**:
+    ```bash
+    uv run tools/activate.py chief-of-staff
+    ```
+
+## Usage
+
+### Interactive Mode
+Start a conversational session with any specialist:
+```bash
+uv run tools/activate.py <specialist-slug>
+# Example:
+uv run tools/activate.py creative-director
+```
+*   **Sessions**: Chat history is automatically saved to `~/.ai-staff-hq/sessions/`.
+*   **Resume**: Use `--resume last` to pick up where you left off.
+*   **Commands**: Use `/exit` to quit.
+
+### One-Shot Queries
+For quick questions without entering interactive mode:
+```bash
+uv run tools/activate.py strategy -q "Analyze this business model..."
+```
+
+### Listing Specialists
+View all available roles:
+```bash
+uv run tools/activate.py --list
+```
+
+### Running Tests
+This project uses `pytest`:
+```bash
+uv run pytest
+```
 
 ## **🏗️ Repository Structure**
 

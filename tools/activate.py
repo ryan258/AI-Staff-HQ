@@ -59,11 +59,16 @@ def interactive_loop(agent: SpecialistAgent) -> None:
 
             # Query
             with console.status("[bold yellow]Thinking...", spinner="dots"):
-                response = agent.query(user_input)
-
-            console.print()
-            console.print(Markdown(response))
-            console.print()
+                try:
+                    response = agent.query(user_input)
+                    
+                    # Streaming simulated by printing the whole response for now
+                    # (LangChain streaming is supported but requires callback handlers)
+                    console.print(Panel(Markdown(response), title=f"{info['specialist']}", border_style="green"))
+                    
+                except KeyboardInterrupt:
+                    console.print("\n[yellow]Generation cancelled by user.[/yellow]")
+                    continue
 
         except KeyboardInterrupt:
             continue
@@ -80,11 +85,13 @@ def query_mode(agent: SpecialistAgent, query: str) -> None:
     console.print(f"\n[bold]{info['specialist']}[/bold] [dim](using {info['model']})[/dim]")
     console.print(f"[dim]Session: {info['session_id']}[/dim]\n")
 
-    with console.status("[bold yellow]Processing query...", spinner="dots"):
-        response = agent.query(query)
-
-    console.print(Markdown(response))
-    console.print()
+    with console.status("[bold green]Processing query...", spinner="dots"):
+        try:
+            response = agent.query(query)
+            console.print(Panel(Markdown(response), title=f"{agent.schema.specialist}", border_style="green"))
+        except KeyboardInterrupt:
+            console.print("\n[yellow]Generation cancelled by user.[/yellow]")
+            sys.exit(130)
 
 
 def list_specialists(staff_dir: Path, department: Optional[str] = None) -> None:

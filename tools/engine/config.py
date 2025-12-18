@@ -3,6 +3,7 @@
 import os
 from pathlib import Path
 from typing import Optional
+from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -24,8 +25,19 @@ class Config(BaseSettings):
     default_temperature: float = 0.7
 
     # Session Storage
-    session_dir: Path = Path.home() / ".ai-staff-hq" / "sessions"
+    # Session Storage
+    # We use a factory or validator to allow dynamic Home resolution
+    session_dir: Path = None  # type: ignore
     save_sessions: bool = True
+
+    # ...
+    
+    @field_validator("session_dir", mode="before")
+    @classmethod
+    def set_session_dir(cls, v: Optional[Path]) -> Path:
+        if v is not None:
+            return Path(v)
+        return Path.home() / ".ai-staff-hq" / "sessions"
 
     # CLI Preferences
     rich_output: bool = True
