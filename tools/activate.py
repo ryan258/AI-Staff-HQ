@@ -123,7 +123,7 @@ def list_specialists(staff_dir: Path, department: Optional[str] = None) -> None:
         for name in sorted(names):
             console.print(f"  - {name}")
 
-    console.print(f"\n[dim]Total: {len(specialists)} specialists[/dim]\n")
+    console.print(f"\n[dim]Total: {total} specialists[/dim]\n")
 
 
 def main():

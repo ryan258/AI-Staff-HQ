@@ -1,5 +1,6 @@
 # Model routing configuration for AI Staff HQ
-# Maps specialist roles and departments to optimal models via OpenRouter
+# Maps specialist roles and departments to optimal models via OpenRouter.
+# Lookup order: package-local config/model_routing.yaml (preferred), then CWD/config/model_routing.yaml, otherwise defaults.
 
 # Role-based routing (takes precedence)
 role_routing:

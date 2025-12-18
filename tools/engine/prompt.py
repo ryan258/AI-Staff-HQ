@@ -124,7 +124,7 @@ You are a {identity.role}.
         # Check for workflow fields (schema 'extra'='allow' lets them through)
         workflows = []
         for field, value in self.specialist.model_dump().items():
-            if field.endswith('_workflow') and isinstance(value, list):
+            if (field.endswith('_workflow') or field.endswith('_process')) and isinstance(value, list):
                 steps = []
                 for phase in value:
                     phase_title = phase.get('phase', 'Phase')

@@ -177,7 +177,7 @@ def load_specialist(
     # 2. Search by name (stem) in staff directory recursively
     # We prioritize exact name matches
     for yaml_file in staff_dir.rglob("*.yaml"):
-        if yaml_file.stem == specialist_identifier:
+        if yaml_file.stem == slug:
             return SpecialistAgent(yaml_file, **kwargs)
 
     # 3. Not found

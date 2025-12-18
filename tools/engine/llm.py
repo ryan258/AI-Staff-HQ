@@ -16,10 +16,20 @@ class ModelRouter:
 
         # Load routing configuration
         if routing_config_path is None:
-            routing_config_path = Path(__file__).parent.parent.parent / "config" / "model_routing.yaml"
-
-        with open(routing_config_path) as f:
-            self.routing = yaml.safe_load(f)
+            # Try typical locations (prefer package-local over CWD)
+            candidates = [
+                Path(__file__).parent.parent.parent / "config" / "model_routing.yaml",  # Package relative
+                Path("config/model_routing.yaml"),  # CWD
+            ]
+            for candidate in candidates:
+                if candidate.exists():
+                    routing_config_path = candidate
+                    break
+        
+        self.routing = {}
+        if routing_config_path and routing_config_path.exists():
+            with open(routing_config_path) as f:
+                self.routing = yaml.safe_load(f) or {}
 
     def select_model(
         self,
@@ -41,16 +51,19 @@ class ModelRouter:
             return override
 
         # 2. Budget mode overrides everything except user override
-        if self.routing.get('budget_mode', {}).get('enabled', False):
-            return self.routing['budget_mode']['model']
+        budget_cfg = self.routing.get('budget_mode', {})
+        if budget_cfg.get('enabled', False):
+            return budget_cfg.get('model', self.config.default_model)
 
         # 3. Role-based routing
-        if role in self.routing['role_routing']:
-            return self.routing['role_routing'][role]
+        role_routing = self.routing.get('role_routing', {})
+        if role in role_routing:
+            return role_routing[role]
 
         # 4. Department-based fallback
-        if department and department in self.routing['department_routing']:
-            return self.routing['department_routing'][department]
+        dept_routing = self.routing.get('department_routing', {})
+        if department and department in dept_routing:
+            return dept_routing[department]
 
         # 5. Default model
         return self.config.default_model

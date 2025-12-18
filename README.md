@@ -185,6 +185,10 @@ graph TD
 - Your custom specialists integrate seamlessly using the same coordination protocols
 - Templates structure thinking, workflows guide execution, and the knowledge base keeps every specialist informed
 
+### Model Routing
+- Routing lives in `config/model_routing.yaml` in this repo; if missing, the engine will also check `config/model_routing.yaml` in your current working directory.
+- If no routing file is found (or it is empty), the system falls back to the `default_model` from your configuration.
+
 ## **🚀 Getting Started Checklist**
 
 Prefer a guided overview? Start with [`GETTING-STARTED.md`](GETTING-STARTED.md) for tailored entry paths before working through this checklist.
