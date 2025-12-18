@@ -15,8 +15,10 @@ class PromptBuilder:
         sections = [
             self._build_identity_section(),
             self._build_capabilities_section(),
+            self._build_activation_section(),
             self._build_collaboration_section(),
             self._build_standards_section(),
+            self._build_workflow_section(),
             self._build_knowledge_section(),
         ]
 
@@ -91,6 +93,50 @@ You are a {identity.role}.
         sections.append(f"### Specialized Knowledge\n\n" + "\n\n".join(knowledge))
 
         return "## Deep Expertise\n\n" + "\n\n".join(sections)
+
+    def _build_activation_section(self) -> str:
+        """Activation patterns and triggers."""
+        patterns = []
+        for pat in self.specialist.activation_patterns:
+            # Handle schema fluidity (type vs name)
+            pat_type = pat.type or pat.name or "General Pattern"
+            if pat.pattern:
+                pat_text = f"**{pat_type}**\nTrigger: `{pat.pattern}`"
+                if pat.examples:
+                    pat_text += f"\nExamples:\n{self._format_list(pat.examples)}"
+                patterns.append(pat_text)
+            elif pat.sub_types:
+                # Handle nested patterns
+                sub_text = f"**{pat_type}**"
+                for sub in pat.sub_types:
+                    sub_name = sub.type or sub.name or "Sub-pattern"
+                    if sub.pattern:
+                        sub_text += f"\n- {sub_name}: `{sub.pattern}`"
+                patterns.append(sub_text)
+
+        if not patterns:
+            return ""
+
+        return "## Activation Patterns\n\n" + "\n\n".join(patterns)
+
+    def _build_workflow_section(self) -> str:
+        """Inject workflows dynamically."""
+        # Check for workflow fields (schema 'extra'='allow' lets them through)
+        workflows = []
+        for field, value in self.specialist.model_dump().items():
+            if field.endswith('_workflow') and isinstance(value, list):
+                steps = []
+                for phase in value:
+                    phase_title = phase.get('phase', 'Phase')
+                    step_list = phase.get('steps', [])
+                    steps.append(f"### {phase_title}\n{self._format_list(step_list)}")
+                
+                workflows.append(f"**{field.replace('_', ' ').title()}**\n\n" + "\n\n".join(steps))
+
+        if not workflows:
+            return ""
+
+        return "## Standard Workflows\n\n" + "\n\n".join(workflows)
 
     def _format_list(self, items: List[str]) -> str:
         """Format list as markdown."""

@@ -3,54 +3,48 @@
 
 # Role-based routing (takes precedence)
 role_routing:
-  # Strategy specialists - Claude for deep context and reasoning
-  "Strategic Coordinator & Project Orchestrator": "anthropic/claude-3.5-sonnet"
-  "Market Research & Competitive Intelligence Specialist": "anthropic/claude-3-opus"
-  "Creative Strategy & Campaign Planning Specialist": "anthropic/claude-3.5-sonnet"
-  "Brand Architecture & Identity Specialist": "anthropic/claude-3.5-sonnet"
-  "Data Analytics & Insights Specialist": "anthropic/claude-3.5-sonnet"
-  "Cultural Trends & Future Forecasting Specialist": "anthropic/claude-3.5-sonnet"
-  "Academic Research & Knowledge Synthesis Specialist": "anthropic/claude-3-opus"
-  "Learning & Skill Development Specialist": "anthropic/claude-3.5-sonnet"
-
-  # Producers - GPT-4o for creativity
-  "Conversion Copy & Brand Messaging Specialist": "openai/gpt-4o"
-  "Visual Creative Director": "openai/gpt-4o"
-  "Narrative Design & Storytelling Specialist": "openai/gpt-4o"
-  "Community Engagement & Management Specialist": "openai/gpt-4o"
-  "Event Planning & Experience Design Specialist": "openai/gpt-4o"
-
-  # Commerce - Balance of speed and quality
-  "Social Media Strategy & Growth Specialist": "anthropic/claude-3.5-haiku"
-  "Search Engine Optimization Specialist": "anthropic/claude-3.5-sonnet"
-  "Conversion Rate Optimization Specialist": "anthropic/claude-3.5-sonnet"
-  "Customer Acquisition & Growth Specialist": "anthropic/claude-3.5-sonnet"
-  "Influencer Marketing & Partnership Specialist": "openai/gpt-4o"
-  "Pricing Strategy & Revenue Optimization Specialist": "anthropic/claude-3.5-sonnet"
-
-  # Tech - Claude for code and system design
-  "Software System Design & Technical Strategy Specialist": "anthropic/claude-3.5-sonnet"
-  "Productivity Systems & Workflow Optimization Specialist": "anthropic/claude-3.5-sonnet"
-  "Python Workflow Automation Specialist": "anthropic/claude-3.5-sonnet"
-  "Tool Development & Technical Solutions Specialist": "anthropic/claude-3.5-sonnet"
-  "Operations Management & Process Optimization Specialist": "anthropic/claude-3.5-sonnet"
-  "Quality Assurance & Testing Specialist": "anthropic/claude-3.5-sonnet"
-  "Cybersecurity & Risk Management Specialist": "anthropic/claude-3.5-sonnet"
-  "Supply Chain & Logistics Optimization Specialist": "anthropic/claude-3.5-sonnet"
+  # Canonical Roles (Generated from Staff Audit)
   "AI Optimization & Prompt Design Specialist": "anthropic/claude-3.5-sonnet"
-
-  # Health/Lifestyle - Claude for nuanced guidance
-  "Habit Formation & Behavioral Design Specialist": "anthropic/claude-3.5-sonnet"
-  "Cognitive Behavioral Therapy Specialist": "anthropic/claude-3-opus"
-  "Stoic Philosophy & Resilience Building Specialist": "anthropic/claude-3-opus"
-  "Health & Wellness Coaching Specialist": "anthropic/claude-3.5-sonnet"
-  "Meditation & Mindfulness Instruction Specialist": "anthropic/claude-3.5-sonnet"
-
-  # Knowledge - Opus for complex reasoning
-  "Business Law & Compliance Specialist": "anthropic/claude-3-opus"
-  "Tax Strategy & Planning Specialist": "anthropic/claude-3-opus"
-  "Investment Strategy & Financial Planning Specialist": "anthropic/claude-3-opus"
+  "Behavior Design & Habit Formation Specialist": "anthropic/claude-3.5-sonnet"
+  "Brand Architecture & Identity Strategist": "anthropic/claude-3.5-sonnet"
+  "Business Law & Legal Strategy Specialist": "anthropic/claude-3.5-sonnet"
+  "Business Operations & Process Optimization Specialist": "anthropic/claude-3.5-sonnet"
+  "Cognitive Restructuring & Mental Wellness Specialist": "anthropic/claude-3.5-sonnet"
+  "Commercial Property Analysis & Investment Specialist": "anthropic/claude-3.5-sonnet"
+  "Community Building & Engagement Specialist": "anthropic/claude-3.5-sonnet"
+  "Conversion Copy & Brand Messaging Specialist": "anthropic/claude-3.5-sonnet"
+  "Conversion Rate & Revenue Optimization Specialist": "anthropic/claude-3.5-sonnet"
+  "Custom Tool & Solution Development Specialist": "anthropic/claude-3.5-sonnet"
+  "Data Intelligence & Analytics Specialist": "anthropic/claude-3.5-sonnet"
+  "Event Strategy & Experience Design Specialist": "anthropic/claude-3.5-sonnet"
   "Financial Psychology & Money Mindset Specialist": "anthropic/claude-3.5-sonnet"
+  "Growth Marketing & Customer Acquisition Strategist": "anthropic/claude-3.5-sonnet"
+  "Holistic Health & Wellness Optimization Specialist": "anthropic/claude-3.5-sonnet"
+  "Influencer Marketing & Partnership Strategist": "anthropic/claude-3.5-sonnet"
+  "Information Security & Risk Management Specialist": "anthropic/claude-3.5-sonnet"
+  "Interior Space Design & Styling Specialist": "anthropic/claude-3.5-sonnet"
+  "Investment Strategy & Wealth Management Specialist": "anthropic/claude-3.5-sonnet"
+  "Landscape Design & Outdoor Space Planning Specialist": "anthropic/claude-3.5-sonnet"
+  "Learning Design & Cognitive Science Specialist": "anthropic/claude-3.5-sonnet"
+  "Market Research & Competitive Analysis Specialist": "anthropic/claude-3.5-sonnet"
+  "Mindfulness & Meditation Practice Specialist": "anthropic/claude-3.5-sonnet"
+  "Pricing Strategy & Revenue Optimization Specialist": "anthropic/claude-3.5-sonnet"
+  "Python Workflow Automation Specialist": "anthropic/claude-3.5-sonnet"
+  "Quality Assurance & Standards Enforcement Specialist": "anthropic/claude-3.5-sonnet"
+  "Real Estate Investment Strategy & Execution Specialist": "anthropic/claude-3.5-sonnet"
+  "Scholarly Research & Literature Analysis Specialist": "anthropic/claude-3.5-sonnet"
+  "Search Engine Optimization & Organic Growth Specialist": "anthropic/claude-3.5-sonnet"
+  "Social Media Strategy & Community Growth Specialist": "anthropic/claude-3.5-sonnet"
+  "Software System Design & Technical Strategy Specialist": "anthropic/claude-3.5-sonnet"
+  "Stoic Philosophy & Resilience Building Specialist": "anthropic/claude-3.5-sonnet"
+  "Story Architecture & Narrative Systems Specialist": "anthropic/claude-3.5-sonnet"
+  "Strategic Coordinator & Project Orchestrator": "anthropic/claude-3.5-sonnet"
+  "Strategic Creative Thinker & Campaign Architect": "anthropic/claude-3.5-sonnet"
+  "Supply Chain Management & Logistics Optimization Specialist": "anthropic/claude-3.5-sonnet"
+  "Tax Planning & Optimization Specialist": "anthropic/claude-3.5-sonnet"
+  "Trend Analysis & Future Insights Specialist": "anthropic/claude-3.5-sonnet"
+  "Visual Creative Director": "anthropic/claude-3.5-sonnet"
+  "Workflow Design & Personal Systems Specialist": "anthropic/claude-3.5-sonnet"
 
 # Department-based fallback routing
 department_routing:

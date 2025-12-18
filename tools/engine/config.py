@@ -12,7 +12,7 @@ class Config(BaseSettings):
     # OpenRouter Configuration
     openrouter_api_key: str = ""
     openrouter_base_url: str = "https://openrouter.ai/api/v1"
-    default_model: str = "deepseek/deepseek-v3.2-speciale"
+    default_model: str = "anthropic/claude-3.5-sonnet"
 
     # Direct Provider Keys (Fallback/Optional)
     openai_api_key: str = ""

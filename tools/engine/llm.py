@@ -62,10 +62,24 @@ class ModelRouter:
     ) -> ChatOpenAI:
         """Create LangChain LLM client for OpenRouter."""
 
-        if not self.config.openrouter_api_key:
+        # Check API keys
+        api_key = self.config.openrouter_api_key
+        base_url = self.config.openrouter_base_url
+        default_headers = {
+            "HTTP-Referer": "https://github.com/ai-staff-hq",
+            "X-Title": "AI-Staff-HQ Executable Engine"
+        }
+
+        # Fallback to direct OpenAI if configured and OpenRouter missing
+        if not api_key and self.config.openai_api_key:
+            api_key = self.config.openai_api_key
+            base_url = None  # Use default OpenAI URL
+            default_headers = None
+
+        if not api_key:
             raise ValueError(
-                "OPENROUTER_API_KEY not found in environment. "
-                "Please set it in your .env file."
+                "No API keys found. Please set OPENROUTER_API_KEY (recommended) "
+                "or OPENAI_API_KEY in your .env file."
             )
 
         # "headers" works if passed as default_headers to httpx client or similar
@@ -75,13 +89,10 @@ class ModelRouter:
         
         return ChatOpenAI(
             model=model,
-            openai_api_key=self.config.openrouter_api_key,
-            openai_api_base=self.config.openrouter_base_url,
+            openai_api_key=api_key,
+            openai_api_base=base_url,
             temperature=temperature or self.config.default_temperature,
-            default_headers={
-                "HTTP-Referer": "https://github.com/ai-staff-hq",
-                "X-Title": "AI-Staff-HQ Executable Engine"
-            }
+            default_headers=default_headers
         )
 
     def get_model_info(self, model_id: str) -> Optional[dict]:

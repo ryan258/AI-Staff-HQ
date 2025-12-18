@@ -34,32 +34,29 @@ def query_mode(agent: SpecialistAgent, query: str) -> None:
 
 def list_specialists(staff_dir: Path, department: Optional[str] = None) -> None:
     """List available specialists."""
-    specialists = []
+    specialists_by_dept = {}
+    total = 0
 
-    for dept_dir in staff_dir.iterdir():
-        if not dept_dir.is_dir():
+    # Scan each department
+    for dept_dir in sorted(staff_dir.iterdir()):
+        if not dept_dir.is_dir() or dept_dir.name.startswith('.'):
             continue
 
         if department and dept_dir.name != department:
             continue
 
-        for yaml_file in dept_dir.glob("*.yaml"):
-            specialists.append({
-                "name": yaml_file.stem,
-                "department": dept_dir.name,
-                "path": yaml_file
-            })
+        # Recursively find YAMLs
+        dept_specialists = []
+        for yaml_file in sorted(dept_dir.rglob("*.yaml")):
+            specialist_name = yaml_file.stem
+            dept_specialists.append(specialist_name)
 
-    # Group by department
-    by_dept = {}
-    for spec in specialists:
-        dept = spec['department']
-        if dept not in by_dept:
-            by_dept[dept] = []
-        by_dept[dept].append(spec['name'])
+        if dept_specialists:
+            specialists_by_dept[dept_dir.name] = dept_specialists
+            total += len(dept_specialists)
 
     console.print("\n[bold]Available Specialists[/bold]\n")
-    for dept, names in sorted(by_dept.items()):
+    for dept, names in sorted(specialists_by_dept.items()):
         console.print(f"[cyan]{dept}[/cyan] ({len(names)})")
         for name in sorted(names):
             console.print(f"  - {name}")

@@ -107,15 +107,13 @@ def load_specialist(
     # Otherwise, search in staff directory
     slug = specialist_identifier.lower().replace(' ', '-')
 
-    # Search all departments
-    for dept_dir in staff_dir.iterdir():
-        if not dept_dir.is_dir():
-            continue
-
-        yaml_file = dept_dir / f"{slug}.yaml"
-        if yaml_file.exists():
+    # 2. Search by name (stem) in staff directory recursively
+    # We prioritize exact name matches
+    for yaml_file in staff_dir.rglob("*.yaml"):
+        if yaml_file.stem == specialist_identifier:
             return SpecialistAgent(yaml_file, **kwargs)
 
+    # 3. Not found
     raise FileNotFoundError(
         f"Specialist '{specialist_identifier}' not found in {staff_dir}. "
         f"Use 'activate --list' to see available specialists."
