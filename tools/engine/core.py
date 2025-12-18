@@ -6,8 +6,10 @@ import yaml
 from langchain_core.messages import BaseMessage, HumanMessage, AIMessage, SystemMessage
 
 from .schemas import SpecialistSchema
+from .schemas import SpecialistSchema
 from .prompt import PromptBuilder
 from .llm import ModelRouter
+from .state import ConversationState
 
 
 class SpecialistAgent:
@@ -18,6 +20,7 @@ class SpecialistAgent:
         yaml_path: Path,
         model_override: Optional[str] = None,
         temperature: Optional[float] = None,
+        session_id: Optional[str] = None,
     ):
         # Load and validate YAML
         with open(yaml_path) as f:
@@ -44,7 +47,18 @@ class SpecialistAgent:
         self.model_name = model
 
         # Initialize conversation state
-        self.messages: list[BaseMessage] = [SystemMessage(content=self.system_prompt)]
+        self.state = ConversationState(
+            specialist_slug=self._get_specialist_slug(),
+            session_id=session_id
+        )
+        
+        # Load existing session or start new
+        if session_id:
+            if not self.state.load():
+                # Fallback if session not found, but we keep the ID for new file
+                self.state.add_message(SystemMessage(content=self.system_prompt))
+        else:
+            self.state.add_message(SystemMessage(content=self.system_prompt))
 
     def _get_specialist_slug(self) -> str:
         """Get specialist slug from filename."""
@@ -53,14 +67,17 @@ class SpecialistAgent:
     def query(self, user_input: str) -> str:
         """Execute single query."""
         # Add user message to conversation
-        self.messages.append(HumanMessage(content=user_input))
+        self.state.add_message(HumanMessage(content=user_input))
 
         # Invoke LLM with full conversation history
-        response = self.llm.invoke(self.messages)
+        response = self.llm.invoke(self.state.messages)
 
         # Extract and store response
         response_text = response.content
-        self.messages.append(AIMessage(content=response_text))
+        self.state.add_message(AIMessage(content=response_text))
+        
+        # Save state
+        self.state.save()
 
         return response_text
 
@@ -73,11 +90,12 @@ class SpecialistAgent:
             "model": self.model_name,
             "motto": self.schema.motto,
             "slug": self._get_specialist_slug(),
+            "session_id": self.state.session_id,
         }
 
     def get_conversation_length(self) -> int:
         """Get number of messages in conversation."""
-        return len(self.messages)
+        return len(self.state.messages)
 
 
 def load_specialist(

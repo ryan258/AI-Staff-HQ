@@ -109,24 +109,21 @@ All core engine files have been implemented:
    - Check that Copywriter uses deepseek/deepseek-v3.2-speciale
    - Try model override: `--model deepseek/deepseek-v3.2-speciale`
 
-### Phase 2: Conversation State (Not Yet Started)
+### Phase 2: Conversation State (100% Complete) ✅
 
-**Files to create:**
-- tools/engine/state.py - ConversationState class with history management
-- Enhance activate.py - Add interactive REPL mode with prompt_toolkit
-
-**Features:**
-- Multi-turn conversations
-- Session persistence (~/.ai-staff-hq/sessions/)
-- Conversation history trimming
-- Resume sessions
+**Implemented Features:**
+- `tools/engine/state.py`: JSON session persistence in `~/.ai-staff-hq/sessions`.
+-   `tools/engine/state.py`: JSON session persistence in `~/.ai-staff-hq/sessions`.
+-   `activate.py`: Interactive REPL with up-arrow history.
+-   Resume capability: `--resume` or `--resume last`.
+-   History trimming logic (keeps context window small).
 
 ### Phase 3: Polish (Not Yet Started)
 
-- Error handling improvements
-- Tests (unit + integration)
-- Documentation updates (README, CHANGELOG)
-- Example workflows
+-   Error handling improvements
+-   Tests (unit + integration)
+-   Documentation updates (README, CHANGELOG)
+-   Example workflows
 
 ---
 

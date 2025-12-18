@@ -57,8 +57,8 @@ department_routing:
 
 # Budget mode (use cheaper models across the board)
 budget_mode:
-  enabled: false
-  model: "anthropic/claude-3.5-haiku"
+  enabled: true
+  model: "nex-agi/deepseek-v3.1-nex-n1:free"
 
 # Model metadata (for display and validation)
 available_models:

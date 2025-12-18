@@ -8,22 +8,77 @@ import argparse
 from rich.console import Console
 from rich.panel import Panel
 from rich.markdown import Markdown
+from prompt_toolkit import PromptSession
+from prompt_toolkit.formatted_text import HTML
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from tools.engine.core import load_specialist, SpecialistAgent
 from tools.engine.config import get_config
+from tools.engine.state import ConversationState
 
 
 console = Console()
+
+
+def interactive_loop(agent: SpecialistAgent) -> None:
+    """Run interactive chat session."""
+    info = agent.get_info()
+    session_id = info['session_id']
+    
+    console.print(f"\n[bold green]Activated: {info['specialist']}[/bold green]")
+    console.print(f"[dim]Role: {info['role']}[/dim]")
+    console.print(f"[dim]Model: {info['model']}[/dim]")
+    console.print(f"[dim]Session: {session_id}[/dim]")
+    console.print("\n[dim]Type 'exit' or /bye to quit. /clear to restart context.[/dim]\n")
+
+    # Prompt toolkit session
+    session = PromptSession()
+    
+    while True:
+        try:
+            user_input = session.prompt(HTML(f"<b>{info['slug']}</b>> "))
+            user_input = user_input.strip()
+
+            if not user_input:
+                continue
+
+            # Commands
+            if user_input.lower() in ('exit', 'quit', '/bye', '/exit'):
+                console.print("[yellow]Saving and exiting...[/yellow]")
+                break
+                
+            if user_input.lower() in ('/clear', 'clear'):
+                console.print("[yellow]Clearing memory (new session)...[/yellow]")
+                # We can't easily clear in-place without agent support, so we just restart
+                # For now, simplistic clear by just adding a system note or similar?
+                # Actually proper clear needs agent support. Let's just exit/restart.
+                console.print("To clear properly, please restart the tool. (Feature WIP)")
+                continue
+
+            # Query
+            with console.status("[bold yellow]Thinking...", spinner="dots"):
+                response = agent.query(user_input)
+
+            console.print()
+            console.print(Markdown(response))
+            console.print()
+
+        except KeyboardInterrupt:
+            continue
+        except EOFError:
+            break
+        except Exception as e:
+            console.print(f"[red]Error:[/red] {e}")
 
 
 def query_mode(agent: SpecialistAgent, query: str) -> None:
     """Execute single query and exit."""
     info = agent.get_info()
 
-    console.print(f"\n[bold]{info['specialist']}[/bold] [dim](using {info['model']})[/dim]\n")
+    console.print(f"\n[bold]{info['specialist']}[/bold] [dim](using {info['model']})[/dim]")
+    console.print(f"[dim]Session: {info['session_id']}[/dim]\n")
 
     with console.status("[bold yellow]Processing query...", spinner="dots"):
         response = agent.query(query)
@@ -103,6 +158,13 @@ Examples:
         help='Temperature for responses (0.0-1.0)'
     )
 
+    parser.add_argument(
+        '--resume',
+        nargs='?',
+        const='last',
+        help='Resume session ID or "last" (default)'
+    )
+
     # Discovery
     parser.add_argument(
         '--list',
@@ -142,13 +204,30 @@ Examples:
     if not args.specialist:
         parser.error("specialist name or path required (use --list to see available specialists)")
 
-    # Require query for Phase 1 (interactive mode not yet implemented)
-    if not args.query:
-        console.print(
-            "[yellow]Note:[/yellow] Interactive mode coming in Phase 2. "
-            "For now, use -q/--query for one-shot queries.\n"
-        )
-        parser.error("--query/-q required")
+    # Resolve resume session
+    session_id = args.resume
+    if session_id == 'last':
+        # Find last session for this specialist
+        # We need the slug first to find the directory
+        # This is chicken-egg: we need core logic to resolve slug from identifier
+        # For now, let's assume identifier IS the slug or close enough, 
+        # OR we load the agent first then check history? 
+        # Loading agent with session_id=None starts new session.
+        # Let's try to resolve latest session for the specialist identifier
+        # Simple heuristic: assume identifier is slug
+        # But if it's a path (e.g. staff/strategy/chief-of-staff.yaml), we need the stem
+        if '/' in args.specialist or args.specialist.endswith('.yaml'):
+            slug = Path(args.specialist).stem
+        else:
+            slug = args.specialist.lower().replace(' ', '-')
+            
+        sessions = ConversationState.list_sessions(slug)
+        if sessions:
+            session_id = sessions[0]['id']
+            console.print(f"[dim]Resuming last session: {session_id}[/dim]")
+        else:
+            console.print("[yellow]No previous session found. Starting new.[/yellow]")
+            session_id = None
 
     # Load specialist
     try:
@@ -158,6 +237,7 @@ Examples:
             staff_dir,
             model_override=args.model,
             temperature=args.temperature,
+            session_id=session_id
         )
     except FileNotFoundError as e:
         console.print(f"\n[red]Error:[/red] {e}\n")
@@ -168,9 +248,12 @@ Examples:
             raise
         sys.exit(1)
 
-    # Execute query
+    # Execute query or enter interactive mode
     try:
-        query_mode(agent, args.query)
+        if args.query:
+            query_mode(agent, args.query)
+        else:
+            interactive_loop(agent)
     except KeyboardInterrupt:
         console.print("\n[dim]Interrupted[/dim]\n")
         sys.exit(130)
