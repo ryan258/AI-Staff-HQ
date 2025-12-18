@@ -126,8 +126,8 @@ Your specialist workforce is designed to be extended. You can create new special
 
 ### **Planned Expansions**
 
-See `ROSTER-plan.md` for the complete implementation roadmap including:
-- **Batch 5 (In Progress):** 68 niche specialists across culinary, audio/podcast, publishing, sustainability, wellness, sports, and more specialized domains
+- Add new specialists using `templates/persona/new-staff-member-template.md` and place them in the correct department.
+- Legacy roster planning docs are archived in `archive/legacy-docs/` if you need historical context.
 
 ---
 
@@ -142,4 +142,3 @@ All specialists include:
 - **Deep Dive:** Deliverables, specialized knowledge areas, and detailed workflows
 
 ---
-

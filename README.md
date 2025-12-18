@@ -149,6 +149,8 @@ AI-Staff-HQ/
 ├── 📖 handbooks/ — Deep dives on prompt engineering & coordination
 └── 🧠 knowledge-base/ — Principles, research, decisions, retrospective logs
 
+Legacy status/roster docs are archived in `archive/legacy-docs/`.
+
 ## **🧠 The Knowledge System**
 
 This repository is designed around **systematic knowledge management**:
