@@ -68,17 +68,19 @@ class ModelRouter:
                 "Please set it in your .env file."
             )
 
+        # "headers" works if passed as default_headers to httpx client or similar
+        # But for ChatOpenAI, standard way to pass headers is via default_headers kwarg
+        # or it might need to be in model_kwargs depending on version.
+        # Let's try passing it directly as default_headers which langchain support usually.
+        
         return ChatOpenAI(
             model=model,
             openai_api_key=self.config.openrouter_api_key,
             openai_api_base=self.config.openrouter_base_url,
             temperature=temperature or self.config.default_temperature,
-            max_tokens=None,  # Let model decide
-            model_kwargs={
-                "headers": {
-                    "HTTP-Referer": "https://github.com/ai-staff-hq",
-                    "X-Title": "AI-Staff-HQ Executable Engine"
-                }
+            default_headers={
+                "HTTP-Referer": "https://github.com/ai-staff-hq",
+                "X-Title": "AI-Staff-HQ Executable Engine"
             }
         )
 

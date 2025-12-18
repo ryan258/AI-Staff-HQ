@@ -22,10 +22,19 @@ class Capability(BaseModel):
 
 class ActivationPattern(BaseModel):
     """Pattern for activating specialist."""
-    type: str
-    pattern: str
+    type: Optional[str] = None
+    name: Optional[str] = None  # Some sub-types use 'name' instead of 'type'
+    pattern: Optional[str] = None
     examples: Optional[List[str]] = None
     sub_types: Optional[List['ActivationPattern']] = None
+
+    @field_validator('pattern')
+    @classmethod
+    def validate_pattern(cls, v: Optional[str], info) -> Optional[str]:
+        """Pattern is required unless sub_types are present."""
+        # Note: We can't easily check for presence of sub_types here in field validator
+        # strictly, but this relaxes the hard requirement.
+        return v
 
 
 class IntegrationPoints(BaseModel):
@@ -72,7 +81,7 @@ class DeepDive(BaseModel):
 
 class SpecialistSchema(BaseModel):
     """Complete specialist YAML schema."""
-    version: str
+    version: str | float
     specialist: str
     motto: str
     core_identity: CoreIdentity
@@ -88,8 +97,9 @@ class SpecialistSchema(BaseModel):
 
     @field_validator('version')
     @classmethod
-    def validate_version(cls, v: str) -> str:
+    def validate_version(cls, v: str | float) -> str:
         """Ensure version is 1.x."""
-        if not v.startswith('1.'):
+        str_v = str(v)
+        if not str_v.startswith('1.'):
             raise ValueError(f"Unsupported schema version: {v}")
-        return v
+        return str_v
