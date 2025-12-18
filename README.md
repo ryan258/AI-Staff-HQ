@@ -73,7 +73,7 @@ These roles cover the majority of strategic, creative, and technical work:
 **🟦 Strategy (8):** Creative Strategist, Brand Builder, Data Analyst, Market Analyst, Trend Forecaster, Academic Researcher, Learning Scientist
 **🎨 Producers (5):** Art Director, Copywriter, Narrative Designer, Community Manager, Event Planner
 **💰 Commerce (10):** Social Media Strategist, SEO Specialist, Conversion Optimizer, Customer Acquisition, Influencer Strategist, Pricing Strategist, Real Estate (4 specialists)
-**⚙️ Tech (9):** Software Architect, Productivity Architect, Automation Specialist, Toolmaker, Operations Manager, Quality Control, Cybersecurity, Supply Chain
+**⚙️ Tech (9):** Software Architect, Productivity Architect, Automation Specialist, Toolmaker, Operations Manager, Quality Control, Cybersecurity, Supply Chain, Prompt Engineer
 **🌿 Health/Lifestyle (5):** Habit Architect, Cognitive Behavioral Therapist, Stoic Coach, Health Coach, Meditation Instructor
 **📚 Knowledge (4):** Business Lawyer, Tax Strategist, Investment Advisor, Financial Therapist
 
@@ -97,11 +97,11 @@ These roles cover the majority of strategic, creative, and technical work:
 
 ### **Example: Creating a 'UX Designer' Specialist**
 
-1. **Copy the template:** `cp templates/persona/new-staff-member-template.md staff/technical/ux-designer.yaml`
+1. **Copy the template:** `cp templates/persona/new-staff-member-template.md staff/tech/ux-designer.yaml`
 2. **Define the role:**
    ```yaml
    name: UX Designer
-   department: Technical
+   department: Tech
    role: User Experience Designer
    skills:
      - User Research
@@ -121,7 +121,7 @@ AI-Staff-HQ/
 ├── 📊 IMPLEMENTATION-STATUS.md — Current progress and gaps
 ├── 👥 staff/ — 41 specialists across 6 MtG color-coded departments
 │   ├── strategy/ — Blue (8 specialists)
-│   ├── producers/ — Red (5 specialists + culinary subdirectory)
+│   ├── producers/ — Red (6 specialists + culinary subdirectory)
 │   ├── commerce/ — Black (10 specialists)
 │   ├── tech/ — Grey/Artifact (9 specialists)
 │   ├── health-lifestyle/ — Green (5 specialists)

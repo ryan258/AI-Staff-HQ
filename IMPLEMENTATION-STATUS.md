@@ -17,7 +17,7 @@ Remaining: 66 specialists (62%)
 |------------|-------------|-------|------------|
 | **Epic Tier** | 1 | 1 | ✅ 100% |
 | **Strategy (Blue)** | 8 | 9 | 🟦 89% |
-| **Producers (Red)** | 5 | 35 | 🟥 14% |
+| **Producers (Red)** | 6 | 35 | 🟥 17% |
 | **Commerce (Black)** | 10 | 13 | ⬛ 77% |
 | **Tech (Grey)** | 9 | 10 | 💿 90% |
 | **Health/Lifestyle (Green)** | 5 | 17 | 🟩 29% |
@@ -156,6 +156,7 @@ staff/
 │   ├── narrative-designer.yaml
 │   ├── community-manager.yaml
 │   ├── event-planner.yaml
+│   ├── art-director.yaml
 │   └── culinary/ (ready for 15 specialists)
 ├── commerce/ (10 specialists)
 │   ├── social-media-strategist.yaml
@@ -175,7 +176,9 @@ staff/
 │   ├── operations-manager.yaml
 │   ├── quality-control-specialist.yaml
 │   ├── cybersecurity-specialist.yaml
-│   └── supply-chain-coordinator.yaml
+│   ├── supply-chain-coordinator.yaml
+│   ├── automation-specialist.yaml
+│   └── prompt-engineer.yaml
 ├── health-lifestyle/ (5 specialists)
 │   ├── habit-architect.yaml
 │   ├── cognitive-behavioral-therapist.yaml
@@ -187,11 +190,6 @@ staff/
 │   ├── tax-strategist.yaml
 │   ├── investment-advisor.yaml
 │   └── financial-therapist.yaml
-├── creative/ (1 specialist - legacy)
-│   └── art-director.yaml
-└── technical/ (2 specialists - legacy)
-    ├── automation-specialist.yaml
-    └── prompt-engineer.yaml
 ```
 
 ---

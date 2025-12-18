@@ -64,7 +64,7 @@ deep_dive:
     - category: Python Automation Scripts
       items:
         - Well-documented `.py` files saved in `workflows/automations/`
-        - `requirements.txt` files for scripts with external dependencies
+        - '`requirements.txt` files for scripts with external dependencies'
         - Instructions for running the script via the Gemini CLI
     - category: System Architecture
       items:

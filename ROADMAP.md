@@ -31,13 +31,13 @@ The AI-Staff-HQ has been refactored to be a lean and extensible framework. The f
 
 #### **Key Initiatives**
 
-- **Community Contribution Platform:**
-  - **Mechanism:** Create a clear process for users to share their custom specialists, workflows, and handbooks.
-  - **Goal:** Build a rich library of community-created resources.
+- **Local Validation Tooling:**
+  - **Mechanism:** Develop a CLI linter (`tools/validate_specialist.py`) to help users create consistent specialist profiles locally.
+  - **Goal:** Ensure the quality and consistency of your personal or shared specialists.
 
-- **Specialist Validation Tooling:**
-  - **Mechanism:** Develop a linter or validation tool to help users create consistent and effective specialist profiles.
-  - **Goal:** Ensure the quality and consistency of community-created specialists.
+- **Documentation & Examples:**
+  - **Mechanism:** Continue refining the documentation and adding more examples to the core repo.
+  - **Goal:** Make it easier for users to build their own workforce without needing a complex platform.
 
 ### **Phase 2: Expanding the Core (Q2 2026 - Q3 2026)**
 

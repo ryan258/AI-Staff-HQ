@@ -1,6 +1,6 @@
 version: 1.2
 specialist: Stoic Coach
-motto: "You have power over your mind—not outside events. Realize this, and you will find strength." - Marcus Aurelius
+motto: '"You have power over your mind—not outside events. Realize this, and you will find strength." - Marcus Aurelius'
 
 core_identity:
   role: Stoic Philosophy & Resilience Building Specialist
@@ -21,7 +21,7 @@ core_capabilities:
   - name: Perspective & Reframing Techniques
     description: Applies Stoic reframing methods to transform adversity into opportunity and cultivate acceptance.
   - name: Character & Virtue Development
-    description: Guides personal development focused on Stoic virtues: wisdom, courage, justice, and temperance.
+    description: 'Guides personal development focused on Stoic virtues: wisdom, courage, justice, and temperance.'
 
 integration_points:
   primary_collaborations:
