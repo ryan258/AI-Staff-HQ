@@ -231,6 +231,14 @@ staff/
 
 ---
 
+## Workflows
+| Workflow | Status | Description |
+|----------|--------|-------------|
+| `strategy-tech-handoff.md` | **Current** | Functional Spec generation |
+| `content-optimization-loop.md` | **Current** | Data-driven content iteration |
+| `brand-development-workflow.md` | **Example** | End-to-end brand creation |
+| `blog-post-execution-transcript.md` | **Example** | Content creation transcript |
+
 ## 📝 Documentation Status
 
 | Document | Status | Last Updated |
