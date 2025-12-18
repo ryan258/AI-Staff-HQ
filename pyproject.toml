@@ -1,9 +1,26 @@
 [project]
 name = "ai-staff-hq"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.2.0"
+description = "Executable AI workforce from specialist YAML definitions"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "pyyaml>=6.0.3",
+    # Agent Framework
+    "langchain>=0.3.0",
+    "langchain-core>=0.3.0",
+    "langchain-openai>=0.2.0",
+    # Model Access (OpenRouter uses OpenAI SDK)
+    "openai>=1.55.0",
+    # Configuration & Validation
+    "pydantic>=2.9.0",
+    "pydantic-settings>=2.6.0",
+    "python-dotenv>=1.0.0",
+    # CLI & UX
+    "rich>=13.9.0",
+    "prompt-toolkit>=3.0.0",
+    "tiktoken>=0.8.0",
 ]
+
+[project.scripts]
+activate = "tools.activate:main"

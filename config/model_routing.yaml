@@ -1,0 +1,93 @@
+# Model routing configuration for AI Staff HQ
+# Maps specialist roles and departments to optimal models via OpenRouter
+
+# Role-based routing (takes precedence)
+role_routing:
+  # Strategy specialists - Claude for deep context and reasoning
+  "Strategic Coordinator & Project Orchestrator": "anthropic/claude-3.5-sonnet"
+  "Market Research & Competitive Intelligence Specialist": "anthropic/claude-3-opus"
+  "Creative Strategy & Campaign Planning Specialist": "anthropic/claude-3.5-sonnet"
+  "Brand Architecture & Identity Specialist": "anthropic/claude-3.5-sonnet"
+  "Data Analytics & Insights Specialist": "anthropic/claude-3.5-sonnet"
+  "Cultural Trends & Future Forecasting Specialist": "anthropic/claude-3.5-sonnet"
+  "Academic Research & Knowledge Synthesis Specialist": "anthropic/claude-3-opus"
+  "Learning & Skill Development Specialist": "anthropic/claude-3.5-sonnet"
+
+  # Producers - GPT-4o for creativity
+  "Conversion Copy & Brand Messaging Specialist": "openai/gpt-4o"
+  "Visual Creative Director": "openai/gpt-4o"
+  "Narrative Design & Storytelling Specialist": "openai/gpt-4o"
+  "Community Engagement & Management Specialist": "openai/gpt-4o"
+  "Event Planning & Experience Design Specialist": "openai/gpt-4o"
+
+  # Commerce - Balance of speed and quality
+  "Social Media Strategy & Growth Specialist": "anthropic/claude-3.5-haiku"
+  "Search Engine Optimization Specialist": "anthropic/claude-3.5-sonnet"
+  "Conversion Rate Optimization Specialist": "anthropic/claude-3.5-sonnet"
+  "Customer Acquisition & Growth Specialist": "anthropic/claude-3.5-sonnet"
+  "Influencer Marketing & Partnership Specialist": "openai/gpt-4o"
+  "Pricing Strategy & Revenue Optimization Specialist": "anthropic/claude-3.5-sonnet"
+
+  # Tech - Claude for code and system design
+  "Software System Design & Technical Strategy Specialist": "anthropic/claude-3.5-sonnet"
+  "Productivity Systems & Workflow Optimization Specialist": "anthropic/claude-3.5-sonnet"
+  "Python Workflow Automation Specialist": "anthropic/claude-3.5-sonnet"
+  "Tool Development & Technical Solutions Specialist": "anthropic/claude-3.5-sonnet"
+  "Operations Management & Process Optimization Specialist": "anthropic/claude-3.5-sonnet"
+  "Quality Assurance & Testing Specialist": "anthropic/claude-3.5-sonnet"
+  "Cybersecurity & Risk Management Specialist": "anthropic/claude-3.5-sonnet"
+  "Supply Chain & Logistics Optimization Specialist": "anthropic/claude-3.5-sonnet"
+  "AI Optimization & Prompt Design Specialist": "anthropic/claude-3.5-sonnet"
+
+  # Health/Lifestyle - Claude for nuanced guidance
+  "Habit Formation & Behavioral Design Specialist": "anthropic/claude-3.5-sonnet"
+  "Cognitive Behavioral Therapy Specialist": "anthropic/claude-3-opus"
+  "Stoic Philosophy & Resilience Building Specialist": "anthropic/claude-3-opus"
+  "Health & Wellness Coaching Specialist": "anthropic/claude-3.5-sonnet"
+  "Meditation & Mindfulness Instruction Specialist": "anthropic/claude-3.5-sonnet"
+
+  # Knowledge - Opus for complex reasoning
+  "Business Law & Compliance Specialist": "anthropic/claude-3-opus"
+  "Tax Strategy & Planning Specialist": "anthropic/claude-3-opus"
+  "Investment Strategy & Financial Planning Specialist": "anthropic/claude-3-opus"
+  "Financial Psychology & Money Mindset Specialist": "anthropic/claude-3.5-sonnet"
+
+# Department-based fallback routing
+department_routing:
+  strategy: "anthropic/claude-3.5-sonnet"
+  producers: "openai/gpt-4o"
+  commerce: "anthropic/claude-3.5-haiku"
+  tech: "anthropic/claude-3.5-sonnet"
+  health-lifestyle: "anthropic/claude-3.5-sonnet"
+  knowledge: "anthropic/claude-3-opus"
+
+# Budget mode (use cheaper models across the board)
+budget_mode:
+  enabled: false
+  model: "anthropic/claude-3.5-haiku"
+
+# Model metadata (for display and validation)
+available_models:
+  - id: "anthropic/claude-3.5-sonnet"
+    name: "Claude 3.5 Sonnet"
+    context_window: 200000
+    cost_per_1k_input: 0.003
+    strengths: ["reasoning", "code", "analysis"]
+
+  - id: "anthropic/claude-3-opus"
+    name: "Claude 3 Opus"
+    context_window: 200000
+    cost_per_1k_input: 0.015
+    strengths: ["deep_research", "complexity", "nuance"]
+
+  - id: "openai/gpt-4o"
+    name: "GPT-4o"
+    context_window: 128000
+    cost_per_1k_input: 0.005
+    strengths: ["creativity", "multimodal", "code"]
+
+  - id: "anthropic/claude-3.5-haiku"
+    name: "Claude 3.5 Haiku"
+    context_window: 200000
+    cost_per_1k_input: 0.001
+    strengths: ["speed", "efficiency", "cost"]
