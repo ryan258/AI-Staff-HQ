@@ -61,21 +61,21 @@ Successfully built personal cognitive infrastructure:
   - **Goal:** Standardize complex operations into reliable routines.
   - **Completed:** December 2025 - Added `strategy-tech-handoff` and `content-optimization-loop`.
 
-### **Phase 3: Advanced Engineering (Q4 2026+)**
+### **Phase 3: Autonomous Orchestration (Q4 2026+)**
 
-**Goal**: Transform the project from a static library into a dynamic prompt engineering codebase.
+**Goal**: Transform the project from a static library into an executable agent swarm using LangGraph and OpenRouter.
 
 #### **Key Initiatives**
 
-- **Automated Context Loading:**
-  - **Mechanism:** Develop a tool (`tools/load_context.py`) that parses a specialist's YAML file and generates a perfectly formatted System Prompt string, eliminating manual copy-pasting.
-  - **Goal:** Streamline the activation process and reduce user error.
+- **LangGraph Orchestration:**
+  - **Mechanism:** Implement the workflows (e.g., `strategy-tech-handoff`) as executable graphs.
+  - **Goal:** "Human-on-the-loop" automation—you approve the handoffs, the graph handles the typing and context passing.
 
-- **Enhanced Schema (Few-Shot):**
-  - **Mechanism:** Update the YAML schema to support `output_examples` fields, allowing users to define "Gold Standard" responses directly in the file.
-  - **Goal:** Enable true few-shot learning by injecting high-quality examples into the context window.
+- **Multi-Model Routing (OpenRouter):**
+  - **Mechanism:** Use OpenRouter to dynamically assign the best model for the job (e.g., Claude 3.5 Sonnet for Strategy, GPT-4o for Coding, Llama 3 for drafts) via a `.env` configuration file.
+  - **Goal:** Optimize cost and performance without vendor lock-in.
 
-- **Automated Prompt Testing:**
-  - **Mechanism:** Create a testing framework that runs specialists against standard inputs and grades the output against defined criteria.
-  - **Goal:** Move from "Prompt Guessing" to true "Prompt Engineering" with measurable quality metrics.
+- **The "Executable Staff" Engine:**
+  - **Mechanism:** A Python tool that ingests a specialist's YAML and "spins them up" as a persistent LangChain agent.
+  - **Goal:** Eliminate manual prompt pasting entirely.
 
