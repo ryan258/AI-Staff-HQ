@@ -43,6 +43,10 @@ class Config(BaseSettings):
     rich_output: bool = True
     debug: bool = False
 
+    # Logging
+    log_dir: Path = Path("logs")
+    enable_logging: bool = True
+
     model_config = SettingsConfigDict(
         env_file=Path(__file__).parents[2] / ".env",
         env_file_encoding="utf-8",

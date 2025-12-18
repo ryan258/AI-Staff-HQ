@@ -2,14 +2,17 @@
 
 from typing import Optional
 from pathlib import Path
+import json
+import time
+from datetime import datetime, timezone
 import yaml
 from langchain_core.messages import BaseMessage, HumanMessage, AIMessage, SystemMessage
 
 from .schemas import SpecialistSchema
-from .schemas import SpecialistSchema
 from .prompt import PromptBuilder
 from .llm import ModelRouter
 from .state import ConversationState
+from .config import get_config
 
 
 class SpecialistAgent:
@@ -28,6 +31,7 @@ class SpecialistAgent:
 
         self.schema = SpecialistSchema(**data)
         self.yaml_path = yaml_path
+        self.config = get_config()
 
         # Extract department from path
         self.department = yaml_path.parent.name if yaml_path.parent.name != 'staff' else None
@@ -69,6 +73,7 @@ class SpecialistAgent:
         # Add user message to conversation
         self.state.add_message(HumanMessage(content=user_input))
 
+        start_time = time.time()
         try:
             # Invoke LLM with full conversation history
             response = self.llm.invoke(self.state.messages)
@@ -80,14 +85,50 @@ class SpecialistAgent:
             # But maybe we should return it as a system message? 
             # For now, simply returning the strings.
             return f"⚠️ {error_msg}"
+        
+        end_time = time.time()
+        latency = end_time - start_time
 
         # Extract and store response
         self.state.add_message(AIMessage(content=response_text))
         
+        # Log interaction
+        if self.config.enable_logging:
+            self._log_interaction(user_input, response_text, latency)
+
         # Save state
         self.state.save()
 
         return response_text
+
+    def _log_interaction(self, user_input: str, response: str, latency: float):
+        """Log API interaction to Markdown file."""
+        if not self.config.log_dir.exists():
+            self.config.log_dir.mkdir(parents=True, exist_ok=True)
+            
+        session_id = self.state.session_id or "unknown_session"
+        log_file = self.config.log_dir / f"{session_id}.md"
+        
+        timestamp = datetime.now(timezone.utc).isoformat()
+        
+        # Create header if new file
+        if not log_file.exists():
+            with open(log_file, "w", encoding="utf-8") as f:
+                f.write(f"# Session Log: {session_id}\n")
+                f.write(f"**Specialist:** {self.schema.specialist}\n")
+                f.write(f"**Model:** {self.model_name}\n")
+                f.write(f"**Started:** {timestamp}\n")
+                f.write("---\n\n")
+
+        # Append interaction
+        with open(log_file, "a", encoding="utf-8") as f:
+            f.write(f"## Interaction @ {timestamp}\n")
+            f.write(f"**Latency:** {latency:.2f}s\n\n")
+            f.write("### User\n")
+            f.write(f"{user_input}\n\n")
+            f.write("### Assistant\n")
+            f.write(f"{response}\n\n")
+            f.write("---\n\n")
 
     def get_info(self) -> dict:
         """Get agent metadata."""
