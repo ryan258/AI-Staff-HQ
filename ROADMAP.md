@@ -53,4 +53,21 @@ The AI-Staff-HQ has been refactored to be a lean and extensible framework. The f
   - **Mechanism:** Add more example workflows that showcase different ways to orchestrate specialists.
   - **Goal:** Inspire users to create their own custom workflows.
 
+### **Phase 3: Advanced Engineering (Q4 2026+)**
+
+**Goal**: Transform the project from a static library into a dynamic prompt engineering codebase.
+
+#### **Key Initiatives**
+
+- **Automated Context Loading:**
+  - **Mechanism:** Develop a tool (`tools/load_context.py`) that parses a specialist's YAML file and generates a perfectly formatted System Prompt string, eliminating manual copy-pasting.
+  - **Goal:** Streamline the activation process and reduce user error.
+
+- **Enhanced Schema (Few-Shot):**
+  - **Mechanism:** Update the YAML schema to support `output_examples` fields, allowing users to define "Gold Standard" responses directly in the file.
+  - **Goal:** Enable true few-shot learning by injecting high-quality examples into the context window.
+
+- **Automated Prompt Testing:**
+  - **Mechanism:** Create a testing framework that runs specialists against standard inputs and grades the output against defined criteria.
+  - **Goal:** Move from "Prompt Guessing" to true "Prompt Engineering" with measurable quality metrics.
 
