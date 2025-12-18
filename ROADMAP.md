@@ -1,57 +1,49 @@
 # **🗺️ AI-Staff-HQ: Product Roadmap**
 
-_The Future of Your AI Workforce - Version 2.0.0_
+_The Future of Your AI Workforce - Version 2.1.0_
 
 ## **🎯 Vision**
 
 To create the most comprehensive, adaptable, and powerful framework for building and managing a custom AI workforce, enabling users to command a diverse team of specialized AI agents for any creative, strategic, technical, or personal challenge.
 
-## **🚀 Current Status: Version 2.0.0 (October 2025)**
+## **🚀 Current Status: Version 2.1.0 (December 2025)**
 
-### **✅ Lean and Extensible**
-
-The AI-Staff-HQ has been refactored to be a lean and extensible framework. The focus is now on providing a solid foundation for users to build their own custom AI workforce.
-
-### **🏆 Major Achievements in v2.0.0**
-
-- **Core Team:** The project now includes a core team of 5 essential specialists that serve as examples and a starting point for any workforce.
-- **Bring Your Own Staff:** The project is now designed around the 'bring your own staff' philosophy, with clear instructions and templates for creating new specialists.
-- **Streamlined Documentation:** All documentation has been updated to reflect the new lean and extensible approach.
+### **✅ Tooling & Cleanup Complete**
+We have successfully consolidated the directory structure, audited the documentation, and shipped the **Local Validation Tool** (`tools/validate_specialist.py`). The project is now clean, validated, and ready for extension.
 
 ### **Known Limitations**
-
-- **Limited Examples:** While the core team provides a good starting point, more examples of different types of specialists would be beneficial.
-- **Manual Validation:** The process of creating new specialists is still manual and relies on the user to ensure consistency and quality.
+- **Manual Context Loading:** Users still need to manually copy specialist contexts into their AI interfaces.
+- **Limited Examples:** More diverse workflow examples are needed.
 
 ## **🗺️ Roadmap: Next 12 Months**
 
-### **Phase 1: Community & Tooling (Q4 2025 - Q1 2026)**
+### **Phase 1: Cognitive Infrastructure & Clarity (Q4 2025 - Q1 2026)**
 
-**Goal**: Foster a thriving community and provide tools for building and validating custom specialists.
-
-#### **Key Initiatives**
-
-- **Local Validation Tooling:** (✅ Completed)
-  - **Mechanism:** Use the CLI linter (`tools/validate_specialist.py`) to help users create consistent specialist profiles locally. Run via `uv run tools/validate_specialist.py`.
-  - **Goal:** Ensure the quality and consistency of your personal or shared specialists.
-
-- **Documentation & Examples:**
-  - **Mechanism:** Continue refining the documentation and adding more examples to the core repo.
-  - **Goal:** Make it easier for users to build their own workforce without needing a complex platform.
-
-### **Phase 2: Expanding the Core (Q2 2026 - Q3 2026)**
-
-**Goal**: Expand the library of core specialists and example workflows.
+**Goal**: Optimize the framework for personal utility, focusing on unambiguous documentation and cognitive accessibility.
 
 #### **Key Initiatives**
 
-- **New Core Specialists:**
-  - **Mechanism:** Add a few more core specialists to the project to provide more examples and cover more domains.
-  - **Goal:** Provide a richer starting point for new users.
+- **Cognitive Accessibility Audit:**
+  - **Mechanism:** Review and rewrite guides (`GETTING-STARTED.md`, `QUICK-REFERENCE.md`) to be unambiguous, step-by-step, and explicitly formatted for high-clarity execution.
+  - **Goal:** Reduce cognitive load and ambiguous interpretation during usage.
 
-- **New Example Workflows:**
-  - **Mechanism:** Add more example workflows that showcase different ways to orchestrate specialists.
-  - **Goal:** Inspire users to create their own custom workflows.
+- **Personal Documentation:**
+  - **Mechanism:** tailored documentation that assumes "Self" as the primary user, removing generic "Community" fluff.
+  - **Goal:** Create a "External Brain" that requires zero context-switching to use.
+
+### **Phase 2: Workflow Mastery (Q2 2026 - Q3 2026)**
+
+**Goal**: Deepen the capabilities of the existing 41 specialists rather than expanding the roster.
+
+#### **Key Initiatives**
+
+- **Deep Dive Completion:**
+  - **Mechanism:** Flesh out the `deep_dive` and `specialized_knowledge_areas` for the core 41 specialists.
+  - **Goal:** Move from "Generalist" to "Expert" in existing domains.
+
+- **Advanced Inter-Specialist Workflows:**
+  - **Mechanism:** Document complex chains (e.g., *Strategy -> Tech -> Comms*) as repeatable runbooks.
+  - **Goal:** Standardize complex operations into reliable routines.
 
 ### **Phase 3: Advanced Engineering (Q4 2026+)**
 

@@ -243,7 +243,7 @@ staff/
 | `staff/README.md` | **Current** | Updated paths and counts |
 | `ROSTER.md` | **Reference** | List of all planned specialists |
 | `ROSTER-plan.md` | **Reference** | detailed implementation plan |
-| `CHANGELOG` | ⚠️ Needs Creation | - |
+| `CHANGELOG.md` | **Current** | Tracks project history |
 
 ---
 
