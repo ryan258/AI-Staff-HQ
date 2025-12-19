@@ -21,6 +21,23 @@ from orchestrator.graph_runner import GraphRunner, build_state_graph, GraphState
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 STAFF_DIR = PROJECT_ROOT / "staff"
 
+
+def get_available_specialists(staff_dir: Path) -> dict[str, list[str]]:
+    """Discover all available specialists grouped by department."""
+    specialists = {}
+    for dept_dir in staff_dir.iterdir():
+        if not dept_dir.is_dir() or dept_dir.name.startswith('.'):
+            continue
+        dept_specialists = []
+        for yaml_file in dept_dir.rglob("*.yaml"):
+            # Get the specialist slug (filename without extension)
+            slug = yaml_file.stem
+            dept_specialists.append(slug)
+        if dept_specialists:
+            specialists[dept_dir.name] = sorted(dept_specialists)
+    return specialists
+
+
 def extract_json(text: str) -> list:
     """Extract JSON list from text (naive)."""
     try:
@@ -38,6 +55,15 @@ def build_graph(runner: GraphRunner):
     """Assemble the Dynamic Orchestration graph with a Worker Loop."""
     graph = build_state_graph()
 
+    # Discover available specialists
+    available_specialists = get_available_specialists(STAFF_DIR)
+
+    # Format specialist list for prompt
+    specialist_list = []
+    for dept, specialists in sorted(available_specialists.items()):
+        specialist_list.append(f"  {dept.upper()}: {', '.join(specialists)}")
+    specialists_text = "\n".join(specialist_list)
+
     # Node 1: Planning (Manager)
     # Generates a JSON list of tasks for other specialists
     def plan_step(state: GraphState) -> GraphState:
@@ -45,25 +71,50 @@ def build_graph(runner: GraphRunner):
         agent = runner.get_agent("chief-of-staff", session_id=state.get("run_id"))
         prompt = (
             "You are the Orchestrator. Break down this request into specific tasks for your staff.\n"
-            "Identify the BEST specialist for each task (use their exact slug, e.g., 'copywriter', 'market-analyst').\n"
-            "Return ONLY a JSON list of tasks. Do not do the work yourself.\n\n"
+            "You MUST ONLY delegate to specialists from this EXACT list below. "
+            "Use their exact slug names (e.g., 'copywriter', 'market-analyst').\n\n"
+            "AVAILABLE SPECIALISTS:\n"
+            f"{specialists_text}\n\n"
+            "Return ONLY a JSON list of tasks. Do not do the work yourself.\n"
+            "If you try to use a specialist not in the list above, it will fail.\n\n"
             "Format:\n"
             '[{"specialist": "slug-name", "task": "specific instructions"}, ...]\n\n'
             f"Request: {state.get('topic')}"
         )
         response = agent.query(prompt)
-        
+
         # Parse tasks
         tasks = extract_json(response)
-        
+
+        # Validate specialists exist - filter out invalid ones
+        valid_specialists = set()
+        for dept_specialists in available_specialists.values():
+            valid_specialists.update(dept_specialists)
+
+        validated_tasks = []
+        invalid_tasks = []
+        for task in tasks:
+            specialist_slug = task.get("specialist", "").lower()
+            if specialist_slug in valid_specialists:
+                validated_tasks.append(task)
+            else:
+                invalid_tasks.append(task)
+                # Re-assign invalid tasks to chief-of-staff to handle
+                validated_tasks.append({
+                    "specialist": "chief-of-staff",
+                    "task": f"[Reassigned from non-existent '{specialist_slug}']: {task.get('task', '')}"
+                })
+
         runner.record_step(state, "cos_planning", {
             "prompt": prompt,
             "response": response,
             "parsed_tasks": tasks,
+            "validated_tasks": validated_tasks,
+            "invalid_specialists_requested": [t.get("specialist") for t in invalid_tasks],
             "parse_success": bool(tasks)
         })
-        
-        return {**state, "strategy_plan": response, "queue": tasks, "results": []}
+
+        return {**state, "strategy_plan": response, "queue": validated_tasks, "results": []}
 
     # Node 2: Worker (Dynamic Dispatch)
     def worker_step(state: GraphState) -> GraphState:
