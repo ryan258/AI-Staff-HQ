@@ -17,11 +17,20 @@ class SpecialistSlugs:
     CHIEF_OF_STAFF = "chief-of-staff"
     MARKET_ANALYST = "market-analyst"
     CREATIVE_STRATEGIST = "creative-strategist"
+    ALCHEMIST = "alchemist"
 
     # Tech Department
     SOFTWARE_ARCHITECT = "software-architect"
     TOOLMAKER = "toolmaker"
     QUALITY_CONTROL_SPECIALIST = "quality-control-specialist"
+
+    # Health & Lifestyle Department
+    SHADOW_WORKER = "shadow-worker"
+    ACTIVE_IMAGINATION_GUIDE = "active-imagination-guide"
+
+    # Producers Department
+    SYMBOLIST = "symbolist"
+    MYTHOLOGIST = "mythologist"
 
 
 def get_available_specialists(staff_dir: Path) -> Set[str]:
