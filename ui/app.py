@@ -39,8 +39,203 @@ def list_specialists() -> Dict[str, List[str]]:
 
 def main():
     st.set_page_config(page_title="AI-Staff-HQ", layout="wide")
+
+    # Apply Candlelite Theme
+    st.markdown("""
+    <style>
+        /* Candlelite Theme - Color Palette */
+        :root {
+            --bg-color: #121212;
+            --text-color: #EBD2BE;
+            --accent-primary: #A6ACCD;
+            --accent-success: #98C379;
+            --accent-danger: #E06C75;
+            --card-bg: #121212;
+            --border-color: #A6ACCD;
+        }
+
+        /* Main App Background */
+        .stApp {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* Headers */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-color) !important;
+        }
+
+        /* Text elements */
+        .stMarkdown, .stText, p, span, label {
+            color: var(--text-color) !important;
+        }
+
+        /* Captions */
+        .stCaption {
+            color: var(--accent-primary) !important;
+        }
+
+        /* Text inputs */
+        .stTextInput > div > div > input {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+        }
+
+        .stTextInput > div > div > input:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 1px var(--accent-primary);
+        }
+
+        /* Number inputs */
+        .stNumberInput > div > div > input {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Select boxes */
+        .stSelectbox > div > div > div {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Buttons - Primary */
+        .stButton > button[kind="primary"] {
+            background-color: var(--accent-primary);
+            color: var(--bg-color);
+            border: none;
+            font-weight: 600;
+        }
+
+        .stButton > button[kind="primary"]:hover {
+            background-color: var(--accent-success);
+            color: var(--bg-color);
+        }
+
+        /* Buttons - Secondary */
+        .stButton > button {
+            background-color: var(--bg-color);
+            color: var(--accent-primary);
+            border: 1px solid var(--accent-primary);
+        }
+
+        .stButton > button:hover {
+            background-color: var(--accent-primary);
+            color: var(--bg-color);
+        }
+
+        /* Checkboxes */
+        .stCheckbox {
+            color: var(--text-color) !important;
+        }
+
+        /* Expanders */
+        .streamlit-expanderHeader {
+            background-color: var(--bg-color);
+            color: var(--text-color) !important;
+            border: 1px solid var(--border-color);
+        }
+
+        .streamlit-expanderContent {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-top: none;
+        }
+
+        /* Sidebar */
+        section[data-testid="stSidebar"] {
+            background-color: var(--bg-color);
+            border-right: 1px solid var(--border-color);
+        }
+
+        section[data-testid="stSidebar"] * {
+            color: var(--text-color) !important;
+        }
+
+        /* Success messages */
+        .stSuccess {
+            background-color: var(--bg-color);
+            color: var(--accent-success) !important;
+            border-left: 4px solid var(--accent-success);
+        }
+
+        /* Error messages */
+        .stError {
+            background-color: var(--bg-color);
+            color: var(--accent-danger) !important;
+            border-left: 4px solid var(--accent-danger);
+        }
+
+        /* Spinner */
+        .stSpinner > div {
+            border-top-color: var(--accent-primary) !important;
+        }
+
+        /* Code blocks */
+        code {
+            background-color: var(--bg-color);
+            color: var(--accent-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        /* JSON viewer */
+        .stJson {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Dividers */
+        hr {
+            border-color: var(--border-color);
+        }
+
+        /* Links */
+        a {
+            color: var(--accent-primary);
+        }
+
+        a:hover {
+            color: var(--accent-success);
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
     st.title("AI-Staff-HQ Dashboard")
     st.caption("Phase 4: Autonomous Swarm & Interface")
+
+    # Usage instructions
+    with st.expander("ℹ️ How to Use", expanded=False):
+        st.markdown("""
+        ### Quick Start Guide
+
+        1. **Select a Workflow** from the dropdown (Dynamic Orchestration is recommended)
+        2. **Enter your topic/request** in the text box below
+        3. **Configure settings** in the sidebar (optional)
+        4. **Click "Run Workflow"** to execute
+
+        ### What Each Workflow Does
+
+        - **Dynamic Orchestration (Chief of Staff)**: The Chief of Staff analyzes your request, delegates to appropriate specialists, and synthesizes the results. Best for general requests.
+        - **Strategy → Tech Handoff**: Market analysis → Technical planning → Executive brief
+        - **Strategic Planning**: Market analysis → Creative strategy → Executive summary
+        - **Code Feature Implementation**: Architecture → Implementation → QA review
+
+        ### Reading Results
+
+        After execution completes, you'll see:
+        - **Final Synthesized Output** (for Dynamic Orchestration)
+        - **Individual Specialist Outputs** (what each specialist produced)
+        - **Execution Log** (detailed step-by-step workflow trace)
+
+        ### Troubleshooting
+
+        If no results appear:
+        1. Check the **Raw Result Data** expander to see what was returned
+        2. Review the **Full Execution Log** for errors
+        3. Make sure your API keys are configured in `.env`
+        """)
 
     # Initialize topic if not present
     if "topic" not in st.session_state:
@@ -89,7 +284,16 @@ def main():
                                 current_topic += " "
                             st.session_state["topic"] = current_topic + addition
                             st.rerun()
-    if st.button("Run Workflow", type="primary", disabled=not topic.strip()):
+    col1, col2 = st.columns([3, 1])
+    with col1:
+        run_button = st.button("Run Workflow", type="primary", disabled=not topic.strip())
+    with col2:
+        if st.button("Clear Results"):
+            if "last_result" in st.session_state:
+                del st.session_state["last_result"]
+            st.rerun()
+
+    if run_button:
         with st.spinner(f"Running {selected_workflow_name}..."):
             try:
                 run_func = workflow_map[selected_workflow_name]
@@ -100,30 +304,53 @@ def main():
                     temperature=temperature,
                 )
                 st.session_state["last_result"] = result
+                st.rerun()  # Force UI refresh to show results
             except Exception as exc:  # noqa: BLE001
-                st.error(f"Workflow failed: {exc}")
+                st.error(f"❌ Workflow failed: {exc}")
+                import traceback
+                with st.expander("Error Details"):
+                    st.code(traceback.format_exc())
 
     if "last_result" in st.session_state:
         result = st.session_state["last_result"]
-        st.success(f"Run complete (ID: {result.get('run_id')})")
+        st.success(f"✓ Run complete (ID: {result.get('run_id', 'N/A')})")
 
-        if result.get("results"):
-            for item in result["results"]:
+        # Debug info - show what keys are in result
+        st.caption(f"Result contains: {', '.join(result.keys())}")
+
+        # Display final output first (most important for Dynamic Orchestration)
+        if final_output := result.get("final_output"):
+            with st.expander("📋 Final Synthesized Output", expanded=True):
+                st.markdown(final_output)
+
+        # Display individual specialist outputs
+        if results_list := result.get("results"):
+            st.subheader(f"Individual Specialist Outputs ({len(results_list)} total)")
+            for idx, item in enumerate(results_list, 1):
                 specialist = item.get("specialist", "Specialist").replace("-", " ").title()
-                with st.expander(f"Output: {specialist}", expanded=True):
-                    st.markdown(item.get("output", ""))
+                task = item.get("task", "")
+                output = item.get("output", "")
 
-        # Generic Result Display based on keys
+                with st.expander(f"{idx}. {specialist}", expanded=False):
+                    if task:
+                        st.markdown(f"**Task:** {task}")
+                        st.markdown("---")
+                    st.markdown(output)
+        else:
+            # No results - check if there was an error
+            if not result.get("final_output"):
+                st.warning("⚠️ No outputs were generated. Check the step log below for details.")
+
+        # Generic Result Display based on keys (for other workflows)
         display_keys = [
-            ("analysis", "Market Analysis"),
-            ("strategy", "Creative Strategy"),
-            ("spec", "Technical Spec"),
-            ("technical_plan", "Technical Plan"),
-            ("code", "Implementation"),
-            ("qa_report", "QA Report"),
-            ("strategy_plan", "Strategic Plan"),
-            ("executive_brief", "Executive Brief"),
-            ("final_output", "Final Output"),
+            ("analysis", "📊 Market Analysis"),
+            ("strategy", "💡 Creative Strategy"),
+            ("spec", "📐 Technical Spec"),
+            ("technical_plan", "🔧 Technical Plan"),
+            ("code", "💻 Implementation"),
+            ("qa_report", "✅ QA Report"),
+            ("strategy_plan", "📈 Strategic Plan"),
+            ("executive_brief", "📄 Executive Brief"),
         ]
 
         for key, title in display_keys:
@@ -131,8 +358,18 @@ def main():
                 with st.expander(title, expanded=True):
                     st.markdown(val)
 
-        with st.expander("Full Step Log", expanded=False):
-            st.json(result.get("steps", []))
+        # Step log - always show for debugging
+        with st.expander("🔍 Full Execution Log", expanded=False):
+            steps = result.get("steps", [])
+            if steps:
+                st.caption(f"{len(steps)} steps recorded")
+                st.json(steps)
+            else:
+                st.warning("No steps were recorded")
+
+        # Raw result viewer for debugging
+        with st.expander("🐛 Raw Result Data (Debug)", expanded=False):
+            st.json(result)
 
 
 if __name__ == "__main__":
