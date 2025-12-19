@@ -50,11 +50,9 @@ def interactive_loop(agent: SpecialistAgent) -> None:
                 break
                 
             if user_input.lower() in ('/clear', 'clear'):
-                console.print("[yellow]Clearing memory (new session)...[/yellow]")
-                # We can't easily clear in-place without agent support, so we just restart
-                # For now, simplistic clear by just adding a system note or similar?
-                # Actually proper clear needs agent support. Let's just exit/restart.
-                console.print("To clear properly, please restart the tool. (Feature WIP)")
+                console.print("[yellow]Clearing conversation history...[/yellow]")
+                new_session_id = agent.state.clear()
+                console.print(f"[green]✓ New session started: {new_session_id}[/green]")
                 continue
 
             # Query

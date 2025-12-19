@@ -15,6 +15,7 @@ from rich.console import Console
 from langgraph.graph import END
 
 from orchestrator.graph_runner import GraphRunner, build_state_graph, GraphState
+from workflows.constants import SpecialistSlugs
 
 
 console = Console()
@@ -28,7 +29,7 @@ def build_graph(runner: GraphRunner):
 
     # Phase 1: Spec Design (Architect)
     spec_design = runner.make_agent_node(
-        specialist_slug="software-architect",
+        specialist_slug=SpecialistSlugs.SOFTWARE_ARCHITECT,
         state_key="spec",
         step_name="spec_design",
         prompt_builder=lambda state: (
@@ -40,7 +41,7 @@ def build_graph(runner: GraphRunner):
 
     # Phase 2: Implementation (Toolmaker)
     implementation = runner.make_agent_node(
-        specialist_slug="toolmaker",
+        specialist_slug=SpecialistSlugs.TOOLMAKER,
         state_key="code",
         step_name="implementation",
         prompt_builder=lambda state: (
@@ -52,7 +53,7 @@ def build_graph(runner: GraphRunner):
 
     # Phase 3: Quality Check (QA)
     quality_check = runner.make_agent_node(
-        specialist_slug="quality-control-specialist",
+        specialist_slug=SpecialistSlugs.QUALITY_CONTROL_SPECIALIST,
         state_key="qa_report",
         step_name="quality_check",
         prompt_builder=lambda state: (

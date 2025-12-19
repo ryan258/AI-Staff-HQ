@@ -16,6 +16,7 @@ sys.path.append(str(Path(__file__).resolve().parents[2]))
 from langgraph.graph import END
 
 from orchestrator.graph_runner import GraphRunner, build_state_graph, GraphState
+from workflows.constants import SpecialistSlugs
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -68,7 +69,7 @@ def build_graph(runner: GraphRunner):
     # Generates a JSON list of tasks for other specialists
     def plan_step(state: GraphState) -> GraphState:
         # Use public get_agent
-        agent = runner.get_agent("chief-of-staff", session_id=state.get("run_id"))
+        agent = runner.get_agent(SpecialistSlugs.CHIEF_OF_STAFF, session_id=state.get("run_id"))
         prompt = (
             "You are the Orchestrator. Break down this request into specific tasks for your staff.\n"
             "You MUST ONLY delegate to specialists from this EXACT list below. "
@@ -101,7 +102,7 @@ def build_graph(runner: GraphRunner):
                 invalid_tasks.append(task)
                 # Re-assign invalid tasks to chief-of-staff to handle
                 validated_tasks.append({
-                    "specialist": "chief-of-staff",
+                    "specialist": SpecialistSlugs.CHIEF_OF_STAFF,
                     "task": f"[Reassigned from non-existent '{specialist_slug}']: {task.get('task', '')}"
                 })
 
@@ -118,32 +119,36 @@ def build_graph(runner: GraphRunner):
 
     # Node 2: Worker (Dynamic Dispatch)
     def worker_step(state: GraphState) -> GraphState:
+        """Execute next task in queue."""
         queue = list(state.get("queue", []))
         if not queue:
             return state
-            
+
         # Pop next task
         task = queue.pop(0)
-        slug = task.get("specialist", "chief-of-staff").lower()
+        slug = task.get("specialist", SpecialistSlugs.CHIEF_OF_STAFF).lower()
         instruction = task.get("task", "")
-        
+
         # Run Agent
         try:
             agent = runner.get_agent(slug, session_id=state.get("run_id"))
             response = agent.query(instruction)
         except Exception as e:
-            # Log specific error but continue workflow
+            # Log the primary error to stderr
             error_msg = f"Failed to load/run agent '{slug}': {e}"
+            print(f"ERROR: {error_msg}", file=sys.stderr)
             response = f"[System Error]: {error_msg}"
-            
-            # Helper fallback if specific agent fails
-            if slug != "chief-of-staff":
-                 try:
-                     fallback_agent = runner.get_agent("chief-of-staff", session_id=state.get("run_id"))
-                     fallback_resp = fallback_agent.query(f"Task for {slug} failed. Please handle: {instruction}")
-                     response += f"\n\n[CoS Fallback]: {fallback_resp}"
-                 except Exception:
-                     pass
+
+            # Try fallback to chief-of-staff
+            if slug != SpecialistSlugs.CHIEF_OF_STAFF:
+                try:
+                    fallback_agent = runner.get_agent(SpecialistSlugs.CHIEF_OF_STAFF, session_id=state.get("run_id"))
+                    fallback_resp = fallback_agent.query(f"Task for {slug} failed. Please handle: {instruction}")
+                    response += f"\n\n[CoS Fallback]: {fallback_resp}"
+                except Exception as fallback_error:
+                    # Log the fallback failure - DO NOT SUPPRESS
+                    print(f"ERROR: Chief-of-Staff fallback also failed: {fallback_error}", file=sys.stderr)
+                    response += f"\n\n[Fallback Failed]: Chief-of-Staff could not handle the task."
 
         # Record result
         result_entry = {
@@ -162,7 +167,7 @@ def build_graph(runner: GraphRunner):
 
     # Node 3: Synthesis
     def synthesis_step(state: GraphState) -> GraphState:
-        agent = runner.get_agent("chief-of-staff", session_id=state.get("run_id"))
+        agent = runner.get_agent(SpecialistSlugs.CHIEF_OF_STAFF, session_id=state.get("run_id"))
         
         # Compile context from results
         results_text = ""

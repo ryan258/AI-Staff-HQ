@@ -66,23 +66,29 @@ def main():
     model_override = st.sidebar.text_input("Model override (optional)")
     temperature = st.sidebar.number_input("Temperature", min_value=0.0, max_value=1.0, step=0.1, value=0.7)
 
-    with st.sidebar.expander("Specialists", expanded=True):
-        st.caption("Click to insert template:")
-        for dept, names in list_specialists().items():
-            st.markdown(f"**{dept.title()}**")
-            for name in names:
-                if st.button(name, key=f"btn_{name}"):
-                    current_topic = st.session_state.get("topic", "")
-                    addition = name.replace('-', ' ').title()
-                    # Add space if needed
-                    if current_topic and not current_topic.endswith(" "):
-                        current_topic += " "
-                    st.session_state["topic"] = current_topic + addition
-                    st.rerun()
+
 
     st.subheader(f"Run: {selected_workflow_name}")
     
     topic = st.text_input("Topic or project", key="topic")
+
+    with st.expander("Specialists"):
+        st.caption("Click to insert template:")
+        specialists_map = list_specialists()
+        if specialists_map:
+            cols = st.columns(len(specialists_map))
+            for col, (dept, names) in zip(cols, specialists_map.items()):
+                with col:
+                    st.markdown(f"**{dept.title()}**")
+                    for name in names:
+                        if st.button(name, key=f"btn_{name}"):
+                            current_topic = st.session_state.get("topic", "")
+                            addition = name.replace('-', ' ').title()
+                            # Add space if needed
+                            if current_topic and not current_topic.endswith(" "):
+                                current_topic += " "
+                            st.session_state["topic"] = current_topic + addition
+                            st.rerun()
     if st.button("Run Workflow", type="primary", disabled=not topic.strip()):
         with st.spinner(f"Running {selected_workflow_name}..."):
             try:

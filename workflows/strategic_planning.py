@@ -20,6 +20,7 @@ project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
 from tools.engine.core import load_specialist
+from workflows.constants import SpecialistSlugs
 from rich.console import Console
 from rich.panel import Panel
 from rich.markdown import Markdown
@@ -37,9 +38,9 @@ def main():
 
     # 1. Initialize Agents
     with console.status("[bold]Loading specialists...[/bold]"):
-        market_analyst = load_specialist("market-analyst", staff_dir)
-        creative_strategist = load_specialist("creative-strategist", staff_dir)
-        chief_of_staff = load_specialist("chief-of-staff", staff_dir)
+        market_analyst = load_specialist(SpecialistSlugs.MARKET_ANALYST, staff_dir)
+        creative_strategist = load_specialist(SpecialistSlugs.CREATIVE_STRATEGIST, staff_dir)
+        chief_of_staff = load_specialist(SpecialistSlugs.CHIEF_OF_STAFF, staff_dir)
 
     # 2. Market Analysis
     console.print(f"\n[bold blue]Phase 1: Market Analysis ({market_analyst.schema.specialist})[/bold blue]")

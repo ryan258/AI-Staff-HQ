@@ -17,6 +17,7 @@ from rich.markdown import Markdown
 from langgraph.graph import END
 
 from orchestrator.graph_runner import GraphRunner, build_state_graph, GraphState
+from workflows.constants import SpecialistSlugs
 
 
 console = Console()
@@ -29,7 +30,7 @@ def build_graph(runner: GraphRunner):
     graph = build_state_graph()
 
     analyze_market = runner.make_agent_node(
-        specialist_slug="market-analyst",
+        specialist_slug=SpecialistSlugs.MARKET_ANALYST,
         state_key="analysis",
         step_name="market_analysis",
         prompt_builder=lambda state: (
@@ -39,7 +40,7 @@ def build_graph(runner: GraphRunner):
     )
 
     technical_plan = runner.make_agent_node(
-        specialist_slug="software-architect",
+        specialist_slug=SpecialistSlugs.SOFTWARE_ARCHITECT,
         state_key="technical_plan",
         step_name="technical_plan",
         prompt_builder=lambda state: (
@@ -51,7 +52,7 @@ def build_graph(runner: GraphRunner):
     )
 
     executive_brief = runner.make_agent_node(
-        specialist_slug="chief-of-staff",
+        specialist_slug=SpecialistSlugs.CHIEF_OF_STAFF,
         state_key="executive_brief",
         step_name="executive_brief",
         prompt_builder=lambda state: (

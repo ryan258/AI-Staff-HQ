@@ -93,19 +93,50 @@ class ConversationState:
         try:
             with open(self.session_file) as f:
                 data = json.load(f)
-                
+
             self.session_id = data["session_id"]
             self.created_at = data["created_at"]
             self.updated_at = data.get("updated_at", self.created_at)
-            
+
             # Restore messages
             if "messages" in data:
                 self.messages = messages_from_dict(data["messages"])
-                
+
             return True
         except Exception as e:
             print(f"Error loading session {self.session_id}: {e}")
             return False
+
+    def clear(self) -> str:
+        """Clear conversation history and start fresh session.
+
+        Returns:
+            New session ID
+        """
+        # Generate new session ID
+        from datetime import timezone
+        timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+        short_uuid = uuid.uuid4().hex[:8]
+        self.session_id = f"{timestamp}_{short_uuid}"
+
+        # Reset messages but keep system message if exists
+        system_msg = None
+        if self.messages and isinstance(self.messages[0], SystemMessage):
+            system_msg = self.messages[0]
+
+        self.messages = [system_msg] if system_msg else []
+
+        # Update timestamps
+        self.created_at = datetime.now().isoformat()
+        self.updated_at = self.created_at
+
+        # Update session file path
+        self.session_file = self.session_dir / f"{self.session_id}.json"
+
+        # Save new session
+        self.save()
+
+        return self.session_id
 
     @staticmethod
     def list_sessions(specialist_slug: str) -> List[Dict[str, Any]]:

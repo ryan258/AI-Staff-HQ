@@ -57,8 +57,11 @@ department_routing:
   knowledge: "anthropic/claude-3-opus"
 
 # Budget mode (use cheaper models across the board)
+# WARNING: When enabled, budget mode overrides ALL role-based and department-based routing
+# All specialists will use the budget model regardless of their configured model
+# Only enable this if you explicitly want to force all specialists to use a free/cheap model
 budget_mode:
-  enabled: true
+  enabled: false
   model: "nex-agi/deepseek-v3.1-nex-n1:free"
 
 # Model metadata (for display and validation)
