@@ -29,7 +29,15 @@ class ConversationState:
     ):
         self.config = get_config()
         self.specialist_slug = specialist_slug
-        self.session_id = session_id or str(uuid.uuid4())[:8]
+        if session_id:
+            self.session_id = session_id
+        else:
+            # Consistent format with GraphRunner: YYYYMMDD_HHMMSS_hex8
+            # Use UTC to align with logs
+            from datetime import timezone
+            timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+            short_uuid = uuid.uuid4().hex[:8]
+            self.session_id = f"{timestamp}_{short_uuid}"
         self.messages: List[BaseMessage] = []
         self.created_at = datetime.now().isoformat()
         self.updated_at = self.created_at

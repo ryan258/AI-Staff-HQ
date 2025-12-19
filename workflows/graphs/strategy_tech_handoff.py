@@ -6,6 +6,10 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 from typing import Optional
+import sys
+
+# Add project root to path
+sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 from rich.console import Console
 from rich.panel import Panel

@@ -14,6 +14,7 @@ When you have a task, follow these exact steps:
 4.  **Activate:** Type exactly: `Acting as the [Specialist Name] from my AI-Staff-HQ, [your specific request].`
 
 **Example:**
+
 > "Acting as the Copywriter from my AI-Staff-HQ, write a subject line for tomorrow's email."
 
 ## 2. Advanced Coordination (Chief of Staff)
@@ -33,8 +34,20 @@ If no existing specialist fits your need:
 3.  **Define:** Fill in the `role`, `skills`, and `motto` fields.
 4.  **Validate:** Run `uv run tools/validate_specialist.py` to check your work.
 
+## 4. Visual Interface (Web UI)
+
+For a graphical experience with workflow visualization:
+
+1.  **Install UI Dependencies:** `uv sync --extra ui`
+2.  **Launch Dashboard:** `uv run streamlit run ui/app.py`
+3.  **Use the Interface:**
+    - **Workflows:** Launch complex graphs like `Strategy-Tech Handoff`.
+    - **Chat:** Interact with specialists visually.
+    - **Logs:** Inspect session history and audit trails.
+
 ---
 
 **Cognitive Check:**
+
 - If you are thinking "Which specialist do I use?", check `docs/QUICK-REFERENCE.md`.
 - If you are thinking "How do I do this?", come back to step 1 of this file.
