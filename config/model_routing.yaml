@@ -2,59 +2,11 @@
 # Maps specialist roles and departments to optimal models via OpenRouter.
 # Lookup order: package-local config/model_routing.yaml (preferred), then CWD/config/model_routing.yaml, otherwise defaults.
 
-# Role-based routing (takes precedence)
-role_routing:
-  # Canonical Roles (Generated from Staff Audit)
-  "AI Optimization & Prompt Design Specialist": "anthropic/claude-3.5-sonnet"
-  "Behavior Design & Habit Formation Specialist": "anthropic/claude-3.5-sonnet"
-  "Brand Architecture & Identity Strategist": "anthropic/claude-3.5-sonnet"
-  "Business Law & Legal Strategy Specialist": "anthropic/claude-3.5-sonnet"
-  "Business Operations & Process Optimization Specialist": "anthropic/claude-3.5-sonnet"
-  "Cognitive Restructuring & Mental Wellness Specialist": "anthropic/claude-3.5-sonnet"
-  "Commercial Property Analysis & Investment Specialist": "anthropic/claude-3.5-sonnet"
-  "Community Building & Engagement Specialist": "anthropic/claude-3.5-sonnet"
-  "Conversion Copy & Brand Messaging Specialist": "anthropic/claude-3.5-sonnet"
-  "Conversion Rate & Revenue Optimization Specialist": "anthropic/claude-3.5-sonnet"
-  "Custom Tool & Solution Development Specialist": "anthropic/claude-3.5-sonnet"
-  "Data Intelligence & Analytics Specialist": "anthropic/claude-3.5-sonnet"
-  "Event Strategy & Experience Design Specialist": "anthropic/claude-3.5-sonnet"
-  "Financial Psychology & Money Mindset Specialist": "anthropic/claude-3.5-sonnet"
-  "Growth Marketing & Customer Acquisition Strategist": "anthropic/claude-3.5-sonnet"
-  "Holistic Health & Wellness Optimization Specialist": "anthropic/claude-3.5-sonnet"
-  "Influencer Marketing & Partnership Strategist": "anthropic/claude-3.5-sonnet"
-  "Information Security & Risk Management Specialist": "anthropic/claude-3.5-sonnet"
-  "Interior Space Design & Styling Specialist": "anthropic/claude-3.5-sonnet"
-  "Investment Strategy & Wealth Management Specialist": "anthropic/claude-3.5-sonnet"
-  "Landscape Design & Outdoor Space Planning Specialist": "anthropic/claude-3.5-sonnet"
-  "Learning Design & Cognitive Science Specialist": "anthropic/claude-3.5-sonnet"
-  "Market Research & Competitive Analysis Specialist": "anthropic/claude-3.5-sonnet"
-  "Mindfulness & Meditation Practice Specialist": "anthropic/claude-3.5-sonnet"
-  "Pricing Strategy & Revenue Optimization Specialist": "anthropic/claude-3.5-sonnet"
-  "Python Workflow Automation Specialist": "anthropic/claude-3.5-sonnet"
-  "Quality Assurance & Standards Enforcement Specialist": "anthropic/claude-3.5-sonnet"
-  "Real Estate Investment Strategy & Execution Specialist": "anthropic/claude-3.5-sonnet"
-  "Scholarly Research & Literature Analysis Specialist": "anthropic/claude-3.5-sonnet"
-  "Search Engine Optimization & Organic Growth Specialist": "anthropic/claude-3.5-sonnet"
-  "Social Media Strategy & Community Growth Specialist": "anthropic/claude-3.5-sonnet"
-  "Software System Design & Technical Strategy Specialist": "anthropic/claude-3.5-sonnet"
-  "Stoic Philosophy & Resilience Building Specialist": "anthropic/claude-3.5-sonnet"
-  "Story Architecture & Narrative Systems Specialist": "anthropic/claude-3.5-sonnet"
-  "Strategic Coordinator & Project Orchestrator": "anthropic/claude-3.5-sonnet"
-  "Strategic Creative Thinker & Campaign Architect": "anthropic/claude-3.5-sonnet"
-  "Supply Chain Management & Logistics Optimization Specialist": "anthropic/claude-3.5-sonnet"
-  "Tax Planning & Optimization Specialist": "anthropic/claude-3.5-sonnet"
-  "Trend Analysis & Future Insights Specialist": "anthropic/claude-3.5-sonnet"
-  "Visual Creative Director": "anthropic/claude-3.5-sonnet"
-  "Workflow Design & Personal Systems Specialist": "anthropic/claude-3.5-sonnet"
+# Role-based routing (takes precedence if configured, but currently empty to respect .env default)
+role_routing: {}
 
 # Department-based fallback routing
-department_routing:
-  strategy: "anthropic/claude-3.5-sonnet"
-  producers: "openai/gpt-4o"
-  commerce: "anthropic/claude-3.5-haiku"
-  tech: "anthropic/claude-3.5-sonnet"
-  health-lifestyle: "anthropic/claude-3.5-sonnet"
-  knowledge: "anthropic/claude-3-opus"
+department_routing: {}
 
 # Budget mode (use cheaper models across the board)
 # WARNING: When enabled, budget mode overrides ALL role-based and department-based routing
@@ -66,26 +18,14 @@ budget_mode:
 
 # Model metadata (for display and validation)
 available_models:
-  - id: "anthropic/claude-3.5-sonnet"
-    name: "Claude 3.5 Sonnet"
+  - id: "nex-agi/deepseek-v3.1-nex-n1:free"
+    name: "DeepSeek V3 (Free)"
     context_window: 200000
-    cost_per_1k_input: 0.003
-    strengths: ["reasoning", "code", "analysis"]
-
-  - id: "anthropic/claude-3-opus"
-    name: "Claude 3 Opus"
-    context_window: 200000
-    cost_per_1k_input: 0.015
-    strengths: ["deep_research", "complexity", "nuance"]
+    cost_per_1k_input: 0.0
+    strengths: ["reasoning", "code", "analysis", "free"]
 
   - id: "openai/gpt-4o"
     name: "GPT-4o"
     context_window: 128000
     cost_per_1k_input: 0.005
     strengths: ["creativity", "multimodal", "code"]
-
-  - id: "anthropic/claude-3.5-haiku"
-    name: "Claude 3.5 Haiku"
-    context_window: 200000
-    cost_per_1k_input: 0.001
-    strengths: ["speed", "efficiency", "cost"]

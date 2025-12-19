@@ -55,17 +55,20 @@ class ModelRouter:
         if budget_cfg.get('enabled', False):
             return budget_cfg.get('model', self.config.default_model)
 
-        # 3. Role-based routing
+        # 3. Default model from .env takes precedence over YAML routing
+        if self.config.default_model:
+            return self.config.default_model
+
+        # 4. Role-based routing (Ignored if default_model is set)
         role_routing = self.routing.get('role_routing', {})
         if role in role_routing:
             return role_routing[role]
 
-        # 4. Department-based fallback
+        # 5. Department-based fallback (Ignored if default_model is set)
         dept_routing = self.routing.get('department_routing', {})
         if department and department in dept_routing:
             return dept_routing[department]
 
-        # 5. Default model
         return self.config.default_model
 
     def create_llm(
