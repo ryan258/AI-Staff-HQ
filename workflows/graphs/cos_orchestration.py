@@ -129,10 +129,22 @@ def build_graph(runner: GraphRunner):
         slug = task.get("specialist", SpecialistSlugs.CHIEF_OF_STAFF).lower()
         instruction = task.get("task", "")
 
+        # Compile context from previous results
+        previous_results = state.get("results", [])
+        context_block = ""
+        if previous_results:
+            context_block = "\n\n--- PROJECT CONTEXT (PREVIOUS STEPS) ---\n"
+            for res in previous_results:
+                context_block += f"\n[Output from {res['specialist']}]:\n{res['output']}\n"
+            context_block += "\n--- END CONTEXT ---\n\n"
+            
+        # Add context to instruction
+        full_prompt = f"{instruction}{context_block}"
+
         # Run Agent
         try:
             agent = runner.get_agent(slug, session_id=state.get("run_id"))
-            response = agent.query(instruction)
+            response = agent.query(full_prompt)
         except Exception as e:
             # Log the primary error to stderr
             error_msg = f"Failed to load/run agent '{slug}': {e}"
@@ -163,6 +175,8 @@ def build_graph(runner: GraphRunner):
         }
         
         runner.record_step(state, f"worker_{slug}", result_entry)
+        # Also log the full prompt for debugging
+        result_entry["full_prompt_with_context"] = full_prompt
         return {**state, **update}
 
     # Node 3: Synthesis
