@@ -29,11 +29,13 @@ class SpecialistSlugs:
     QUALITY_CONTROL_SPECIALIST = "quality-control-specialist"
     INFINITE_LOOPER = "infinite-looper"
     IRONY_DETECTOR = "irony-detector"
+    HANDYMAN = "handyman"
 
     # Knowledge Department
     LIBRARIAN_BABEL = "librarian-babel"
     ANTIQUARIAN = "antiquarian"
     ARCHIVIST_SILENCE = "archivist-silence"
+    LOCAL_HISTORIAN = "local-historian"
 
     # Health & Lifestyle Department
     SHADOW_WORKER = "shadow-worker"
@@ -48,6 +50,9 @@ class SpecialistSlugs:
     TRANSLATOR_SILENCE = "translator-silence"
     NARRATOR = "narrator"
     DREAM_NAVIGATOR = "dream-navigator"
+    FORENSIC_CONSULTANT = "forensic-consultant"
+    DIALECT_COACH = "dialect-coach"
+    BETA_READER = "beta-reader"
 
 
 def get_available_specialists(staff_dir: Path) -> Set[str]:
