@@ -21,6 +21,7 @@ class SpecialistSlugs:
     CARTOGRAPHER_INVISIBLE = "cartographer-invisible"
     ETHICIST = "ethicist"
     SCENARIO_PLANNER = "scenario-planner"
+    ETYMOLOGIST_DECAY = "etymologist-decay"
 
     # Tech Department
     SOFTWARE_ARCHITECT = "software-architect"
@@ -31,11 +32,14 @@ class SpecialistSlugs:
 
     # Knowledge Department
     LIBRARIAN_BABEL = "librarian-babel"
+    ANTIQUARIAN = "antiquarian"
+    ARCHIVIST_SILENCE = "archivist-silence"
 
     # Health & Lifestyle Department
     SHADOW_WORKER = "shadow-worker"
     ACTIVE_IMAGINATION_GUIDE = "active-imagination-guide"
     HUMANIST = "humanist"
+    XENOBIOLOGIST = "xenobiologist"
 
     # Producers Department
     SYMBOLIST = "symbolist"
@@ -43,6 +47,7 @@ class SpecialistSlugs:
     MIRROR_MAKER = "mirror-maker"
     TRANSLATOR_SILENCE = "translator-silence"
     NARRATOR = "narrator"
+    DREAM_NAVIGATOR = "dream-navigator"
 
 
 def get_available_specialists(staff_dir: Path) -> Set[str]:
