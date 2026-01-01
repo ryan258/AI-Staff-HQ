@@ -86,6 +86,8 @@ def build_graph(runner: GraphRunner):
 
         # Parse tasks
         tasks = extract_json(response)
+        if not isinstance(tasks, list):
+            tasks = []
 
         # Validate specialists exist - filter out invalid ones
         valid_specialists = set()
@@ -94,12 +96,23 @@ def build_graph(runner: GraphRunner):
 
         validated_tasks = []
         invalid_tasks = []
+        invalid_specialists = []
         for task in tasks:
-            specialist_slug = task.get("specialist", "").lower()
+            if not isinstance(task, dict):
+                invalid_tasks.append(task)
+                invalid_specialists.append(None)
+                validated_tasks.append({
+                    "specialist": SpecialistSlugs.CHIEF_OF_STAFF,
+                    "task": f"[Reassigned from invalid task payload]: {task}"
+                })
+                continue
+
+            specialist_slug = str(task.get("specialist", "")).lower()
             if specialist_slug in valid_specialists:
                 validated_tasks.append(task)
             else:
                 invalid_tasks.append(task)
+                invalid_specialists.append(task.get("specialist"))
                 # Re-assign invalid tasks to chief-of-staff to handle
                 validated_tasks.append({
                     "specialist": SpecialistSlugs.CHIEF_OF_STAFF,
@@ -111,7 +124,7 @@ def build_graph(runner: GraphRunner):
             "response": response,
             "parsed_tasks": tasks,
             "validated_tasks": validated_tasks,
-            "invalid_specialists_requested": [t.get("specialist") for t in invalid_tasks],
+            "invalid_specialists_requested": invalid_specialists,
             "parse_success": bool(tasks)
         })
 
