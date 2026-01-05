@@ -28,6 +28,7 @@ Welcome to AI-Staff-HQ, a framework for building your own AI workforce. This rep
 **This is cognitive infrastructure as code** - my personal AI operating system.
 
 ### Principles:
+
 - ✅ **Infrastructure:** Optimized for context window management and systematic thinking
 - ✅ **Methodology:** Patterns for moving from one-off prompts to orchestrated workflows
 
@@ -36,6 +37,7 @@ Welcome to AI-Staff-HQ, a framework for building your own AI workforce. This rep
 AI-Staff-HQ has evolved into **41 high-quality specialists** across 6 departments, organized using MtG color-coded principles. Start simple, expand as needed.
 
 ### Start Here: Core Team
+
 These roles cover the majority of strategic, creative, and technical work:
 
 - 🏢 [**Chief of Staff**](staff/strategy/chief-of-staff.yaml) — Project coordination, quality gates, cross-department orchestration
@@ -60,6 +62,7 @@ These roles cover the majority of strategic, creative, and technical work:
 📊 **Implementation Status:** See [IMPLEMENTATION-STATUS.md](IMPLEMENTATION-STATUS.md) for current progress
 
 ### Build Your Own
+
 - 📚 Copy `templates/persona/new-staff-member-template.md` into the appropriate department
 - 🔍 Study existing specialists as examples of depth and structure
 - 🎯 Use the Prompt Engineer to help design new specialists
@@ -77,11 +80,13 @@ These roles cover the majority of strategic, creative, and technical work:
 ## Quick Start
 
 1.  **Install Dependencies** (using `uv`):
+
     ```bash
     uv sync
     ```
 
 2.  **Configure Environment**:
+
     ```bash
     cp .env.example .env
     # Edit .env and add your OPENROUTER_API_KEY
@@ -95,38 +100,50 @@ These roles cover the majority of strategic, creative, and technical work:
 ## Usage
 
 ### Interactive Mode
+
 Start a conversational session with any specialist:
+
 ```bash
 uv run tools/activate.py <specialist-slug>
 # Example:
 uv run tools/activate.py creative-director
 ```
-*   **Sessions**: Chat history is automatically saved to `~/.ai-staff-hq/sessions/`.
-*   **Resume**: Use `--resume last` to pick up where you left off.
-*   **Commands**: Use `/exit` to quit.
+
+- **Sessions**: Chat history is automatically saved to `~/.ai-staff-hq/sessions/`.
+- **Resume**: Use `--resume last` to pick up where you left off.
+- **Commands**: Use `/exit` to quit.
 
 ### One-Shot Queries
+
 For quick questions without entering interactive mode:
+
 ```bash
 uv run tools/activate.py strategy -q "Analyze this business model..."
 ```
 
 ### Listing Specialists
+
 View all available roles:
+
 ```bash
 uv run tools/activate.py --list
 ```
 
 ### Running Tests
+
 This project uses `pytest`:
+
 ```bash
 uv run pytest
 ```
 
-### Phase 4: Orchestrated Workflows & UI
-- CLI graph: `uv run workflows/graphs/strategy_tech_handoff.py "New product idea" --auto-approve`
-- Streamlit UI (install `uv sync --extra ui`): `uv run streamlit run ui/app.py`
-- More details: `docs/phase4.md`
+### Phase 4: Swarm Orchestration (LIVE)
+
+- **Universal Runner**: All `dhp-*` scripts now use `bin/dhp-swarm.py` for dynamic multi-agent orchestration.
+- **Parallel Execution**: Complex tasks are broken down and executed in parallel waves.
+- **Robust Pipelines**: Full support for `stdin` piping allows massive context to flow between specialized agents (e.g., `market` → `brand` → `copy`).
+- **CLI Graph**: `uv run workflows/graphs/strategy_tech_handoff.py "New product idea" --auto-approve` (Legacy graph runner still available)
+- **Web UI**: `uv run streamlit run ui/app.py`
 
 ## **🏗️ Repository Structure**
 
@@ -137,12 +154,12 @@ AI-Staff-HQ/
 ├── ⚡ docs/QUICK-REFERENCE.md — Fast lookups (updated for 41 specialists)
 ├── 📊 IMPLEMENTATION-STATUS.md — Current progress and gaps
 ├── 👥 staff/ — 41 specialists across 6 MtG color-coded departments
-│   ├── strategy/ — Blue (8 specialists)
-│   ├── producers/ — Red (6 specialists + culinary subdirectory)
-│   ├── commerce/ — Black (10 specialists)
-│   ├── tech/ — Grey/Artifact (9 specialists)
-│   ├── health-lifestyle/ — Green (5 specialists)
-│   └── knowledge/ — White (4 specialists)
+│ ├── strategy/ — Blue (8 specialists)
+│ ├── producers/ — Red (6 specialists + culinary subdirectory)
+│ ├── commerce/ — Black (10 specialists)
+│ ├── tech/ — Grey/Artifact (9 specialists)
+│ ├── health-lifestyle/ — Green (5 specialists)
+│ └── knowledge/ — White (4 specialists)
 ├── 📚 examples/ — Completed specialists, project briefs, workflows
 ├── 🛠️ templates/ — Persona + project templates
 ├── ⚡ workflows/ — System workflows and automation concepts
@@ -186,6 +203,7 @@ graph TD
 ```
 
 **How It Works:**
+
 - You activate specialists directly for single-domain tasks or route through the Chief of Staff for cross-functional coordination
 - The Chief of Staff orchestrates all 6 departments: Strategy, Producers, Commerce, Tech, Health/Lifestyle, and Knowledge
 - Each specialist is fully documented with capabilities, activation patterns, and workflows
@@ -193,6 +211,7 @@ graph TD
 - Templates structure thinking, workflows guide execution, and the knowledge base keeps every specialist informed
 
 ### Model Routing
+
 - Routing lives in `config/model_routing.yaml` in this repo; if missing, the engine will also check `config/model_routing.yaml` in your current working directory.
 - If no routing file is found (or it is empty), the system falls back to the `default_model` from your configuration.
 
