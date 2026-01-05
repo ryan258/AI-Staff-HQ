@@ -3,13 +3,14 @@
 from __future__ import annotations
 
 import sys
+import json
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
-from langgraph.graph import END
+from langgraph.graph import END, StateGraph
 
 from orchestrator.capability_index import CapabilityIndex
 from orchestrator.execution_planner import ExecutionPlanner, ExecutionWave
@@ -110,7 +111,7 @@ class SwarmRunner(GraphRunner):
         4. Wave execution (sequential/parallel based on plan)
         5. Synthesis (Chief of Staff compiles final output)
         """
-        graph = build_state_graph()
+        graph = StateGraph(SwarmState)
 
         # Node 1: Planning
         graph.add_node("planning", self._planning_node)
@@ -591,3 +592,44 @@ Return the final synthesized output.
         """Backward compatibility: run in squad mode."""
         # TODO: Implement squad mode compatibility
         raise NotImplementedError("Squad mode compatibility not yet implemented")
+    def _persist_log(self, state: SwarmState) -> None:
+        """Write run metadata and steps to disk, handling dataclass serialization."""
+        self.log_dir.mkdir(parents=True, exist_ok=True)
+        run_id = state.get("run_id", "unknown")
+        log_path = self.log_dir / f"{run_id}.json"
+
+        # Helper to convert dataclasses to dicts
+        from dataclasses import asdict, is_dataclass
+        
+        def to_serializable(obj):
+            if is_dataclass(obj):
+                return asdict(obj)
+            return obj
+
+        # Create serializable state
+        serializable_state = {}
+        for k, v in state.items():
+            if k == "steps":
+                continue
+            
+            # recursive conversion for specific keys
+            if k in ["task_breakdown", "execution_plan"]:
+                serializable_state[k] = to_serializable(v)
+            elif k == "task_map":
+                # Convert Dict[str, Task] -> Dict[str, dict]
+                serializable_state[k] = {
+                    tid: to_serializable(task) 
+                    for tid, task in v.items()
+                }
+            else:
+                serializable_state[k] = v
+
+        log = {
+            "run_id": run_id,
+            "completed_at": datetime.now(timezone.utc).isoformat(),
+            "steps": state.get("steps", []),
+            "state": serializable_state,
+        }
+        
+        with open(log_path, "w", encoding="utf-8") as f:
+            json.dump(log, f, indent=2, default=str)

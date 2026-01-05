@@ -53,6 +53,7 @@ class SpecialistSlugs:
     FORENSIC_CONSULTANT = "forensic-consultant"
     DIALECT_COACH = "dialect-coach"
     BETA_READER = "beta-reader"
+    CREATIVE_WRITER = "creative-writer"
 
 
 def get_available_specialists(staff_dir: Path) -> Set[str]:

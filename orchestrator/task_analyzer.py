@@ -173,6 +173,14 @@ Tasks:
   {{"id": "task_3", "description": "Design campaign assets and creative", "required_capabilities": ["graphic design", "creative direction"], "depends_on": ["task_2"], "priority": 2}}
 ]
 
+Brief: "Write a short story about a time traveler"
+Tasks:
+[
+  {{"id": "task_1", "description": "Create story outline and character profiles", "required_capabilities": ["narrative design", "character development"], "depends_on": [], "priority": 1}},
+  {{"id": "task_2", "description": "Develop world-building rules for time travel", "required_capabilities": ["world building", "system design"], "depends_on": [], "priority": 1}},
+  {{"id": "task_3", "description": "Write the complete story narrative (approx. 2000 words) ensuring full scene execution", "required_capabilities": ["creative writing", "storytelling", "prose generation"], "depends_on": ["task_1", "task_2"], "priority": 1}}
+]
+
 Now analyze the user brief above and return the JSON task array.
 """
         return prompt
