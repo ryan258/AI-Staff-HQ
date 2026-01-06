@@ -41,6 +41,8 @@ class SwarmState(TypedDict, total=False):
     max_parallel: int
     enable_parallel: bool
     context_strategy: str  # 'dependencies_only', 'full', 'summary'
+    verbose: bool  # Show detailed progress output
+    stream_output: bool  # Stream task outputs as JSON events
 
 
 @dataclass

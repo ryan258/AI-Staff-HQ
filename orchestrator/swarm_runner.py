@@ -28,6 +28,8 @@ class SwarmRunner(GraphRunner):
         staff_dir: Path,
         *,
         config: Optional[SwarmConfig] = None,
+        verbose: bool = False,
+        stream_output: bool = False,
         **kwargs,
     ):
         """
@@ -36,12 +38,16 @@ class SwarmRunner(GraphRunner):
         Args:
             staff_dir: Path to specialist YAML directory
             config: Optional SwarmConfig
+            verbose: Show detailed progress output
+            stream_output: Stream task outputs as JSON events
             **kwargs: Passed to GraphRunner (model_override, temperature, auto_approve, etc.)
         """
         super().__init__(staff_dir, **kwargs)
 
         # Swarm-specific components
         self.config = config or SwarmConfig()
+        self.verbose = verbose
+        self.stream_output = stream_output
         self.capability_index = CapabilityIndex(staff_dir)
         self.task_analyzer = TaskAnalyzer(self)
         self.execution_planner = ExecutionPlanner()
@@ -96,6 +102,8 @@ class SwarmRunner(GraphRunner):
             'max_parallel': self.config.max_parallel,
             'enable_parallel': self.config.enable_parallel,
             'context_strategy': self.config.context_strategy,
+            'verbose': self.verbose,
+            'stream_output': self.stream_output,
         }
 
         return self.run_graph(graph, initial_state)
@@ -260,9 +268,20 @@ class SwarmRunner(GraphRunner):
         execution_plan: ExecutionPlan = state['execution_plan']
         task_map: Dict[str, Task] = state['task_map']
 
+        total_waves = len(execution_plan.waves)
+
         # Execute each wave
-        for wave in execution_plan.waves:
-            print(f"\n>>> Executing {wave}", file=sys.stderr)
+        for wave_idx, wave in enumerate(execution_plan.waves, 1):
+            specialist_count = len(wave.tasks)
+            mode_str = "parallel" if wave.parallel else "sequential"
+
+            # Enhanced wave header
+            print(
+                f"\n>>> Wave {wave_idx}/{total_waves}: "
+                f"Running {specialist_count} specialist{'s' if specialist_count > 1 else ''} "
+                f"in {mode_str}...",
+                file=sys.stderr
+            )
 
             if wave.parallel and state.get('enable_parallel', self.config.enable_parallel):
                 # Parallel execution
@@ -296,8 +315,8 @@ class SwarmRunner(GraphRunner):
 
         Each task gets a unique session_id for thread safety.
         """
-        def execute_task_wrapper(task: Task) -> Tuple[Task, str]:
-            """Wrapper for parallel execution that returns (task, result)."""
+        def execute_task_wrapper(task: Task) -> Tuple[Task, str, float]:
+            """Wrapper for parallel execution that returns (task, result, duration)."""
             start_time = time.time()
 
             # Build prompt with context
@@ -306,17 +325,19 @@ class SwarmRunner(GraphRunner):
             # Execute with fallback
             result = self._execute_task_with_fallback(task, prompt, state)
 
+            duration = time.time() - start_time
+
             # Log execution
             self.record_step(state, f"task_{task.id}", {
                 'task_id': task.id,
                 'description': task.description,
                 'assigned_specialist': task.assigned_specialist,
-                'duration_seconds': time.time() - start_time,
+                'duration_seconds': duration,
                 'result_length': len(result),
                 'parallel': True,
             })
 
-            return (task, result)
+            return (task, result, duration)
 
         # Execute tasks in parallel
         with ThreadPoolExecutor(max_workers=len(wave.tasks)) as executor:
@@ -330,17 +351,41 @@ class SwarmRunner(GraphRunner):
             for future in as_completed(futures):
                 task = futures[future]
                 try:
-                    completed_task, result = future.result()
+                    completed_task, result, duration = future.result()
 
                     # Update task and map
                     completed_task.result = result
                     task_map[completed_task.id] = completed_task
                     state['completed_task_ids'].append(completed_task.id)
 
-                    print(f"  ✓ Completed {completed_task.id}", file=sys.stderr)
+                    # Stream task output if enabled
+                    if state.get('stream_output', False):
+                        self._stream_task_output(completed_task, result, duration)
+
+                    # Enhanced completion message
+                    if state.get('verbose', False):
+                        print(
+                            f"  ✓ Completed {completed_task.id} "
+                            f"({completed_task.assigned_specialist}, {duration:.1f}s)",
+                            file=sys.stderr
+                        )
+                    else:
+                        print(f"  ✓ Completed {completed_task.id}", file=sys.stderr)
 
                 except Exception as exc:
                     error_msg = f"Task {task.id} generated exception: {exc}"
+
+                    # Stream error event if enabled
+                    if state.get('stream_output', False):
+                        error_event = {
+                            "event": "task_failed",
+                            "task_id": task.id,
+                            "specialist": task.assigned_specialist,
+                            "error": str(exc),
+                            "timestamp": datetime.now(timezone.utc).isoformat(),
+                        }
+                        print(f"STREAM: {json.dumps(error_event)}", file=sys.stderr)
+
                     print(f"ERROR: {error_msg}", file=sys.stderr)
 
                     # Mark as failed
@@ -370,19 +415,73 @@ class SwarmRunner(GraphRunner):
         # Execute with fallback
         result = self._execute_task_with_fallback(task, prompt, state)
 
+        duration = time.time() - start_time
+
         # Store result
         task.result = result
         task_map[task.id] = task
         state['completed_task_ids'].append(task.id)
+
+        # Stream task output if enabled
+        if state.get('stream_output', False):
+            self._stream_task_output(task, result, duration)
+
+        # Enhanced completion message
+        if state.get('verbose', False):
+            print(
+                f"  ✓ Completed {task.id} "
+                f"({task.assigned_specialist}, {duration:.1f}s)",
+                file=sys.stderr
+            )
+        else:
+            print(f"  ✓ Completed {task.id}", file=sys.stderr)
 
         # Log execution
         self.record_step(state, f"task_{task.id}", {
             'task_id': task.id,
             'description': task.description,
             'assigned_specialist': task.assigned_specialist,
-            'duration_seconds': time.time() - start_time,
+            'duration_seconds': duration,
             'result_length': len(result),
         })
+
+    def _stream_task_output(
+        self,
+        task: Task,
+        result: str,
+        duration: float,
+    ) -> None:
+        """
+        Stream task output to stderr in structured format.
+
+        Output format (JSON Lines):
+        {
+            "event": "task_completed",
+            "task_id": "task_1",
+            "specialist": "market-analyst",
+            "duration_seconds": 4.2,
+            "result_preview": "First 500 chars...",
+            "result_length": 2048
+        }
+        """
+        # Truncate result for preview
+        max_preview = 500
+        preview = result[:max_preview]
+        if len(result) > max_preview:
+            preview += "... [truncated]"
+
+        event = {
+            "event": "task_completed",
+            "task_id": task.id,
+            "specialist": task.assigned_specialist,
+            "duration_seconds": round(duration, 2),
+            "result_preview": preview,
+            "result_length": len(result),
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+
+        # Output as JSON line to stderr
+        print(f"STREAM: {json.dumps(event)}", file=sys.stderr)
 
     def _build_task_prompt(
         self,

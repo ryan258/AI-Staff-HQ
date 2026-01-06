@@ -144,6 +144,7 @@ uv run pytest
 - **Robust Pipelines**: Full support for `stdin` piping allows massive context to flow between specialized agents (e.g., `market` → `brand` → `copy`).
 - **CLI Graph**: `uv run workflows/graphs/strategy_tech_handoff.py "New product idea" --auto-approve` (Legacy graph runner still available)
 - **Web UI**: `uv run streamlit run ui/app.py`
+- **Observability**: Use `--verbose` for detailed progress and `--stream` for real-time JSON events.
 
 ## **🏗️ Repository Structure**
 
