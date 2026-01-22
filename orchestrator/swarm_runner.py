@@ -6,6 +6,7 @@ import sys
 import json
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from threading import Lock
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
@@ -51,6 +52,7 @@ class SwarmRunner(GraphRunner):
         self.capability_index = CapabilityIndex(staff_dir)
         self.task_analyzer = TaskAnalyzer(self)
         self.execution_planner = ExecutionPlanner()
+        self.state_lock = Lock()
 
         # Validate configuration
         warnings = self.config.validate()
@@ -320,6 +322,14 @@ class SwarmRunner(GraphRunner):
             start_time = time.time()
 
             # Build prompt with context
+            # Accessing shared state (read-only here usually, but good to be safe if strict)
+            # _build_task_prompt reads from task_map and state.
+            # Since other threads might be writing to task_map, we should lock reading if we want strict consistency,
+            # but usually appending to logs implies we only care about completed tasks.
+            # Dependencies are from PREVIOUS waves (sequential), so they are stable. 
+            # So reading is likely safe without lock if waves are barriers.
+            # However, let's keep it simple.
+            
             prompt = self._build_task_prompt(task, state, task_map)
 
             # Execute with fallback
@@ -328,14 +338,16 @@ class SwarmRunner(GraphRunner):
             duration = time.time() - start_time
 
             # Log execution
-            self.record_step(state, f"task_{task.id}", {
-                'task_id': task.id,
-                'description': task.description,
-                'assigned_specialist': task.assigned_specialist,
-                'duration_seconds': duration,
-                'result_length': len(result),
-                'parallel': True,
-            })
+            # record_step appends to state['steps'], so it needs lock.
+            with self.state_lock:
+                self.record_step(state, f"task_{task.id}", {
+                    'task_id': task.id,
+                    'description': task.description,
+                    'assigned_specialist': task.assigned_specialist,
+                    'duration_seconds': duration,
+                    'result_length': len(result),
+                    'parallel': True,
+                })
 
             return (task, result, duration)
 
@@ -353,10 +365,11 @@ class SwarmRunner(GraphRunner):
                 try:
                     completed_task, result, duration = future.result()
 
-                    # Update task and map
-                    completed_task.result = result
-                    task_map[completed_task.id] = completed_task
-                    state['completed_task_ids'].append(completed_task.id)
+                    with self.state_lock:
+                        # Update task and map
+                        completed_task.result = result
+                        task_map[completed_task.id] = completed_task
+                        state['completed_task_ids'].append(completed_task.id)
 
                     # Stream task output if enabled
                     if state.get('stream_output', False):
@@ -388,10 +401,11 @@ class SwarmRunner(GraphRunner):
 
                     print(f"ERROR: {error_msg}", file=sys.stderr)
 
-                    # Mark as failed
-                    task.result = f"[ERROR] {error_msg}"
-                    task_map[task.id] = task
-                    state['failed_task_ids'].append(task.id)
+                    with self.state_lock:
+                        # Mark as failed
+                        task.result = f"[ERROR] {error_msg}"
+                        task_map[task.id] = task
+                        state['failed_task_ids'].append(task.id)
 
     def _execute_single_task(
         self,
