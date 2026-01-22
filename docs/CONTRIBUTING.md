@@ -38,4 +38,6 @@ Issues are reserved for concrete bugs or broken references. Thanks for respectin
 ---
 
 ### How to Use This File
-- Link to this guide in the README (already done) so visitors understand contribution boundaries.\n+- When sharing the repo publicly, reference this document in your announcement or launch post.\n+- Update the welcome text if expectations change; keep the “personal system” stance explicit.
+- Link to this guide in the README (already done) so visitors understand contribution boundaries.
+- When sharing the repo publicly, reference this document in your announcement or launch post.
+- Update the welcome text if expectations change; keep the “personal system” stance explicit.

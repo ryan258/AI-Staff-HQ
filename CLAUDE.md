@@ -94,7 +94,7 @@ st.markdown("""
 
 ## Project Architecture
 
-AI-Staff-HQ is a LangChain/LangGraph-based multi-agent orchestration system with 41 specialized AI agents.
+AI-Staff-HQ is a LangChain/LangGraph-based multi-agent orchestration system with 68 specialized AI agents.
 
 ### Key Components
 

@@ -127,7 +127,7 @@ st.markdown("""
 
 AI-Staff-HQ is a multi-agent orchestration framework built with Python, LangChain, and LangGraph. It provides:
 
-- **41 Specialized AI Agents** defined in YAML
+- **68 Specialized AI Agents** defined in YAML
 - **Multi-Agent Workflows** using LangGraph
 - **CLI Interface** for direct specialist interaction
 - **Streamlit Dashboard** for workflow execution
@@ -182,7 +182,7 @@ AI-Staff-HQ is a multi-agent orchestration framework built with Python, LangChai
                   │
 ┌─────────────────────────────────────────┐
 │          Data Layer                     │
-│  - 41 Specialist YAML files             │
+│  - 68 Specialist YAML files             │
 │  - Model routing configuration          │
 │  - Session persistence                  │
 └─────────────────────────────────────────┘
@@ -352,7 +352,7 @@ OPENAI_API_KEY=sk-...
 ANTHROPIC_API_KEY=sk-ant-...
 
 # Model settings
-DEFAULT_MODEL=anthropic/claude-3.5-sonnet
+DEFAULT_MODEL=xiaomi/mimo-v2-flash:free
 MAX_HISTORY_TURNS=20
 MAX_CONTEXT_TOKENS=32000
 ```
@@ -365,16 +365,16 @@ Edit `config/model_routing.yaml`:
 # Budget mode (disabled by default)
 budget_mode:
   enabled: false  # Change to true to use free models
-  model: "nex-agi/deepseek-v3.1-nex-n1:free"
+  model: "xiaomi/mimo-v2-flash:free"
 
 # Role-based routing (highest precedence)
 role_routing:
-  "Market Research & Competitive Analysis Specialist": "anthropic/claude-3.5-sonnet"
+  "Market Research & Competitive Analysis Specialist": "xiaomi/mimo-v2-flash:free"
 
 # Department fallback
 department_routing:
-  strategy: "anthropic/claude-3.5-sonnet"
-  tech: "anthropic/claude-3.5-sonnet"
+  strategy: "xiaomi/mimo-v2-flash:free"
+  tech: "xiaomi/mimo-v2-flash:free"
 ```
 
 ---
@@ -455,7 +455,7 @@ Before submitting changes:
 - **CLAUDE.md** - Claude-specific guide
 - **README.md** - Project overview
 - **GETTING-STARTED.md** - Setup instructions
-- **QUICK-REFERENCE.md** - All 41 specialists
+- **QUICK-REFERENCE.md** - All 68 specialists
 - **docs/phase4.md** - Orchestration details
 - **ROADMAP.md** - Future plans
 

@@ -1,12 +1,14 @@
 # **🗺️ AI-Staff-HQ: Product Roadmap**
 
-_The Future of Your AI Workforce - Version 2.1.0_
+_The Future of Your AI Workforce - Version 2.2.0_
 
 ## **🎯 Vision**
 
 To create the most comprehensive, adaptable, and powerful framework for building and managing a custom AI workforce, enabling users to command a diverse team of specialized AI agents for any creative, strategic, technical, or personal challenge.
 
-## **🚀 Current Status: Version 2.1.0 (December 2025)**
+## **🚀 Current Status: Version 2.2.0 (January 2026)**
+
+**Roster snapshot:** 68 specialists total (41 core + 27 extended).
 
 ### **✅ Phase 1 & 2 Complete: Foundation & Workflow Mastery**
 
@@ -14,14 +16,14 @@ Successfully built personal cognitive infrastructure:
 
 **Phase 1 - Cognitive Infrastructure:**
 
-- Local Validation Tool (`tools/validate_specialist.py`) - 41 specialists validated
+- Local Validation Tool (`tools/validate_specialist.py`) - core 41 specialists validated
 - Consolidated directory structure (`staff/tech`, `staff/producers`)
 - Rewrote documentation for unambiguous, personal use
 - Shifted from "community framework" to "my external brain"
 
 **Phase 2 - Workflow Mastery:**
 
-- Completed deep dive sections for all 41 specialists (100%)
+- Completed deep dive sections for all core 41 specialists (100%)
 - Documented inter-specialist workflows: `strategy-tech-handoff` and `content-optimization-loop`
 
 **Next:** Phase 3 - Advanced Engineering (Q4 2026+)
@@ -52,7 +54,7 @@ Successfully built personal cognitive infrastructure:
 
 ### **Phase 2: Workflow Mastery (Q2 2026 - Q3 2026)** ✅ **COMPLETE**
 
-**Goal**: Deepen the capabilities of the existing 41 specialists rather than expanding the roster.
+**Goal**: Deepen the capabilities of the core 41 specialists while integrating the extended roster for niche and experimental needs.
 
 #### **Key Initiatives**
 
@@ -60,7 +62,7 @@ Successfully built personal cognitive infrastructure:
 
   - **Mechanism:** Flesh out the `deep_dive` and `specialized_knowledge_areas` for the core 41 specialists.
   - **Goal:** Move from "Generalist" to "Expert" in existing domains.
-  - **Completed:** December 2025 - All 41 specialists now have deep dive sections.
+  - **Completed:** December 2025 - All core 41 specialists now have deep dive sections.
 
 - ✅ **Advanced Inter-Specialist Workflows:**
   - **Mechanism:** Document complex chains (e.g., _Strategy -> Tech -> Comms_) as repeatable runbooks.
@@ -80,7 +82,7 @@ Successfully built personal cognitive infrastructure:
   - **Completed:** December 2025.
 
 - ✅ **Multi-Model Routing (OpenRouter):**
-  - **Mechanism:** Dynamic assignment of models (Claude 3.5 Sonnet, GPT-4o, DeepSeek) based on role/department via `.env` configuration.
+  - **Mechanism:** Dynamic assignment of models via `.env` (e.g., `STRATEGY_MODEL`, `MARKET_MODEL`, `TECH_MODEL`) based on role/department.
   - **Goal:** Optimize cost and performance without vendor lock-in.
   - **Completed:** December 2025.
 

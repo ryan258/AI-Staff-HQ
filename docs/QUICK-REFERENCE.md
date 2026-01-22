@@ -18,7 +18,7 @@
 
 > Shortcut: If a project touches more than one specialist, begin with the Chief of Staff.
 
-## 🏢 Current Workforce: 41 Specialists
+## 🏢 Current Workforce: 68 Specialists (41 core + 27 extended)
 
 ### 🎯 Epic Tier
 **Chief of Staff** - Strategic coordination and project orchestration across all departments
@@ -98,6 +98,28 @@ Specialized experts in legal, financial, and professional knowledge domains.
 | **Tax Strategist** | Tax planning, optimization | `staff/knowledge/tax-strategist.yaml` |
 | **Investment Advisor** | Investment strategy, wealth management | `staff/knowledge/investment-advisor.yaml` |
 | **Financial Therapist** | Financial psychology, money mindset | `staff/knowledge/financial-therapist.yaml` |
+
+## Extended Roster (27 specialists)
+
+These specialists are available for niche or experimental work. See `staff/README.md` for the full catalog.
+
+**🟦 Strategy (5):** Alchemist, Cartographer Invisible, Ethicist, Etymologist Decay, Scenario Planner  
+Paths: `staff/strategy/alchemist.yaml`, `staff/strategy/cartographer-invisible.yaml`, `staff/strategy/ethicist.yaml`, `staff/strategy/etymologist-decay.yaml`, `staff/strategy/scenario-planner.yaml`
+
+**🎨 Producers (10):** Beta Reader, Creative Writer, Dialect Coach, Dream Navigator, Forensic Consultant, Mirror Maker, Mythologist, Narrator, Symbolist, Translator Silence  
+Paths: `staff/producers/beta-reader.yaml`, `staff/producers/creative-writer.yaml`, `staff/producers/dialect-coach.yaml`, `staff/producers/dream-navigator.yaml`, `staff/producers/forensic-consultant.yaml`, `staff/producers/mirror-maker.yaml`, `staff/producers/mythologist.yaml`, `staff/producers/narrator.yaml`, `staff/producers/symbolist.yaml`, `staff/producers/translator-silence.yaml`
+
+**⚙️ Tech (3):** Handyman, Infinite Looper, Irony Detector  
+Paths: `staff/tech/handyman.yaml`, `staff/tech/infinite-looper.yaml`, `staff/tech/irony-detector.yaml`
+
+**🌿 Health/Lifestyle (4):** Active Imagination Guide, Humanist, Shadow Worker, Xenobiologist  
+Paths: `staff/health-lifestyle/active-imagination-guide.yaml`, `staff/health-lifestyle/humanist.yaml`, `staff/health-lifestyle/shadow-worker.yaml`, `staff/health-lifestyle/xenobiologist.yaml`
+
+**📚 Knowledge (4):** Antiquarian, Archivist Silence, Librarian Babel, Local Historian  
+Paths: `staff/knowledge/antiquarian.yaml`, `staff/knowledge/archivist-silence.yaml`, `staff/knowledge/librarian-babel.yaml`, `staff/knowledge/local-historian.yaml`
+
+**🟪 Meta (1):** Morphling  
+Path: `staff/meta/morphling.yaml`
 
 ## Common Workflow Patterns
 
@@ -206,4 +228,4 @@ You → Chief of Staff → Project Brief Template → Specialists → Quality Ga
 - Update when you add new specialists or discover new patterns
 - Share with team members so they know how to activate specialists
 
-_Last updated: 2025-12-18 | Current roster: 41 specialists across 6 departments_
+_Last updated: 2026-01-22 | Current roster: 68 specialists across 7 departments_

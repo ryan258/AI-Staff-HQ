@@ -3,6 +3,7 @@
 ## Overview
 
 AI Staff HQ supports multiple ways to control which models are used by specialists.
+The default model is configured in `.env` (currently `xiaomi/mimo-v2-flash:free`). Examples below show optional overrides.
 
 ## Model Control Hierarchy
 
@@ -106,7 +107,7 @@ Set default in `ai-staff-hq/.env`:
 
 ```bash
 # Default model for all specialists
-DEFAULT_MODEL="anthropic/claude-3.5-sonnet"
+DEFAULT_MODEL="xiaomi/mimo-v2-flash:free"
 
 # OpenRouter API key
 OPENROUTER_API_KEY="your-key-here"
@@ -121,7 +122,7 @@ Edit `ai-staff-hq/config/model_routing.yaml`:
 ```yaml
 budget_mode:
   enabled: true
-  model: "google/gemini-flash-1.5"  # Free/cheap model
+  model: "xiaomi/mimo-v2-flash:free"  # Free/cheap model
 ```
 
 When enabled, ALL specialists use the budget model (overrides everything except direct override).
@@ -190,7 +191,7 @@ budget_mode:
 ```yaml
 budget_mode:
   enabled: true
-  model: "google/gemini-flash-1.5"
+  model: "xiaomi/mimo-v2-flash:free"
 ```
 
 ### 3. Override During Testing

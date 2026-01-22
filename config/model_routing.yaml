@@ -14,10 +14,16 @@ department_routing: {}
 # Only enable this if you explicitly want to force all specialists to use a free/cheap model
 budget_mode:
   enabled: false
-  model: "nex-agi/deepseek-v3.1-nex-n1:free"
+  model: "xiaomi/mimo-v2-flash:free"
 
 # Model metadata (for display and validation)
 available_models:
+  - id: "xiaomi/mimo-v2-flash:free"
+    name: "Xiaomi MiMo v2 Flash (Free)"
+    context_window: 200000
+    cost_per_1k_input: 0.0
+    strengths: ["reasoning", "code", "analysis", "free"]
+
   - id: "nex-agi/deepseek-v3.1-nex-n1:free"
     name: "DeepSeek V3 (Free)"
     context_window: 200000

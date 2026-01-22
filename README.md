@@ -34,7 +34,7 @@ Welcome to AI-Staff-HQ, a framework for building your own AI workforce. This rep
 
 ## **⚡ Your AI Workforce**
 
-AI-Staff-HQ has evolved into **41 high-quality specialists** across 6 departments, organized using MtG color-coded principles. Start simple, expand as needed.
+AI-Staff-HQ currently includes **68 specialists** across **7 departments** (strategy, producers, commerce, tech, health-lifestyle, knowledge, meta). The **core roster of 41** is recommended for daily use; an extended roster covers niche and experimental roles.
 
 ### Start Here: Core Team
 
@@ -49,17 +49,19 @@ These roles cover the majority of strategic, creative, and technical work:
 
 > **Tip:** Start with 2-3 specialists for your first project. Expand to other departments as you discover needs.
 
-### Full Workforce: 41 Specialists Across 6 Departments
+### Core Roster: 41 Specialists Across 6 Departments
 
-**🟦 Strategy (8):** Creative Strategist, Brand Builder, Data Analyst, Market Analyst, Trend Forecaster, Academic Researcher, Learning Scientist
+**🟦 Strategy (8):** Chief of Staff, Market Analyst, Creative Strategist, Brand Builder, Data Analyst, Trend Forecaster, Academic Researcher, Learning Scientist
 **🎨 Producers (5):** Art Director, Copywriter, Narrative Designer, Community Manager, Event Planner
 **💰 Commerce (10):** Social Media Strategist, SEO Specialist, Conversion Optimizer, Customer Acquisition, Influencer Strategist, Pricing Strategist, Real Estate (4 specialists)
 **⚙️ Tech (9):** Software Architect, Productivity Architect, Automation Specialist, Toolmaker, Operations Manager, Quality Control, Cybersecurity, Supply Chain, Prompt Engineer
 **🌿 Health/Lifestyle (5):** Habit Architect, Cognitive Behavioral Therapist, Stoic Coach, Health Coach, Meditation Instructor
 **📚 Knowledge (4):** Business Lawyer, Tax Strategist, Investment Advisor, Financial Therapist
 
+**Extended roster (27):** Additional specialists across strategy, producers, tech, health-lifestyle, knowledge, and meta. See the full roster in `staff/README.md`.
+
 📋 **Full Directory:** See [staff/README.md](staff/README.md) for complete specialist catalog
-📊 **Implementation Status:** See [IMPLEMENTATION-STATUS.md](IMPLEMENTATION-STATUS.md) for current progress
+📊 **Implementation Status:** See [archive/legacy-docs/IMPLEMENTATION-STATUS.md](archive/legacy-docs/IMPLEMENTATION-STATUS.md) for historical progress notes
 
 ### Build Your Own
 
@@ -152,15 +154,16 @@ AI-Staff-HQ/
 ├── 📖 README.md — Start here
 ├── 🎯 GETTING-STARTED.md — Choose a learning path
 ├── 💭 PHILOSOPHY.md — Why it's designed this way
-├── ⚡ docs/QUICK-REFERENCE.md — Fast lookups (updated for 41 specialists)
-├── 📊 IMPLEMENTATION-STATUS.md — Current progress and gaps
-├── 👥 staff/ — 41 specialists across 6 MtG color-coded departments
-│ ├── strategy/ — Blue (8 specialists)
-│ ├── producers/ — Red (6 specialists + culinary subdirectory)
+├── ⚡ docs/QUICK-REFERENCE.md — Fast lookups (updated for 68 specialists)
+├── 📊 archive/legacy-docs/IMPLEMENTATION-STATUS.md — Historical progress notes
+├── 👥 staff/ — 68 specialists across 7 MtG color-coded departments
+│ ├── strategy/ — Blue (13 specialists)
+│ ├── producers/ — Red (15 specialists)
 │ ├── commerce/ — Black (10 specialists)
-│ ├── tech/ — Grey/Artifact (9 specialists)
-│ ├── health-lifestyle/ — Green (5 specialists)
-│ └── knowledge/ — White (4 specialists)
+│ ├── tech/ — Grey/Artifact (12 specialists)
+│ ├── health-lifestyle/ — Green (9 specialists)
+│ ├── knowledge/ — White (8 specialists)
+│ └── meta/ — Colorless (1 specialist)
 ├── 📚 examples/ — Completed specialists, project briefs, workflows
 ├── 🛠️ templates/ — Persona + project templates
 ├── ⚡ workflows/ — System workflows and automation concepts
@@ -206,7 +209,7 @@ graph TD
 **How It Works:**
 
 - You activate specialists directly for single-domain tasks or route through the Chief of Staff for cross-functional coordination
-- The Chief of Staff orchestrates all 6 departments: Strategy, Producers, Commerce, Tech, Health/Lifestyle, and Knowledge
+- The Chief of Staff orchestrates all 7 departments: Strategy, Producers, Commerce, Tech, Health/Lifestyle, Knowledge, and Meta
 - Each specialist is fully documented with capabilities, activation patterns, and workflows
 - Your custom specialists integrate seamlessly using the same coordination protocols
 - Templates structure thinking, workflows guide execution, and the knowledge base keeps every specialist informed

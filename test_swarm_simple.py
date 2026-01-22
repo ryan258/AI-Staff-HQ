@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Simple test of swarm orchestration - makes API calls!"""
 
+import os
 import sys
 from pathlib import Path
 
@@ -22,10 +23,11 @@ def main():
         enable_parallel=True,
     )
 
+    model_override = os.getenv("DEFAULT_MODEL", "xiaomi/mimo-v2-flash:free")
     runner = SwarmRunner(
         staff_dir,
         config=config,
-        model_override="nvidia/nemotron-3-nano-30b-a3b:free",  # Cheap model for testing
+        model_override=model_override,
         auto_approve=True,
     )
 

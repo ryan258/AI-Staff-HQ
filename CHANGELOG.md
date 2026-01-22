@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.0] - 2026-01-22
+### Added
+- **Swarm Orchestration:** `bin/dhp-swarm.py` for parallel execution with streaming output and verbose logging.
+- **LangGraph Orchestration:** `orchestrator/graph_runner.py` and `workflows/graphs/strategy_tech_handoff.py`.
+- **Streamlit UI:** `ui/app.py` for launching graphs and reviewing inline logs.
+- **Extended Roster:** Documented 68 specialists total (41 core + 27 extended) across 7 departments.
+
+### Changed
+- **Documentation:** Updated counts, commands, output paths, and model routing defaults across AI-Staff-HQ docs.
+- **Model Routing:** Documented per-role model variables with optional brand override.
+
 ## [2.1.0] - 2025-12-18
 ### Added
 - **Local Validation Tooling:** A CLI linter (`tools/validate_specialist.py`) to validate specialist YAML structure.
@@ -21,7 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Personal Documentation:** Shifted `README.md` framing from "your workforce" to "MY workforce" - personal infrastructure focus.
 - **Quick Reference:** Reframed "Common Mistakes" as "Rules of Engagement" in `docs/QUICK-REFERENCE.md`.
 - **Phase 2 Complete - Workflow Mastery:**
-  - Deep dive sections completed for all 41 specialists with comprehensive deliverables, knowledge areas, and workflows
+  - Deep dive sections completed for all core 41 specialists with comprehensive deliverables, knowledge areas, and workflows
   - Added inter-specialist workflow documentation: `strategy-tech-handoff.md` and `content-optimization-loop.md`
 
 ### Removed

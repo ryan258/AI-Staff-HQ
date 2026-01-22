@@ -8,7 +8,7 @@
 ## Summary
 
 Successfully transformed the static squad-based dispatcher system into a dynamic swarm orchestration system with:
-- **Dynamic specialist selection** from 66 agents across 6 departments
+- **Dynamic specialist selection** from 68 agents across 7 departments
 - **Parallel task execution** for performance
 - **Chief of Staff coordination** for planning and synthesis
 - **Bash integration** for seamless CLI usage
@@ -20,7 +20,7 @@ Successfully transformed the static squad-based dispatcher system into a dynamic
 ### ✅ Core Components (Phase 1-3)
 
 1. **CapabilityIndex** (`orchestrator/capability_index.py`)
-   - Indexes all 66 specialists and 263 capabilities
+   - Indexes all 68 specialists and their declared capabilities
    - Fuzzy matching with scoring algorithm (exact: 1.0, fuzzy: 0.5, expertise: 0.3)
    - Department-based fallback matching
 
@@ -46,16 +46,14 @@ Successfully transformed the static squad-based dispatcher system into a dynamic
 
 ### ✅ CLI Integration (Phase 4)
 
-6. **Python Wrappers**
-   - `bin/dhp-swarm-content.py` - Content workflow orchestrator
-   - `bin/dhp-swarm-creative.py` - Creative workflow orchestrator
-   - Full argparse support (--model, --parallel, --debug, etc.)
+6. **Python Wrapper**
+   - `bin/dhp-swarm.py` - Universal swarm orchestrator
+   - Full argparse support (--model, --parallel, --verbose, --stream, etc.)
 
 7. **Bash Dispatcher Integration**
-   - **Modified**: `bin/dhp-content.sh` - Now calls Python swarm wrapper
-   - **Modified**: `bin/dhp-creative.sh` - Now calls Python swarm wrapper
+   - **Modified**: All `bin/dhp-*.sh` dispatchers route through `bin/dhp-swarm.py`
    - Maintains backward compatibility
-   - Supports --context, --persona, --stream flags
+   - Supports --context, --persona, --stream flags (where applicable)
 
 ### ✅ Testing & Documentation
 
@@ -87,7 +85,7 @@ Successfully transformed the static squad-based dispatcher system into a dynamic
 dhp-content.sh "Create a guide on Bash scripting"
 
 # With model control
-dhp-content.sh "Write a tagline" --model "anthropic/claude-3.5-sonnet"
+dhp-content.sh "Write a tagline" --model "xiaomi/mimo-v2-flash:free"
 
 # Creative workflow
 dhp-creative.sh "Write a sci-fi story about AI"
@@ -103,7 +101,7 @@ uv run python bin/dhp-swarm-content.py "Brief" --debug --max-parallel 10
 uv run python bin/dhp-swarm-content.py "Brief" --no-parallel
 
 # Budget mode
-uv run python bin/dhp-swarm-content.py "Brief" --model "google/gemini-flash-1.5"
+uv run python bin/dhp-swarm-content.py "Brief" --model "xiaomi/mimo-v2-flash:free"
 ```
 
 ### Test Script
@@ -121,21 +119,21 @@ Control which models are used via:
 
 1. **Runtime Override** (highest priority)
    ```bash
-   dhp-content.sh "Brief" --model "anthropic/claude-opus-4"
+   dhp-content.sh "Brief" --model "xiaomi/mimo-v2-flash:free"
    ```
 
 2. **Config File** (`config/model_routing.yaml`)
    ```yaml
    role_routing:
-     "Strategic Coordinator & Project Orchestrator": "anthropic/claude-opus-4"
+     "Strategic Coordinator & Project Orchestrator": "xiaomi/mimo-v2-flash:free"
 
    department_routing:
-     strategy: "anthropic/claude-3.5-sonnet"
+     strategy: "xiaomi/mimo-v2-flash:free"
    ```
 
 3. **Environment** (`.env`)
    ```bash
-   DEFAULT_MODEL="anthropic/claude-3.5-sonnet"
+   DEFAULT_MODEL="xiaomi/mimo-v2-flash:free"
    ```
 
 See `MODEL_CONTROL.md` for full details.
@@ -185,7 +183,7 @@ Wave 5 (SEQUENTIAL): [task_6]
 
 ### Test Results
 
-- **Indexed**: 66 specialists, 263 capabilities, 6 departments
+- **Indexed**: 68 specialists across 7 departments (capabilities count varies)
 - **Parallel Execution**: ✅ Working (ThreadPoolExecutor)
 - **Task Breakdown**: ✅ Dynamic from Chief of Staff
 - **Dependency Resolution**: ✅ Topological sort
@@ -302,7 +300,7 @@ A: Use `uv run python` instead of plain `python`
 A: This is a known issue - prompts need tuning for simplicity
 
 **Q: "How do I use cheaper models?"**
-A: Add `--model "google/gemini-flash-1.5"` or see `MODEL_CONTROL.md`
+A: Add `--model "xiaomi/mimo-v2-flash:free"` or see `MODEL_CONTROL.md`
 
 ### Debug Mode
 
@@ -311,14 +309,14 @@ A: Add `--model "google/gemini-flash-1.5"` or see `MODEL_CONTROL.md`
 dhp-content.sh "Brief" --debug
 
 # Or with Python wrapper
-uv run python bin/dhp-swarm-content.py "Brief" --debug
+uv run python bin/dhp-swarm.py "Brief" --debug
 ```
 
 ---
 
 ## Success Criteria ✅
 
-- [x] Dynamic specialist selection from 66 agents
+- [x] Dynamic specialist selection from 68 agents
 - [x] Parallel task execution working
 - [x] Chief of Staff coordination
 - [x] Bash integration complete

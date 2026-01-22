@@ -2,9 +2,11 @@
 
 > _Your extensible AI workforce, organized by MtG color-coded departments._
 
-## 🏢 Current Workforce: 41 Specialists Across 6 Departments
+## 🏢 Current Workforce: 68 Specialists Across 7 Departments (41 core + 27 extended)
 
-Your AI Staff HQ has been expanded with high-quality specialists across strategic, creative, technical, health, knowledge, and commerce domains.
+Your AI Staff HQ has been expanded with specialists across strategy, producers, commerce, tech, health-lifestyle, knowledge, and meta domains.
+
+The core roster is listed first; extended specialists follow after the main department sections.
 
 ---
 
@@ -37,7 +39,7 @@ Creative specialists who produce content, experiences, and narratives across all
 - **[Community Manager](producers/community-manager.yaml)** - Community building and engagement
 - **[Event Planner](producers/event-planner.yaml)** - Event strategy and experience design
 
-**Culinary Subdirectory:** `staff/producers/culinary/` _(ready for 15 culinary specialists)_
+ 
 
 ---
 
@@ -105,6 +107,51 @@ Specialized experts in legal, financial, and professional knowledge domains.
 
 ---
 
+## 🧩 Extended Roster (27 Specialists)
+
+These specialists are available for niche or experimental use. Full roster includes paths for each role:
+
+### 🟦 Strategy (5)
+- **[Alchemist](strategy/alchemist.yaml)**
+- **[Cartographer Invisible](strategy/cartographer-invisible.yaml)**
+- **[Ethicist](strategy/ethicist.yaml)**
+- **[Etymologist Decay](strategy/etymologist-decay.yaml)**
+- **[Scenario Planner](strategy/scenario-planner.yaml)**
+
+### 🎨 Producers (10)
+- **[Beta Reader](producers/beta-reader.yaml)**
+- **[Creative Writer](producers/creative-writer.yaml)**
+- **[Dialect Coach](producers/dialect-coach.yaml)**
+- **[Dream Navigator](producers/dream-navigator.yaml)**
+- **[Forensic Consultant](producers/forensic-consultant.yaml)**
+- **[Mirror Maker](producers/mirror-maker.yaml)**
+- **[Mythologist](producers/mythologist.yaml)**
+- **[Narrator](producers/narrator.yaml)**
+- **[Symbolist](producers/symbolist.yaml)**
+- **[Translator Silence](producers/translator-silence.yaml)**
+
+### ⚙️ Tech (3)
+- **[Handyman](tech/handyman.yaml)**
+- **[Infinite Looper](tech/infinite-looper.yaml)**
+- **[Irony Detector](tech/irony-detector.yaml)**
+
+### 🌿 Health & Lifestyle (4)
+- **[Active Imagination Guide](health-lifestyle/active-imagination-guide.yaml)**
+- **[Humanist](health-lifestyle/humanist.yaml)**
+- **[Shadow Worker](health-lifestyle/shadow-worker.yaml)**
+- **[Xenobiologist](health-lifestyle/xenobiologist.yaml)**
+
+### 📚 Knowledge (4)
+- **[Antiquarian](knowledge/antiquarian.yaml)**
+- **[Archivist Silence](knowledge/archivist-silence.yaml)**
+- **[Librarian Babel](knowledge/librarian-babel.yaml)**
+- **[Local Historian](knowledge/local-historian.yaml)**
+
+### 🟪 Meta (1)
+- **[Morphling](meta/morphling.yaml)**
+
+---
+
 ## 📈 Workforce Expansion & Customization
 
 Your specialist workforce is designed to be extended. You can create new specialists and departments to suit your needs.
@@ -123,6 +170,7 @@ Your specialist workforce is designed to be extended. You can create new special
 - 💿 **Grey/Artifact** → `tech/` - Systems & Technology
 - 🟩 **Green** → `health-lifestyle/` - Health & Lifestyle
 - ⬜ **White** → `knowledge/` - Specialized Knowledge
+- 🟪 **Colorless** → `meta/` - Meta and orchestration support
 
 ### **Planned Expansions**
 

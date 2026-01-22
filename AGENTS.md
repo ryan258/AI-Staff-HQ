@@ -87,7 +87,7 @@ hr {
 
 AI-Staff-HQ is organized as follows:
 
-- **staff/** - 41 specialist YAML definitions organized by department
+- **staff/** - 68 specialist YAML definitions organized by department
 - **tools/** - Core Python engine for activating specialists
 - **workflows/** - Multi-agent orchestration workflows
 - **orchestrator/** - LangGraph-based workflow execution
@@ -144,5 +144,5 @@ The project supports multiple LLM providers via OpenRouter. See `.env.example` f
 Refer to:
 - **README.md** - Project overview
 - **GETTING-STARTED.md** - Setup instructions
-- **QUICK-REFERENCE.md** - All 41 specialists directory
+- **QUICK-REFERENCE.md** - Full 68 specialist directory
 - **docs/phase4.md** - Orchestration documentation
