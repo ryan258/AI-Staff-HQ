@@ -25,13 +25,21 @@ Choosing the right AI model for a task is a critical skill that enhances perform
 
 To make model selection as efficient as possible, refer to the following quick-reference table. The "Preferred" and "Secondary" columns are recommendations based on the model's core strengths and typical project requirements for each specialist.
 
-| Specialist | Preferred Model | Secondary Model |
-| :---- | :---- | :---- |
-| **Chief of Staff** | Claude | Gemini |
-| **Market Analyst** | Claude / Gemini | ChatGPT |
-| **Art Director** | Gemini | ChatGPT |
-| **Automation Specialist** | Claude | ChatGPT |
-| **Prompt Engineer** | ChatGPT | Claude |
+| Specialist | Preferred Model | Secondary Model | Notes |
+| :---- | :---- | :---- | :---- |
+| **Chief of Staff** | Claude | Gemini | Complex orchestration, multi-document context |
+| **Market Analyst** | Claude / Gemini | ChatGPT | Research synthesis, trend analysis |
+| **Art Director** | Gemini | ChatGPT | Visual strategy, multi-modal tasks |
+| **Automation Specialist** | Claude | ChatGPT | Technical implementation, code generation |
+| **Prompt Engineer** | ChatGPT | Claude | Iterative prompt design, conversation |
+| **Creative Strategist** | ChatGPT | Claude | Campaign ideation, creative direction |
+| **Brand Builder** | Claude | Gemini | Identity systems, brand architecture |
+| **Data Analyst** | Claude | Gemini | Analytics, pattern recognition |
+| **Copywriter** | ChatGPT | Claude | Conversion copy, persuasive writing |
+| **Narrative Designer** | ChatGPT | Claude | Story architecture, character arcs |
+| **Software Architect** | Claude | ChatGPT | System design, technical strategy |
+| **Stoic Coach** | Claude | ChatGPT | Thoughtful reflection, philosophical |
+| **Morphling** | Any | Any | Adapts to task requirements |
 
 ### **2.1 Claude (Anthropic)**
 

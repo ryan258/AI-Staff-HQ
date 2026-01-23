@@ -32,7 +32,7 @@ If no existing specialist fits your need:
 1.  **Copy Template:** Copy `templates/persona/new-staff-member-template.md` to the correct department folder in `staff/`.
 2.  **Rename:** Change the filename to `[specialist-name].yaml`.
 3.  **Define:** Fill in the `role`, `skills`, and `motto` fields.
-4.  **Validate:** Run `uv run tools/validate_specialist.py` to check your work.
+4.  **Validate:** Run `uv run tools/validate_specialist.py staff/[dept]/[name].yaml` to check your work.
 
 ## 4. Visual Interface (Web UI)
 

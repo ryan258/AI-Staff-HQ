@@ -23,7 +23,7 @@
 ### 🎯 Epic Tier
 **Chief of Staff** - Strategic coordination and project orchestration across all departments
 
-### 🟦 Strategy Department (8 specialists)
+### 🟦 Strategy Department (13 specialists)
 Core strategic and analytical specialists who provide insights, research, and strategic direction.
 
 | Specialist | Use When | Path |
@@ -35,8 +35,13 @@ Core strategic and analytical specialists who provide insights, research, and st
 | **Trend Forecaster** | Trend analysis, future insights | `staff/strategy/trend-forecaster.yaml` |
 | **Academic Researcher** | Scholarly research, literature analysis | `staff/strategy/academic-researcher.yaml` |
 | **Learning Scientist** | Learning design, cognitive science | `staff/strategy/learning-scientist.yaml` |
+| **Ethicist** | Ethical analysis, moral frameworks | `staff/strategy/ethicist.yaml` |
+| **Alchemist** | Transformation, synthesis of ideas | `staff/strategy/alchemist.yaml` |
+| **Cartographer Invisible** | Mapping hidden systems, patterns | `staff/strategy/cartographer-invisible.yaml` |
+| **Etymologist Decay** | Language evolution, meaning shifts | `staff/strategy/etymologist-decay.yaml` |
+| **Scenario Planner** | Future scenarios, strategic foresight | `staff/strategy/scenario-planner.yaml` |
 
-### 🎨 Producers Department (5 specialists)
+### 🎨 Producers Department (15 specialists)
 Creative specialists who produce content, experiences, and narratives.
 
 | Specialist | Use When | Path |
@@ -46,6 +51,16 @@ Creative specialists who produce content, experiences, and narratives.
 | **Narrative Designer** | Story architecture, narrative systems | `staff/producers/narrative-designer.yaml` |
 | **Community Manager** | Community building, engagement | `staff/producers/community-manager.yaml` |
 | **Event Planner** | Event strategy, experience design | `staff/producers/event-planner.yaml` |
+| **Beta Reader** | Manuscript feedback, reader perspective | `staff/producers/beta-reader.yaml` |
+| **Creative Writer** | Fiction, creative prose | `staff/producers/creative-writer.yaml` |
+| **Dialect Coach** | Voice authenticity, speech patterns | `staff/producers/dialect-coach.yaml` |
+| **Dream Navigator** | Subconscious exploration, imagery | `staff/producers/dream-navigator.yaml` |
+| **Forensic Consultant** | Crime writing accuracy, procedural details | `staff/producers/forensic-consultant.yaml` |
+| **Mirror Maker** | Reflection, perspective shifts | `staff/producers/mirror-maker.yaml` |
+| **Mythologist** | Mythic structures, archetypal patterns | `staff/producers/mythologist.yaml` |
+| **Narrator** | Voice, POV, storytelling craft | `staff/producers/narrator.yaml` |
+| **Symbolist** | Symbolic meaning, metaphor | `staff/producers/symbolist.yaml` |
+| **Translator Silence** | Unspoken meaning, subtext | `staff/producers/translator-silence.yaml` |
 
 ### 💰 Commerce Department (10 specialists)
 Growth, marketing, and revenue-focused specialists.
@@ -63,7 +78,7 @@ Growth, marketing, and revenue-focused specialists.
 | **Landscape Architect** | Landscape design, outdoor planning | `staff/commerce/landscape-architect.yaml` |
 | **Real Estate Investor** | RE investment strategy | `staff/commerce/real-estate-investor.yaml` |
 
-### ⚙️ Tech Department (9 specialists)
+### ⚙️ Tech Department (12 specialists)
 Technical specialists who build systems, ensure security, and optimize operations.
 
 | Specialist | Use When | Path |
@@ -77,8 +92,11 @@ Technical specialists who build systems, ensure security, and optimize operation
 | **Quality Control Specialist** | QA, standards enforcement | `staff/tech/quality-control-specialist.yaml` |
 | **Cybersecurity Specialist** | Security, risk management | `staff/tech/cybersecurity-specialist.yaml` |
 | **Supply Chain Coordinator** | Supply chain, logistics optimization | `staff/tech/supply-chain-coordinator.yaml` |
+| **Handyman** | Practical fixes, troubleshooting | `staff/tech/handyman.yaml` |
+| **Infinite Looper** | Iteration, recursion, refinement | `staff/tech/infinite-looper.yaml` |
+| **Irony Detector** | Tone analysis, sarcasm detection | `staff/tech/irony-detector.yaml` |
 
-### 🌿 Health & Lifestyle Department (5 specialists)
+### 🌿 Health & Lifestyle Department (9 specialists)
 Wellness and personal development specialists.
 
 | Specialist | Use When | Path |
@@ -88,8 +106,12 @@ Wellness and personal development specialists.
 | **Stoic Coach** | Stoic philosophy, resilience | `staff/health-lifestyle/stoic-coach.yaml` |
 | **Health Coach** | Holistic health, wellness optimization | `staff/health-lifestyle/health-coach.yaml` |
 | **Meditation Instructor** | Mindfulness, meditation practice | `staff/health-lifestyle/meditation-instructor.yaml` |
+| **Active Imagination Guide** | Jungian active imagination, inner work | `staff/health-lifestyle/active-imagination-guide.yaml` |
+| **Humanist** | Human potential, personal growth | `staff/health-lifestyle/humanist.yaml` |
+| **Shadow Worker** | Shadow integration, depth psychology | `staff/health-lifestyle/shadow-worker.yaml` |
+| **Xenobiologist** | Strange perspectives, alien viewpoints | `staff/health-lifestyle/xenobiologist.yaml` |
 
-### 📚 Knowledge Department (4 specialists)
+### 📚 Knowledge Department (8 specialists)
 Specialized experts in legal, financial, and professional knowledge domains.
 
 | Specialist | Use When | Path |
@@ -98,28 +120,21 @@ Specialized experts in legal, financial, and professional knowledge domains.
 | **Tax Strategist** | Tax planning, optimization | `staff/knowledge/tax-strategist.yaml` |
 | **Investment Advisor** | Investment strategy, wealth management | `staff/knowledge/investment-advisor.yaml` |
 | **Financial Therapist** | Financial psychology, money mindset | `staff/knowledge/financial-therapist.yaml` |
+| **Antiquarian** | Historical artifacts, rare knowledge | `staff/knowledge/antiquarian.yaml` |
+| **Archivist Silence** | Lost knowledge, forgotten wisdom | `staff/knowledge/archivist-silence.yaml` |
+| **Librarian Babel** | Information synthesis, knowledge navigation | `staff/knowledge/librarian-babel.yaml` |
+| **Local Historian** | Regional history, local context | `staff/knowledge/local-historian.yaml` |
 
-## Extended Roster (27 specialists)
+### 🟪 Meta Department (1 specialist)
+Universal adaptive specialist that transcends departmental boundaries.
 
-These specialists are available for niche or experimental work. See `staff/README.md` for the full catalog.
+| Specialist | Use When | Path |
+|------------|----------|------|
+| **Morphling** | Any task - auto-adapts to optimal persona | `staff/meta/morphling.yaml` |
 
-**🟦 Strategy (5):** Alchemist, Cartographer Invisible, Ethicist, Etymologist Decay, Scenario Planner  
-Paths: `staff/strategy/alchemist.yaml`, `staff/strategy/cartographer-invisible.yaml`, `staff/strategy/ethicist.yaml`, `staff/strategy/etymologist-decay.yaml`, `staff/strategy/scenario-planner.yaml`
+## Full Specialist Catalog
 
-**🎨 Producers (10):** Beta Reader, Creative Writer, Dialect Coach, Dream Navigator, Forensic Consultant, Mirror Maker, Mythologist, Narrator, Symbolist, Translator Silence  
-Paths: `staff/producers/beta-reader.yaml`, `staff/producers/creative-writer.yaml`, `staff/producers/dialect-coach.yaml`, `staff/producers/dream-navigator.yaml`, `staff/producers/forensic-consultant.yaml`, `staff/producers/mirror-maker.yaml`, `staff/producers/mythologist.yaml`, `staff/producers/narrator.yaml`, `staff/producers/symbolist.yaml`, `staff/producers/translator-silence.yaml`
-
-**⚙️ Tech (3):** Handyman, Infinite Looper, Irony Detector  
-Paths: `staff/tech/handyman.yaml`, `staff/tech/infinite-looper.yaml`, `staff/tech/irony-detector.yaml`
-
-**🌿 Health/Lifestyle (4):** Active Imagination Guide, Humanist, Shadow Worker, Xenobiologist  
-Paths: `staff/health-lifestyle/active-imagination-guide.yaml`, `staff/health-lifestyle/humanist.yaml`, `staff/health-lifestyle/shadow-worker.yaml`, `staff/health-lifestyle/xenobiologist.yaml`
-
-**📚 Knowledge (4):** Antiquarian, Archivist Silence, Librarian Babel, Local Historian  
-Paths: `staff/knowledge/antiquarian.yaml`, `staff/knowledge/archivist-silence.yaml`, `staff/knowledge/librarian-babel.yaml`, `staff/knowledge/local-historian.yaml`
-
-**🟪 Meta (1):** Morphling  
-Path: `staff/meta/morphling.yaml`
+All 68 specialists are now listed above by department. See `staff/README.md` for additional details, activation patterns, and usage examples for each specialist.
 
 ## Common Workflow Patterns
 

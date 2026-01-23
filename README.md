@@ -49,16 +49,17 @@ These roles cover the majority of strategic, creative, and technical work:
 
 > **Tip:** Start with 2-3 specialists for your first project. Expand to other departments as you discover needs.
 
-### Core Roster: 41 Specialists Across 6 Departments
+### Full Roster: 68 Specialists Across 7 Departments
 
-**🟦 Strategy (8):** Chief of Staff, Market Analyst, Creative Strategist, Brand Builder, Data Analyst, Trend Forecaster, Academic Researcher, Learning Scientist
-**🎨 Producers (5):** Art Director, Copywriter, Narrative Designer, Community Manager, Event Planner
+**🟦 Strategy (13):** Chief of Staff, Market Analyst, Creative Strategist, Brand Builder, Data Analyst, Trend Forecaster, Academic Researcher, Learning Scientist, Ethicist, Alchemist, Cartographer Invisible, Etymologist Decay, Scenario Planner
+**🎨 Producers (15):** Art Director, Copywriter, Narrative Designer, Community Manager, Event Planner, Beta Reader, Creative Writer, Dialect Coach, Dream Navigator, Forensic Consultant, Mirror Maker, Mythologist, Narrator, Symbolist, Translator Silence
 **💰 Commerce (10):** Social Media Strategist, SEO Specialist, Conversion Optimizer, Customer Acquisition, Influencer Strategist, Pricing Strategist, Real Estate (4 specialists)
-**⚙️ Tech (9):** Software Architect, Productivity Architect, Automation Specialist, Toolmaker, Operations Manager, Quality Control, Cybersecurity, Supply Chain, Prompt Engineer
-**🌿 Health/Lifestyle (5):** Habit Architect, Cognitive Behavioral Therapist, Stoic Coach, Health Coach, Meditation Instructor
-**📚 Knowledge (4):** Business Lawyer, Tax Strategist, Investment Advisor, Financial Therapist
+**⚙️ Tech (12):** Software Architect, Productivity Architect, Automation Specialist, Toolmaker, Operations Manager, Quality Control, Cybersecurity, Supply Chain, Prompt Engineer, Handyman, Infinite Looper, Irony Detector
+**🌿 Health/Lifestyle (9):** Habit Architect, Cognitive Behavioral Therapist, Stoic Coach, Health Coach, Meditation Instructor, Active Imagination Guide, Humanist, Shadow Worker, Xenobiologist
+**📚 Knowledge (8):** Business Lawyer, Tax Strategist, Investment Advisor, Financial Therapist, Antiquarian, Archivist Silence, Librarian Babel, Local Historian
+**🟪 Meta (1):** Morphling (universal adaptive specialist)
 
-**Extended roster (27):** Additional specialists across strategy, producers, tech, health-lifestyle, knowledge, and meta. See the full roster in `staff/README.md`.
+See `staff/README.md` for the full catalog with activation patterns and paths.
 
 📋 **Full Directory:** See [staff/README.md](staff/README.md) for complete specialist catalog
 📊 **Implementation Status:** See [archive/legacy-docs/IMPLEMENTATION-STATUS.md](archive/legacy-docs/IMPLEMENTATION-STATUS.md) for historical progress notes
@@ -108,7 +109,7 @@ Start a conversational session with any specialist:
 ```bash
 uv run tools/activate.py <specialist-slug>
 # Example:
-uv run tools/activate.py creative-director
+uv run tools/activate.py creative-strategist
 ```
 
 - **Sessions**: Chat history is automatically saved to `~/.ai-staff-hq/sessions/`.
@@ -120,7 +121,7 @@ uv run tools/activate.py creative-director
 For quick questions without entering interactive mode:
 
 ```bash
-uv run tools/activate.py strategy -q "Analyze this business model..."
+uv run tools/activate.py market-analyst -q "Analyze this business model..."
 ```
 
 ### Listing Specialists
@@ -185,12 +186,13 @@ This repository is designed around **systematic knowledge management**:
 ```mermaid
 graph TD
     A[You] -->|Activate| B[Chief of Staff]
-    B -->|Coordinates| C[🟦 Strategy - 8]
-    B -->|Coordinates| D[🎨 Producers - 5]
+    B -->|Coordinates| C[🟦 Strategy - 13]
+    B -->|Coordinates| D[🎨 Producers - 15]
     B -->|Coordinates| E[💰 Commerce - 10]
-    B -->|Coordinates| F[⚙️ Tech - 9]
-    B -->|Coordinates| G[🌿 Health/Lifestyle - 5]
-    B -->|Coordinates| H[📚 Knowledge - 4]
+    B -->|Coordinates| F[⚙️ Tech - 12]
+    B -->|Coordinates| G[🌿 Health/Lifestyle - 9]
+    B -->|Coordinates| H[📚 Knowledge - 8]
+    B -->|Coordinates| I[🟪 Meta - 1]
 
     C --> C1[Market Analyst<br/>Creative Strategist<br/>Brand Builder<br/>Data Analyst]
     D --> D1[Copywriter<br/>Narrative Designer<br/>Community Manager]
