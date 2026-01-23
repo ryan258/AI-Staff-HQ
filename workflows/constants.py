@@ -8,6 +8,11 @@ from pathlib import Path
 from typing import Set
 
 
+# Configuration Constants
+CACHE_KEY_SEPARATOR = "::"
+DEFAULT_GRAPH_LOG_DIR = Path("logs") / "graphs"
+
+
 class SpecialistSlugs:
     """Centralized specialist slug constants.
 

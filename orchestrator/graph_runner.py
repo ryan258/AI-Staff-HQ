@@ -11,6 +11,7 @@ from typing import Any, Callable, Dict, List, Optional, TypedDict
 from langgraph.graph import StateGraph, END
 
 from tools.engine.core import load_specialist
+from workflows.constants import CACHE_KEY_SEPARATOR, DEFAULT_GRAPH_LOG_DIR
 
 
 class GraphState(TypedDict, total=False):
@@ -79,14 +80,14 @@ class GraphRunner:
         self.temperature = temperature
         self.approval_handler = approval_handler
         self.auto_approve = auto_approve
-        self.log_dir = log_dir or Path("logs") / "graphs"
+        self.log_dir = log_dir or DEFAULT_GRAPH_LOG_DIR
         self.agent_loader = agent_loader or _default_agent_loader
         self._agent_cache: Dict[str, Any] = {}
 
     def get_agent(self, specialist_slug: str, session_id: Optional[str] = None):
         """Memoize specialist agents within a run to reduce initialization overhead."""
-        # Use :: separator to avoid ambiguity with timestamps or colons in slugs
-        cache_key = f"{specialist_slug}::{session_id}" if session_id else specialist_slug
+        # Use separator to avoid ambiguity with timestamps or colons in slugs
+        cache_key = f"{specialist_slug}{CACHE_KEY_SEPARATOR}{session_id}" if session_id else specialist_slug
         
         if cache_key not in self._agent_cache:
             agent = self.agent_loader(
