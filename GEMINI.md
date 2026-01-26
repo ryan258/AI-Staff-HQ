@@ -31,10 +31,10 @@ You MUST implement the Candlelite theme and use ONLY the following hex colors in
 ```css
 :root {
   --bg-color: #121212;
-  --text-color: #EBD2BE;
-  --accent-primary: #A6ACCD;
-  --accent-success: #98C379;
-  --accent-danger: #E06C75;
+  --text-color: #ebd2be;
+  --accent-primary: #a6accd;
+  --accent-success: #98c379;
+  --accent-danger: #e06c75;
   --card-bg: var(--bg-color);
   --border-color: var(--accent-primary);
 }
@@ -43,43 +43,45 @@ You MUST implement the Candlelite theme and use ONLY the following hex colors in
 ### Color Mapping Examples
 
 **HTML/CSS:**
+
 ```html
 <style>
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
 
-.button-primary {
-  background-color: var(--accent-primary);
-  color: var(--bg-color);
-  border: 2px solid var(--accent-primary);
-  padding: 8px 16px;
-  cursor: pointer;
-}
+  .button-primary {
+    background-color: var(--accent-primary);
+    color: var(--bg-color);
+    border: 2px solid var(--accent-primary);
+    padding: 8px 16px;
+    cursor: pointer;
+  }
 
-.button-primary:hover {
-  background-color: var(--bg-color);
-  color: var(--accent-primary);
-}
+  .button-primary:hover {
+    background-color: var(--bg-color);
+    color: var(--accent-primary);
+  }
 
-.alert-success {
-  background-color: var(--bg-color);
-  border-left: 4px solid var(--accent-success);
-  color: var(--accent-success);
-  padding: 12px;
-}
+  .alert-success {
+    background-color: var(--bg-color);
+    border-left: 4px solid var(--accent-success);
+    color: var(--accent-success);
+    padding: 12px;
+  }
 
-.alert-danger {
-  background-color: var(--bg-color);
-  border-left: 4px solid var(--accent-danger);
-  color: var(--accent-danger);
-  padding: 12px;
-}
+  .alert-danger {
+    background-color: var(--bg-color);
+    border-left: 4px solid var(--accent-danger);
+    color: var(--accent-danger);
+    padding: 12px;
+  }
 </style>
 ```
 
 **Streamlit (Python):**
+
 ```python
 import streamlit as st
 
@@ -228,6 +230,7 @@ When creating or modifying any UI:
 5. Test responsive behavior
 
 Example workflow:
+
 ```python
 # 1. Define CSS variables at top of file
 candlelite_css = """
@@ -260,11 +263,13 @@ st.markdown(candlelite_css, unsafe_allow_html=True)
 ### Adding a New Specialist
 
 1. Create YAML file:
+
 ```bash
 cp templates/persona/new-staff-member-template.md staff/tech/new-specialist.yaml
 ```
 
 2. Edit with required fields:
+
 ```yaml
 specialist: "Full Name"
 role: "Role Title"
@@ -280,11 +285,13 @@ collaboration:
 ```
 
 3. Validate:
+
 ```bash
 python tools/validate_specialist.py staff/tech/new-specialist.yaml
 ```
 
 4. Test:
+
 ```bash
 python tools/activate.py new-specialist
 ```
@@ -352,7 +359,7 @@ OPENAI_API_KEY=sk-...
 ANTHROPIC_API_KEY=sk-ant-...
 
 # Model settings
-DEFAULT_MODEL=xiaomi/mimo-v2-flash:free
+DEFAULT_MODEL=moonshotai/kimi-k2:free
 MAX_HISTORY_TURNS=20
 MAX_CONTEXT_TOKENS=32000
 ```
@@ -364,17 +371,17 @@ Edit `config/model_routing.yaml`:
 ```yaml
 # Budget mode (disabled by default)
 budget_mode:
-  enabled: false  # Change to true to use free models
-  model: "xiaomi/mimo-v2-flash:free"
+  enabled: false # Change to true to use free models
+  model: "moonshotai/kimi-k2:free"
 
 # Role-based routing (highest precedence)
 role_routing:
-  "Market Research & Competitive Analysis Specialist": "xiaomi/mimo-v2-flash:free"
+  "Market Research & Competitive Analysis Specialist": "moonshotai/kimi-k2:free"
 
 # Department fallback
 department_routing:
-  strategy: "xiaomi/mimo-v2-flash:free"
-  tech: "xiaomi/mimo-v2-flash:free"
+  strategy: "moonshotai/kimi-k2:free"
+  tech: "moonshotai/kimi-k2:free"
 ```
 
 ---
@@ -386,11 +393,13 @@ Sessions persist to: `~/.ai-staff-hq/sessions/[specialist]/[session_id].json`
 **Session ID Format:** `YYYYMMDD_HHMMSS_hex8` (24 characters)
 
 **Commands:**
+
 - `/clear` - Start new session (keeps system message)
 - `/exit` or `exit` - Save and quit
 - `/bye` - Quit
 
 **Programmatic Access:**
+
 ```python
 from tools.engine.state import ConversationState
 
@@ -413,6 +422,7 @@ state.load()
 ## Error Handling Best Practices
 
 ### DO:
+
 ```python
 try:
     agent = runner.get_agent(SpecialistSlugs.MARKET_ANALYST, session_id=run_id)
@@ -425,6 +435,7 @@ except Exception as e:
 ```
 
 ### DON'T:
+
 ```python
 try:
     agent = runner.get_agent("market-analyst", session_id=run_id)  # Magic string!
@@ -464,6 +475,7 @@ Before submitting changes:
 ## Support
 
 For issues or questions:
+
 1. Check existing documentation
 2. Review test files for usage examples
 3. Examine similar code in the codebase

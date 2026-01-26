@@ -8,6 +8,7 @@
 ## Summary
 
 Successfully transformed the static squad-based dispatcher system into a dynamic swarm orchestration system with:
+
 - **Dynamic specialist selection** from 68 agents across 7 departments
 - **Parallel task execution** for performance
 - **Chief of Staff coordination** for planning and synthesis
@@ -85,7 +86,7 @@ Successfully transformed the static squad-based dispatcher system into a dynamic
 dhp-content.sh "Create a guide on Bash scripting"
 
 # With model control
-dhp-content.sh "Write a tagline" --model "xiaomi/mimo-v2-flash:free"
+dhp-content.sh "Write a tagline" --model "moonshotai/kimi-k2:free"
 
 # Creative workflow
 dhp-creative.sh "Write a sci-fi story about AI"
@@ -101,7 +102,7 @@ uv run python bin/dhp-swarm-content.py "Brief" --debug --max-parallel 10
 uv run python bin/dhp-swarm-content.py "Brief" --no-parallel
 
 # Budget mode
-uv run python bin/dhp-swarm-content.py "Brief" --model "xiaomi/mimo-v2-flash:free"
+uv run python bin/dhp-swarm-content.py "Brief" --model "moonshotai/kimi-k2:free"
 ```
 
 ### Test Script
@@ -118,22 +119,24 @@ uv run python test_swarm_simple.py
 Control which models are used via:
 
 1. **Runtime Override** (highest priority)
+
    ```bash
-   dhp-content.sh "Brief" --model "xiaomi/mimo-v2-flash:free"
+   dhp-content.sh "Brief" --model "moonshotai/kimi-k2:free"
    ```
 
 2. **Config File** (`config/model_routing.yaml`)
+
    ```yaml
    role_routing:
-     "Strategic Coordinator & Project Orchestrator": "xiaomi/mimo-v2-flash:free"
+     "Strategic Coordinator & Project Orchestrator": "moonshotai/kimi-k2:free"
 
    department_routing:
-     strategy: "xiaomi/mimo-v2-flash:free"
+     strategy: "moonshotai/kimi-k2:free"
    ```
 
 3. **Environment** (`.env`)
    ```bash
-   DEFAULT_MODEL="xiaomi/mimo-v2-flash:free"
+   DEFAULT_MODEL="moonshotai/kimi-k2:free"
    ```
 
 See `MODEL_CONTROL.md` for full details.
@@ -300,7 +303,7 @@ A: Use `uv run python` instead of plain `python`
 A: This is a known issue - prompts need tuning for simplicity
 
 **Q: "How do I use cheaper models?"**
-A: Add `--model "xiaomi/mimo-v2-flash:free"` or see `MODEL_CONTROL.md`
+A: Add `--model "moonshotai/kimi-k2:free"` or see `MODEL_CONTROL.md`
 
 ### Debug Mode
 
@@ -342,4 +345,4 @@ The system successfully executed a 7-task swarm with 5 execution waves, demonstr
 
 ---
 
-*For questions or issues, see `swarm-plan.md` or `MODEL_CONTROL.md`*
+_For questions or issues, see `swarm-plan.md` or `MODEL_CONTROL.md`_

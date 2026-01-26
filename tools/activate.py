@@ -154,7 +154,7 @@ Examples:
     # Model selection
     parser.add_argument(
         '--model',
-        help='Override model routing (e.g., xiaomi/mimo-v2-flash:free)'
+        help='Override model routing (e.g., moonshotai/kimi-k2:free)'
     )
 
     parser.add_argument(

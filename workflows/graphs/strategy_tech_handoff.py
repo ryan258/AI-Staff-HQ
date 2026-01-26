@@ -117,7 +117,7 @@ def main():
     )
     parser.add_argument(
         "--model",
-        help="Override model routing for this run (e.g., xiaomi/mimo-v2-flash:free).",
+        help="Override model routing for this run (e.g., moonshotai/kimi-k2:free).",
     )
     parser.add_argument(
         "--temperature",

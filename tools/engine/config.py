@@ -13,7 +13,7 @@ class Config(BaseSettings):
     # OpenRouter Configuration
     openrouter_api_key: str = ""
     openrouter_base_url: str = "https://openrouter.ai/api/v1"
-    default_model: str = "xiaomi/mimo-v2-flash:free"
+    default_model: str = "moonshotai/kimi-k2:free"
 
     # Direct Provider Keys (Fallback/Optional)
     openai_api_key: str = ""

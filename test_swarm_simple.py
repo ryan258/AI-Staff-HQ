@@ -23,7 +23,7 @@ def main():
         enable_parallel=True,
     )
 
-    model_override = os.getenv("DEFAULT_MODEL", "xiaomi/mimo-v2-flash:free")
+    model_override = os.getenv("DEFAULT_MODEL", "moonshotai/kimi-k2:free")
     runner = SwarmRunner(
         staff_dir,
         config=config,

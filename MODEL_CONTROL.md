@@ -3,7 +3,7 @@
 ## Overview
 
 AI Staff HQ supports multiple ways to control which models are used by specialists.
-The default model is configured in `.env` (currently `xiaomi/mimo-v2-flash:free`). Examples below show optional overrides.
+The default model is configured in `.env` (currently `moonshotai/kimi-k2:free`). Examples below show optional overrides.
 
 ## Model Control Hierarchy
 
@@ -83,15 +83,16 @@ Edit `ai-staff-hq/config/model_routing.yaml`:
 
 ```yaml
 department_routing:
-  strategy: "anthropic/claude-opus-4"      # Best reasoning
+  strategy: "anthropic/claude-opus-4" # Best reasoning
   producers: "anthropic/claude-3.5-sonnet" # Creative writing
-  commerce: "anthropic/claude-3.5-sonnet"  # Marketing
-  tech: "openai/o1-mini"                   # Technical reasoning
+  commerce: "anthropic/claude-3.5-sonnet" # Marketing
+  tech: "openai/o1-mini" # Technical reasoning
   health-lifestyle: "anthropic/claude-3.5-sonnet"
-  knowledge: "anthropic/claude-opus-4"     # Expert knowledge
+  knowledge: "anthropic/claude-opus-4" # Expert knowledge
 ```
 
 **Departments**:
+
 - `strategy` - Market analysis, research, planning
 - `producers` - Content creation, narrative, design
 - `commerce` - SEO, marketing, growth
@@ -107,7 +108,7 @@ Set default in `ai-staff-hq/.env`:
 
 ```bash
 # Default model for all specialists
-DEFAULT_MODEL="xiaomi/mimo-v2-flash:free"
+DEFAULT_MODEL="moonshotai/kimi-k2:free"
 
 # OpenRouter API key
 OPENROUTER_API_KEY="your-key-here"
@@ -122,7 +123,7 @@ Edit `ai-staff-hq/config/model_routing.yaml`:
 ```yaml
 budget_mode:
   enabled: true
-  model: "xiaomi/mimo-v2-flash:free"  # Free/cheap model
+  model: "moonshotai/kimi-k2:free" # Free/cheap model
 ```
 
 When enabled, ALL specialists use the budget model (overrides everything except direct override).
@@ -132,6 +133,7 @@ When enabled, ALL specialists use the budget model (overrides everything except 
 ## Popular Model Choices
 
 ### Best Quality (Expensive)
+
 ```yaml
 anthropic/claude-opus-4         # Best overall
 openai/o1                        # Best reasoning
@@ -139,6 +141,7 @@ anthropic/claude-3.7-sonnet      # Latest Sonnet
 ```
 
 ### Balanced (Recommended)
+
 ```yaml
 anthropic/claude-3.5-sonnet      # Great quality/price
 openai/gpt-4o                    # Fast and capable
@@ -146,6 +149,7 @@ google/gemini-pro-1.5            # Good value
 ```
 
 ### Budget (Cheap/Free)
+
 ```yaml
 google/gemini-flash-1.5          # Free
 anthropic/claude-3-haiku         # Cheapest Anthropic
@@ -170,8 +174,8 @@ department_routing:
   producers: "anthropic/claude-3.5-sonnet"
   commerce: "anthropic/claude-3.5-sonnet"
   tech: "anthropic/claude-3.5-sonnet"
-  health-lifestyle: "anthropic/claude-3-haiku"  # Cheaper for wellness
-  knowledge: "anthropic/claude-opus-4"          # Expensive for legal/tax
+  health-lifestyle: "anthropic/claude-3-haiku" # Cheaper for wellness
+  knowledge: "anthropic/claude-opus-4" # Expensive for legal/tax
 
 # Budget mode disabled (use real models)
 budget_mode:
@@ -183,18 +187,21 @@ budget_mode:
 ## Cost Optimization Strategies
 
 ### 1. Hybrid Approach
+
 - Chief of Staff: `claude-opus-4` (planning & synthesis)
 - Task execution: `claude-3.5-sonnet` (balance)
 - Simple tasks: `claude-3-haiku` (cheap)
 
 ### 2. Budget Mode for Development
+
 ```yaml
 budget_mode:
   enabled: true
-  model: "xiaomi/mimo-v2-flash:free"
+  model: "moonshotai/kimi-k2:free"
 ```
 
 ### 3. Override During Testing
+
 ```python
 # Use cheap model for testing
 runner = SwarmRunner(
@@ -217,6 +224,7 @@ print(router.config)
 ```
 
 Or check the file directly:
+
 ```bash
 cat ai-staff-hq/config/model_routing.yaml
 ```
@@ -262,6 +270,7 @@ runner = SwarmRunner(
 ## Quick Start
 
 **For testing (cheap)**:
+
 ```python
 runner = SwarmRunner(
     staff_dir,
@@ -270,6 +279,7 @@ runner = SwarmRunner(
 ```
 
 **For production (balanced)**:
+
 ```python
 runner = SwarmRunner(
     staff_dir,
@@ -278,6 +288,7 @@ runner = SwarmRunner(
 ```
 
 **For best quality (expensive)**:
+
 ```python
 runner = SwarmRunner(
     staff_dir,
@@ -286,6 +297,7 @@ runner = SwarmRunner(
 ```
 
 **No override (use config file)**:
+
 ```python
 runner = SwarmRunner(staff_dir)  # Uses model_routing.yaml
 ```
