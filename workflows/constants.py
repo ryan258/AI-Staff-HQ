@@ -13,6 +13,16 @@ CACHE_KEY_SEPARATOR = "::"
 DEFAULT_GRAPH_LOG_DIR = Path("logs") / "graphs"
 
 
+
+class GraphNodes:
+    """Constants for LangGraph node names."""
+    PLANNING = "planning"
+    CAPABILITY_MATCHING = "capability_matching"
+    EXECUTION_PLANNING = "execution_planning"
+    WAVE_EXECUTION = "wave_execution"
+    SYNTHESIS = "synthesis"
+
+
 class SpecialistSlugs:
     """Centralized specialist slug constants.
 

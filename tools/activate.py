@@ -17,9 +17,13 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from tools.engine.core import load_specialist, SpecialistAgent
 from tools.engine.config import get_config
 from tools.engine.state import ConversationState
+from tools.engine.utils import normalize_slug
 
 
-console = Console()
+
+from ui.theme import RICH_THEME
+
+console = Console(theme=RICH_THEME)
 
 
 def interactive_loop(agent: SpecialistAgent) -> None:
@@ -27,7 +31,7 @@ def interactive_loop(agent: SpecialistAgent) -> None:
     info = agent.get_info()
     session_id = info['session_id']
     
-    console.print(f"\n[bold green]Activated: {info['specialist']}[/bold green]")
+    console.print(f"\n[bold success]Activated: {info['specialist']}[/bold success]")
     console.print(f"[dim]Role: {info['role']}[/dim]")
     console.print(f"[dim]Model: {info['model']}[/dim]")
     console.print(f"[dim]Session: {session_id}[/dim]")
@@ -46,26 +50,26 @@ def interactive_loop(agent: SpecialistAgent) -> None:
 
             # Commands
             if user_input.lower() in ('exit', 'quit', '/bye', '/exit'):
-                console.print("[yellow]Saving and exiting...[/yellow]")
+                console.print("[accent]Saving and exiting...[/accent]")
                 break
                 
             if user_input.lower() in ('/clear', 'clear'):
-                console.print("[yellow]Clearing conversation history...[/yellow]")
+                console.print("[accent]Clearing conversation history...[/accent]")
                 new_session_id = agent.state.clear()
-                console.print(f"[green]✓ New session started: {new_session_id}[/green]")
+                console.print(f"[success]✓ New session started: {new_session_id}[/success]")
                 continue
 
             # Query
-            with console.status("[bold yellow]Thinking...", spinner="dots"):
+            with console.status("[bold accent]Thinking...", spinner="dots"):
                 try:
                     response = agent.query(user_input)
                     
                     # Streaming simulated by printing the whole response for now
                     # (LangChain streaming is supported but requires callback handlers)
-                    console.print(Panel(Markdown(response), title=f"{info['specialist']}", border_style="green"))
+                    console.print(Panel(Markdown(response), title=f"{info['specialist']}", border_style="accent"))
                     
                 except KeyboardInterrupt:
-                    console.print("\n[yellow]Generation cancelled by user.[/yellow]")
+                    console.print("\n[accent]Generation cancelled by user.[/accent]")
                     continue
 
         except KeyboardInterrupt:
@@ -73,7 +77,7 @@ def interactive_loop(agent: SpecialistAgent) -> None:
         except EOFError:
             break
         except Exception as e:
-            console.print(f"[red]Error:[/red] {e}")
+            console.print(f"[error]Error:[/error] {e}")
 
 
 def query_mode(agent: SpecialistAgent, query: str) -> None:
@@ -83,12 +87,12 @@ def query_mode(agent: SpecialistAgent, query: str) -> None:
     console.print(f"\n[bold]{info['specialist']}[/bold] [dim](using {info['model']})[/dim]")
     console.print(f"[dim]Session: {info['session_id']}[/dim]\n")
 
-    with console.status("[bold green]Processing query...", spinner="dots"):
+    with console.status("[bold success]Processing query...", spinner="dots"):
         try:
             response = agent.query(query)
-            console.print(Panel(Markdown(response), title=f"{agent.schema.specialist}", border_style="green"))
+            console.print(Panel(Markdown(response), title=f"{agent.schema.specialist}", border_style="accent"))
         except KeyboardInterrupt:
-            console.print("\n[yellow]Generation cancelled by user.[/yellow]")
+            console.print("\n[accent]Generation cancelled by user.[/accent]")
             sys.exit(130)
 
 
@@ -117,7 +121,7 @@ def list_specialists(staff_dir: Path, department: Optional[str] = None) -> None:
 
     console.print("\n[bold]Available Specialists[/bold]\n")
     for dept, names in sorted(specialists_by_dept.items()):
-        console.print(f"[cyan]{dept}[/cyan] ({len(names)})")
+        console.print(f"[accent]{dept}[/accent] ({len(names)})")
         for name in sorted(names):
             console.print(f"  - {name}")
 
@@ -221,17 +225,14 @@ Examples:
         # Let's try to resolve latest session for the specialist identifier
         # Simple heuristic: assume identifier is slug
         # But if it's a path (e.g. staff/strategy/chief-of-staff.yaml), we need the stem
-        if '/' in args.specialist or args.specialist.endswith('.yaml'):
-            slug = Path(args.specialist).stem
-        else:
-            slug = args.specialist.lower().replace(' ', '-')
+        slug = normalize_slug(args.specialist)
             
         sessions = ConversationState.list_sessions(slug)
         if sessions:
             session_id = sessions[0]['id']
             console.print(f"[dim]Resuming last session: {session_id}[/dim]")
         else:
-            console.print("[yellow]No previous session found. Starting new.[/yellow]")
+            console.print("[accent]No previous session found. Starting new.[/accent]")
             session_id = None
 
     # Load specialist
@@ -245,10 +246,10 @@ Examples:
             session_id=session_id
         )
     except FileNotFoundError as e:
-        console.print(f"\n[red]Error:[/red] {e}\n")
+        console.print(f"\n[error]Error:[/error] {e}\n")
         sys.exit(1)
     except Exception as e:
-        console.print(f"\n[red]Error loading specialist:[/red] {e}\n")
+        console.print(f"\n[error]Error loading specialist:[/error] {e}\n")
         if config.debug:
             raise
         sys.exit(1)
@@ -263,7 +264,7 @@ Examples:
         console.print("\n[dim]Interrupted[/dim]\n")
         sys.exit(130)
     except Exception as e:
-        console.print(f"\n[red]Error:[/red] {e}\n")
+        console.print(f"\n[error]Error:[/error] {e}\n")
         if config.debug:
             raise
         sys.exit(1)

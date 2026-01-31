@@ -13,6 +13,7 @@ from .prompt import PromptBuilder
 from .llm import ModelRouter
 from .state import ConversationState
 from .config import get_config
+from .utils import normalize_slug
 
 
 class SpecialistAgent:
@@ -172,7 +173,7 @@ def load_specialist(
         return SpecialistAgent(specialist_path, **kwargs)
 
     # Otherwise, search in staff directory
-    slug = specialist_identifier.lower().replace(' ', '-')
+    slug = normalize_slug(specialist_identifier)
 
     # 2. Search by name (stem) in staff directory recursively
     # We prioritize exact name matches

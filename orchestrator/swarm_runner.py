@@ -17,7 +17,7 @@ from orchestrator.capability_index import CapabilityIndex
 from orchestrator.execution_planner import ExecutionPlanner, ExecutionWave
 from orchestrator.graph_runner import GraphRunner, GraphState, build_state_graph
 from orchestrator.task_analyzer import Task, TaskAnalyzer, TaskBreakdown
-from workflows.constants import SpecialistSlugs
+from workflows.constants import GraphNodes, SpecialistSlugs
 from workflows.schemas.swarm import SwarmConfig, SwarmMetrics, SwarmState
 
 
@@ -124,28 +124,28 @@ class SwarmRunner(GraphRunner):
         graph = StateGraph(SwarmState)
 
         # Node 1: Planning
-        graph.add_node("planning", self._planning_node)
+        graph.add_node(GraphNodes.PLANNING, self._planning_node)
 
         # Node 2: Capability Matching
-        graph.add_node("capability_matching", self._capability_matching_node)
+        graph.add_node(GraphNodes.CAPABILITY_MATCHING, self._capability_matching_node)
 
         # Node 3: Execution Planning
-        graph.add_node("execution_planning", self._execution_planning_node)
+        graph.add_node(GraphNodes.EXECUTION_PLANNING, self._execution_planning_node)
 
         # Node 4: Wave Execution
-        graph.add_node("wave_execution", self._wave_execution_node)
+        graph.add_node(GraphNodes.WAVE_EXECUTION, self._wave_execution_node)
 
         # Node 5: Synthesis
-        graph.add_node("synthesis", self._synthesis_node)
+        graph.add_node(GraphNodes.SYNTHESIS, self._synthesis_node)
 
         # Connect nodes
-        graph.add_edge("planning", "capability_matching")
-        graph.add_edge("capability_matching", "execution_planning")
-        graph.add_edge("execution_planning", "wave_execution")
-        graph.add_edge("wave_execution", "synthesis")
-        graph.add_edge("synthesis", END)
+        graph.add_edge(GraphNodes.PLANNING, GraphNodes.CAPABILITY_MATCHING)
+        graph.add_edge(GraphNodes.CAPABILITY_MATCHING, GraphNodes.EXECUTION_PLANNING)
+        graph.add_edge(GraphNodes.EXECUTION_PLANNING, GraphNodes.WAVE_EXECUTION)
+        graph.add_edge(GraphNodes.WAVE_EXECUTION, GraphNodes.SYNTHESIS)
+        graph.add_edge(GraphNodes.SYNTHESIS, END)
 
-        graph.set_entry_point("planning")
+        graph.set_entry_point(GraphNodes.PLANNING)
 
         return graph.compile()
 
@@ -170,7 +170,7 @@ class SwarmRunner(GraphRunner):
                 print(f"Task Breakdown Warning: {warning}", file=sys.stderr)
 
         # Log the planning step
-        self.record_step(state, "planning", {
+        self.record_step(state, GraphNodes.PLANNING, {
             'brief': state.get('user_brief', ''),
             'task_count': len(breakdown.tasks),
             'parse_success': breakdown.parse_success,
@@ -224,7 +224,7 @@ class SwarmRunner(GraphRunner):
 
         avg_match_score = sum(match_scores) / len(match_scores) if match_scores else 0.0
 
-        self.record_step(state, "capability_matching", {
+        self.record_step(state, GraphNodes.CAPABILITY_MATCHING, {
             'avg_match_score': avg_match_score,
             'unmatched_capabilities': unmatched_capabilities,
             'duration_seconds': time.time() - start_time,
@@ -250,7 +250,7 @@ class SwarmRunner(GraphRunner):
         # Log plan
         print("\n" + self.execution_planner.visualize_plan(execution_plan), file=sys.stderr)
 
-        self.record_step(state, "execution_planning", {
+        self.record_step(state, GraphNodes.EXECUTION_PLANNING, {
             'total_waves': len(execution_plan.waves),
             'total_tasks': execution_plan.total_tasks,
             'parallel_tasks': execution_plan.parallel_tasks,
@@ -624,7 +624,7 @@ Return the final synthesized output.
         # Calculate metrics
         metrics = self._calculate_metrics(state, start_time)
 
-        self.record_step(state, "synthesis", {
+        self.record_step(state, GraphNodes.SYNTHESIS, {
             'duration_seconds': time.time() - start_time,
             'final_output_length': len(final_output),
         })
@@ -658,7 +658,7 @@ Return the final synthesized output.
         # Extract unmatched capabilities from logs
         unmatched = []
         for step in state.get('steps', []):
-            if step.get('step') == 'capability_matching':
+            if step.get('step') == GraphNodes.CAPABILITY_MATCHING:
                 unmatched = step.get('unmatched_capabilities', [])
 
         # Calculate total duration
@@ -703,8 +703,32 @@ Return the final synthesized output.
 
     def _run_squad_mode(self, user_brief: str, squad_name: str) -> SwarmState:
         """Backward compatibility: run in squad mode."""
-        # TODO: Implement squad mode compatibility
-        raise NotImplementedError("Squad mode compatibility not yet implemented")
+        print(f"WARNING: Squad mode '{squad_name}' is deprecated. Upgrading to Swarm execution.", file=sys.stderr)
+        
+        # Load squads config to find preferred specialists
+        squads_path = self.staff_dir.parent / "squads.json"
+        
+        prefix = f"[Context: You are operating as the '{squad_name}' squad] "
+        
+        if squads_path.exists():
+            try:
+                with open(squads_path) as f:
+                    data = json.load(f)
+                    if squad_name in data:
+                        # Extract specialist names
+                        staff_paths = data[squad_name].get("staff", [])
+                        specialists = [Path(p).stem for p in staff_paths]
+                        if specialists:
+                            prefix += f"\nPreferred Specialists: {', '.join(specialists)}\n"
+            except Exception as e:
+                print(f"Warning: Could not load squad config: {e}", file=sys.stderr)
+
+        # Combine with brief
+        enhanced_brief = f"{prefix}\n\n{user_brief}"
+        
+        # Run standard swarm (disable recursion)
+        return self.run_swarm(enhanced_brief, use_squad=None)
+
     def _persist_log(self, state: SwarmState) -> None:
         """Write run metadata and steps to disk, handling dataclass serialization."""
         self.log_dir.mkdir(parents=True, exist_ok=True)
