@@ -1,5 +1,10 @@
 # Gemini Guide for AI-Staff-HQ
 
+> [!IMPORTANT]
+> **SCOPE WARNING**: This document applies **ONLY** to the `ai-staff-hq` submodule.
+> For root-level `dotfiles` work, refer to the root `CLAUDE.md` and `GEMINI.md`.
+> Do NOT apply Candlelite theme requirements to standard CLI scripts in the parent directory.
+
 This guide provides Google Gemini-specific instructions for working with the AI-Staff-HQ project.
 
 ---
