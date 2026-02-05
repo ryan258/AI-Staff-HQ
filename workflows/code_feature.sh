@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Workflows: Code Feature Scaffold (CLI Chaining Example)
 #
 # This script demonstrates how to use the 'activate' CLI tool to pipe
