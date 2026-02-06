@@ -26,7 +26,7 @@ from ui.theme import RICH_THEME
 console = Console(theme=RICH_THEME)
 
 
-def interactive_loop(agent: SpecialistAgent) -> None:
+def interactive_loop(agent: SpecialistAgent, initial_prompt: Optional[str] = None) -> None:
     """Run interactive chat session."""
     info = agent.get_info()
     session_id = info['session_id']
@@ -40,6 +40,16 @@ def interactive_loop(agent: SpecialistAgent) -> None:
     # Prompt toolkit session
     session = PromptSession()
     
+    # Handle initial prompt if provided
+    if initial_prompt:
+        console.print(f"<b>{info['slug']}</b>> {initial_prompt}")
+        with console.status("[bold accent]Thinking...", spinner="dots"):
+            try:
+                response = agent.query(initial_prompt)
+                console.print(Panel(Markdown(response), title=f"{info['specialist']}", border_style="accent"))
+            except Exception as e:
+                console.print(f"[error]Error executing initial prompt:[/error] {e}")
+
     while True:
         try:
             user_input = session.prompt(HTML(f"<b>{info['slug']}</b>> "))
@@ -155,6 +165,12 @@ Examples:
         help='Execute single query and exit'
     )
 
+    # Initial prompt (for interactive mode)
+    parser.add_argument(
+        '--initial-prompt',
+        help='Execute this prompt first then stay in interactive mode'
+    )
+
     # Model selection
     parser.add_argument(
         '--model',
@@ -259,7 +275,7 @@ Examples:
         if args.query:
             query_mode(agent, args.query)
         else:
-            interactive_loop(agent)
+            interactive_loop(agent, initial_prompt=args.initial_prompt)
     except KeyboardInterrupt:
         console.print("\n[dim]Interrupted[/dim]\n")
         sys.exit(130)
