@@ -44,7 +44,7 @@ class Config(BaseSettings):
     debug: bool = False
 
     # Logging
-    log_dir: Path = Path("logs")
+    log_dir: Path = Path.home() / ".ai-staff-hq" / "logs"
     enable_logging: bool = True
 
     model_config = SettingsConfigDict(
