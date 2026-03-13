@@ -13,25 +13,25 @@ department_routing: {}
 # All specialists will use the budget model regardless of their configured model
 # Only enable this if you explicitly want to force all specialists to use a free/cheap model
 budget_mode:
-  enabled: false
-  model: "moonshotai/kimi-k2:free"
+  enabled: true
+  model: "openrouter/hunter-alpha"
 
 # Model metadata (for display and validation)
 available_models:
-  - id: "moonshotai/kimi-k2:free"
-    name: "Xiaomi MiMo v2 Flash (Free)"
+  - id: "openrouter/hunter-alpha"
+    name: "Hunter Alpha"
     context_window: 200000
     cost_per_1k_input: 0.0
     strengths: ["reasoning", "code", "analysis", "free"]
 
-  - id: "nex-agi/deepseek-v3.1-nex-n1:free"
-    name: "DeepSeek V3 (Free)"
+  - id: "openrouter/healer-alpha"
+    name: "Healer Alpha"
     context_window: 200000
     cost_per_1k_input: 0.0
     strengths: ["reasoning", "code", "analysis", "free"]
 
-  - id: "openai/gpt-4o"
-    name: "GPT-4o"
+  - id: "nvidia/nemotron-3-super-120b-a12b:free"
+    name: "Nemotron 120b"
     context_window: 128000
     cost_per_1k_input: 0.005
     strengths: ["creativity", "multimodal", "code"]
