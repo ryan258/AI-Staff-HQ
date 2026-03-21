@@ -14,7 +14,7 @@ department_routing: {}
 # Only enable this if you explicitly want to force all specialists to use a free/cheap model
 budget_mode:
   enabled: true
-  model: "openrouter/hunter-alpha"
+  model: ""
 
 # Model metadata (for display and validation)
 available_models:

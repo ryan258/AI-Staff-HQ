@@ -41,32 +41,38 @@ class ModelRouter:
 
         Priority:
         1. User override (--model flag)
-        2. Budget mode (if enabled)
-        3. Role-based routing
-        4. Department fallback
-        5. Default model
+        2. Default model from environment/config
+        3. Budget mode fallback (if enabled and env default is unset)
+        4. Role-based routing
+        5. Department fallback
         """
 
         # 1. User override takes precedence
         if override:
             return override
 
-        # 2. Budget mode overrides everything except user override
+        # 2. Central env/config default is the normal source of truth.
+        if self.config.default_model:
+            return self.config.default_model
+
+        # 3. Budget mode is only a fallback when no env default is set.
         budget_cfg = self.routing.get('budget_mode', {})
         if budget_cfg.get('enabled', False):
-            return budget_cfg.get('model', self.config.default_model)
+            budget_model = str(budget_cfg.get('model', "")).strip()
+            if budget_model:
+                return budget_model
 
-        # 3. Role-based routing
+        # 4. Role-based routing
         role_routing = self.routing.get('role_routing', {})
         if role in role_routing:
             return role_routing[role]
 
-        # 4. Department-based fallback
+        # 5. Department-based fallback
         dept_routing = self.routing.get('department_routing', {})
         if department and department in dept_routing:
             return dept_routing[department]
 
-        # 5. Fallback default model
+        # 6. Final fallback default model
         return self.config.default_model
 
     def create_llm(
