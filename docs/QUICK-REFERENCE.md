@@ -1,246 +1,208 @@
-# Quick Reference Guide
+# Quick Help Guide
 
-## 5-Second Reference
+## The 5-Second Cheat Sheet
 
-| Need help with… | Start with |
+| I need help with… | Talk to this person first |
 |-----------------|------------|
-| Multi-specialist coordination | Chief of Staff |
-| Creative campaigns & strategy | Creative Strategist |
-| Brand development | Brand Builder |
-| Market intelligence | Market Analyst |
-| Data analysis & insights | Data Analyst |
-| Conversion copy | Copywriter |
-| Growth & marketing | Social Media Strategist, SEO Specialist |
-| System architecture | Software Architect |
-| Workflow automation | Automation Specialist, Toolmaker |
-| Health & habits | Health Coach, Habit Architect |
-| Business law & finance | Business Lawyer, Tax Strategist |
+| Managing a big project with lots of people | Chief of Staff |
+| Fun ideas and big plans | Creative Strategist |
+| Building my brand's look and feel | Brand Builder |
+| Finding out what people want to buy | Market Analyst |
+| Reading numbers and charts | Data Analyst |
+| Writing words that make people buy | Copywriter |
+| Getting famous online | Social Media Strategist, SEO Specialist |
+| Building big computer systems | Software Architect |
+| Making my computer work for me | Automation Specialist, Toolmaker |
+| Being healthy and building good habits | Health Coach, Habit Architect |
+| Business rules and money | Business Lawyer, Tax Strategist |
 
-> Shortcut: If a project touches more than one specialist, begin with the Chief of Staff.
+> **Cheat Code:** If your job needs more than one helper, always start by talking to the Chief of Staff.
 
-## 🏢 Current Workforce: 68 Specialists (41 core + 27 extended)
+## 🏢 Your Whole Team: 68 Helpers (41 main + 27 extra)
 
-### 🎯 Epic Tier
-**Chief of Staff** - Strategic coordination and project orchestration across all departments
+### 🎯 The Boss
+**Chief of Staff** - Helps you run big projects and tells the other helpers what to do.
 
-### 🟦 Strategy Department (13 specialists)
-Core strategic and analytical specialists who provide insights, research, and strategic direction.
+### 🟦 The Planners (13 helpers)
+Smart helpers who do research and tell you what to do next.
 
-| Specialist | Use When | Path |
+| Helper | Use When | File location |
 |------------|----------|------|
-| **Market Analyst** | Market research, competitive analysis | `staff/strategy/market-analyst.yaml` |
-| **Creative Strategist** | Campaign strategy, creative direction | `staff/strategy/creative-strategist.yaml` |
-| **Brand Builder** | Brand architecture, identity development | `staff/strategy/brand-builder.yaml` |
-| **Data Analyst** | Data intelligence, analytics, experimentation | `staff/strategy/data-analyst.yaml` |
-| **Trend Forecaster** | Trend analysis, future insights | `staff/strategy/trend-forecaster.yaml` |
-| **Academic Researcher** | Scholarly research, literature analysis | `staff/strategy/academic-researcher.yaml` |
-| **Learning Scientist** | Learning design, cognitive science | `staff/strategy/learning-scientist.yaml` |
-| **Ethicist** | Ethical analysis, moral frameworks | `staff/strategy/ethicist.yaml` |
-| **Alchemist** | Transformation, synthesis of ideas | `staff/strategy/alchemist.yaml` |
-| **Cartographer Invisible** | Mapping hidden systems, patterns | `staff/strategy/cartographer-invisible.yaml` |
-| **Etymologist Decay** | Language evolution, meaning shifts | `staff/strategy/etymologist-decay.yaml` |
-| **Scenario Planner** | Future scenarios, strategic foresight | `staff/strategy/scenario-planner.yaml` |
+| **Market Analyst** | Finding out what people are buying | `staff/strategy/market-analyst.yaml` |
+| **Creative Strategist** | Planning fun advertising | `staff/strategy/creative-strategist.yaml` |
+| **Brand Builder** | Making your brand look great | `staff/strategy/brand-builder.yaml` |
+| **Data Analyst** | Looking at numbers and charts | `staff/strategy/data-analyst.yaml` |
+| **Trend Forecaster** | Guessing what will be cool tomorrow | `staff/strategy/trend-forecaster.yaml` |
+| **Academic Researcher** | Reading big smart books | `staff/strategy/academic-researcher.yaml` |
+| **Learning Scientist** | Teaching people how to learn | `staff/strategy/learning-scientist.yaml` |
+| **Ethicist** | Figuring out what is right and wrong | `staff/strategy/ethicist.yaml` |
+| **Alchemist** | Mixing crazy ideas together | `staff/strategy/alchemist.yaml` |
+| **Cartographer Invisible** | Finding things no one else sees | `staff/strategy/cartographer-invisible.yaml` |
+| **Etymologist Decay** | Looking at how words change | `staff/strategy/etymologist-decay.yaml` |
+| **Scenario Planner** | Guessing the future | `staff/strategy/scenario-planner.yaml` |
 
-### 🎨 Producers Department (15 specialists)
-Creative specialists who produce content, experiences, and narratives.
+### 🎨 The Makers (15 helpers)
+Artsy helpers who draw, write, and tell stories.
 
-| Specialist | Use When | Path |
+| Helper | Use When | File location |
 |------------|----------|------|
-| **Art Director** | Visual strategy, brand aesthetics | `staff/producers/art-director.yaml` |
-| **Copywriter** | Conversion copy, brand messaging | `staff/producers/copywriter.yaml` |
-| **Narrative Designer** | Story architecture, narrative systems | `staff/producers/narrative-designer.yaml` |
-| **Community Manager** | Community building, engagement | `staff/producers/community-manager.yaml` |
-| **Event Planner** | Event strategy, experience design | `staff/producers/event-planner.yaml` |
-| **Beta Reader** | Manuscript feedback, reader perspective | `staff/producers/beta-reader.yaml` |
-| **Creative Writer** | Fiction, creative prose | `staff/producers/creative-writer.yaml` |
-| **Dialect Coach** | Voice authenticity, speech patterns | `staff/producers/dialect-coach.yaml` |
-| **Dream Navigator** | Subconscious exploration, imagery | `staff/producers/dream-navigator.yaml` |
-| **Forensic Consultant** | Crime writing accuracy, procedural details | `staff/producers/forensic-consultant.yaml` |
-| **Mirror Maker** | Reflection, perspective shifts | `staff/producers/mirror-maker.yaml` |
-| **Mythologist** | Mythic structures, archetypal patterns | `staff/producers/mythologist.yaml` |
-| **Narrator** | Voice, POV, storytelling craft | `staff/producers/narrator.yaml` |
-| **Symbolist** | Symbolic meaning, metaphor | `staff/producers/symbolist.yaml` |
-| **Translator Silence** | Unspoken meaning, subtext | `staff/producers/translator-silence.yaml` |
+| **Art Director** | Deciding how things should look | `staff/producers/art-director.yaml` |
+| **Copywriter** | Writing words that sell | `staff/producers/copywriter.yaml` |
+| **Narrative Designer** | Building long, fun stories | `staff/producers/narrative-designer.yaml` |
+| **Community Manager** | Talking to your fans | `staff/producers/community-manager.yaml` |
+| **Event Planner** | Throwing a big party | `staff/producers/event-planner.yaml` |
+| **Beta Reader** | Reading your book before anyone else | `staff/producers/beta-reader.yaml` |
+| **Creative Writer** | Writing fake stories (fiction) | `staff/producers/creative-writer.yaml` |
+| **Dialect Coach** | Making characters sound real | `staff/producers/dialect-coach.yaml` |
+| **Dream Navigator** | Looking at weird dreams | `staff/producers/dream-navigator.yaml` |
+| **Forensic Consultant** | Writing scary crime stories safely | `staff/producers/forensic-consultant.yaml` |
+| **Mirror Maker** | Looking at things backwards | `staff/producers/mirror-maker.yaml` |
+| **Mythologist** | Telling old legends | `staff/producers/mythologist.yaml` |
+| **Narrator** | Reading the story out loud | `staff/producers/narrator.yaml` |
+| **Symbolist** | Finding hidden messages | `staff/producers/symbolist.yaml` |
+| **Translator Silence** | Understanding what people DON'T say | `staff/producers/translator-silence.yaml` |
 
-### 💰 Commerce Department (10 specialists)
-Growth, marketing, and revenue-focused specialists.
+### 💰 The Sellers (10 helpers)
+Helpers who know how to sell stuff and get you famous.
 
-| Specialist | Use When | Path |
+| Helper | Use When | File location |
 |------------|----------|------|
-| **Social Media Strategist** | Social media strategy, growth | `staff/commerce/social-media-strategist.yaml` |
-| **SEO Specialist** | Search optimization, organic growth | `staff/commerce/seo-specialist.yaml` |
-| **Conversion Optimizer** | CRO, revenue optimization | `staff/commerce/conversion-optimizer.yaml` |
-| **Customer Acquisition Specialist** | Growth marketing, acquisition | `staff/commerce/customer-acquisition-specialist.yaml` |
-| **Influencer Strategist** | Influencer marketing, partnerships | `staff/commerce/influencer-strategist.yaml` |
-| **Pricing Strategist** | Pricing strategy, revenue optimization | `staff/commerce/pricing-strategist.yaml` |
-| **Commercial Real Estate Analyst** | Property analysis, investment | `staff/commerce/commercial-real-estate-analyst.yaml` |
-| **Interior Designer** | Interior space design, styling | `staff/commerce/interior-designer.yaml` |
-| **Landscape Architect** | Landscape design, outdoor planning | `staff/commerce/landscape-architect.yaml` |
-| **Real Estate Investor** | RE investment strategy | `staff/commerce/real-estate-investor.yaml` |
+| **Social Media Strategist** | Getting fans on social media | `staff/commerce/social-media-strategist.yaml` |
+| **SEO Specialist** | Helping people find you on Google | `staff/commerce/seo-specialist.yaml` |
+| **Conversion Optimizer** | Getting more people to click "buy" | `staff/commerce/conversion-optimizer.yaml` |
+| **Customer Acquisition** | Finding brand new customers | `staff/commerce/customer-acquisition-specialist.yaml` |
+| **Influencer Strategist** | Adding famous internet friends | `staff/commerce/influencer-strategist.yaml` |
+| **Pricing Strategist** | Deciding how much to charge | `staff/commerce/pricing-strategist.yaml` |
+| **Commercial Real Estate Analyst** | Buying big buildings | `staff/commerce/commercial-real-estate-analyst.yaml` |
+| **Interior Designer** | Making rooms look pretty | `staff/commerce/interior-designer.yaml` |
+| **Landscape Architect** | Making yards and parks look pretty | `staff/commerce/landscape-architect.yaml` |
+| **Real Estate Investor** | Making money with houses | `staff/commerce/real-estate-investor.yaml` |
 
-### ⚙️ Tech Department (12 specialists)
-Technical specialists who build systems, ensure security, and optimize operations.
+### ⚙️ The Techies (12 helpers)
+Computer helpers who build machines and keep things safe.
 
-| Specialist | Use When | Path |
+| Helper | Use When | File location |
 |------------|----------|------|
-| **Automation Specialist** | Workflow optimization, tech solutions | `staff/tech/automation-specialist.yaml` |
-| **Prompt Engineer** | AI optimization, prompt design | `staff/tech/prompt-engineer.yaml` |
-| **Software Architect** | System design, technical strategy | `staff/tech/software-architect.yaml` |
-| **Productivity Architect** | Workflow design, personal systems | `staff/tech/productivity-architect.yaml` |
-| **Toolmaker** | Custom tool development | `staff/tech/toolmaker.yaml` |
-| **Operations Manager** | Business operations, process optimization | `staff/tech/operations-manager.yaml` |
-| **Quality Control Specialist** | QA, standards enforcement | `staff/tech/quality-control-specialist.yaml` |
-| **Cybersecurity Specialist** | Security, risk management | `staff/tech/cybersecurity-specialist.yaml` |
-| **Supply Chain Coordinator** | Supply chain, logistics optimization | `staff/tech/supply-chain-coordinator.yaml` |
-| **Handyman** | Practical fixes, troubleshooting | `staff/tech/handyman.yaml` |
-| **Infinite Looper** | Iteration, recursion, refinement | `staff/tech/infinite-looper.yaml` |
-| **Irony Detector** | Tone analysis, sarcasm detection | `staff/tech/irony-detector.yaml` |
+| **Automation Specialist** | Making robots do your boring chores | `staff/tech/automation-specialist.yaml` |
+| **Prompt Engineer** | Writing better rules for AI | `staff/tech/prompt-engineer.yaml` |
+| **Software Architect** | Planning big computer programs | `staff/tech/software-architect.yaml` |
+| **Productivity Architect** | Making your work day faster | `staff/tech/productivity-architect.yaml` |
+| **Toolmaker** | Building custom tools just for you | `staff/tech/toolmaker.yaml` |
+| **Operations Manager** | Making sure everything runs smoothly | `staff/tech/operations-manager.yaml` |
+| **Quality Control** | Checking for bugs and mistakes | `staff/tech/quality-control-specialist.yaml` |
+| **Cybersecurity** | Keeping the hackers away | `staff/tech/cybersecurity-specialist.yaml` |
+| **Supply Chain Coordinator** | Moving boxes from place to place | `staff/tech/supply-chain-coordinator.yaml` |
+| **Handyman** | Fixing things that are broken | `staff/tech/handyman.yaml` |
+| **Infinite Looper** | Doing things over and over until perfect | `staff/tech/infinite-looper.yaml` |
+| **Irony Detector** | Finding sarcasm | `staff/tech/irony-detector.yaml` |
 
-### 🌿 Health & Lifestyle Department (9 specialists)
-Wellness and personal development specialists.
+### 🌿 The Life Helpers (9 helpers)
+Helpers to keep you healthy, happy, and calm.
 
-| Specialist | Use When | Path |
+| Helper | Use When | File location |
 |------------|----------|------|
-| **Habit Architect** | Behavior design, habit formation | `staff/health-lifestyle/habit-architect.yaml` |
-| **Cognitive Behavioral Therapist** | CBT, mental wellness | `staff/health-lifestyle/cognitive-behavioral-therapist.yaml` |
-| **Stoic Coach** | Stoic philosophy, resilience | `staff/health-lifestyle/stoic-coach.yaml` |
-| **Health Coach** | Holistic health, wellness optimization | `staff/health-lifestyle/health-coach.yaml` |
-| **Meditation Instructor** | Mindfulness, meditation practice | `staff/health-lifestyle/meditation-instructor.yaml` |
-| **Active Imagination Guide** | Jungian active imagination, inner work | `staff/health-lifestyle/active-imagination-guide.yaml` |
-| **Humanist** | Human potential, personal growth | `staff/health-lifestyle/humanist.yaml` |
-| **Shadow Worker** | Shadow integration, depth psychology | `staff/health-lifestyle/shadow-worker.yaml` |
-| **Xenobiologist** | Strange perspectives, alien viewpoints | `staff/health-lifestyle/xenobiologist.yaml` |
+| **Habit Architect** | Building good daily habits | `staff/health-lifestyle/habit-architect.yaml` |
+| **Cognitive Behavioral Therapist** | Helping you feel better | `staff/health-lifestyle/cognitive-behavioral-therapist.yaml` |
+| **Stoic Coach** | Staying tough when things are hard | `staff/health-lifestyle/stoic-coach.yaml` |
+| **Health Coach** | Eating right and exercising | `staff/health-lifestyle/health-coach.yaml` |
+| **Meditation Instructor** | Sitting quietly and breathing | `staff/health-lifestyle/meditation-instructor.yaml` |
+| **Active Imagination Guide** | Looking deep inside your mind | `staff/health-lifestyle/active-imagination-guide.yaml` |
+| **Humanist** | Becoming the best person you can be | `staff/health-lifestyle/humanist.yaml` |
+| **Shadow Worker** | Looking at the dark parts of your mind | `staff/health-lifestyle/shadow-worker.yaml` |
+| **Xenobiologist** | Thinking exactly like an alien | `staff/health-lifestyle/xenobiologist.yaml` |
 
-### 📚 Knowledge Department (8 specialists)
-Specialized experts in legal, financial, and professional knowledge domains.
+### 📚 The Smart Folks (8 helpers)
+Helpers who studied hard in law and money school.
 
-| Specialist | Use When | Path |
+| Helper | Use When | File location |
 |------------|----------|------|
-| **Business Lawyer** | Business law, legal strategy | `staff/knowledge/business-lawyer.yaml` |
-| **Tax Strategist** | Tax planning, optimization | `staff/knowledge/tax-strategist.yaml` |
-| **Investment Advisor** | Investment strategy, wealth management | `staff/knowledge/investment-advisor.yaml` |
-| **Financial Therapist** | Financial psychology, money mindset | `staff/knowledge/financial-therapist.yaml` |
-| **Antiquarian** | Historical artifacts, rare knowledge | `staff/knowledge/antiquarian.yaml` |
-| **Archivist Silence** | Lost knowledge, forgotten wisdom | `staff/knowledge/archivist-silence.yaml` |
-| **Librarian Babel** | Information synthesis, knowledge navigation | `staff/knowledge/librarian-babel.yaml` |
-| **Local Historian** | Regional history, local context | `staff/knowledge/local-historian.yaml` |
+| **Business Lawyer** | Looking at rules and contracts | `staff/knowledge/business-lawyer.yaml` |
+| **Tax Strategist** | Planning your annoying taxes | `staff/knowledge/tax-strategist.yaml` |
+| **Investment Advisor** | Saving your money wisely | `staff/knowledge/investment-advisor.yaml` |
+| **Financial Therapist** | Fixing how you feel about money | `staff/knowledge/financial-therapist.yaml` |
+| **Antiquarian** | Finding very old objects | `staff/knowledge/antiquarian.yaml` |
+| **Archivist Silence** | Finding secrets people lost | `staff/knowledge/archivist-silence.yaml` |
+| **Librarian Babel** | Finding exactly the right book | `staff/knowledge/librarian-babel.yaml` |
+| **Local Historian** | Learning about your hometown | `staff/knowledge/local-historian.yaml` |
 
-### 🟪 Meta Department (1 specialist)
-Universal adaptive specialist that transcends departmental boundaries.
+### 🟪 The Shapeshifter (1 helper)
+A magic helper who can become anyone.
 
-| Specialist | Use When | Path |
+| Helper | Use When | File location |
 |------------|----------|------|
-| **Morphling** | Any task - auto-adapts to optimal persona | `staff/meta/morphling.yaml` |
+| **Morphling** | Any weird job that doesn't fit the others | `staff/meta/morphling.yaml` |
 
-## Full Specialist Catalog
+## How to Work Together
 
-All 68 specialists are now listed above by department. See `staff/README.md` for additional details, activation patterns, and usage examples for each specialist.
+### Trick 1: Just Ask One Helper
+**When:** A very simple chore.
+```
+You → Helper → Done
+```
+**Example:** "Copywriter, write an email to my boss."
 
-## Common Workflow Patterns
+### Trick 2: The Boss Handles It
+**When:** The job is big and needs three or four helpers.
+```
+You → Chief of Staff → Many Helpers → Finished Big Project
+```
+**Example:** "Chief of Staff, build a whole new company using the Planners and the Makers."
 
-### Pattern 1: Single Specialist Direct
-**When:** Simple, focused task requiring one area of expertise
+### Trick 3: Passing Notes
+**When:** One helper needs to finish before the next one can start.
 ```
-You → Specialist → Output
+You → Helper 1 → Helper 2 → Done
 ```
-**Example:** "Copywriter, write a landing page for our new product launch."
+**Example:** Market Analyst does research → Creative thinks of idea → Copywriter writes it down.
 
-### Pattern 2: Chief of Staff Coordination
-**When:** Project requires multiple specialists or cross-functional work
+### Trick 4: Try, Try Again
+**When:** The work isn't perfect yet.
 ```
-You → Chief of Staff → Multiple Specialists → Integrated Output
+Helper → Bad Draft → You Complain → Helper → Better Draft → Repeat
 ```
-**Example:** "Chief of Staff, coordinate a brand refresh involving strategy, creative, and content teams."
+**Example:** Brand Builder draws a logo → You say "make it blue" → They fix it.
 
-### Pattern 3: Sequential Workflow
-**When:** Work builds on previous specialist output
+### Trick 5: Step-by-Step Forms
+**When:** Doing a huge project using our proven forms.
 ```
-You → Specialist A → Output → Specialist B → Final Output
-```
-**Example:** Market Analyst research → Creative Strategist campaign → Copywriter execution
-
-### Pattern 4: Iterative Refinement
-**When:** Output needs multiple rounds of feedback and improvement
-```
-Specialist → Draft → Your Feedback → Specialist → Refined Output → Repeat
-```
-**Example:** Brand Builder creates identity → feedback → refinement → approval
-
-### Pattern 5: Template-Driven Sprint
-**When:** Using project templates for systematic execution
-```
-You → Chief of Staff → Project Brief Template → Specialists → Quality Gates → Retrospective
+You → Chief of Staff → Fill in Blank Form → Helpers → Check Errors → Done
 ```
 
-## Activation Best Practices
+## How to Talk to Them So They Listen
 
-### Standard Activation Format
+### The Magic Phrase
+Always type exactly this:
 ```
-"Acting as the [Specialist Name] from my AI-Staff-HQ, [specific request]"
+"Acting as the [Helper's Name] from my AI-Staff-HQ, [tell them what to do]"
 ```
 
-### Examples
-- ✅ "Acting as the Data Analyst from my AI-Staff-HQ, analyze our Q3 customer churn data."
-- ✅ "Acting as the Brand Builder from my AI-Staff-HQ, develop a brand strategy for our new product line."
-- ❌ "Can you help me with data?" (Too vague, no specialist context)
+### Good and Bad Habits
+- ✅ "Acting as the Data Analyst from my AI-Staff-HQ, tell me why my sales are dropping."
+- ✅ "Acting as the Brand Builder from my AI-Staff-HQ, help me pick my company colors."
+- ❌ "Can you help me with data?" (Bad! You forgot to name the helper!)
 
-## Template Selection
+## Picking the Right Blank Form
 
-| Need | Use This Template |
+| I Want To... | File I Should Copy |
 |------|-------------------|
-| Quick project definition | `templates/project/project-brief-simple.md` |
-| Comprehensive initiative | `templates/project/project-brief-comprehensive.md` |
-| New specialist | `templates/persona/new-staff-member-template.md` |
-| Custom workflow draft | Duplicate a file in `workflows/` and adapt |
+| Plan a fast project | `templates/project/project-brief-simple.md` |
+| Plan a huge project | `templates/project/project-brief-comprehensive.md` |
+| Build a new helper | `templates/persona/new-staff-member-template.md` |
 
-## Department Selection Guide
+## ⚠️ Bad Rules to Avoid
 
-**Choose Strategy when:** You need insights, research, positioning, or strategic direction
-**Choose Producers when:** You need content, experiences, narratives, or creative production
-**Choose Commerce when:** You need growth, marketing, revenue, or business development
-**Choose Tech when:** You need systems, security, automation, or technical solutions
-**Choose Health/Lifestyle when:** You need wellness, habits, mindset, or personal development
-**Choose Knowledge when:** You need legal, financial, or specialized professional expertise
+- **Making one helper do everything.**
+  _Fix:_ Break the job into pieces. Ask one helper to do the art, and a different one to do the numbers.
+- **Forgetting the magic phrase.**
+  _Fix:_ Always start with "Acting as the [Helper's Name]..." or the AI will forget who it is playing.
+- **Using every helper at once.**
+  _Fix:_ Start with 2 helpers. Add more later if you need them.
+- **Treating blank forms like homework.**
+  _Fix:_ Delete any questions on the form that you don't care about! They are there to help, not to punish you.
 
-## Where to Look Next
+## 🎯 Pro Tricks
 
-- **Full Directory:** `staff/README.md` - Complete specialist catalog with descriptions
-- **Implementation Status:** `IMPLEMENTATION-STATUS.md` - Current progress and gaps
-- **Examples:** `examples/` directory shows real briefs, specialists, and transcripts
-- **Getting Started:** `GETTING-STARTED.md` offers role-based entry paths
-- **Templates:** `templates/` hold structured thinking tools for projects and personas
-
-## ⚠️ Rules of Engagement
-
-- **Routing single-specialist tasks through the Chief of Staff**
-  _Instead:_ Activate the specialist directly. Chief of Staff is for coordination across multiple roles.
-
-- **Not using the "Acting as" preamble**
-  _Instead:_ Always start with "Acting as the [Specialist] from my AI-Staff-HQ" to load the right context.
-
-- **Choosing specialists based on title alone**
-  _Instead:_ Read the specialist's capabilities and activation patterns in their YAML file.
-
-- **Trying to use every specialist immediately**
-  _Instead:_ Start with 2-3 specialists for your current project. Expand as needed.
-
-- **Treating templates as forms to complete**
-  _Instead:_ Delete sections that don't apply. Templates are thinking tools, not paperwork.
-
-## 🎯 Power User Tips
-
-1. **Chain specialists for complex projects:** Market Analyst → Creative Strategist → Copywriter
-2. **Use Chief of Staff for quality gates:** "Ensure all deliverables meet our standards before final delivery"
-3. **Cross-department collaboration:** Combine Strategy + Producers + Commerce for launches
-4. **Specialist synergies:** Habit Architect + Productivity Architect for personal systems
-5. **Reference previous work:** "Use the brand guidelines from Brand Builder's previous output"
-
----
-
-### How to Use This File
-- Keep it open as a reference while working with your AI staff
-- Bookmark specialist paths you use frequently
-- Update when you add new specialists or discover new patterns
-- Share with team members so they know how to activate specialists
-
-_Last updated: 2026-01-22 | Current roster: 68 specialists across 7 departments_
+1. **Chain helpers together:** Market Analyst → Creative Strategist → Copywriter
+2. **Be the boss:** Tell the Chief of Staff "Check the work and make sure there are no typos before you give it to me."
+3. **Mash them up:** Use the Habit Builder and the Computer Techie to build a robot that forces you to exercise.
+4. **Use old notes:** "Use the brand rules from our chat yesterday."

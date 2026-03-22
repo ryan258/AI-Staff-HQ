@@ -1,43 +1,36 @@
-# Contributing to AI-Staff-HQ
+# How to Help with AI-Staff-HQ
 
-## This Is a Personal System
+## This Is My Personal System
 
-AI-Staff-HQ is my personal cognitive infrastructure, shared publicly to demonstrate a methodology. The core repository stays lean so I can continue using it every day.
+AI-Staff-HQ is the private set of rules I use to run my own life. I am sharing it publicly to show you how I do things. I keep this toolkit very small on purpose so it is easy for me to use every single day.
 
-> **I am not looking for pull requests that expand the core system.**
+> **I am not looking for strangers to add new code or new rules to the main project.**
 
-## How You Can Help
+## How You Can Actually Help
 
-### ✅ Welcome
-- **Issues:** Report broken links, bugs, or documentation typos.
-- **Discussions:** Share how you adapted the methodology or ask philosophy questions.
-- **Examples:** Fork the repo, build your own version, and show the patterns you discovered.
+### ✅ Please Do This
+- **Tell Me About Mistakes:** Let me know if a link is broken or if I spelled a word wrong!
+- **Discussions:** Post on the message board about how you used the toolkit for your own job.
+- **Show Your Work:** Make a copy of this whole folder, build your own helpers, and show everyone what you made!
 
-### ❌ Not Accepted
-- New core specialists, departments, or templates.
-- Feature requests that add complexity or make this feel like a product.
-- Additional meta-documentation for edge cases.
+### ❌ Do Not Do This
+- Do not send me brand new helpers or templates and ask me to add them.
+- Do not ask me to add giant new features.
+- Do not add super confusing rules meant for weird edge cases.
 
-## Share Your Version
+## Share Your Own Toolkit!
 
-If you build your own AI workforce using this methodology:
-1. Fork the repository.
-2. Customize specialists, workflows, and knowledge for your context.
-3. Open a post in [Discussions](../../discussions) with a short write-up and link.
-4. Note what you changed and why—it helps others learn from your approach.
+If you build your own AI team using my ideas:
+1. Make a copy of this folder (Fork it).
+2. Build new helpers that fit your own job.
+3. Open a post on the [Discussions](../../discussions) board. 
+4. Write a short note describing what you changed and why you changed it. We love learning from you!
 
-## Questions?
+## Got Questions?
 
-Use [Discussions](../../discussions) for:
-- How to adapt the system to your work.
-- Design philosophy and methodology dialogue.
-- Suggestions for clarifying existing docs.
+Use the [Discussions](../../discussions) board to:
+- Ask how to make the system fit your weird job.
+- Talk about big ideas and how AIs should act.
+- Tell me if a sentence in the guide is too confusing.
 
-Issues are reserved for concrete bugs or broken references. Thanks for respecting the intent of this project and keeping the core lean.
-
----
-
-### How to Use This File
-- Link to this guide in the README (already done) so visitors understand contribution boundaries.
-- When sharing the repo publicly, reference this document in your announcement or launch post.
-- Update the welcome text if expectations change; keep the “personal system” stance explicit.
+Please only use the "Issues" tab if something is completely broken. Thank you for reading this and keeping my toolkit clean!
