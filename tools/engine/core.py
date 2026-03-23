@@ -13,7 +13,7 @@ from .schemas import SpecialistSchema
 from .prompt import PromptBuilder
 from .llm import ModelRouter
 from .state import ConversationState
-from .capabilities import read_file, write_file, list_directory
+from .capabilities import read_file, write_file, list_directory, run_command
 from .config import get_config
 from .utils import normalize_slug
 
@@ -219,7 +219,7 @@ def load_specialist(
             # Special case: Enable tools for Morphling
             tools = None
             if slug == "morphling":
-                tools = [read_file, write_file, list_directory]
+                tools = [read_file, write_file, list_directory, run_command]
                 
             return SpecialistAgent(yaml_file, tools=tools, **kwargs)
 

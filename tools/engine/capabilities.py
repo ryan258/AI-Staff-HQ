@@ -1,9 +1,14 @@
-"""File system capabilities for agents."""
+"""File system and command execution capabilities for agents."""
 
 import os
+import subprocess
 from pathlib import Path
 from typing import List
 from langchain_core.tools import tool
+
+# Limits for run_command output to prevent token explosion.
+_MAX_OUTPUT_CHARS = 10_000
+_DEFAULT_TIMEOUT_SECONDS = 60
 
 
 def _resolve_path(path: str) -> Path:
@@ -78,3 +83,58 @@ def list_directory(path: str = ".") -> str:
         return "\n".join(sorted(params))
     except Exception as e:
         return f"Error listing directory: {e}"
+
+
+@tool
+def run_command(command: str, working_directory: str = ".") -> str:
+    """Run a shell command and return its combined stdout and stderr.
+
+    Use this to install dependencies, run tests, compile code, or verify
+    that code you have written actually works.  After writing files, call
+    this tool to close the build-test-fix loop: run the tests, read the
+    errors, fix the code, and run again until everything passes.
+
+    Args:
+        command: The shell command to run (e.g. "npm test", "python -m pytest",
+                 "go build ./...").
+        working_directory: Directory to run the command in.  Defaults to the
+                           current project directory.
+    """
+    try:
+        if working_directory == "." and "USER_CWD" in os.environ:
+            cwd = os.environ["USER_CWD"]
+        else:
+            cwd = str(_resolve_path(working_directory))
+
+        result = subprocess.run(
+            command,
+            shell=True,
+            cwd=cwd,
+            capture_output=True,
+            text=True,
+            timeout=_DEFAULT_TIMEOUT_SECONDS,
+        )
+
+        output_parts: list[str] = []
+        if result.stdout:
+            output_parts.append(result.stdout)
+        if result.stderr:
+            output_parts.append(result.stderr)
+        combined = "\n".join(output_parts).strip()
+
+        # Truncate to avoid token explosion.
+        if len(combined) > _MAX_OUTPUT_CHARS:
+            half = _MAX_OUTPUT_CHARS // 2
+            combined = (
+                combined[:half]
+                + f"\n\n... ({len(combined) - _MAX_OUTPUT_CHARS} chars truncated) ...\n\n"
+                + combined[-half:]
+            )
+
+        exit_label = "SUCCESS" if result.returncode == 0 else f"FAILED (exit code {result.returncode})"
+        return f"[{exit_label}]\n{combined}" if combined else f"[{exit_label}]"
+
+    except subprocess.TimeoutExpired:
+        return f"[TIMEOUT] Command exceeded {_DEFAULT_TIMEOUT_SECONDS}s limit: {command}"
+    except Exception as e:
+        return f"[ERROR] {e}"
