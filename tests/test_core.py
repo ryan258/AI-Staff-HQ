@@ -104,6 +104,21 @@ def test_agent_query(mock_env, mock_yaml, mock_llm, mock_router):
     
     # Check manual deep copy logic if strict history is needed, but sufficient here
 
+
+def test_agent_query_uses_semantic_markdown_log_name(mock_env, mock_yaml, mock_llm, mock_router):
+    """Interaction logs should use semantic filenames for new sessions."""
+    agent = SpecialistAgent(mock_yaml)
+    agent.config.log_dir = mock_env / ".ai-staff-hq" / "logs"
+
+    mock_llm.invoke.return_value = AIMessage(content="Logged answer")
+
+    agent.query("Hello from the semantic log test")
+
+    log_files = list(agent.config.log_dir.glob("*.md"))
+    assert len(log_files) == 1
+    assert log_files[0].name.startswith("tech-lead__hello-from-the-semantic-log-test__")
+    assert log_files[0].name.endswith(f"__{agent.state.session_id}.md")
+
 def test_load_specialist_factory(mock_env, mock_yaml, mock_llm):
     """Test the load_specialist factory function."""
     staff_dir = mock_yaml.parent.parent # staff/

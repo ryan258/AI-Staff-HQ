@@ -1,0 +1,56 @@
+version: 1
+cases:
+- id: rip-tequila-brand-expansion
+  brief: "R.I.P. Tequila is a parody liquor brand. The mascot is The Don - a skeleton\
+    \ mob boss who returned from death with unfinished business. The tone is corporate-sinister.\
+    \ Never winking at the camera. Threats and warmth are indistinguishable. Death\
+    \ is mundane.\nThe brand has four existing guides: style, brand, voice, and universe.\
+    \ Supporting characters include Huesos (distribution), La Contadora (CFO), El\
+    \ Maestro (master distiller), and Los Gemelos (enforcement).\nYour job: generate\
+    \ three new pieces of brand content.\n1. A product description for a new limited-edition\
+    \ bottle.\n   It must sound like a premium spirits listing. It must also\n   sound\
+    \ like a threat. Never explain the joke.\n\n2. A social media post from The Don's\
+    \ personal account.\n   Formal. Grateful. Slightly ominous. Under 150 words.\n\
+    \n3. A FAQ entry answering \"What happens if I don't finish my bottle?\"\n   Answer\
+    \ in the brand voice. One paragraph. No direct threats.\n   The reader should\
+    \ feel uncertain anyway."
+  planner_response: "[\n  {\n    \"id\": \"task_1\",\n    \"description\": \"Review\
+    \ and synthesize the existing brand guides (style, brand, voice, universe) to\
+    \ extract tone, key terminology, character details, and the corporate-sinister\
+    \ brand essence.\",\n    \"required_capabilities\": [\"brand analysis\", \"research\"\
+    ],\n    \"depends_on\": [],\n    \"priority\": 1\n  },\n  {\n    \"id\": \"task_2\"\
+    ,\n    \"description\": \"Write a product description for a new limited-edition\
+    \ bottle that reads like a premium spirits listing while conveying a threat, without\
+    \ explaining the joke.\",\n    \"required_capabilities\": [\"copywriting\", \"\
+    brand voice\"],\n    \"depends_on\": [\"task_1\"],\n    \"priority\": 1\n  },\n\
+    \  {\n    \"id\": \"task_3\",\n    \"description\": \"Compose a social media post\
+    \ from The Don's personal account: formal, grateful, slightly ominous, under 150\
+    \ words.\",\n    \"required_capabilities\": [\"copywriting\", \"brand voice\"\
+    ],\n    \"depends_on\": [\"task_1\"],\n    \"priority\": 1\n  },\n  {\n    \"\
+    id\": \"task_4\",\n    \"description\": \"Create a FAQ entry answering 'What happens\
+    \ if I don't finish my bottle?' in brand voice, one paragraph, with no direct\
+    \ threats but leaving the reader uncertain.\",\n    \"required_capabilities\"\
+    : [\"copywriting\", \"brand voice\"],\n    \"depends_on\": [\"task_1\"],\n   \
+    \ \"priority\": 1  }\n]"
+  expect:
+    parse_success: true
+    task_count: 4
+    warning_count: 0
+    wave_count: 2
+    parallel_waves: 1
+    chief_of_staff_tasks: 0
+    top_specialists:
+      task_1:
+      - academic-researcher
+      task_2:
+      - copywriter
+      task_3:
+      - copywriter
+      task_4:
+      - copywriter
+  max_parallel: 3
+  notes: 'Based on Ryan''s R.I.P. Tequila parody brand (Rest In Proof). Skeleton crime
+    syndicate aesthetic. Dia de los Muertos meets prohibition-era mob. Humor comes
+    from playing it completely straight.
+
+    '

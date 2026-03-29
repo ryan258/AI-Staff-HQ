@@ -1,98 +1,210 @@
-# **🗺️ AI-Staff-HQ: Plan for the Future**
+# AI-Staff-HQ Roadmap
 
-_What is coming next for your AI team - Version 2.2.0_
+Updated: March 28, 2026
+Planning Horizon: April 1, 2026 through March 31, 2027
 
-## **🎯 The Big Goal**
+## Direction
 
-Our goal is to give you the best, easiest-to-change toolkit for building your own team of AI helpers. We want you to be able to command a mixed group of smart agents to solve any art, planning, computer, or personal problem.
+AI-Staff-HQ is no longer trying to be a broad "AI staff for everyone" toolkit first.
 
-## **🚀 Where We Are Now: Version 2.2.0 (January 2026)**
+For the next 12 months, the primary goal is to turn this repository into a dependable personal second-brain workbench for Ryan. The flagship path is the planning swarm: a quality-first multi-agent workflow that takes a vague brief, chooses a small set of useful specialists, and returns one strong final deliverable.
 
-**Current Roster:** 68 total helpers (41 main ones + 27 extra ones).
+The experimental lab remains important, but it is secondary. It should be preserved, documented, and available by opt-in. It should not shape the default experience until it proves its value through real use and evals.
 
-### **✅ Phase 1 & 2 Finished: The Basics & Mastering Plans**
+## Product Thesis
 
-We successfully built the main pieces:
+By March 31, 2027, AI-Staff-HQ should feel like a practical operating system for creative and strategic work:
 
-**Phase 1 - The Basics:**
+- It should accept vague briefs without needing perfect prompting.
+- It should pull in relevant context from prior work, guides, and logs.
+- It should produce a coherent final output, not just an interesting trace.
+- It should leave behind semantic logs, reusable artifacts, and a searchable history.
+- It should default to a small active roster and only widen scope when evidence supports it.
 
-- A tool (`tools/validate_specialist.py`) to check that our 41 main helpers are built right.
-- Cleaned up our folders (`staff/tech`, `staff/producers`).
-- Rewrote the instruction manuals so they are perfectly clear.
-- Changed the goal to be a "personal second brain".
+## What Great Looks Like
 
-**Phase 2 - Mastering Plans:**
+By the end of this roadmap, the default experience should be:
 
-- Finished the deep-dive training for all 41 main helpers (100% complete!).
-- Wrote down plans for how helpers should talk to each other (like handing off a plan to a computer programmer).
+1. You give the system a rough brief.
+2. The system loads the right project context and style guides.
+3. The planning swarm creates a tight execution plan with sane delegation.
+4. Specialists produce useful intermediate work only when needed.
+5. Chief of Staff synthesizes a strong final deliverable.
+6. The run is saved with semantic logs, searchable outputs, and enough metadata to reuse later.
 
-**Coming Up:** Phase 3 - Advanced Coding (Late 2026 and beyond)
+## Rules For The Year
 
-### **Known Weak Spots**
+- The planning swarm stays the flagship.
+- The active roster stays small by default.
+- Experimental staff remain opt-in.
+- Archived staff remain preserved, not deleted.
+- No new specialist is promoted to active without a real eval reason.
+- No major workflow is added without tests and an eval story.
+- UI work follows the flagship workflow; it does not lead it.
+- Logs, output artifacts, and naming must stay semantic and human-readable.
 
-- **Copying and Pasting:** You still have to manually copy the helper's rules and paste them into your AI chat window.
-- **Not Enough Examples:** We need to add more examples of different projects.
+## Current Baseline
 
-## **🗺️ The Roadmap: The Next 12 Months**
+As of March 28, 2026:
 
-### **Phase 1: Clear Instructions (Late 2025 - Early 2026)** ✅ **FINISHED**
+- The active, experimental, and archived roster tiers exist.
+- The flagship planning swarm is live.
+- Real-brief capture and eval scaffolding exist.
+- Semantic log naming exists for new runs, and the old backlog has been migrated.
+- Dynamic CoS orchestration and Streamlit exist, but they are secondary.
+- Phase 1 gaps: planner variance, parser brittleness, and thin real-brief coverage.
+- Phase 2 gaps: weak memory and context loading, plus limited searchability across prior runs.
+- Phase 3 gaps: limited artifact reuse and no consistent deliverable packaging.
+- Phase 4 gaps: no durable review and continuity layer for work across days and weeks.
 
-**Goal**: Make the toolkit much easier for you to use by writing clear, step-by-step guides without any confusing words.
+## Phase 1: Harden The Flagship
 
-#### **Big Wins**
+Window: April 1, 2026 through June 30, 2026
 
-- ✅ **Making it Easy to Read:**
-  - **How:** We completely rewrote the guides (`GETTING-STARTED.md`, `QUICK-REFERENCE.md`) so they are very clear, step-by-step instructions.
-  - **Why:** To make sure you don't get a headache trying to use the tools.
-  - **When:** Finished in December 2025.
+Goal: Make the planning swarm reliable enough that it becomes the default way to think through real work.
 
-- ✅ **Personal Focus:**
-  - **How:** We rewrote everything to focus on YOU instead of writing boring group fluff.
-  - **Why:** To make a perfect "second brain".
-  - **When:** Finished in December 2025.
+### Priority Work
 
-### **Phase 2: Mastering Plans (Mid 2026)** ✅ **FINISHED**
+- Replace naive JSON extraction in planning paths with stricter structured-output handling.
+- Reduce planner variance so similar briefs produce similar task structures.
+- Expand real-brief eval coverage with at least 10 recurring prompt types from actual use.
+- Tighten capability matching and fallback behavior.
+- Keep the active roster small and evidence-based.
+- Ensure every flagship run persists a useful semantic log and a clear final output.
 
-**Goal**: Make the 41 main helpers even smarter, while keeping the extra helpers around for weird jobs.
+### Deliverables
 
-#### **Big Wins**
+- Structured planner contract for the flagship path.
+- Real-brief eval suite with at least 10 cases.
+- Stable active roster definition with documented promotion and demotion rules.
+- Clear failure reporting for parse errors, fallback use, and synthesis failures.
 
-- ✅ **Deep Dives Finished:**
-  - **How:** We filled out the `deep_dive` settings for all 41 helpers.
-  - **Why:** To turn them from "okay workers" into "amazing experts".
-  - **When:** Finished in December 2025.
+### Exit Criteria
 
-- ✅ **Helpers Talking Together:**
-  - **How:** We wrote down exact plans for when one helper hands work off to the next helper (like the Planner handling work to the Techie).
-  - **Why:** To lock down hard jobs into safe, easy-to-repeat routines.
-  - **When:** Finished in December 2025.
+- The real-brief eval suite passes at a stable baseline.
+- The flagship planner consistently produces defensible task breakdowns.
+- Default output quality is high enough that it is worth using on real briefs first, not just tests.
 
-### **Phase 3: Building The Machine (December 2025)** ✅ **FINISHED**
+## Phase 2: Build Context And Memory
 
-**Goal**: Turn our boring text files into an actual machine that runs itself.
+Window: July 1, 2026 through September 30, 2026
 
-#### **Big Wins**
+Goal: Stop treating each run as isolated. Add one lightweight memory layer that reliably improves repeated work on the same projects.
 
-- ✅ **The Engine:**
-  - **How:** Added a computer script (`activate.py`) that reads a helper's rules and turns them into a real talking agent.
-  - **Why:** So you never have to manually copy and paste again!
-  - **When:** Finished in December 2025.
+### Priority Work
 
-- ✅ **Smart AI Routing (OpenRouter):**
-  - **How:** The computer automatically picks the best AI brain based on the job (like giving planners one AI, and techies a different AI) using the `.env` settings.
-  - **Why:** Saves money and gets way better answers.
-  - **When:** Finished in December 2025.
+- Add project context manifests for recurring domains such as brands, story worlds, and active initiatives.
+- Build a lightweight retrieval layer over approved local materials: guides, notes, prior outputs, and semantic logs.
+- Normalize run metadata so history is queryable by project, workflow, specialist, and subject.
+- Establish a reusable case library of past briefs, outputs, and preferred patterns.
+- Introduce context-budget and de-duplication rules so retrieval helps more than it distracts.
 
-### **Phase 4: The Swarm & Web Screen (Early 2026 and later)**
+### Deliverables
 
-**Goal**: Build a cool screen you can click on, and allow the helpers to manage huge projects all by themselves.
+- A documented project context manifest format and loader.
+- Retrieval support in the flagship planning flow for at least 3 recurring project types.
+- Searchable run history with normalized project and subject metadata.
+- Clear rules for what context is injected automatically versus manually.
+- A small case library that can be reused during planning and synthesis.
 
-#### **Big Wins**
+### Exit Criteria
 
-- ✅ **The Swarm Tool:**
-  - **How:** A script called `bin/dhp-swarm.py` lets multiple helpers work at the exact same time!
-  - **Why:** Extremely fast teamwork you can watch while it happens.
-  - **When:** Finished in January 2026.
+- The planning swarm can pull in relevant project context without manual copy/paste.
+- Repeated work in the same domain feels faster and more grounded.
+- Past outputs can be found and reused without digging through raw logs.
 
-- ✅ **Graph Control:** `orchestrator/graph_runner.py` completely handles the steps for you.
-- ✅ **Web Dashboard (Streamlit):** We built `ui/app.py` so you can click buttons instead of typing code!
+## Phase 3: Move From Plans To Deliverables
+
+Window: October 1, 2026 through December 31, 2026
+
+Goal: The system should stop ending at "here is a plan" for everything. For core use cases, it should produce complete work packages.
+
+### Priority Work
+
+- Turn flagship outputs into reusable deliverable bundles.
+- Support common personal use cases with stronger end artifacts:
+  creative development, brand writing, strategic planning, content packaging, and technical scoping.
+- Add review and approval gates where they improve quality.
+- Formalize output schemas for core deliverable types.
+- Improve synthesis so final outputs feel authored, not merely concatenated.
+
+### Deliverables
+
+- At least 3 high-value output package types.
+- Reusable artifact structure per run, not just a final text blob.
+- Better final synthesis prompts and review heuristics.
+- Tests and evals covering output-package integrity.
+
+### Exit Criteria
+
+- The system regularly produces usable final artifacts, not just promising drafts.
+- The best workflows save time on real projects rather than only demonstrating orchestration.
+
+## Phase 4: Personal Operating System
+
+Window: January 1, 2027 through March 31, 2027
+
+Goal: Turn AI-Staff-HQ into a dependable day-to-day workbench for continuity, review, and next-step recovery.
+
+### Priority Work
+
+- Add one dependable review loop for daily and weekly planning.
+- Connect planning runs to next actions, active projects, and backlog review.
+- Add a lightweight continuity surface for current focus, recent outputs, and open threads.
+- Refine the Chief of Staff role around continuity and memory, not just delegation.
+- Define which experimental workflows are ready to graduate and which should remain lab-only.
+
+### Deliverables
+
+- A stable daily review workflow and a stable weekly review workflow.
+- A clear project-overview surface, still CLI-first with secondary UI support if warranted.
+- A documented graduation path for experimental specialists and workflows.
+- A stable internal version of AI-Staff-HQ that can be treated as the default personal workbench.
+
+### Exit Criteria
+
+- The system is useful across days and weeks, not just single prompts.
+- Active work, recent outputs, and next steps are visible and recoverable.
+- There is a clear distinction between stable workflows and experimental lab work.
+
+## Experimental Track
+
+The experimental track remains active all year, but it is explicitly constrained.
+
+### Allowed
+
+- Trying unusual specialist combinations.
+- Running opt-in experimental staff.
+- Building weird or narrow workflows for discovery.
+- Testing alternate orchestration strategies behind flags.
+
+### Not Allowed To Distort The Core
+
+- Experimental work does not expand the default active roster automatically.
+- Experimental work does not redefine the default UI.
+- Experimental work does not ship as the recommended path without eval evidence.
+
+## What We Will Not Prioritize
+
+For this roadmap window, these are not primary goals:
+
+- Broad public productization.
+- Maximizing roster size.
+- Building a large plugin ecosystem.
+- Re-optimizing everything around lowest cost.
+- Heavy UI investment before the flagship runtime and memory layers are stable.
+
+## Metrics That Matter
+
+The project should be judged by these outcomes, not by breadth alone:
+
+- Real-brief eval pass rate.
+- Final deliverable quality on recurring personal workflows.
+- Delegation quality and fallback rate.
+- Searchability and reuse of prior work.
+- Time saved on repeated planning and writing tasks.
+- Stability of the active roster.
+
+## Definition Of Done For This Roadmap
+
+This roadmap is complete when AI-Staff-HQ is the first place to bring a vague brief, because it reliably turns it into grounded, reusable work with context, continuity, and a strong final output.

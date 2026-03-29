@@ -99,6 +99,8 @@ def run_strategic_planning(
     graph = build_graph(runner)
     initial_state: GraphState = {
         "topic": topic,
+        "workflow_name": "strategic-planning",
+        "log_title": topic,
         "steps": [],
     }
     return runner.run_graph(graph, initial_state)
@@ -127,6 +129,7 @@ def main():
         
         console.print("\n[green]Workflow Complete[/green]")
         console.print(f"Run ID: {result.get('run_id')}")
+        console.print(f"Logs: {result.get('log_path', 'N/A')}")
         
     except Exception as e:
         console.print(f"[red]Error:[/red] {e}")

@@ -16,6 +16,7 @@ sys.path.append(str(Path(__file__).resolve().parents[2]))
 from langgraph.graph import END
 
 from orchestrator.graph_runner import GraphRunner, build_state_graph, GraphState
+from tools.engine.roster import list_specialists_by_department
 from workflows.constants import SpecialistSlugs
 
 
@@ -23,20 +24,14 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 STAFF_DIR = PROJECT_ROOT / "staff"
 
 
-def get_available_specialists(staff_dir: Path) -> dict[str, list[str]]:
-    """Discover all available specialists grouped by department."""
-    specialists = {}
-    for dept_dir in staff_dir.iterdir():
-        if not dept_dir.is_dir() or dept_dir.name.startswith('.'):
-            continue
-        dept_specialists = []
-        for yaml_file in dept_dir.rglob("*.yaml"):
-            # Get the specialist slug (filename without extension)
-            slug = yaml_file.stem
-            dept_specialists.append(slug)
-        if dept_specialists:
-            specialists[dept_dir.name] = sorted(dept_specialists)
-    return specialists
+def get_available_specialists(
+    staff_dir: Path,
+    *,
+    include_experimental: bool = False,
+) -> dict[str, list[str]]:
+    """Discover the selected specialist roster grouped by department."""
+    tiers = ("active", "experimental") if include_experimental else ("active",)
+    return list_specialists_by_department(staff_dir, tiers=tiers)
 
 
 def extract_json(text: str) -> list:
@@ -52,12 +47,15 @@ def extract_json(text: str) -> list:
     return []
 
 
-def build_graph(runner: GraphRunner):
+def build_graph(runner: GraphRunner, *, include_experimental: bool = False):
     """Assemble the Dynamic Orchestration graph with a Worker Loop."""
     graph = build_state_graph()
 
     # Discover available specialists
-    available_specialists = get_available_specialists(STAFF_DIR)
+    available_specialists = get_available_specialists(
+        STAFF_DIR,
+        include_experimental=include_experimental,
+    )
 
     # Format specialist list for prompt
     specialist_list = []
@@ -261,6 +259,7 @@ def run_cos_orchestration(
     auto_approve: bool = True,
     model: Optional[str] = None,
     temperature: Optional[float] = None,
+    include_experimental: bool = False,
     log_dir: Optional[Path] = None,
 ) -> GraphState:
     """Run the dynamic orchestration."""
@@ -271,9 +270,11 @@ def run_cos_orchestration(
         auto_approve=auto_approve,
         log_dir=log_dir,
     )
-    graph = build_graph(runner)
+    graph = build_graph(runner, include_experimental=include_experimental)
     initial_state: GraphState = {
         "topic": topic,
+        "workflow_name": "cos-orchestration",
+        "log_title": topic,
         "steps": [],
         "queue": [],
         "results": []

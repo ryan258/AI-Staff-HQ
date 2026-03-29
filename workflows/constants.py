@@ -5,7 +5,9 @@ magic strings and enable easier refactoring if specialists are renamed.
 """
 
 from pathlib import Path
-from typing import Set
+from typing import Collection, Set
+
+from tools.engine.roster import get_specialist_slugs
 
 
 # Configuration Constants
@@ -71,19 +73,18 @@ class SpecialistSlugs:
     CREATIVE_WRITER = "creative-writer"
 
 
-def get_available_specialists(staff_dir: Path) -> Set[str]:
+def get_available_specialists(
+    staff_dir: Path,
+    *,
+    tiers: Collection[str] | None = None,
+) -> Set[str]:
     """Get set of all available specialist slugs from staff directory.
 
     Args:
         staff_dir: Path to staff/ directory
+        tiers: Optional roster tiers to include
 
     Returns:
         Set of specialist slugs (YAML filenames without extension)
     """
-    specialists = set()
-    for dept_dir in staff_dir.iterdir():
-        if not dept_dir.is_dir() or dept_dir.name.startswith('.'):
-            continue
-        for yaml_file in dept_dir.rglob("*.yaml"):
-            specialists.add(yaml_file.stem)
-    return specialists
+    return set(get_specialist_slugs(staff_dir, tiers=tiers))

@@ -10,10 +10,10 @@ The default model is configured in `.env` (currently `moonshotai/kimi-k2:free`).
 Models are selected in this priority order:
 
 1. **Direct Override** (highest priority)
-2. **Role-Based Routing** (from config file)
-3. **Department Routing** (from config file)
-4. **Default Model** (from .env)
-5. **Budget Mode** (fallback)
+2. **Budget Mode** (explicit force-all setting)
+3. **Role-Based Routing** (from config file)
+4. **Department Routing** (from config file)
+5. **Default Model** (from .env)
 
 ---
 
@@ -57,7 +57,21 @@ runner = SwarmRunner(
 
 ---
 
-## 2. Role-Based Routing (Config File)
+## 2. Budget Mode (Cheap Override)
+
+Edit `ai-staff-hq/config/model_routing.yaml`:
+
+```yaml
+budget_mode:
+  enabled: true
+  model: "moonshotai/kimi-k2:free" # Free/cheap model
+```
+
+When enabled, ALL specialists use the budget model (overrides everything except direct override).
+
+---
+
+## 3. Role-Based Routing (Config File)
 
 Edit `ai-staff-hq/config/model_routing.yaml`:
 
@@ -77,7 +91,7 @@ role_routing:
 
 ---
 
-## 3. Department-Based Routing (Config File)
+## 4. Department-Based Routing (Config File)
 
 Edit `ai-staff-hq/config/model_routing.yaml`:
 
@@ -102,7 +116,7 @@ department_routing:
 
 ---
 
-## 4. Default Model (.env)
+## 5. Default Model (.env)
 
 Set default in `ai-staff-hq/.env`:
 
@@ -113,20 +127,6 @@ DEFAULT_MODEL="moonshotai/kimi-k2:free"
 # OpenRouter API key
 OPENROUTER_API_KEY="your-key-here"
 ```
-
----
-
-## 5. Budget Mode (Cheap Fallback)
-
-Edit `ai-staff-hq/config/model_routing.yaml`:
-
-```yaml
-budget_mode:
-  enabled: true
-  model: "moonshotai/kimi-k2:free" # Free/cheap model
-```
-
-When enabled, ALL specialists use the budget model (overrides everything except direct override).
 
 ---
 

@@ -11,6 +11,7 @@ from typing import Any, Callable, Dict, List, Optional, TypedDict
 from langgraph.graph import StateGraph, END
 
 from tools.engine.core import load_specialist
+from tools.engine.utils import build_semantic_run_filename
 from workflows.constants import CACHE_KEY_SEPARATOR, DEFAULT_GRAPH_LOG_DIR
 
 
@@ -18,6 +19,9 @@ class GraphState(TypedDict, total=False):
     """State passed between graph nodes."""
 
     topic: str
+    workflow_name: str
+    log_title: str
+    log_path: str
     inputs: Dict[str, Any]
     analysis: str
     technical_plan: str
@@ -188,19 +192,35 @@ class GraphRunner:
         self._persist_log(result)
         return result
 
-    def _persist_log(self, state: GraphState) -> None:
+    def _resolve_log_path(self, state: GraphState) -> Path:
+        """Build a semantic log filename from workflow metadata and the run subject."""
+        run_id = state.get("run_id", "unknown")
+        workflow_name = state.get("workflow_name")
+        subject = state.get("log_title") or state.get("topic") or state.get("user_brief") or run_id
+        filename = build_semantic_run_filename(
+            run_id=run_id,
+            subject=str(subject),
+            workflow_name=str(workflow_name) if workflow_name else None,
+            extension=".json",
+        )
+        return self.log_dir / filename
+
+    def _persist_log(self, state: GraphState) -> Path:
         """Write run metadata and steps to disk."""
         self.log_dir.mkdir(parents=True, exist_ok=True)
         run_id = state.get("run_id", "unknown")
-        log_path = self.log_dir / f"{run_id}.json"
+        log_path = self._resolve_log_path(state)
+        state["log_path"] = str(log_path)
         log = {
             "run_id": run_id,
+            "log_path": str(log_path),
             "completed_at": datetime.now(timezone.utc).isoformat(),
             "steps": state.get("steps", []),
             "state": {k: v for k, v in state.items() if k not in {"steps"}},
         }
         with open(log_path, "w", encoding="utf-8") as f:
             json.dump(log, f, indent=2)
+        return log_path
 
 
 def build_state_graph() -> StateGraph:

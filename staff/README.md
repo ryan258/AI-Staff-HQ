@@ -2,15 +2,40 @@
 
 > _Your extensible AI workforce, organized by MtG color-coded departments._
 
-## 🏢 Current Workforce: 68 Specialists Across 7 Departments (41 core + 27 extended)
+## 🏢 Current Workforce: 68 Specialists Across 7 Departments
+
+Current operating model:
+
+- **Active roster:** 12 specialists used by default for the flagship planning swarm
+- **Experimental roster:** preserved for opt-in use
+- **Archived roster:** only the weakest or most redundant roles, kept for future reference
 
 Your AI Staff HQ has been expanded with specialists across strategy, producers, commerce, tech, health-lifestyle, knowledge, and meta domains.
 
-The core roster is listed first; extended specialists follow after the main department sections.
+The active roster is listed first; experimental specialists follow after the main department sections.
 
 ---
 
-## 📊 Strategy Department (Blue - Strategy & Insights)
+## Active Roster
+
+- **[Chief of Staff](strategy/chief-of-staff.yaml)**
+- **[Market Analyst](strategy/market-analyst.yaml)**
+- **[Creative Strategist](strategy/creative-strategist.yaml)**
+- **[Brand Builder](strategy/brand-builder.yaml)**
+- **[Data Analyst](strategy/data-analyst.yaml)**
+- **[Academic Researcher](strategy/academic-researcher.yaml)**
+- **[Scenario Planner](strategy/scenario-planner.yaml)**
+- **[Copywriter](producers/copywriter.yaml)**
+- **[Software Architect](tech/software-architect.yaml)**
+- **[Automation Specialist](tech/automation-specialist.yaml)**
+- **[Productivity Architect](tech/productivity-architect.yaml)**
+- **[Quality Control Specialist](tech/quality-control-specialist.yaml)**
+
+---
+
+## 📊 Experimental Roster By Department
+
+### Strategy Department (Blue - Strategy & Insights)
 
 **Path:** `staff/strategy/`
 
@@ -107,7 +132,17 @@ Specialized experts in legal, financial, and professional knowledge domains.
 
 ---
 
-## 🧩 Extended Roster (27 Specialists)
+## Archived Roster
+
+- **[Cartographer Invisible](strategy/cartographer-invisible.yaml)**
+- **[Etymologist Decay](strategy/etymologist-decay.yaml)**
+- **[Infinite Looper](tech/infinite-looper.yaml)**
+- **[Irony Detector](tech/irony-detector.yaml)**
+- **[Xenobiologist](health-lifestyle/xenobiologist.yaml)**
+
+---
+
+## 🧩 Extended / Experimental Roster
 
 These specialists are available for niche or experimental use. Full roster includes paths for each role:
 

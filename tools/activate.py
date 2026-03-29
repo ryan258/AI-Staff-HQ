@@ -16,6 +16,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from tools.engine.core import load_specialist, SpecialistAgent
 from tools.engine.config import get_config
+from tools.engine.roster import list_specialists_by_department
 from tools.engine.state import ConversationState
 from tools.engine.utils import normalize_slug
 
@@ -106,30 +107,24 @@ def query_mode(agent: SpecialistAgent, query: str) -> None:
             sys.exit(130)
 
 
-def list_specialists(staff_dir: Path, department: Optional[str] = None) -> None:
+def list_specialists(
+    staff_dir: Path,
+    department: Optional[str] = None,
+    tier: str = "active",
+) -> None:
     """List available specialists."""
-    specialists_by_dept = {}
-    total = 0
+    tiers = ("active", "experimental", "archived") if tier == "all" else (tier,)
+    specialists_by_dept = list_specialists_by_department(staff_dir, tiers=tiers)
 
-    # Scan each department
-    for dept_dir in sorted(staff_dir.iterdir()):
-        if not dept_dir.is_dir() or dept_dir.name.startswith('.'):
-            continue
+    if department:
+        specialists_by_dept = {
+            dept: names for dept, names in specialists_by_dept.items()
+            if dept == department
+        }
 
-        if department and dept_dir.name != department:
-            continue
+    total = sum(len(names) for names in specialists_by_dept.values())
 
-        # Recursively find YAMLs
-        dept_specialists = []
-        for yaml_file in sorted(dept_dir.rglob("*.yaml")):
-            specialist_name = yaml_file.stem
-            dept_specialists.append(specialist_name)
-
-        if dept_specialists:
-            specialists_by_dept[dept_dir.name] = dept_specialists
-            total += len(dept_specialists)
-
-    console.print("\n[bold]Available Specialists[/bold]\n")
+    console.print(f"\n[bold]Available Specialists ({tier})[/bold]\n")
     for dept, names in sorted(specialists_by_dept.items()):
         console.print(f"[accent]{dept}[/accent] ({len(names)})")
         for name in sorted(names):
@@ -199,8 +194,15 @@ Examples:
 
     parser.add_argument(
         '--department',
-        choices=['strategy', 'producers', 'commerce', 'tech', 'health-lifestyle', 'knowledge'],
+        choices=['strategy', 'producers', 'commerce', 'tech', 'health-lifestyle', 'knowledge', 'meta'],
         help='Filter specialists by department'
+    )
+
+    parser.add_argument(
+        '--tier',
+        choices=['active', 'experimental', 'archived', 'all'],
+        default='active',
+        help='Roster tier to list (default: active)'
     )
 
     # Debug
@@ -222,7 +224,7 @@ Examples:
 
     # List mode
     if args.list:
-        list_specialists(staff_dir, args.department)
+        list_specialists(staff_dir, args.department, args.tier)
         return
 
     # Require specialist for other modes

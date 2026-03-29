@@ -27,6 +27,10 @@ Welcome to AI-Staff-HQ! This is a toolkit to help you build your very own team o
 
 **This is a personal AI system.** It helps your brain work better!
 
+## Current Focus
+
+The flagship path is now the **Planning Swarm**: a smaller, higher-signal multi-agent workflow that turns vague briefs into a structured plan. The default runtime uses the **active roster** from `config/specialist_roster.yaml`; experimental staff are preserved but opt-in.
+
 ### Rules We Follow:
 
 - ✅ **Smart Setup:** Designed so the AI remembers the important stuff without breaking.
@@ -100,6 +104,16 @@ See `staff/README.md` to see exactly what they do and how to talk to them.
     uv run tools/activate.py chief-of-staff
     ```
 
+4.  **Run The Flagship Planner**:
+    ```bash
+    uv run workflows/planning_swarm.py "Turn this rough idea into a concrete plan"
+    ```
+
+5.  **Run The Flagship Evals**:
+    ```bash
+    uv run workflows/planning_swarm_eval.py
+    ```
+
 ## How to Use It
 
 ### Chat Mode
@@ -132,6 +146,13 @@ To see everyone you can talk to, type:
 uv run tools/activate.py --list
 ```
 
+To inspect experimental or archived staff:
+
+```bash
+uv run tools/activate.py --list --tier experimental
+uv run tools/activate.py --list --tier archived
+```
+
 ### Testing the Code
 
 This code uses `pytest` to make sure it works:
@@ -142,9 +163,10 @@ uv run pytest
 
 ### Phase 4: Making AIs Work Together (LIVE NOW)
 
-- **The Main Tool**: All scripts starting with `dhp-` now use `bin/dhp-swarm.py` to talk to many AIs at once.
-- **Doing Things at the Same Time**: Hard jobs are split into small pieces. The AIs do these pieces at the same time to save you hours.
-- **Passing Notes**: You can easily pass a long note from the Market Analyst to the Brand Builder to the Copywriter.
+- **The Flagship Tool**: `uv run workflows/planning_swarm.py "Your brief"` runs the quality-first planning swarm.
+- **Small Active Roster**: Default orchestration uses the active roster in `config/specialist_roster.yaml` to keep delegation quality high.
+- **Experimental Preserved**: Experimental specialists still exist, but they are opt-in rather than part of the default planner surface.
+- **Eval-Guided Tuning**: Use `uv run workflows/planning_swarm_eval.py` before changing the active roster or matching logic.
 - **Command Line View**: Test graphs using `uv run workflows/graphs/strategy_tech_handoff.py "New product idea" --auto-approve` 
 - **Easy Web View**: See everything nicely by typing `uv run streamlit run ui/app.py`
 - **Watch the Output**: Type `--verbose` to see exactly what is happening under the hood, or `--stream` to get live text.

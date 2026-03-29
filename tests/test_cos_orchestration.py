@@ -4,7 +4,7 @@ from pathlib import Path
 
 from orchestrator.graph_runner import GraphRunner
 from workflows.constants import SpecialistSlugs
-from workflows.graphs.cos_orchestration import build_graph
+from workflows.graphs.cos_orchestration import build_graph, get_available_specialists
 
 
 class DummyAgent:
@@ -40,3 +40,41 @@ def test_cos_orchestration_handles_invalid_tasks(tmp_path):
 
     assert result.get("results")
     assert any(item.get("specialist") == SpecialistSlugs.CHIEF_OF_STAFF for item in result["results"])
+
+
+def test_get_available_specialists_defaults_to_active(monkeypatch):
+    """CoS orchestration should default to the active roster."""
+    captured = {}
+
+    def fake_list_specialists_by_department(_staff_dir, *, tiers):
+        captured["tiers"] = tiers
+        return {"strategy": ["chief-of-staff"]}
+
+    monkeypatch.setattr(
+        "workflows.graphs.cos_orchestration.list_specialists_by_department",
+        fake_list_specialists_by_department,
+    )
+
+    result = get_available_specialists(Path("staff"))
+
+    assert result == {"strategy": ["chief-of-staff"]}
+    assert captured["tiers"] == ("active",)
+
+
+def test_get_available_specialists_can_include_experimental(monkeypatch):
+    """CoS orchestration should support the experimental roster tier when requested."""
+    captured = {}
+
+    def fake_list_specialists_by_department(_staff_dir, *, tiers):
+        captured["tiers"] = tiers
+        return {"strategy": ["chief-of-staff", "irony-detector"]}
+
+    monkeypatch.setattr(
+        "workflows.graphs.cos_orchestration.list_specialists_by_department",
+        fake_list_specialists_by_department,
+    )
+
+    result = get_available_specialists(Path("staff"), include_experimental=True)
+
+    assert result == {"strategy": ["chief-of-staff", "irony-detector"]}
+    assert captured["tiers"] == ("active", "experimental")

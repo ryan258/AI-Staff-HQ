@@ -50,15 +50,26 @@ def test_graph_runner_executes_and_logs(tmp_path, mock_env):
     graph.set_entry_point("analysis")
 
     compiled = graph.compile()
-    result = runner.run_graph(compiled, {"topic": "demo"})
+    result = runner.run_graph(
+        compiled,
+        {
+            "topic": "demo graph topic",
+            "workflow_name": "test-graph",
+        },
+    )
 
     assert "run_id" in result
+    assert "log_path" in result
     assert result["analysis"].startswith("market-analyst response")
     assert result["technical_plan"].startswith("software-architect response")
     assert len(result.get("steps", [])) == 2
 
-    log_path = Path(tmp_path / "logs" / f"{result['run_id']}.json")
+    log_path = Path(result["log_path"])
     assert log_path.exists()
+    assert log_path.parent == tmp_path / "logs"
+    assert log_path.name.startswith("test-graph__demo-graph-topic__")
+    assert log_path.name.endswith(".json")
     log_data = json.loads(log_path.read_text())
     assert log_data["run_id"] == result["run_id"]
+    assert log_data["log_path"] == str(log_path)
     assert len(log_data["steps"]) == 2

@@ -2,6 +2,8 @@
 
 from pathlib import Path
 
+import yaml
+
 from tools.engine.llm import ModelRouter
 from tools.engine.config import get_config
 
@@ -56,3 +58,14 @@ department_routing:
     assert router.select_model(role="Specialist Role", department="tech") == "role-model"
     # Department routing used when role not present
     assert router.select_model(role="Unknown Role", department="tech") == "dept-model"
+
+
+def test_repo_budget_mode_is_disabled_without_budget_model():
+    """Bundled routing config should not advertise budget mode without a model."""
+    routing_path = Path(__file__).resolve().parents[1] / "config" / "model_routing.yaml"
+    payload = yaml.safe_load(routing_path.read_text(encoding="utf-8"))
+
+    budget_mode = payload["budget_mode"]
+
+    assert budget_mode["enabled"] is False
+    assert budget_mode["model"] == ""

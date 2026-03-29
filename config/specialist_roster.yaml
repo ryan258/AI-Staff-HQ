@@ -1,0 +1,80 @@
+version: 1
+flagship_workflow: planning-swarm
+
+# Default planner surface: small, high-signal, broadly useful.
+active:
+  - chief-of-staff
+  - market-analyst
+  - creative-strategist
+  - brand-builder
+  - data-analyst
+  - academic-researcher
+  - scenario-planner
+  - copywriter
+  - software-architect
+  - automation-specialist
+  - productivity-architect
+  - quality-control-specialist
+
+# Preserved for opt-in use, but hidden from the default planner/listing path.
+experimental:
+  - alchemist
+  - trend-forecaster
+  - learning-scientist
+  - social-media-strategist
+  - seo-specialist
+  - conversion-optimizer
+  - customer-acquisition-specialist
+  - influencer-strategist
+  - pricing-strategist
+  - commercial-real-estate-analyst
+  - interior-designer
+  - landscape-architect
+  - real-estate-investor
+  - cognitive-behavioral-therapist
+  - habit-architect
+  - health-coach
+  - humanist
+  - meditation-instructor
+  - active-imagination-guide
+  - shadow-worker
+  - stoic-coach
+  - antiquarian
+  - archivist-silence
+  - business-lawyer
+  - financial-therapist
+  - investment-advisor
+  - librarian-babel
+  - local-historian
+  - tax-strategist
+  - art-director
+  - beta-reader
+  - community-manager
+  - creative-writer
+  - dialect-coach
+  - dream-navigator
+  - event-planner
+  - forensic-consultant
+  - mirror-maker
+  - mythologist
+  - narrative-designer
+  - narrator
+  - symbolist
+  - translator-silence
+  - cybersecurity-specialist
+  - handyman
+  - operations-manager
+  - prompt-engineer
+  - supply-chain-coordinator
+  - toolmaker
+  - ethicist
+  - morphling
+
+# Archived for future reference because they are weaker or more redundant
+# than the active + experimental set.
+archived:
+  - cartographer-invisible
+  - etymologist-decay
+  - infinite-looper
+  - irony-detector
+  - xenobiologist

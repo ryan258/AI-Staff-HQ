@@ -49,7 +49,10 @@ class SwarmRunner(GraphRunner):
         self.config = config or SwarmConfig()
         self.verbose = verbose
         self.stream_output = stream_output
-        self.capability_index = CapabilityIndex(staff_dir)
+        self.capability_index = CapabilityIndex(
+            staff_dir,
+            allowed_tiers=self.config.roster_tiers,
+        )
         self.task_analyzer = TaskAnalyzer(self)
         self.execution_planner = ExecutionPlanner()
         self.state_lock = Lock()
@@ -100,6 +103,8 @@ class SwarmRunner(GraphRunner):
 
         initial_state: SwarmState = {
             'user_brief': user_brief,
+            'workflow_name': 'planning-swarm',
+            'log_title': user_brief,
             'steps': [],
             'max_parallel': self.config.max_parallel,
             'enable_parallel': self.config.enable_parallel,
@@ -729,11 +734,12 @@ Return the final synthesized output.
         # Run standard swarm (disable recursion)
         return self.run_swarm(enhanced_brief, use_squad=None)
 
-    def _persist_log(self, state: SwarmState) -> None:
+    def _persist_log(self, state: SwarmState) -> Path:
         """Write run metadata and steps to disk, handling dataclass serialization."""
         self.log_dir.mkdir(parents=True, exist_ok=True)
         run_id = state.get("run_id", "unknown")
-        log_path = self.log_dir / f"{run_id}.json"
+        log_path = self._resolve_log_path(state)
+        state["log_path"] = str(log_path)
 
         # Helper to convert dataclasses to dicts
         from dataclasses import asdict, is_dataclass
@@ -763,6 +769,7 @@ Return the final synthesized output.
 
         log = {
             "run_id": run_id,
+            "log_path": str(log_path),
             "completed_at": datetime.now(timezone.utc).isoformat(),
             "steps": state.get("steps", []),
             "state": serializable_state,
@@ -770,3 +777,4 @@ Return the final synthesized output.
         
         with open(log_path, "w", encoding="utf-8") as f:
             json.dump(log, f, indent=2, default=str)
+        return log_path

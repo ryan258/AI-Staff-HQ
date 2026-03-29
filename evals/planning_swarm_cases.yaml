@@ -1,0 +1,159 @@
+version: 1
+cases:
+  - id: launch-plan
+    brief: Turn a rough product launch idea into a clear go-to-market plan.
+    planner_response: |
+      [
+        {
+          "id": "task_1",
+          "description": "Research the audience and competitor landscape for the launch.",
+          "required_capabilities": ["market research", "competitive analysis"],
+          "depends_on": [],
+          "priority": 1
+        },
+        {
+          "id": "task_2",
+          "description": "Define the brand positioning and creative strategy for the launch.",
+          "required_capabilities": ["brand strategy & architecture", "campaign architecture & concept development"],
+          "depends_on": ["task_1"],
+          "priority": 1
+        },
+        {
+          "id": "task_3",
+          "description": "Draft the core launch messaging and copy assets.",
+          "required_capabilities": ["copywriting", "brand messaging"],
+          "depends_on": ["task_2"],
+          "priority": 1
+        }
+      ]
+    expect:
+      parse_success: true
+      task_count: 3
+      warning_count: 0
+      wave_count: 3
+      parallel_waves: 0
+      chief_of_staff_tasks: 0
+      top_specialists:
+        task_1: ["market-analyst"]
+        task_2: ["brand-builder", "creative-strategist"]
+        task_3: ["copywriter"]
+
+  - id: workflow-system
+    brief: Design a better solo operating system for projects, automation, and quality control.
+    planner_response: |
+      [
+        {
+          "id": "task_1",
+          "description": "Design the workflow structure and productivity system.",
+          "required_capabilities": ["workflow design & optimization", "time & energy management"],
+          "depends_on": [],
+          "priority": 1
+        },
+        {
+          "id": "task_2",
+          "description": "Specify the automation layer that should support the workflow.",
+          "required_capabilities": ["python automation scripting", "filesystem & data workflow orchestration"],
+          "depends_on": [],
+          "priority": 1
+        },
+        {
+          "id": "task_3",
+          "description": "Define the quality gates and validation checks for the system.",
+          "required_capabilities": ["quality assurance & testing", "standards & compliance"],
+          "depends_on": ["task_1", "task_2"],
+          "priority": 1
+        }
+      ]
+    expect:
+      parse_success: true
+      task_count: 3
+      warning_count: 0
+      wave_count: 2
+      parallel_waves: 1
+      chief_of_staff_tasks: 0
+      top_specialists:
+        task_1: ["productivity-architect"]
+        task_2: ["automation-specialist"]
+        task_3: ["quality-control-specialist"]
+
+  - id: evidence-risk-plan
+    brief: Build an evidence-based plan for a new initiative and stress-test the risks.
+    planner_response: |
+      [
+        {
+          "id": "task_1",
+          "description": "Review the research literature and synthesize the strongest evidence.",
+          "required_capabilities": ["literature review & synthesis", "research design & methodology"],
+          "depends_on": [],
+          "priority": 1
+        },
+        {
+          "id": "task_2",
+          "description": "Analyze the available data and define the most important metrics.",
+          "required_capabilities": ["data analysis & interpretation", "business intelligence & reporting"],
+          "depends_on": [],
+          "priority": 1
+        },
+        {
+          "id": "task_3",
+          "description": "Map failure scenarios and contingencies before execution.",
+          "required_capabilities": ["scenario development", "contingency planning"],
+          "depends_on": ["task_1", "task_2"],
+          "priority": 1
+        }
+      ]
+    expect:
+      parse_success: true
+      task_count: 3
+      warning_count: 0
+      wave_count: 2
+      parallel_waves: 1
+      chief_of_staff_tasks: 0
+      top_specialists:
+        task_1: ["academic-researcher"]
+        task_2: ["data-analyst"]
+        task_3: ["scenario-planner"]
+
+  - id: initiative-orchestration
+    brief: Turn a messy initiative into a concrete plan with milestones and technical structure.
+    planner_response: |
+      [
+        {
+          "id": "task_1",
+          "description": "Define the initiative structure, milestones, and coordination rhythm.",
+          "required_capabilities": ["strategic coordination", "project management"],
+          "depends_on": [],
+          "priority": 1
+        },
+        {
+          "id": "task_2",
+          "description": "Create the technical roadmap and architecture approach.",
+          "required_capabilities": ["technical strategy & planning", "system architecture & design"],
+          "depends_on": ["task_1"],
+          "priority": 1
+        }
+      ]
+    expect:
+      parse_success: true
+      task_count: 2
+      warning_count: 0
+      wave_count: 2
+      parallel_waves: 0
+      chief_of_staff_tasks: 1
+      top_specialists:
+        task_1: ["chief-of-staff"]
+        task_2: ["software-architect"]
+
+  - id: malformed-fallback
+    brief: Help me think through this idea and give me a plan.
+    planner_response: |
+      I would probably just handle this in one broad step instead of returning JSON.
+    expect:
+      parse_success: false
+      task_count: 1
+      warning_count: 0
+      wave_count: 1
+      parallel_waves: 0
+      chief_of_staff_tasks: 1
+      top_specialists:
+        task_1: ["chief-of-staff"]

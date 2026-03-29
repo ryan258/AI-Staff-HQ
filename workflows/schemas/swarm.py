@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, TypedDict
 
 from orchestrator.execution_planner import ExecutionPlan
@@ -15,6 +15,9 @@ class SwarmState(TypedDict, total=False):
     # Core request
     user_brief: str
     run_id: str
+    workflow_name: str
+    log_title: str
+    log_path: str
 
     # Task breakdown
     task_breakdown: TaskBreakdown  # From TaskAnalyzer
@@ -143,6 +146,7 @@ class SwarmConfig:
     # Quality control
     min_capability_match_score: float = 0.3
     require_approval: bool = False
+    roster_tiers: List[str] = field(default_factory=lambda: ["active"])
 
     def validate(self) -> List[str]:
         """
@@ -167,5 +171,9 @@ class SwarmConfig:
 
         if self.min_capability_match_score < 0.0 or self.min_capability_match_score > 1.0:
             warnings.append("min_capability_match_score must be 0.0-1.0")
+
+        invalid_tiers = [tier for tier in self.roster_tiers if tier not in {"active", "experimental", "archived"}]
+        if invalid_tiers:
+            warnings.append(f"Invalid roster tiers: {', '.join(invalid_tiers)}")
 
         return warnings

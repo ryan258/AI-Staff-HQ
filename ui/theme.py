@@ -22,7 +22,7 @@ RICH_THEME = Theme({
     "accent": COLORS["accent"],
     "text": COLORS["text"],
     "dim": f"dim {COLORS['text']}",
-    "warning": "#E5C07B",   # Soft Yellow for warnings
+    "warning": f"bold {COLORS['text']}",
 })
 
 # Streamlit CSS
@@ -151,6 +151,13 @@ STREAMLIT_CSS = f"""
     .stError {{
         background-color: var(--bg-color);
         color: var(--accent-danger) !important;
+        border-left: 4px solid var(--accent-danger);
+    }}
+
+    /* Warning messages */
+    .stWarning {{
+        background-color: var(--bg-color);
+        color: var(--text-color) !important;
         border-left: 4px solid var(--accent-danger);
     }}
 

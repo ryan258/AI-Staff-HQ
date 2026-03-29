@@ -99,6 +99,8 @@ def run_strategy_tech_handoff(
     graph = build_graph(runner)
     initial_state: GraphState = {
         "topic": topic,
+        "workflow_name": "strategy-tech-handoff",
+        "log_title": topic,
         "steps": [],
     }
     return runner.run_graph(graph, initial_state)
@@ -158,7 +160,7 @@ def main():
     if "executive_brief" in result:
         console.print(Panel(Markdown(result["executive_brief"]), title="Executive Brief", border_style="green"))
 
-    console.print(f"[dim]Run ID:[/dim] {result.get('run_id')}  |  Logs: {Path(args.log_dir or 'logs/graphs') / (result.get('run_id') + '.json')}\n")
+    console.print(f"[dim]Run ID:[/dim] {result.get('run_id')}  |  Logs: {result.get('log_path', 'N/A')}\n")
 
 
 if __name__ == "__main__":

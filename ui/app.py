@@ -8,33 +8,28 @@ from typing import Dict, List
 import streamlit as st
 
 import sys
-from pathlib import Path
 
 # Add project root to path so we can import 'workflows'
 # This handles the case where streamlit is run from the root
 project_root = Path(__file__).resolve().parent.parent
 sys.path.append(str(project_root))
 
+from tools.engine.roster import list_specialists_by_department
 from workflows.graphs.strategy_tech_handoff import run_strategy_tech_handoff
 from workflows.graphs.strategic_planning import run_strategic_planning
 from workflows.graphs.code_feature import run_code_feature
 from workflows.graphs.cos_orchestration import run_cos_orchestration
+from workflows.planning_swarm import run_planning_swarm
 
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 STAFF_DIR = BASE_DIR / "staff"
 
 
-def list_specialists() -> Dict[str, List[str]]:
-    """Return specialists grouped by department."""
-    grouped = {}
-    for dept_dir in sorted(STAFF_DIR.iterdir()):
-        if not dept_dir.is_dir() or dept_dir.name.startswith("."):
-            continue
-        names = sorted(f.stem for f in dept_dir.rglob("*.yaml"))
-        if names:
-            grouped[dept_dir.name] = names
-    return grouped
+def list_specialists(include_experimental: bool = False) -> Dict[str, List[str]]:
+    """Return specialists grouped by department for the chosen tiers."""
+    tiers = ("active", "experimental") if include_experimental else ("active",)
+    return list_specialists_by_department(STAFF_DIR, tiers=tiers)
 
 
 def main():
@@ -52,13 +47,14 @@ def main():
         st.markdown("""
         ### Quick Start Guide
 
-        1. **Select a Workflow** from the dropdown (Dynamic Orchestration is recommended)
+        1. **Select a Workflow** from the dropdown (Flagship Planning Swarm is recommended)
         2. **Enter your topic/request** in the text box below
         3. **Configure settings** in the sidebar (optional)
         4. **Click "Run Workflow"** to execute
 
         ### What Each Workflow Does
 
+        - **Flagship Planning Swarm**: Uses the small active roster to turn vague briefs into a high-quality structured plan. This is the default path.
         - **Dynamic Orchestration (Chief of Staff)**: The Chief of Staff analyzes your request, delegates to appropriate specialists, and synthesizes the results. Best for general requests.
         - **Strategy → Tech Handoff**: Market analysis → Technical planning → Executive brief
         - **Strategic Planning**: Market analysis → Creative strategy → Executive summary
@@ -85,6 +81,7 @@ def main():
 
     # Workflow Selector (Main Column)
     workflow_map = {
+        "Flagship Planning Swarm": run_planning_swarm,
         "Dynamic Orchestration (Chief of Staff)": run_cos_orchestration,
         "Strategy -> Tech Handoff": run_strategy_tech_handoff,
         "Strategic Planning": run_strategic_planning,
@@ -102,6 +99,7 @@ def main():
     auto_approve = st.sidebar.checkbox("Auto-approve handoffs", value=True)
     model_override = st.sidebar.text_input("Model override (optional)")
     temperature = st.sidebar.number_input("Temperature", min_value=0.0, max_value=1.0, step=0.1, value=0.7)
+    include_experimental = st.sidebar.checkbox("Include experimental staff", value=False)
 
 
 
@@ -110,8 +108,8 @@ def main():
     topic = st.text_input("Topic or project", key="topic")
 
     with st.expander("Specialists"):
-        st.caption("Click to insert template:")
-        specialists_map = list_specialists()
+        st.caption("Active roster suggestions. Experimental staff are opt-in.")
+        specialists_map = list_specialists(include_experimental=include_experimental)
         if specialists_map:
             cols = st.columns(len(specialists_map))
             for col, (dept, names) in zip(cols, specialists_map.items()):
@@ -139,12 +137,18 @@ def main():
         with st.spinner(f"Running {selected_workflow_name}..."):
             try:
                 run_func = workflow_map[selected_workflow_name]
-                result = run_func(
-                    topic.strip(),
-                    auto_approve=auto_approve,
-                    model=model_override or None,
-                    temperature=temperature,
-                )
+                run_kwargs = {
+                    "auto_approve": auto_approve,
+                    "model": model_override or None,
+                    "temperature": temperature,
+                }
+                if selected_workflow_name in {
+                    "Flagship Planning Swarm",
+                    "Dynamic Orchestration (Chief of Staff)",
+                }:
+                    run_kwargs["include_experimental"] = include_experimental
+
+                result = run_func(topic.strip(), **run_kwargs)
                 st.session_state["last_result"] = result
                 st.rerun()  # Force UI refresh to show results
             except Exception as exc:  # noqa: BLE001
@@ -156,6 +160,8 @@ def main():
     if "last_result" in st.session_state:
         result = st.session_state["last_result"]
         st.success(f"✓ Run complete (ID: {result.get('run_id', 'N/A')})")
+        if result.get("log_path"):
+            st.caption(f"Log file: {result['log_path']}")
 
         # Debug info - show what keys are in result
         st.caption(f"Result contains: {', '.join(result.keys())}")

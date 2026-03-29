@@ -6,9 +6,11 @@ import re
 from dataclasses import dataclass, field
 from difflib import SequenceMatcher
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Collection, Dict, List, Optional, Tuple
 
 import yaml
+
+from tools.engine.roster import iter_specialist_records
 
 
 @dataclass
@@ -41,14 +43,21 @@ class CapabilityMatch:
 class CapabilityIndex:
     """Index of all specialists and their capabilities for dynamic matching."""
 
-    def __init__(self, staff_dir: Path):
+    def __init__(
+        self,
+        staff_dir: Path,
+        *,
+        allowed_tiers: Collection[str] | None = None,
+    ):
         """
         Initialize the capability index by parsing all specialist YAMLs.
 
         Args:
             staff_dir: Path to the staff directory containing specialist YAMLs
+            allowed_tiers: Optional roster tiers to index
         """
         self.staff_dir = staff_dir
+        self.allowed_tiers = allowed_tiers
         self.specialists: Dict[str, SpecialistMetadata] = {}
         self.capability_map: Dict[str, List[str]] = {}  # capability → [slugs]
         self.expertise_map: Dict[str, List[str]] = {}  # expertise → [slugs]
@@ -60,22 +69,15 @@ class CapabilityIndex:
         if not self.staff_dir.exists():
             raise FileNotFoundError(f"Staff directory not found: {self.staff_dir}")
 
-        # Find all YAML files in all department subdirectories
-        for dept_dir in self.staff_dir.iterdir():
-            if not dept_dir.is_dir() or dept_dir.name.startswith('.'):
-                continue
-
-            department = dept_dir.name
-
-            for yaml_file in dept_dir.glob("*.yaml"):
-                try:
-                    metadata = self._parse_specialist_yaml(yaml_file, department)
-                    if metadata:
-                        self.specialists[metadata.slug] = metadata
-                        self._add_to_maps(metadata)
-                except Exception as e:
-                    # Log but don't fail - continue indexing other specialists
-                    print(f"Warning: Failed to parse {yaml_file}: {e}")
+        for record in iter_specialist_records(self.staff_dir, tiers=self.allowed_tiers):
+            try:
+                metadata = self._parse_specialist_yaml(record.path, record.department)
+                if metadata:
+                    self.specialists[metadata.slug] = metadata
+                    self._add_to_maps(metadata)
+            except Exception as e:
+                # Log but don't fail - continue indexing other specialists
+                print(f"Warning: Failed to parse {record.path}: {e}")
 
     def _parse_specialist_yaml(self, yaml_file: Path, department: str) -> Optional[SpecialistMetadata]:
         """

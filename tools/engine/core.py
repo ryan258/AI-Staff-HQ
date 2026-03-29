@@ -15,7 +15,7 @@ from .llm import ModelRouter
 from .state import ConversationState
 from .capabilities import read_file, write_file, list_directory, run_command
 from .config import get_config
-from .utils import normalize_slug
+from .utils import build_semantic_run_filename, normalize_slug
 
 
 class SpecialistAgent:
@@ -65,6 +65,7 @@ class SpecialistAgent:
             specialist_slug=self._get_specialist_slug(),
             session_id=session_id
         )
+        self._log_file_path: Optional[Path] = None
         
         # Load existing session or start new
         if session_id:
@@ -137,13 +138,38 @@ class SpecialistAgent:
 
         return response_text
 
+    def _resolve_log_file_path(self, user_input: str) -> Path:
+        """Resolve a stable, semantic markdown log path for this agent session."""
+        if self._log_file_path is not None:
+            return self._log_file_path
+
+        session_id = self.state.session_id or "unknown_session"
+        semantic_candidates = sorted(self.config.log_dir.glob(f"*__{session_id}.md"))
+        if semantic_candidates:
+            self._log_file_path = semantic_candidates[0]
+            return self._log_file_path
+
+        legacy_path = self.config.log_dir / f"{session_id}.md"
+        if legacy_path.exists():
+            self._log_file_path = legacy_path
+            return self._log_file_path
+
+        filename = build_semantic_run_filename(
+            run_id=session_id,
+            subject=user_input,
+            workflow_name=self._get_specialist_slug(),
+            extension=".md",
+        )
+        self._log_file_path = self.config.log_dir / filename
+        return self._log_file_path
+
     def _log_interaction(self, user_input: str, response: str, latency: float):
         """Log API interaction to Markdown file."""
         if not self.config.log_dir.exists():
             self.config.log_dir.mkdir(parents=True, exist_ok=True)
             
         session_id = self.state.session_id or "unknown_session"
-        log_file = self.config.log_dir / f"{session_id}.md"
+        log_file = self._resolve_log_file_path(user_input)
         
         timestamp = datetime.now(timezone.utc).isoformat()
         

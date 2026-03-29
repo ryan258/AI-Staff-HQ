@@ -97,6 +97,8 @@ def run_code_feature(
     graph = build_graph(runner)
     initial_state: GraphState = {
         "topic": topic,
+        "workflow_name": "code-feature",
+        "log_title": topic,
         "steps": [],
     }
     return runner.run_graph(graph, initial_state)
