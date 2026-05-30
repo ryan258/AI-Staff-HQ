@@ -28,9 +28,19 @@ dependencies = [
 ui = [
     "streamlit>=1.40.0",
 ]
+# Dependencies for the tracked example scripts and automations
+# (tools/scripts/*, workflows/automations/*). Previously only listed in
+# tools/requirements.txt, so quickstart installs left these scripts unimportable.
+scripts = [
+    "pandas>=2.0.0",
+    "pillow>=10.0.0",
+    "feedparser>=6.0.0",
+]
 
 [project.scripts]
-activate = "tools.activate:main"
+# Named `ai-staff` (not `activate`) to avoid colliding with the virtualenv's
+# own `.venv/bin/activate`, which made `uv run activate` fail.
+ai-staff = "tools.activate:main"
 
 [dependency-groups]
 dev = [

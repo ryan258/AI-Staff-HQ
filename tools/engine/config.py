@@ -17,6 +17,10 @@ class Config(BaseSettings):
 
     # Direct Provider Keys (Fallback/Optional)
     openai_api_key: str = ""
+    # NOTE: anthropic_api_key is accepted for forward-compatibility but is NOT
+    # consumed by ModelRouter (which speaks OpenRouter / OpenAI). It is therefore
+    # deliberately excluded from validate_api_keys() so config does not claim a
+    # usable key it cannot actually route through.
     anthropic_api_key: str = ""
 
     # Agent Configuration
@@ -55,8 +59,12 @@ class Config(BaseSettings):
     )
 
     def validate_api_keys(self) -> bool:
-        """Check if at least one API key is configured."""
-        return bool(self.openrouter_api_key or self.openai_api_key or self.anthropic_api_key)
+        """Check if at least one *routable* API key is configured.
+
+        Only OpenRouter and OpenAI keys are usable by ModelRouter, so an
+        Anthropic-only configuration is intentionally treated as invalid.
+        """
+        return bool(self.openrouter_api_key or self.openai_api_key)
 
 
 # Global config instance

@@ -54,20 +54,38 @@ class ConversationState:
         self._trim_history()
         
     def _trim_history(self) -> None:
-        """Trim history to configured limits."""
+        """Trim history to configured limits (by turn count and token budget)."""
         # Always keep SystemMessage (index 0)
         if not self.messages:
             return
-            
+
         system_msg = self.messages[0]
         history = self.messages[1:]
-        
-        # Trim by turn count if configured
+
+        # 1. Trim by turn count if configured
         max_turns = self.config.max_history_turns
         if max_turns and len(history) > max_turns * 2:  # *2 because Human+AI = 1 turn
-            # Keep the last N turns
             history = history[-(max_turns * 2):]
-            self.messages = [system_msg] + history
+
+        # 2. Trim by token budget so max_context_tokens is actually enforced.
+        max_tokens = self.config.max_context_tokens
+        if max_tokens:
+            from .tokens import message_tokens
+
+            system_tokens = message_tokens(system_msg)
+            budget = max(0, max_tokens - system_tokens)
+            # Walk newest -> oldest, keeping as much recent history as fits.
+            kept_reversed: List[BaseMessage] = []
+            used = 0
+            for msg in reversed(history):
+                cost = message_tokens(msg)
+                if used + cost > budget and kept_reversed:
+                    break
+                kept_reversed.append(msg)
+                used += cost
+            history = list(reversed(kept_reversed))
+
+        self.messages = [system_msg] + history
 
     def save(self) -> None:
         """Save session to disk."""

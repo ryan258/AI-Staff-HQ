@@ -17,10 +17,11 @@ from rich.markdown import Markdown
 from langgraph.graph import END
 
 from orchestrator.graph_runner import GraphRunner, build_state_graph, GraphState
+from ui.theme import RICH_THEME
 from workflows.constants import SpecialistSlugs
 
 
-console = Console()
+console = Console(theme=RICH_THEME)
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 STAFF_DIR = PROJECT_ROOT / "staff"
 
@@ -127,12 +128,12 @@ def main():
             log_dir=args.log_dir,
         )
         
-        console.print("\n[green]Workflow Complete[/green]")
+        console.print("\n[success]Workflow Complete[/success]")
         console.print(f"Run ID: {result.get('run_id')}")
         console.print(f"Logs: {result.get('log_path', 'N/A')}")
         
     except Exception as e:
-        console.print(f"[red]Error:[/red] {e}")
+        console.print(f"[error]Error:[/error] {e}")
 
 if __name__ == "__main__":
     main()

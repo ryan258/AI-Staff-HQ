@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Roster Tiering:** Added `config/specialist_roster.yaml` and `tools/engine/roster.py` to support active, experimental, and archived specialist tiers.
 - **Planning Evals:** Added deterministic planning evals via `workflows/planning_swarm_eval.py`, `evals/planning_swarm_cases.yaml`, and real-brief capture via `workflows/planning_swarm_capture.py` and `evals/planning_swarm_real_briefs.yaml`.
 - **Semantic Log Migration Tooling:** Added `tools/migrate_legacy_logs.py` to rename legacy timestamp-only logs to semantic names.
+- **Workspace Sandbox:** Added containment for the Morphling shell/file tools in `tools/engine/capabilities.py` — path resolution stays inside the workspace, destructive commands are screened, and `AISTAFF_*` env vars gate the escape hatches.
+- **Secret Redaction:** Added `redact_secrets()` in `tools/engine/utils.py`, applied to all persistent log writers (interaction logs, graph logs, swarm logs).
+- **Real Token Budgeting:** Added `tools/engine/tokens.py` (tiktoken-based counting/truncation); history trimming and dependency context now respect a real token budget.
+- **`ai-staff` Console Command:** Added a `[project.scripts]` entry point (`ai-staff`) so installs get a short command instead of `uv run tools/activate.py`.
 - **Regression Coverage:** Added test coverage for roster tiers, planning evals, capture flow, semantic log migration, swarm config defaults, and theme semantics.
 
 ### Changed
@@ -18,10 +22,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Default Specialist Surface:** Default orchestration now uses the active roster by default, with experimental staff preserved as opt-in and archived staff preserved for reference.
 - **Logging:** Graph logs and markdown interaction logs now use semantic filenames derived from workflow, specialist, and prompt/brief subjects; legacy logs were migrated to the new scheme.
 - **Dynamic CoS Parity:** `workflows/graphs/cos_orchestration.py` can now opt into experimental specialists, matching planning swarm behavior.
+- **Specialist Validation:** `tools/validate_specialist.py` now validates against the Pydantic `SpecialistSchema` instead of ad-hoc checks.
+- **Dependencies:** Consolidated tracked-script dependencies into a `scripts` extra in `pyproject.toml`.
 - **Roadmap:** Replaced the old roadmap with a new April 2026 to March 2027 plan centered on flagship reliability, memory/context, deliverables, and personal operating-system workflows.
-- **Documentation:** Updated orchestration, eval, roster, and roadmap docs to reflect the current flagship-first architecture and semantic logging behavior.
+- **Documentation:** Refreshed all user-facing docs to the active-roster model (12 active, 56 experimental), the real CLI surface, and a 7th-grade reading level; converted remaining UI assets to the Candlelite palette.
 
 ### Fixed
+- **LLM Failures Raise:** Specialist query failures now raise `SpecialistQueryError` instead of returning a disguised error string.
+- **Streamlit Approval Gate:** Approval prompts now raise instead of blocking on `input()` when no interactive TTY is present.
+- **Planning JSON Extraction:** Replaced naive bracket slicing with a balanced-array scanner (`extract_json_array`) for robust plan parsing.
+- **Graph Edges:** Removed a conflicting duplicate edge from the planning node in `cos_orchestration.py`.
+- **Capability Matching:** Rescored specialist matching to reward coverage across a task's required capabilities.
+- **Config Knobs:** Fixed misleading temperature/api-key handling so configured values are honored as intended.
 - **Model Routing Clarity:** Set `config/model_routing.yaml` budget mode to `enabled: false` when no budget model is configured.
 - **SwarmConfig Defaults:** `SwarmConfig.roster_tiers` now defaults directly to `["active"]` rather than relying on mutation during validation.
 - **Theme Semantics:** Restored visual distinction between warning and accent styling in `ui/theme.py` and added explicit Streamlit warning styling.

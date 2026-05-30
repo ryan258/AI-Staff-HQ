@@ -136,14 +136,15 @@ def list_specialists(
 def main():
     """Main CLI entry point."""
     parser = argparse.ArgumentParser(
+        prog="ai-staff",
         description="Activate AI Staff HQ specialists as executable agents",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  activate chief-of-staff -q "Create a project plan"
-  activate copywriter --query "Write a tagline for luxury wellness"
-  activate --list
-  activate --list --department tech
+  ai-staff chief-of-staff -q "Create a project plan"
+  ai-staff copywriter --query "Write a tagline for luxury wellness"
+  ai-staff --list
+  ai-staff --list --department tech
         """
     )
 

@@ -1,52 +1,70 @@
 # 🚀 The CLI Workflow: Your AI Workforce on the Command Line
 
-This document provides a guide for developers and other technical users who want to interact with their AI workforce through a command-line interface (CLI) like the Gemini CLI, OpenAI's codec, or Claude's code.
+This guide is for people who like to work in the terminal. It shows two ways to run your specialists from the command line.
 
-## 🎯 Core Concept
+## 🎯 Two Ways to Run Specialists
 
-The CLI workflow allows you to integrate your AI workforce into your existing development environment. You can use shell scripts to automate your interactions with your specialists, pipe the output of one specialist to another, and integrate your AI workforce with other command-line tools.
+1. **The built-in CLI (recommended).** This project ships with its own command, `tools/activate.py`. It loads a specialist, keeps the conversation, and saves your session. No extra tools needed.
+2. **An outside coding assistant.** You can also paste a specialist's instructions into a tool like the Gemini CLI, OpenAI's Codex, or Claude Code. This is handy when you are already coding in one of those.
 
-## 🗺️ Step-by-Step Guide
+Most of the time, start with the built-in CLI.
 
-### **1. Set Up Your Environment**
+## 🗺️ Using the Built-in CLI
 
-Before you can start using your AI workforce on the command line, you need to set up your environment. This will typically involve:
+Run everything from the project root (the folder that holds `tools/` and `staff/`).
 
-- **Installing the CLI tool:** Follow the instructions for your chosen AI platform to install their CLI tool.
-- **Authenticating:** You will need to authenticate with the AI platform to use their CLI tool. This will typically involve setting an environment variable with your API key.
-
-### **2. Build Your Team**
-
-As with the other workflows, the first step is to build your custom team of specialists. Use the `templates/persona/new-staff-member-template.md` to create your specialists, and use the `Prompt Engineer` to help you design their capabilities.
-
-### **3. Craft Your Prompts**
-
-When you are using the command line, you will typically pass your prompt to the CLI tool as a string. You can also use shell commands like `cat` to pass the content of a file as part of your prompt.
-
-For example, to have the `Prompt Engineer` review a file called `my-script.py`, you could use a command like this:
+### Talk to one specialist
 
 ```bash
-cat my-script.py | gemini "Act as the Prompt Engineer from my AI-Staff-HQ. Please review this Python script and suggest improvements."
+uv run tools/activate.py copywriter
 ```
 
-### **4. Activate Your Specialists**
+This opens a chat with the Copywriter. Type `exit` to leave, or `/clear` to start fresh.
 
-You can activate your specialists using the same `Acting as the [ROLE]...` pattern as in the other workflows. The key is to provide the AI with the full context of your project by passing the relevant files as part of the prompt.
+### Ask one question and get one answer
 
-### **5. Chain Commands**
+```bash
+uv run tools/activate.py market-analyst -q "Who are the top 3 competitors for a paid newsletter?"
+```
 
-The real power of the CLI workflow comes from the ability to chain commands together. You can pipe the output of one specialist to another, or use shell scripts to create complex, automated workflows.
+### See the whole team
 
-For example, you could create a script that:
+```bash
+uv run tools/activate.py --list
+```
 
-1.  Uses the `Market Analyst` to research a topic.
-2.  Pipes the `Market Analyst`'s research to your custom `Copywriter` specialist to write a blog post.
-3.  Pipes the `Copywriter`'s blog post to your custom `SEO Specialist` to optimize it for search engines.
+### Run the planning swarm on a big idea
 
-## 🌟 Benefits of the CLI Workflow
+```bash
+uv run workflows/planning_swarm.py "Turn my newsletter into a small paid product"
+```
 
-- **Automation:** You can automate your interactions with your AI workforce using shell scripts.
-- **Integration:** You can integrate your AI workforce with other command-line tools.
-- **Power:** The CLI workflow provides a powerful and flexible way to interact with your AI workforce.
+The swarm picks the right helpers, splits the work, and returns one strong result.
 
-This workflow is recommended for developers, technical users, and anyone who wants to automate their AI workflows.
+## 🛠️ Using an Outside Coding Assistant
+
+If you would rather use a tool like the Gemini CLI, OpenAI's Codex, or Claude Code, you can feed a specialist's role into it with the same `Acting as the [ROLE]...` pattern. Pass your files as context.
+
+For example, to have the Prompt Engineer review a script:
+
+```bash
+cat my-script.py | gemini "Act as the Prompt Engineer from my AI-Staff-HQ. Review this Python script and suggest improvements."
+```
+
+## 🔗 Chaining Specialists
+
+The real power of the command line is connecting steps. You can pipe one specialist's output into the next, or write a short shell script that:
+
+1. Uses the **Market Analyst** to research a topic.
+2. Passes that research to the **Copywriter** to write a blog post.
+3. Passes the blog post to the **SEO Specialist** to tune it for search.
+
+For a hands-off version of this, the planning swarm does the chaining for you.
+
+## 🌟 Why Use the CLI
+
+- **Speed:** One command, one answer. No clicking around.
+- **Automation:** Wrap your common tasks in shell scripts.
+- **Integration:** Plug your specialists into the tools you already use.
+
+This workflow fits developers and anyone who likes to keep their hands on the keyboard.

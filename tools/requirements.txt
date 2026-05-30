@@ -1,3 +1,6 @@
-pandas
-pillow
-feedparser
+# Dependencies for tracked example scripts and automations.
+# These are also declared as the `scripts` extra in pyproject.toml; prefer
+# installing via `pip install -e ".[scripts]"` (or `uv sync --extra scripts`).
+pandas>=2.0.0
+pillow>=10.0.0
+feedparser>=6.0.0

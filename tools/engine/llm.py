@@ -103,11 +103,17 @@ class ModelRouter:
         # or it might need to be in model_kwargs depending on version.
         # Let's try passing it directly as default_headers which langchain support usually.
         
+        # Use `is None` so an explicit temperature of 0.0 is honored rather than
+        # being silently replaced by the default (0.0 is falsy).
+        resolved_temperature = (
+            temperature if temperature is not None else self.config.default_temperature
+        )
+
         return ChatOpenAI(
             model=model,
             openai_api_key=api_key,
             openai_api_base=base_url,
-            temperature=temperature or self.config.default_temperature,
+            temperature=resolved_temperature,
             default_headers=default_headers
         )
 

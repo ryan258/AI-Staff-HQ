@@ -189,7 +189,8 @@ Now analyze the user brief above and return the JSON task array.
         """
         Extract and parse JSON task array from Chief of Staff response.
 
-        Uses the pattern from cos_orchestration.py (lines 42-52).
+        Uses the shared robust extractor (handles code fences, surrounding
+        prose, and nested brackets) instead of a naive first-[/last-] slice.
 
         Args:
             response: Raw response from Chief of Staff
@@ -197,17 +198,10 @@ Now analyze the user brief above and return the JSON task array.
         Returns:
             List of Task objects (empty if parsing fails)
         """
-        # Extract JSON array from response
+        from tools.engine.utils import extract_json_array
+
         try:
-            # Find first [ and last ]
-            start = response.find('[')
-            end = response.rfind(']') + 1
-
-            if start == -1 or end == 0:
-                return []
-
-            json_str = response[start:end]
-            task_dicts = json.loads(json_str)
+            task_dicts = extract_json_array(response)
 
             if not isinstance(task_dicts, list):
                 return []

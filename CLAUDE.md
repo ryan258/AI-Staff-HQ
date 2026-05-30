@@ -150,7 +150,7 @@ When creating or modifying UI:
 1. **Apply Candlelite theme FIRST** - this is non-negotiable
 2. Use CSS variables for colors
 3. Ensure accessibility (contrast ratios)
-4. Test in Streamlit: `streamlit run ui/app.py`
+4. Test in Streamlit: `uv run streamlit run ui/app.py`
 
 ### 4. Specialist Management
 
@@ -159,11 +159,11 @@ Creating new specialists:
 # 1. Create YAML in appropriate department
 cp templates/persona/new-staff-member-template.md staff/[dept]/[slug].yaml
 
-# 2. Validate
-python tools/validate_specialist.py staff/[dept]/[slug].yaml
+# 2. Validate (checks every specialist in staff/)
+uv run tools/validate_specialist.py
 
 # 3. Test loading
-python tools/activate.py [slug]
+uv run tools/activate.py [slug]
 ```
 
 ### 5. Workflow Development

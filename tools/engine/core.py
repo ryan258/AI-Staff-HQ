@@ -15,7 +15,15 @@ from .llm import ModelRouter
 from .state import ConversationState
 from .capabilities import read_file, write_file, list_directory, run_command
 from .config import get_config
-from .utils import build_semantic_run_filename, normalize_slug
+from .utils import build_semantic_run_filename, normalize_slug, redact_secrets
+
+
+class SpecialistQueryError(RuntimeError):
+    """Raised when a specialist fails to produce a model response.
+
+    Orchestration layers rely on this propagating so they can fall back to an
+    alternative specialist instead of treating a failed call as a valid answer.
+    """
 
 
 class SpecialistAgent:
@@ -122,10 +130,12 @@ class SpecialistAgent:
                 self.state.add_message(AIMessage(content=response_text))
                 
         except Exception as e:
-            # Basic error handling for now - could be enhanced with specific API error checking
-            error_msg = f"Error: Failed to get response from AI model. Details: {str(e)}"
-            return f"⚠️ {error_msg}"
-        
+            # Surface the failure so orchestration can fall back to another
+            # specialist instead of recording an error string as a valid answer.
+            raise SpecialistQueryError(
+                f"{self._get_specialist_slug()} failed to get a model response: {e}"
+            ) from e
+
         end_time = time.time()
         latency = end_time - start_time
 
@@ -187,9 +197,9 @@ class SpecialistAgent:
             f.write(f"## Interaction @ {timestamp}\n")
             f.write(f"**Latency:** {latency:.2f}s\n\n")
             f.write("### User\n")
-            f.write(f"{user_input}\n\n")
+            f.write(f"{redact_secrets(user_input)}\n\n")
             f.write("### Assistant\n")
-            f.write(f"{response}\n\n")
+            f.write(f"{redact_secrets(response)}\n\n")
             f.write("---\n\n")
 
     def get_info(self) -> dict:

@@ -15,7 +15,7 @@ Running multiple AI agents in sequence (e.g., Writer -> Editor -> SEO) often res
 ## Key Features
 
 - **Type-Safe State:** Uses `TypedDict` (`GraphState`) to ensure data consistency between agents. No more guessing what keys exist in the `context` dictionary.
-- **Observability First:** Every step, prompt, and output is automatically logged to `~/.ai-staff-hq/logs/` with detailed timestamps and run metadata.
+- **Observability First:** Every step, prompt, and output is automatically logged to `logs/graphs/` with detailed timestamps and run metadata.
 - **Human-in-the-Loop:** Built-in `make_approval_node` allows you to pause execution for human review (CLI or API) before proceeding to critical steps.
 - **Dynamic Caching:** Memoizes agent initialization (`get_agent`) to reduce overhead during complex multi-step runs.
 - **Framework Agnostic:** While optimized for `ai-staff-hq` specialists, it can orchestrate any callable that accepts and returns state.
@@ -30,13 +30,14 @@ Running multiple AI agents in sequence (e.g., Writer -> Editor -> SEO) often res
 
 ```python
 from orchestrator.graph_runner import GraphRunner, build_state_graph
+from workflows.constants import SpecialistSlugs
 
 runner = GraphRunner(staff_dir=Path("./staff"))
 graph = build_state_graph()
 
 # Define nodes
 analysis = runner.make_agent_node(
-    specialist_slug="market-analyst",
+    specialist_slug=SpecialistSlugs.MARKET_ANALYST,
     state_key="analysis",
     prompt_builder=lambda s: f"Analyze: {s['topic']}"
 )

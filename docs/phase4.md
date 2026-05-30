@@ -30,7 +30,7 @@ uv run workflows/planning_swarm_eval.py
 ```
 - Runs deterministic fixture-based checks for planning quality.
 - Use this before changing the active roster or matching heuristics.
-- See [planning_swarm_evals.md](/Users/ryanjohnson/Projects/AI-Staff-HQ/docs/planning_swarm_evals.md) for tuning guidance.
+- See [planning_swarm_evals.md](./planning_swarm_evals.md) for tuning guidance.
 
 ## Run the graph workflows via CLI
 ```bash

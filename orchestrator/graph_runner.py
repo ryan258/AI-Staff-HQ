@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import sys
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
@@ -11,7 +12,7 @@ from typing import Any, Callable, Dict, List, Optional, TypedDict
 from langgraph.graph import StateGraph, END
 
 from tools.engine.core import load_specialist
-from tools.engine.utils import build_semantic_run_filename
+from tools.engine.utils import build_semantic_run_filename, redact_secrets
 from workflows.constants import CACHE_KEY_SEPARATOR, DEFAULT_GRAPH_LOG_DIR
 
 
@@ -122,6 +123,16 @@ class GraphRunner:
         if self.auto_approve:
             return True
 
+        # Blocking input() only works in an interactive terminal. In a UI/server
+        # context (e.g. Streamlit) it would hang the whole app, so fail loudly
+        # and tell the caller to wire up an approval_handler or auto_approve.
+        if not sys.stdin or not sys.stdin.isatty():
+            raise RuntimeError(
+                f"Approval required at gate '{gate_name}' but no interactive terminal "
+                "is available. Pass auto_approve=True or supply an approval_handler "
+                "for non-interactive (UI/server) execution."
+            )
+
         response = input(f"[Approve] {gate_name}? (y/N): ").strip().lower()
         return response in {"y", "yes"}
 
@@ -219,7 +230,7 @@ class GraphRunner:
             "state": {k: v for k, v in state.items() if k not in {"steps"}},
         }
         with open(log_path, "w", encoding="utf-8") as f:
-            json.dump(log, f, indent=2)
+            json.dump(redact_secrets(log), f, indent=2)
         return log_path
 
 

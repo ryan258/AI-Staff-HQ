@@ -18,14 +18,15 @@ We build our helpers inside files called `YAML`. We use YAML because humans can 
 
 AI-Staff-HQ expects you to build your own helpers. This is the best way to do things! If I gave you my exact set of helpers, you would get all of my weird rules and mistakes. Instead, this toolkit shows you *how* helpers work together and *how* they share notes. You fill the team with the helpers you actually need for your job. The final result feels perfect because you built it for yourself, not for someone else.
 
-## The Essential Five, Core Team, and Extra Library
+## The Active Roster and the Extra Library
 
-In Version 2.0.0, we started with just five helpers. I learned that **five helpers is helpful, but thirty-nine is too messy**. Now, the system has a **core team of 41 helpers**, and an **extra library making 68 in total**. But the same rules apply:
+I started with just five helpers. Then I grew the team too far, and a big roster got messy fast. Too many helpers made it hard to pick the right one, so I pulled the team back to a small, sharp default. Now the system works like this:
 
-- **The Essential Five:** (Chief of Staff, Market Analyst, Art Director, Copywriter, Automation Specialist) These do almost all the daily work without confusing the AI's brain.
-- **The Core Team:** This is the main group of 41 helpers. You can use them right away, but grow your team slowly.
-- **The Extra Library:** These are for very weird or special jobs. Only use them when you really need them.
-- **Make Your Own:** This is still the best way! Copy the blank form, make it fit your job, and put it in the `staff/` folder only when it proves it deserves to be on your team.
+- **The Active Roster (12):** This is the team that runs by default. It's a small, high-signal group that covers most everyday jobs. It also powers the flagship Planning Swarm. The list lives in `config/specialist_roster.yaml`.
+- **The Extra Library (56):** These are experimental helpers, kept for weird or special jobs. They still work, but you turn them on yourself. That keeps the default team focused.
+- **Make Your Own:** This is still the best way! Copy the blank form, make it fit your job, and add it to the `staff/` folder only when it proves it deserves a spot on your team.
+
+The whole library is 68 helpers, but you should rarely need more than the active 12 plus a few of your own. A small default forces good choices, which is the whole point.
 
 ## How Much Detail Do You Need?
 

@@ -18,7 +18,28 @@
 
 > **Cheat Code:** If your job needs more than one helper, always start by talking to the Chief of Staff.
 
-## 🏢 Your Whole Team: 68 Helpers (41 main + 27 extra)
+## ⭐ The Active Roster (Start Here)
+
+These 12 helpers run **by default**. They cover most everyday jobs and are the team the Planning Swarm uses. The list lives in `config/specialist_roster.yaml`.
+
+| Helper | Group |
+|--------|-------|
+| Chief of Staff | Planners |
+| Market Analyst | Planners |
+| Creative Strategist | Planners |
+| Brand Builder | Planners |
+| Data Analyst | Planners |
+| Academic Researcher | Planners |
+| Scenario Planner | Planners |
+| Copywriter | Makers |
+| Software Architect | Techies |
+| Automation Specialist | Techies |
+| Productivity Architect | Techies |
+| Quality Control Specialist | Techies |
+
+The other 56 helpers are **experimental**. They still work, but you turn them on yourself. See them with `uv run tools/activate.py --list --tier experimental`.
+
+## 🏢 Your Whole Team: 68 Helpers (12 active + 56 experimental)
 
 ### 🎯 The Boss
 **Chief of Staff** - Helps you run big projects and tells the other helpers what to do.
@@ -170,8 +191,17 @@ You → Chief of Staff → Fill in Blank Form → Helpers → Check Errors → D
 
 ## How to Talk to Them So They Listen
 
-### The Magic Phrase
-Always type exactly this:
+There are two ways to reach a helper.
+
+### Way 1: Run It On Your Computer (Fastest)
+If you have the project installed, just name the helper's slug:
+```bash
+uv run tools/activate.py copywriter -q "Write a tagline for a wellness brand"
+# or, if you installed the project: ai-staff copywriter -q "..."
+```
+
+### Way 2: The Magic Phrase (Any Chat Website)
+If you're pasting a helper's rules into a chat tool, always start with this:
 ```
 "Acting as the [Helper's Name] from my AI-Staff-HQ, [tell them what to do]"
 ```

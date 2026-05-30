@@ -31,15 +31,15 @@ runner = SwarmRunner(
 )
 ```
 
-### Via CLI Wrapper
+### Via the Flagship CLI
 
 ```bash
 # Override model for all specialists
-python bin/dhp-swarm-content.py "Write a tagline" \
+uv run workflows/planning_swarm.py "Write a tagline" \
     --model "anthropic/claude-3.5-sonnet"
 
 # With temperature
-python bin/dhp-swarm-content.py "Write a tagline" \
+uv run workflows/planning_swarm.py "Write a tagline" \
     --model "anthropic/claude-3.5-sonnet" \
     --temperature 0.9
 ```

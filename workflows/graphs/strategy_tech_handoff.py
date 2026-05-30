@@ -17,10 +17,11 @@ from rich.markdown import Markdown
 from langgraph.graph import END
 
 from orchestrator.graph_runner import GraphRunner, build_state_graph, GraphState
+from ui.theme import RICH_THEME
 from workflows.constants import SpecialistSlugs
 
 
-console = Console()
+console = Console(theme=RICH_THEME)
 PROJECT_ROOT = Path(__file__).parents[2]
 STAFF_DIR = PROJECT_ROOT / "staff"
 
@@ -146,19 +147,19 @@ def main():
             log_dir=args.log_dir,
         )
     except KeyboardInterrupt:
-        console.print("\n[yellow]Cancelled by user[/yellow]")
+        console.print("\n[warning]Cancelled by user[/warning]")
         return
     except Exception as e:
-        console.print(f"\n[red]Workflow failed:[/red] {e}")
+        console.print(f"\n[error]Workflow failed:[/error] {e}")
         return
 
-    console.print("\n[green]Workflow complete.[/green]\n")
+    console.print("\n[success]Workflow complete.[/success]\n")
     if "analysis" in result:
-        console.print(Panel(Markdown(result["analysis"]), title="Market Analysis", border_style="cyan"))
+        console.print(Panel(Markdown(result["analysis"]), title="Market Analysis", border_style="accent"))
     if "technical_plan" in result:
-        console.print(Panel(Markdown(result["technical_plan"]), title="Technical Plan", border_style="magenta"))
+        console.print(Panel(Markdown(result["technical_plan"]), title="Technical Plan", border_style="accent"))
     if "executive_brief" in result:
-        console.print(Panel(Markdown(result["executive_brief"]), title="Executive Brief", border_style="green"))
+        console.print(Panel(Markdown(result["executive_brief"]), title="Executive Brief", border_style="success"))
 
     console.print(f"[dim]Run ID:[/dim] {result.get('run_id')}  |  Logs: {result.get('log_path', 'N/A')}\n")
 

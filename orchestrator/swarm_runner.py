@@ -17,6 +17,8 @@ from orchestrator.capability_index import CapabilityIndex
 from orchestrator.execution_planner import ExecutionPlanner, ExecutionWave
 from orchestrator.graph_runner import GraphRunner, GraphState, build_state_graph
 from orchestrator.task_analyzer import Task, TaskAnalyzer, TaskBreakdown
+from tools.engine.tokens import truncate_to_tokens
+from tools.engine.utils import redact_secrets
 from workflows.constants import GraphNodes, SpecialistSlugs
 from workflows.schemas.swarm import SwarmConfig, SwarmMetrics, SwarmState
 
@@ -111,6 +113,7 @@ class SwarmRunner(GraphRunner):
             'context_strategy': self.config.context_strategy,
             'verbose': self.verbose,
             'stream_output': self.stream_output,
+            'fallback_count': 0,
         }
 
         return self.run_graph(graph, initial_state)
@@ -518,10 +521,10 @@ class SwarmRunner(GraphRunner):
             for dep_id in task.depends_on:
                 dep_task = task_map.get(dep_id)
                 if dep_task and dep_task.result:
-                    # Truncate result if needed
-                    result = dep_task.result
-                    if len(result) > self.config.max_context_tokens:
-                        result = result[:self.config.max_context_tokens] + "... [truncated]"
+                    # Truncate by actual token count (not characters).
+                    result = truncate_to_tokens(
+                        dep_task.result, self.config.max_context_tokens
+                    )
 
                     dependency_context += f"\n### Output from {dep_id} ({dep_task.assigned_specialist}):\n"
                     dependency_context += f"{result}\n"
@@ -537,6 +540,31 @@ Please complete this task. Be thorough and specific in your response.
 """
         return prompt
 
+    def _record_fallback(self, state: SwarmState) -> None:
+        """Thread-safely increment the run's fallback counter."""
+        with self.state_lock:
+            state['fallback_count'] = state.get('fallback_count', 0) + 1
+
+    def _query_with_retries(self, slug: str, prompt: str, session_id: Optional[str]) -> str:
+        """Query a specialist, retrying transient failures up to config.max_retries."""
+        attempts = max(1, self.config.max_retries + 1)
+        last_error: Optional[Exception] = None
+        for attempt in range(attempts):
+            try:
+                agent = self.get_agent(slug, session_id=session_id)
+                return agent.query(prompt)
+            except Exception as e:  # noqa: BLE001 - retried below
+                last_error = e
+                if attempt < attempts - 1:
+                    backoff = 2 ** attempt
+                    print(
+                        f"WARN: {slug} attempt {attempt + 1}/{attempts} failed ({e}); "
+                        f"retrying in {backoff}s",
+                        file=sys.stderr,
+                    )
+                    time.sleep(backoff)
+        raise last_error  # type: ignore[misc]
+
     def _execute_task_with_fallback(
         self,
         task: Task,
@@ -544,47 +572,60 @@ Please complete this task. Be thorough and specific in your response.
         state: SwarmState,
     ) -> str:
         """
-        Execute task with multi-level fallback.
+        Execute task with retries and (optionally) multi-level fallback.
 
-        Fallback chain:
-        1. Primary specialist
+        Fallback chain (when config.enable_fallback is True):
+        1. Primary specialist (with retries)
         2. Alternative specialist (if available)
         3. Chief of Staff
         4. Error message
         """
         session_id = state.get('run_id')
 
-        # Try primary specialist
+        # Try primary specialist (with retries)
         try:
-            agent = self.get_agent(task.assigned_specialist, session_id=f"{session_id}_{task.id}")
-            return agent.query(prompt)
-
+            return self._query_with_retries(
+                task.assigned_specialist, prompt, f"{session_id}_{task.id}"
+            )
         except Exception as e:
             error_msg = f"Failed with {task.assigned_specialist}: {e}"
             print(f"ERROR: Task {task.id} - {error_msg}", file=sys.stderr)
 
-            # Try alternative specialist
-            if task.candidate_specialists and len(task.candidate_specialists) > 1:
-                fallback_slug = task.candidate_specialists[1][0]
-                try:
-                    agent = self.get_agent(fallback_slug, session_id=f"{session_id}_{task.id}_alt")
-                    result = agent.query(prompt)
-                    return f"[Fallback: {fallback_slug}]\n{result}"
-                except Exception as alt_error:
-                    print(f"ERROR: Alternative specialist {fallback_slug} also failed: {alt_error}", file=sys.stderr)
+        if not self.config.enable_fallback:
+            # Fallback explicitly disabled: surface the failure immediately.
+            with self.state_lock:
+                state.setdefault('failed_task_ids', []).append(task.id)
+            return f"[ERROR] Task failed (fallback disabled): {error_msg}"
 
-            # Try Chief of Staff fallback
-            if task.assigned_specialist != SpecialistSlugs.CHIEF_OF_STAFF:
-                try:
-                    cos = self.get_agent(SpecialistSlugs.CHIEF_OF_STAFF, session_id=f"{session_id}_{task.id}_cos")
-                    result = cos.query(f"Task failed. Please handle:\n{prompt}")
-                    return f"[CoS Fallback]\n{result}"
-                except Exception as cos_error:
-                    print(f"ERROR: Chief of Staff fallback failed: {cos_error}", file=sys.stderr)
+        # Try alternative specialist
+        if task.candidate_specialists and len(task.candidate_specialists) > 1:
+            fallback_slug = task.candidate_specialists[1][0]
+            try:
+                result = self._query_with_retries(
+                    fallback_slug, prompt, f"{session_id}_{task.id}_alt"
+                )
+                self._record_fallback(state)
+                return f"[Fallback: {fallback_slug}]\n{result}"
+            except Exception as alt_error:
+                print(f"ERROR: Alternative specialist {fallback_slug} also failed: {alt_error}", file=sys.stderr)
 
-            # Final fallback: return error
-            state['failed_task_ids'].append(task.id)
-            return f"[ERROR] Task failed: {error_msg}"
+        # Try Chief of Staff fallback
+        if task.assigned_specialist != SpecialistSlugs.CHIEF_OF_STAFF:
+            try:
+                result = self._query_with_retries(
+                    SpecialistSlugs.CHIEF_OF_STAFF,
+                    f"Task failed. Please handle:\n{prompt}",
+                    f"{session_id}_{task.id}_cos",
+                )
+                self._record_fallback(state)
+                return f"[CoS Fallback]\n{result}"
+            except Exception as cos_error:
+                print(f"ERROR: Chief of Staff fallback failed: {cos_error}", file=sys.stderr)
+
+        # Final fallback: return error
+        with self.state_lock:
+            state.setdefault('failed_task_ids', []).append(task.id)
+        return f"[ERROR] Task failed: {error_msg}"
 
     def _synthesis_node(self, state: SwarmState) -> SwarmState:
         """Node 5: Chief of Staff synthesizes final output from all task results."""
@@ -703,7 +744,7 @@ Return the final synthesized output.
             speedup_factor=speedup_factor,
             parallelization_efficiency=speedup_factor / parallel_tasks if parallel_tasks > 0 else 0.0,
             failed_tasks=len(state.get('failed_task_ids', [])),
-            fallback_count=0,  # TODO: track fallbacks
+            fallback_count=state.get('fallback_count', 0),
         )
 
     def _run_squad_mode(self, user_brief: str, squad_name: str) -> SwarmState:
@@ -776,5 +817,5 @@ Return the final synthesized output.
         }
         
         with open(log_path, "w", encoding="utf-8") as f:
-            json.dump(log, f, indent=2, default=str)
+            json.dump(redact_secrets(log), f, indent=2, default=str)
         return log_path

@@ -4,7 +4,42 @@
 
 ## 🔄 Workflow Examples
 
-This directory contains examples of how to orchestrate your AI specialists to achieve complex goals.
+This directory contains examples of how to get your AI specialists to work together on bigger goals.
+
+### ⭐ **Flagship: The Planning Swarm**
+
+This is the main way to use the system. Give it a rough idea and it builds a plan, picks the right helpers, and returns one strong result.
+
+```bash
+uv run workflows/planning_swarm.py "Turn my newsletter into a small paid product"
+```
+
+Helpful flags: `--model`, `--temperature`, `--experimental`, `--max-parallel`, `--verbose`, `--stream`, `--no-auto-approve`.
+
+Check plan quality at any time with the evals:
+
+```bash
+uv run workflows/planning_swarm_eval.py
+```
+
+### 🧩 **Graph Workflows (Step-by-Step)**
+
+These run a fixed set of helpers in order. Good when you know exactly which steps you want.
+
+These two take your topic right on the command line:
+
+- `uv run workflows/graphs/strategy_tech_handoff.py "New product idea" --auto-approve` — Market analysis → technical plan → executive brief.
+- `uv run workflows/graphs/strategic_planning.py "Topic"` — Market analysis → creative strategy → executive brief.
+
+These two are built as importable functions with a built-in demo (running the file directly just runs the demo). Call them from your own script:
+
+```python
+from workflows.graphs.cos_orchestration import run_cos_orchestration
+run_cos_orchestration("Create a 3-agent marketing team plan", auto_approve=True)
+
+from workflows.graphs.code_feature import run_code_feature
+run_code_feature("Add CSV export to the dashboard", auto_approve=True)
+```
 
 ### 🤖 **Python Automations**
 
