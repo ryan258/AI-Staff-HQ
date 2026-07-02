@@ -11,15 +11,24 @@ class PromptBuilder:
         self.specialist = specialist
 
     def build_system_prompt(self) -> str:
-        """Generate comprehensive system prompt from YAML."""
+        """Generate comprehensive system prompt from YAML.
+
+        Section order favors what the model needs to act on the current
+        request (identity, capabilities, workflow, quality bar) before
+        deeper reference material (knowledge, collaboration) and example
+        phrasings (activation patterns, which are catalog metadata rather
+        than response-shaping instructions). Grounding runs last for
+        recency.
+        """
         sections = [
             self._build_identity_section(),
             self._build_capabilities_section(),
-            self._build_activation_section(),
-            self._build_collaboration_section(),
-            self._build_standards_section(),
             self._build_workflow_section(),
+            self._build_standards_section(),
             self._build_knowledge_section(),
+            self._build_collaboration_section(),
+            self._build_activation_section(),
+            self._build_grounding_section(),
         ]
 
         return "\n\n".join(filter(None, sections))
@@ -66,6 +75,8 @@ You are a {identity.role}.
         standards = self.specialist.performance_standards
         return f"""## Quality Standards
 
+Apply these before finalizing your response:
+
 **Quality Indicators**:
 {self._format_list(standards.quality_indicators)}
 
@@ -95,7 +106,7 @@ You are a {identity.role}.
         return "## Deep Expertise\n\n" + "\n\n".join(sections)
 
     def _build_activation_section(self) -> str:
-        """Activation patterns and triggers."""
+        """Example activation phrasings (reference only, not a required format)."""
         patterns = []
         for pat in self.specialist.activation_patterns:
             # Handle schema fluidity (type vs name)
@@ -117,21 +128,53 @@ You are a {identity.role}.
         if not patterns:
             return ""
 
-        return "## Activation Patterns\n\n" + "\n\n".join(patterns)
+        return (
+            "## Example Requests (reference only)\n\n"
+            "These illustrate the kind of requests you handle. Respond to the "
+            "actual request below, not to these examples.\n\n" + "\n\n".join(patterns)
+        )
+
+    def _build_grounding_section(self) -> str:
+        """Anti-hallucination instruction; placed last in the prompt for recency."""
+        return (
+            "## Grounding\n\n"
+            "Ground your response in the request below and the expertise above. "
+            "If specific details are missing that you would normally need, state "
+            "your assumption plainly rather than inventing facts about the user's "
+            "real business, product, or situation. This does not limit imaginative "
+            "or speculative work when that is what the request calls for."
+        )
 
     def _build_workflow_section(self) -> str:
-        """Inject workflows dynamically."""
-        # Check for workflow fields (schema 'extra'='allow' lets them through)
+        """Inject workflows dynamically.
+
+        Workflow/process fields (e.g. `pricing_strategy_workflow`) are
+        declared nested under `deep_dive` in every current specialist YAML,
+        not at the top level, so both locations are scanned. Both models
+        allow extra fields (schema 'extra'='allow'), which is how these
+        dynamically-named fields survive validation.
+        """
         workflows = []
-        for field, value in self.specialist.model_dump().items():
-            if (field.endswith('_workflow') or field.endswith('_process')) and isinstance(value, list):
+        seen = set()
+
+        def collect(source: dict) -> None:
+            for field, value in source.items():
+                if not ((field.endswith('_workflow') or field.endswith('_process')) and isinstance(value, list)):
+                    continue
+                if field in seen:
+                    continue
+                seen.add(field)
                 steps = []
                 for phase in value:
                     phase_title = phase.get('phase', 'Phase')
                     step_list = phase.get('steps', [])
                     steps.append(f"### {phase_title}\n{self._format_list(step_list)}")
-                
+
                 workflows.append(f"**{field.replace('_', ' ').title()}**\n\n" + "\n\n".join(steps))
+
+        collect(self.specialist.model_dump())
+        if self.specialist.deep_dive:
+            collect(self.specialist.deep_dive.model_dump())
 
         if not workflows:
             return ""
