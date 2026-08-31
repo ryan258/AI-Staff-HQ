@@ -73,3 +73,76 @@ def test_graph_runner_executes_and_logs(tmp_path, mock_env):
     assert log_data["run_id"] == result["run_id"]
     assert log_data["log_path"] == str(log_path)
     assert len(log_data["steps"]) == 2
+
+
+def test_graph_runner_persists_log_on_failure(tmp_path, mock_env):
+    """When a node raises an exception, runner must still write a durable failure log."""
+    import pytest
+
+    def failing_node(state):
+        raise RuntimeError("Catastrophic node failure")
+
+    runner = GraphRunner(
+        staff_dir=tmp_path,
+        log_dir=tmp_path / "logs",
+    )
+
+    graph = build_state_graph()
+    graph.add_node("fail", failing_node)
+    graph.set_entry_point("fail")
+    compiled = graph.compile()
+
+    with pytest.raises(RuntimeError, match="Catastrophic node failure"):
+        runner.run_graph(
+            compiled,
+            {
+                "topic": "failure test topic",
+                "workflow_name": "fail-graph",
+            },
+        )
+
+    # Check that failure log was written
+    logs = list((tmp_path / "logs").glob("*.json"))
+    assert len(logs) == 1
+    log_data = json.loads(logs[0].read_text())
+    assert log_data["status"] == "FAILED"
+    assert "Catastrophic node failure" in log_data["state"]["error"]
+
+
+def test_graph_runner_redacts_sensitive_log_values(tmp_path, mock_env):
+    """Structured workflow logs must not retain credential-shaped strings."""
+    runner = GraphRunner(staff_dir=tmp_path, log_dir=tmp_path / "logs")
+    state = {
+        "run_id": "20260831_120000_deadbeef",
+        "workflow_name": "privacy-test",
+        "topic": "password: graph-secret-value",
+        "steps": [{"prompt": "Bearer graph-token-value", "output": "safe"}],
+        "final_output": "-----BEGIN PRIVATE KEY-----\nkey-body\n-----END PRIVATE KEY-----",
+        "status": "COMPLETED",
+    }
+
+    log_path = runner._persist_log(state)
+    log_data = log_path.read_text(encoding="utf-8")
+
+    assert "graph-secret-value" not in log_data
+    assert "graph-token-value" not in log_data
+    assert "key-body" not in log_data
+    assert "[REDACTED_PRIVATE_KEY]" in log_data
+
+
+def test_graph_runner_preserves_explicit_terminal_status(tmp_path, mock_env):
+    """A node's BLOCKED/FAILED status must not be rewritten as COMPLETED."""
+    runner = GraphRunner(staff_dir=tmp_path, log_dir=tmp_path / "logs")
+    graph = build_state_graph()
+
+    def blocked_node(state):
+        return {**state, "status": "BLOCKED", "final_output": "[BLOCKED]"}
+
+    graph.add_node("blocked", blocked_node)
+    graph.set_entry_point("blocked")
+    graph.add_edge("blocked", END)
+
+    result = runner.run_graph(graph.compile(), {"topic": "blocked", "workflow_name": "blocked-graph"})
+    assert result["status"] == "BLOCKED"
+    log_data = json.loads(Path(result["log_path"]).read_text())
+    assert log_data["status"] == "BLOCKED"

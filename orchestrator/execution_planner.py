@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from typing import Dict, List, Set
 
 from orchestrator.task_analyzer import Task
+from tools.engine.state import validate_identifier
 
 
 @dataclass
@@ -71,6 +72,37 @@ class ExecutionPlanner:
         """
         if not tasks:
             return ExecutionPlan(waves=[], total_tasks=0, parallel_tasks=0, sequential_tasks=0)
+
+        # Validate max_parallel
+        if isinstance(max_parallel, bool) or not isinstance(max_parallel, int) or max_parallel < 1:
+            raise ValueError(f"max_parallel must be an integer >= 1, got {max_parallel}")
+
+        # Validate unique task IDs with the same grammar used by session paths.
+        seen_ids = set()
+        for task in tasks:
+            try:
+                validate_identifier(task.id, "task_id")
+            except ValueError as exc:
+                raise ValueError(str(exc)) from exc
+            if task.id in seen_ids:
+                raise ValueError(f"Duplicate task ID found: '{task.id}'")
+            seen_ids.add(task.id)
+
+        # Validate dependencies exist and no self-dependency
+        for task in tasks:
+            if not isinstance(task.depends_on, list):
+                raise ValueError(f"Task '{task.id}' dependencies must be a list of string IDs")
+            if any(not isinstance(dep_id, str) for dep_id in task.depends_on):
+                raise ValueError(f"Task '{task.id}' dependencies must be a list of string IDs")
+            if task.id in task.depends_on:
+                raise ValueError(f"Task '{task.id}' cannot depend on itself")
+            for dep_id in task.depends_on:
+                try:
+                    validate_identifier(dep_id, "dependency_id")
+                except ValueError as exc:
+                    raise ValueError(str(exc)) from exc
+                if dep_id not in seen_ids:
+                    raise ValueError(f"Task '{task.id}' depends on non-existent task '{dep_id}'")
 
         # Build dependency graph
         graph, in_degree = self._build_dependency_graph(tasks)

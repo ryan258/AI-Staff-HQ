@@ -150,10 +150,9 @@ cases:
       I would probably just handle this in one broad step instead of returning JSON.
     expect:
       parse_success: false
-      task_count: 1
+      task_count: 0
       warning_count: 0
-      wave_count: 1
+      wave_count: 0
       parallel_waves: 0
-      chief_of_staff_tasks: 1
-      top_specialists:
-        task_1: ["chief-of-staff"]
+      chief_of_staff_tasks: 0
+      top_specialists: {}

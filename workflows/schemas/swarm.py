@@ -27,6 +27,7 @@ class SwarmState(TypedDict, total=False):
     task_map: Dict[str, Any]  # task_id → Task object with results
     completed_task_ids: List[str]
     failed_task_ids: List[str]
+    blocked_task_ids: List[str]
 
     # Wave tracking
     current_wave_id: int
@@ -46,6 +47,18 @@ class SwarmState(TypedDict, total=False):
     context_strategy: str  # 'dependencies_only', 'full', 'summary'
     verbose: bool  # Show detailed progress output
     stream_output: bool  # Stream task outputs as JSON events
+    status: str
+    error: str
+    approval_required: bool
+    approved: bool
+
+    # Budget ledger mirrors the values used by the runner for durable logs.
+    max_budget_tokens: Optional[int]
+    total_tokens_used: int
+    total_prompt_tokens: int
+    total_completion_tokens: int
+    budget_ledger: Dict[str, Any]
+    budget_exceeded: bool
 
 
 @dataclass
@@ -138,6 +151,7 @@ class SwarmConfig:
     # Cost control
     max_budget_tokens: Optional[int] = None  # Halt if exceeded
     budget_warning_threshold: float = 0.8  # Warn at 80% budget
+    max_completion_tokens_per_call: int = 512
 
     # Error handling
     max_retries: int = 2
@@ -156,6 +170,34 @@ class SwarmConfig:
             List of validation warning messages (empty if valid)
         """
         warnings = []
+
+        if self.max_budget_tokens is not None and (
+            isinstance(self.max_budget_tokens, bool)
+            or not isinstance(self.max_budget_tokens, int)
+            or self.max_budget_tokens <= 0
+        ):
+            raise ValueError("max_budget_tokens must be a positive integer or None")
+
+        if (
+            isinstance(self.budget_warning_threshold, bool)
+            or not isinstance(self.budget_warning_threshold, (int, float))
+            or not 0.0 < self.budget_warning_threshold <= 1.0
+        ):
+            raise ValueError("budget_warning_threshold must be greater than 0 and at most 1")
+
+        if (
+            isinstance(self.max_retries, bool)
+            or not isinstance(self.max_retries, int)
+            or self.max_retries < 0
+        ):
+            raise ValueError("max_retries must be a non-negative integer")
+
+        if (
+            isinstance(self.max_completion_tokens_per_call, bool)
+            or not isinstance(self.max_completion_tokens_per_call, int)
+            or self.max_completion_tokens_per_call < 1
+        ):
+            raise ValueError("max_completion_tokens_per_call must be a positive integer")
 
         if self.max_parallel < 1:
             warnings.append("max_parallel must be >= 1")

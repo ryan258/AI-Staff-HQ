@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import json
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
@@ -10,7 +9,7 @@ from typing import Any, Callable, Dict, List, Optional, TypedDict
 
 from langgraph.graph import StateGraph, END
 
-from tools.engine.core import load_specialist
+from tools.engine.core import load_specialist, redact_sensitive_text, write_private_json_atomic
 from tools.engine.utils import build_semantic_run_filename
 from workflows.constants import CACHE_KEY_SEPARATOR, DEFAULT_GRAPH_LOG_DIR
 
@@ -34,6 +33,10 @@ class GraphState(TypedDict, total=False):
     qa_report: str
     strategy_plan: str
     final_output: str
+    status: str
+    error: str
+    approval_required: bool
+    approved: bool
     
     # keys for dynamic looping
     queue: List[Dict[str, str]]
@@ -188,9 +191,30 @@ class GraphRunner:
             short_uuid = uuid.uuid4().hex[:8]
             state["run_id"] = f"{timestamp}_{short_uuid}"
 
-        result: GraphState = graph.invoke(state)
-        self._persist_log(result)
-        return result
+        result: GraphState = state
+        try:
+            result = graph.invoke(state)
+            if isinstance(result, dict):
+                existing_status = result.get("status")
+                if existing_status in {"BLOCKED", "FAILED", "COMPLETED"}:
+                    result["status"] = existing_status
+                elif result.get("approval_required") and not result.get("approved", False):
+                    result["status"] = "BLOCKED"
+                elif result.get("error") or str(result.get("final_output", "")).startswith("[ERROR]"):
+                    result["status"] = "FAILED"
+                else:
+                    result["status"] = "COMPLETED"
+            return result
+        except Exception as e:
+            state["error"] = str(e)
+            state["status"] = "FAILED"
+            result = state
+            raise
+        finally:
+            try:
+                self._persist_log(result)
+            except Exception:
+                pass
 
     def _resolve_log_path(self, state: GraphState) -> Path:
         """Build a semantic log filename from workflow metadata and the run subject."""
@@ -199,27 +223,26 @@ class GraphRunner:
         subject = state.get("log_title") or state.get("topic") or state.get("user_brief") or run_id
         filename = build_semantic_run_filename(
             run_id=run_id,
-            subject=str(subject),
+            subject=redact_sensitive_text(str(subject)),
             workflow_name=str(workflow_name) if workflow_name else None,
             extension=".json",
         )
         return self.log_dir / filename
 
     def _persist_log(self, state: GraphState) -> Path:
-        """Write run metadata and steps to disk."""
-        self.log_dir.mkdir(parents=True, exist_ok=True)
+        """Write run metadata and steps to disk atomically with 0600 permissions."""
         run_id = state.get("run_id", "unknown")
         log_path = self._resolve_log_path(state)
         state["log_path"] = str(log_path)
         log = {
             "run_id": run_id,
+            "status": state.get("status", "UNKNOWN"),
             "log_path": str(log_path),
             "completed_at": datetime.now(timezone.utc).isoformat(),
             "steps": state.get("steps", []),
             "state": {k: v for k, v in state.items() if k not in {"steps"}},
         }
-        with open(log_path, "w", encoding="utf-8") as f:
-            json.dump(log, f, indent=2)
+        write_private_json_atomic(log_path, log)
         return log_path
 
 

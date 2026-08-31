@@ -7,6 +7,8 @@ import re
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, List, Optional
 
+from tools.engine.state import validate_identifier
+
 if TYPE_CHECKING:
     from orchestrator.graph_runner import GraphRunner
 
@@ -35,6 +37,10 @@ class TaskBreakdown:
     parse_success: bool
 
 
+class TaskAnalysisError(RuntimeError):
+    """Raised when planning output cannot be converted into safe tasks."""
+
+
 class TaskAnalyzer:
     """Analyzes user briefs and breaks them down into structured tasks."""
 
@@ -53,6 +59,7 @@ class TaskAnalyzer:
         *,
         session_id: Optional[str] = None,
         available_specialists: Optional[List[str]] = None,
+        state: Optional[dict] = None,
     ) -> TaskBreakdown:
         """
         Analyze user brief and break it down into tasks.
@@ -71,24 +78,25 @@ class TaskAnalyzer:
         # Query Chief of Staff
         from workflows.constants import SpecialistSlugs
         agent = self.runner.get_agent(SpecialistSlugs.CHIEF_OF_STAFF, session_id=session_id)
-        response = agent.query(prompt)
+        if hasattr(type(self.runner), "query_agent_with_budget"):
+            response = self.runner.query_agent_with_budget(agent, prompt, state)
+        else:
+            response = agent.query(prompt)
 
         # Parse the JSON response
         tasks = self._parse_task_json(response)
 
         # Validate and create TaskBreakdown
         if not tasks:
-            # Fallback: treat entire brief as single task
-            tasks = [self._create_fallback_task(user_brief)]
-            parse_success = False
-        else:
-            parse_success = True
+            raise TaskAnalysisError(
+                "Planning response could not be parsed into a valid task breakdown"
+            )
 
         return TaskBreakdown(
             tasks=tasks,
             original_brief=user_brief,
             raw_response=response,
-            parse_success=parse_success,
+            parse_success=True,
         )
 
     def _build_analysis_prompt(
@@ -209,44 +217,70 @@ Now analyze the user brief above and return the JSON task array.
             json_str = response[start:end]
             task_dicts = json.loads(json_str)
 
-            if not isinstance(task_dicts, list):
+            if not isinstance(task_dicts, list) or len(task_dicts) == 0:
                 return []
 
-            # Convert to Task objects
             tasks = []
-            for i, task_dict in enumerate(task_dicts):
+            seen_ids = set()
+            for task_dict in task_dicts:
                 if not isinstance(task_dict, dict):
-                    continue
+                    return []
 
-                # Extract and validate fields
-                task_id = task_dict.get('id', f'task_{i+1}')
+                # Extract and strictly validate ID
+                raw_id = task_dict.get('id')
+                if not isinstance(raw_id, str) or not raw_id.strip():
+                    return []
+                task_id = raw_id.strip()
+                validate_identifier(task_id, "task_id")
+
+                if task_id in seen_ids:
+                    # Reject duplicate task IDs
+                    return []
+                seen_ids.add(task_id)
+
                 description = task_dict.get('description', '')
-                required_caps = task_dict.get('required_capabilities', [])
-                depends_on = task_dict.get('depends_on', [])
+                if not isinstance(description, str) or not description.strip():
+                    return []
+
+                required_caps = task_dict.get('required_capabilities')
+                if not isinstance(required_caps, list) or len(required_caps) == 0:
+                    return []
+                clean_caps = []
+                for c in required_caps:
+                    if not isinstance(c, str) or not c.strip():
+                        return []
+                    clean_caps.append(c.lower().strip())
+
+                raw_depends_on = task_dict.get('depends_on', [])
+                if not isinstance(raw_depends_on, list):
+                    return []
+
+                clean_deps = []
+                for d in raw_depends_on:
+                    if not isinstance(d, str) or not d.strip() or d.strip() == task_id:
+                        return []
+                    dependency_id = d.strip()
+                    validate_identifier(dependency_id, "dependency_id")
+                    clean_deps.append(dependency_id)
+
                 priority = task_dict.get('priority', 2)
-
-                # Validate required fields
-                if not description or not isinstance(required_caps, list):
-                    continue
-
-                # Ensure depends_on is a list
-                if not isinstance(depends_on, list):
-                    depends_on = []
-
-                # Normalize capability names to lowercase
-                required_caps = [c.lower().strip() for c in required_caps if isinstance(c, str)]
-
-                # Validate priority
                 if not isinstance(priority, int) or priority < 1 or priority > 3:
                     priority = 2
 
                 tasks.append(Task(
                     id=task_id,
-                    description=description,
-                    required_capabilities=required_caps,
-                    depends_on=depends_on,
+                    description=description.strip(),
+                    required_capabilities=clean_caps,
+                    depends_on=clean_deps,
                     priority=priority,
                 ))
+
+            # Validate that all dependencies reference existing tasks in this breakdown
+            all_ids = {t.id for t in tasks}
+            for t in tasks:
+                for dep in t.depends_on:
+                    if dep not in all_ids:
+                        return []
 
             return tasks
 

@@ -17,7 +17,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from orchestrator.capability_index import CapabilityIndex
 from orchestrator.execution_planner import ExecutionPlanner
-from orchestrator.task_analyzer import Task, TaskAnalyzer
+from orchestrator.task_analyzer import Task, TaskAnalysisError, TaskAnalyzer
 from workflows.constants import SpecialistSlugs
 
 
@@ -102,7 +102,22 @@ def analyze_case_observations(case: PlanningEvalCase, staff_dir: Path = STAFF_DI
     """Analyze a case and return observed planner behavior."""
     analyzer = TaskAnalyzer(StaticRunner(case.planner_response))
     available_specialists = CapabilityIndex(staff_dir).list_all_specialists()
-    breakdown = analyzer.analyze_brief(case.brief, available_specialists=available_specialists)
+    try:
+        breakdown = analyzer.analyze_brief(case.brief, available_specialists=available_specialists)
+    except TaskAnalysisError as exc:
+        # Malformed planner output is a planning failure, not an implicit
+        # generic task.  Keep the eval result explicit and machine-checkable.
+        return {
+            "parse_success": False,
+            "warning_count": 0,
+            "task_count": 0,
+            "wave_count": 0,
+            "parallel_waves": 0,
+            "chief_of_staff_tasks": 0,
+            "assigned_specialists": {},
+            "warnings": [str(exc)],
+            "waves": [],
+        }
     warnings = analyzer.validate_task_breakdown(breakdown)
     tasks = _assign_specialists(breakdown.tasks, staff_dir)
     execution_plan = ExecutionPlanner().create_execution_plan(tasks, max_parallel=case.max_parallel)

@@ -26,13 +26,17 @@ def run_planning_swarm(
     temperature: Optional[float] = None,
     include_experimental: bool = False,
     max_parallel: int = 3,
+    max_budget_tokens: Optional[int] = None,
+    require_approval: bool = False,
     verbose: bool = False,
     stream: bool = False,
 ):
     """Run the quality-first planning swarm."""
     config = SwarmConfig(
         max_parallel=max_parallel,
+        max_budget_tokens=max_budget_tokens,
         enable_parallel=True,
+        require_approval=require_approval,
         roster_tiers=["active", "experimental"] if include_experimental else ["active"],
     )
     runner = SwarmRunner(
@@ -67,9 +71,19 @@ def build_parser() -> argparse.ArgumentParser:
         help="Maximum tasks to execute in parallel",
     )
     parser.add_argument(
+        "--budget",
+        type=int,
+        help="Maximum token budget for the complete planning run",
+    )
+    parser.add_argument(
         "--no-auto-approve",
         action="store_true",
         help="Require interactive approval gates where configured",
+    )
+    parser.add_argument(
+        "--require-approval",
+        action="store_true",
+        help="Require approval before wave execution",
     )
     parser.add_argument("--verbose", action="store_true", help="Show detailed stderr progress")
     parser.add_argument("--stream", action="store_true", help="Stream task events as JSON on stderr")
@@ -86,6 +100,8 @@ def main() -> None:
         temperature=args.temperature,
         include_experimental=args.experimental,
         max_parallel=args.max_parallel,
+        max_budget_tokens=args.budget,
+        require_approval=args.require_approval,
         verbose=args.verbose,
         stream=args.stream,
     )
