@@ -5,27 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-### Added
-- **Flagship Planning Swarm:** Added `workflows/planning_swarm.py` as the quality-first orchestration path for turning vague briefs into structured final outputs.
-- **Roster Tiering:** Added `config/specialist_roster.yaml` and `tools/engine/roster.py` to support active, experimental, and archived specialist tiers.
-- **Planning Evals:** Added deterministic planning evals via `workflows/planning_swarm_eval.py`, `evals/planning_swarm_cases.yaml`, and real-brief capture via `workflows/planning_swarm_capture.py` and `evals/planning_swarm_real_briefs.yaml`.
-- **Semantic Log Migration Tooling:** Added `tools/migrate_legacy_logs.py` to rename legacy timestamp-only logs to semantic names.
-- **Regression Coverage:** Added test coverage for roster tiers, planning evals, capture flow, semantic log migration, swarm config defaults, and theme semantics.
-
-### Changed
-- **Flagship Focus:** Reframed the project around a personal second-brain workbench with the planning swarm as the primary path.
-- **Default Specialist Surface:** Default orchestration now uses the active roster by default, with experimental staff preserved as opt-in and archived staff preserved for reference.
-- **Logging:** Graph logs and markdown interaction logs now use semantic filenames derived from workflow, specialist, and prompt/brief subjects; legacy logs were migrated to the new scheme.
-- **Dynamic CoS Parity:** `workflows/graphs/cos_orchestration.py` can now opt into experimental specialists, matching planning swarm behavior.
-- **Roadmap:** Replaced the old roadmap with a new April 2026 to March 2027 plan centered on flagship reliability, memory/context, deliverables, and personal operating-system workflows.
-- **Documentation:** Updated orchestration, eval, roster, and roadmap docs to reflect the current flagship-first architecture and semantic logging behavior.
+## [Unreleased] - 2026-08-31 Review Hardening
 
 ### Fixed
-- **Model Routing Clarity:** Set `config/model_routing.yaml` budget mode to `enabled: false` when no budget model is configured.
-- **SwarmConfig Defaults:** `SwarmConfig.roster_tiers` now defaults directly to `["active"]` rather than relying on mutation during validation.
-- **Theme Semantics:** Restored visual distinction between warning and accent styling in `ui/theme.py` and added explicit Streamlit warning styling.
-- **Log Subject Extraction:** Improved semantic naming heuristics so migrated and new logs use meaningful subjects from briefs and task prompts instead of generic coordinator boilerplate.
+
+- **Private interaction logs:** Logging is opt-in by default. When enabled, prompts, responses, semantic filenames, and structured state are redacted before persistence and written atomically with `0600` files under `0700` directories.
+- **Session persistence:** Session listing is contained and identifier-validated; corrupt or identity-mismatched sessions raise explicit load errors instead of being treated as new sessions; per-session locking and append merging preserve concurrent messages.
+- **Swarm budget enforcement:** A per-run ledger reserves prompt and completion capacity before every provider attempt, passes the remaining completion cap to the provider, counts failed/retry/fallback attempts, stops synthesis when exhausted, and reports the ledger totals through `SwarmMetrics`.
+- **Approval and terminal status:** Configured approval uses the inherited handler/interactive path, while `auto_approve=false` does not create an implicit gate. `BLOCKED`, `FAILED`, and `COMPLETED` states are preserved in the graph and top-level log, and task streaming events match the actual outcome.
+- **Planning and providers:** Unsafe task/dependency identifiers and malformed planning structures fail before graph construction. Anthropic-only configuration is rejected explicitly because the current factory implements OpenRouter/OpenAI only; prior routing-precedence coverage is restored.
+
+### Changed
+
+- **Morphling trust boundary:** Shell execution is disabled by default. Allowlist mode uses `shell=False`, read-oriented commands, root/symlink checks, and metacharacter rejection. Broad owner mode requires both `MORPHLING_OWNER_MODE=true` and `MORPHLING_UNRESTRICTED_ROOT=true` and is documented as owner-only.
+- **Planning CLI:** `workflows/planning_swarm.py` now exposes `--budget`, `--require-approval`, and `--no-auto-approve` controls that map to the enforced runtime policy.
+- **Planning evals:** Malformed model output is represented as an explicit parse failure with zero tasks/waves instead of silently creating a generic task.
+
+### Added
+
+- Added direct regression coverage for sensitive-log redaction and permissions, malformed/corrupt/concurrent sessions, capability and symlink boundaries, budget reservation and exhaustion, approval handlers, blocked/failed stream events, strict task parsing, provider routing, and planning-eval failure reporting.
+
+### Verification
+
+- `.venv/bin/pytest -q`: `98 passed in 2.81s`.
+- Nested changed Python compilation and `git diff --check` pass. Root integration tests and the consolidated finding-by-finding record are maintained in `../docs/20260831-PLAN.md`.
+
+Live provider calls, authenticated integrations, and broad Morphling owner mode were not exercised in this remediation pass.
 
 ## [2.2.0] - 2026-01-22
 ### Added
