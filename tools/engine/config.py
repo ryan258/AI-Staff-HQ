@@ -25,13 +25,10 @@ class Config(BaseSettings):
     default_temperature: float = 0.7
 
     # Session Storage
-    # Session Storage
     # We use a factory or validator to allow dynamic Home resolution
     session_dir: Path = None  # type: ignore
     save_sessions: bool = True
 
-    # ...
-    
     @field_validator("session_dir", mode="before")
     @classmethod
     def set_session_dir(cls, v: Optional[Path]) -> Path:
@@ -45,7 +42,9 @@ class Config(BaseSettings):
 
     # Logging
     log_dir: Path = Path.home() / ".ai-staff-hq" / "logs"
-    enable_logging: bool = True
+    # Interaction logs can contain health, project, and credential-like data.
+    # Callers must opt in explicitly before anything is persisted.
+    enable_logging: bool = False
 
     model_config = SettingsConfigDict(
         env_file=Path(__file__).parents[2] / ".env",
@@ -55,8 +54,14 @@ class Config(BaseSettings):
     )
 
     def validate_api_keys(self) -> bool:
-        """Check if at least one API key is configured."""
-        return bool(self.openrouter_api_key or self.openai_api_key or self.anthropic_api_key)
+        """Check if a provider implemented by ``ModelRouter`` is configured.
+
+        Anthropic is retained as a documented configuration field for forward
+        compatibility, but the current engine does not implement its client.
+        It must not make configuration appear usable when model construction
+        cannot actually honor it.
+        """
+        return bool(self.openrouter_api_key or self.openai_api_key)
 
 
 # Global config instance

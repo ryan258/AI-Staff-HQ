@@ -1,5 +1,7 @@
 """Tests for core agent logic."""
 
+import os
+import stat
 import pytest
 from pathlib import Path
 from unittest.mock import MagicMock
@@ -109,6 +111,7 @@ def test_agent_query_uses_semantic_markdown_log_name(mock_env, mock_yaml, mock_l
     """Interaction logs should use semantic filenames for new sessions."""
     agent = SpecialistAgent(mock_yaml)
     agent.config.log_dir = mock_env / ".ai-staff-hq" / "logs"
+    agent.config.enable_logging = True
 
     mock_llm.invoke.return_value = AIMessage(content="Logged answer")
 
@@ -118,6 +121,43 @@ def test_agent_query_uses_semantic_markdown_log_name(mock_env, mock_yaml, mock_l
     assert len(log_files) == 1
     assert log_files[0].name.startswith("tech-lead__hello-from-the-semantic-log-test__")
     assert log_files[0].name.endswith(f"__{agent.state.session_id}.md")
+
+
+def test_interaction_logging_is_disabled_by_default(mock_env, mock_yaml, mock_llm, mock_router):
+    """Private prompts must not be persisted unless logging is explicitly enabled."""
+    agent = SpecialistAgent(mock_yaml)
+    agent.config.log_dir = mock_env / ".ai-staff-hq" / "logs"
+
+    mock_llm.invoke.return_value = AIMessage(content="private response")
+    agent.query("private prompt")
+
+    assert not agent.config.log_dir.exists()
+
+
+def test_interaction_log_redacts_sensitive_content_and_is_private(
+    mock_env, mock_yaml, mock_llm, mock_router
+):
+    """Opted-in interaction logs must redact secrets and use mode 0600."""
+    agent = SpecialistAgent(mock_yaml)
+    agent.config.log_dir = mock_env / ".ai-staff-hq" / "logs"
+    agent.config.enable_logging = True
+    mock_llm.invoke.return_value = AIMessage(
+        content="response Bearer response-secret-token-1234567890"
+    )
+
+    prompt = "password: super-secret sk-or-v1-abcdef1234567890abcdef1234567890\n"
+    prompt += "-----BEGIN PRIVATE KEY-----\nprivate-key-body\n-----END PRIVATE KEY-----"
+    agent.query(prompt)
+
+    log_file = next(agent.config.log_dir.glob("*.md"))
+    assert stat.S_IMODE(log_file.stat().st_mode) == 0o600
+    content = log_file.read_text(encoding="utf-8")
+    assert "super-secret" not in log_file.name
+    assert "super-secret" not in content
+    assert "sk-or-v1-" not in content
+    assert "private-key-body" not in content
+    assert "response-secret-token" not in content
+    assert "[REDACTED_PRIVATE_KEY]" in content
 
 def test_load_specialist_factory(mock_env, mock_yaml, mock_llm):
     """Test the load_specialist factory function."""
@@ -134,3 +174,27 @@ def test_load_specialist_factory(mock_env, mock_yaml, mock_llm):
     # Validation error for missing
     with pytest.raises(FileNotFoundError):
         load_specialist("missing-agent", staff_dir)
+
+
+def test_agent_query_raises_on_llm_failure(mock_env, mock_yaml, mock_llm, mock_router):
+    """Test that agent query raises AgentExecutionError on LLM failure."""
+    from tools.engine.core import AgentExecutionError
+
+    agent = SpecialistAgent(mock_yaml)
+    mock_llm.invoke.side_effect = RuntimeError("Connection timeout")
+
+    with pytest.raises(AgentExecutionError, match="Failed to get response from AI model"):
+        agent.query("Hello")
+
+
+def test_load_specialist_outside_staff_dir_rejected(mock_env, mock_yaml, mock_llm):
+    """Test that load_specialist rejects paths outside the staff directory."""
+    outside_dir = mock_env / "outside"
+    outside_dir.mkdir(parents=True, exist_ok=True)
+    outside_yaml = outside_dir / "external.yaml"
+    outside_yaml.write_text(mock_yaml.read_text())
+
+    staff_dir = mock_yaml.parent.parent
+
+    with pytest.raises(PermissionError, match="must be inside staff directory"):
+        load_specialist(str(outside_yaml), staff_dir)

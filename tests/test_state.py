@@ -1,10 +1,15 @@
 """Tests for conversation state persistence."""
 
 import json
+from concurrent.futures import ThreadPoolExecutor
 import pytest
 from langchain_core.messages import HumanMessage, AIMessage
 
-from tools.engine.state import ConversationState
+from tools.engine.state import (
+    ConversationState,
+    SessionCorruptError,
+    SessionIdentityMismatchError,
+)
 
 def test_state_initialization(mock_env):
     """Test new session initialization."""
@@ -111,3 +116,95 @@ def test_clear_session(mock_env):
     assert len(new_session_id) == 24
     assert len(state.messages) == 1  # Only system message kept
     assert isinstance(state.messages[0], SystemMessage)
+
+
+def test_session_id_path_traversal_rejected(mock_env):
+    """Test that path traversal attempts in session_id or specialist_slug are rejected."""
+    with pytest.raises(ValueError, match="forbidden characters"):
+        ConversationState("test-specialist", session_id="../../escaped")
+
+    with pytest.raises(ValueError, match="forbidden characters"):
+        ConversationState("../../escaped", session_id="normal_id")
+
+    with pytest.raises(ValueError, match="forbidden characters"):
+        ConversationState("test-specialist", session_id="foo/bar")
+
+
+def test_session_file_private_permissions(mock_env):
+    """Test that session files are saved with 0600 permissions."""
+    import stat
+    state = ConversationState("test-perm")
+    state.add_message(HumanMessage(content="Private message"))
+    state.save()
+
+    assert state.session_file.exists()
+    file_mode = stat.S_IMODE(state.session_file.stat().st_mode)
+    assert file_mode == 0o600
+
+
+def test_list_sessions_rejects_traversal_specialist_slug(mock_env):
+    """Session listing must validate and contain the specialist directory."""
+    with pytest.raises(ValueError, match="forbidden characters"):
+        ConversationState.list_sessions("../outside")
+
+
+def test_load_distinguishes_corrupt_session_and_preserves_evidence(mock_env):
+    """Malformed JSON is a hard load error, not a new-session miss."""
+    state = ConversationState("corrupt-session", session_id="20260831_120000_deadbeef")
+    state.session_file.write_text("{not-json", encoding="utf-8")
+    original = state.session_file.read_text(encoding="utf-8")
+
+    with pytest.raises(SessionCorruptError, match="corrupt"):
+        state.load()
+
+    assert state.session_file.read_text(encoding="utf-8") == original
+
+
+def test_session_lock_symlink_is_rejected(mock_env):
+    """A malicious lock path must not redirect state writes elsewhere."""
+    state = ConversationState("lock-symlink", session_id="20260831_120000_deadbeef")
+    outside_lock = mock_env / "outside.lock"
+    outside_lock.write_text("sentinel", encoding="utf-8")
+    lock_path = state.session_dir / f".{state.session_id}.lock"
+    lock_path.symlink_to(outside_lock)
+    state.add_message(HumanMessage(content="should not be written"))
+
+    with pytest.raises(SessionCorruptError, match="lock"):
+        state.save()
+
+    assert outside_lock.read_text(encoding="utf-8") == "sentinel"
+
+
+def test_load_distinguishes_identity_mismatch(mock_env):
+    """A valid file for another session must not be treated as missing."""
+    state = ConversationState("identity-session", session_id="20260831_120000_deadbeef")
+    state.session_file.write_text(
+        json.dumps({
+            "session_id": state.session_id,
+            "specialist": "different-specialist",
+            "created_at": state.created_at,
+            "updated_at": state.updated_at,
+            "messages": [],
+        }),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(SessionIdentityMismatchError, match="specialist"):
+        state.load()
+
+
+def test_concurrent_state_saves_preserve_appended_messages(mock_env):
+    """Per-session locking and merge-on-save must retain independent appends."""
+    session_id = "20260831_120000_deadbeef"
+    first = ConversationState("concurrent-session", session_id=session_id)
+    second = ConversationState("concurrent-session", session_id=session_id)
+    first.add_message(HumanMessage(content="first message"))
+    second.add_message(HumanMessage(content="second message"))
+
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        list(executor.map(lambda state: state.save(), (first, second)))
+
+    saved = json.loads(first.session_file.read_text(encoding="utf-8"))
+    contents = [item["data"]["content"] for item in saved["messages"]]
+    assert "first message" in contents
+    assert "second message" in contents
