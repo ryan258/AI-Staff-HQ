@@ -1,19 +1,41 @@
 
 # General
 .DS_Store
+._*
+*.bak
+*.bak.*
+*.tmp
+*.tmp.*
+*.swp
+*.swo
+*~
 
 # Python
 __pycache__/
 *.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
 .venv/
 venv/
 *.egg-info/
 
 # Environment
 .env
-# .env.*
+.env.local
+.env.*
+!.env.example
 
 # Knowledge Base
 knowledge-base/research/
+
 # Logs
 logs/
+
+# Editors & Agents
+.gemini/
+.claude/
+.codex/
+.agents/
+.vscode/
+.cursor/
