@@ -109,6 +109,79 @@ def test_graph_runner_persists_log_on_failure(tmp_path, mock_env):
     assert "Catastrophic node failure" in log_data["state"]["error"]
 
 
+def test_graph_runner_surfaces_log_persistence_failure(tmp_path, mock_env, monkeypatch):
+    """A successful graph must not be reported as successful when its log cannot be saved."""
+    import pytest
+
+    runner = GraphRunner(staff_dir=tmp_path, log_dir=tmp_path / "logs")
+    graph = build_state_graph()
+
+    def successful_node(state):
+        return {**state, "final_output": "completed"}
+
+    graph.add_node("success", successful_node)
+    graph.set_entry_point("success")
+    graph.add_edge("success", END)
+
+    def fail_persistence(*_args, **_kwargs):
+        raise OSError("read-only log directory")
+
+    monkeypatch.setattr("orchestrator.graph_runner.write_private_json_atomic", fail_persistence)
+
+    with pytest.raises(RuntimeError, match="run log persistence failed"):
+        runner.run_graph(
+            graph.compile(),
+            {
+                "topic": "persistence failure topic",
+                "workflow_name": "persistence-failure-graph",
+            },
+        )
+
+
+def test_graph_runner_preserves_keyboard_interrupt_when_logging_fails(tmp_path, mock_env, monkeypatch):
+    """A persistence failure must not mask an interrupt from graph execution."""
+    import pytest
+
+    class InterruptingGraph:
+        def invoke(self, _state):
+            raise KeyboardInterrupt()
+
+    runner = GraphRunner(staff_dir=tmp_path, log_dir=tmp_path / "logs")
+
+    def fail_persistence(*_args, **_kwargs):
+        raise OSError("read-only log directory")
+
+    monkeypatch.setattr(runner, "_persist_log", fail_persistence)
+
+    with pytest.raises(KeyboardInterrupt):
+        runner.run_graph(
+            InterruptingGraph(),
+            {"topic": "interrupt test topic", "workflow_name": "interrupt-graph"},
+        )
+
+
+def test_graph_runner_reports_invalid_result_shape_when_logging_fails(tmp_path, mock_env, monkeypatch):
+    """An invalid graph result must not trigger a secondary mapping TypeError."""
+    import pytest
+
+    class InvalidResultGraph:
+        def invoke(self, _state):
+            return ["not", "a", "graph state"]
+
+    runner = GraphRunner(staff_dir=tmp_path, log_dir=tmp_path / "logs")
+
+    def fail_persistence(*_args, **_kwargs):
+        raise OSError("read-only log directory")
+
+    monkeypatch.setattr(runner, "_persist_log", fail_persistence)
+
+    with pytest.raises(TypeError, match="graph.invoke must return a mapping"):
+        runner.run_graph(
+            InvalidResultGraph(),
+            {"topic": "invalid result topic", "workflow_name": "invalid-result-graph"},
+        )
+
+
 def test_graph_runner_redacts_sensitive_log_values(tmp_path, mock_env):
     """Structured workflow logs must not retain credential-shaped strings."""
     runner = GraphRunner(staff_dir=tmp_path, log_dir=tmp_path / "logs")

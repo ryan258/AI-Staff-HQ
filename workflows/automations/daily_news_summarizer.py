@@ -1,5 +1,4 @@
-# To use this script, you need to install the feedparser library:
-# pip install feedparser
+# Dependency: feedparser (provided by the project environment; run `uv sync`).
 
 import feedparser
 

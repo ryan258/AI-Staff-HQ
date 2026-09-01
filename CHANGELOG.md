@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] - 2026-08-31 Review Hardening
+## [Unreleased] - 2026-09-01 Remediation Follow-up
 
 ### Fixed
 
@@ -14,12 +14,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Swarm budget enforcement:** A per-run ledger reserves prompt and completion capacity before every provider attempt, passes the remaining completion cap to the provider, counts failed/retry/fallback attempts, stops synthesis when exhausted, and reports the ledger totals through `SwarmMetrics`.
 - **Approval and terminal status:** Configured approval uses the inherited handler/interactive path, while `auto_approve=false` does not create an implicit gate. `BLOCKED`, `FAILED`, and `COMPLETED` states are preserved in the graph and top-level log, and task streaming events match the actual outcome.
 - **Planning and providers:** Unsafe task/dependency identifiers and malformed planning structures fail before graph construction. Anthropic-only configuration is rejected explicitly because the current factory implements OpenRouter/OpenAI only; prior routing-precedence coverage is restored.
+- **GraphRunner durability:** A successful graph now fails visibly when its run log cannot be persisted, while an existing graph failure remains the primary error and records the secondary logging failure. Interrupts are preserved, invalid non-mapping graph results fail explicitly, and secondary logging diagnostics cannot mask either condition.
+- **Automation dependencies:** The runnable RSS and HTTP examples declare `feedparser` and `requests` in project metadata and are covered by import/compile integrity tests.
 
 ### Changed
 
 - **Morphling trust boundary:** Shell execution is disabled by default. Allowlist mode uses `shell=False`, read-oriented commands, root/symlink checks, and metacharacter rejection. Broad owner mode requires both `MORPHLING_OWNER_MODE=true` and `MORPHLING_UNRESTRICTED_ROOT=true` and is documented as owner-only.
 - **Planning CLI:** `workflows/planning_swarm.py` now exposes `--budget`, `--require-approval`, and `--no-auto-approve` controls that map to the enforced runtime policy.
 - **Planning evals:** Malformed model output is represented as an explicit parse failure with zero tasks/waves instead of silently creating a generic task.
+- **Automation documentation:** Runnable examples now use the project-managed `uv` environment; conceptual examples are clearly labeled as prototypes.
 
 ### Added
 
@@ -27,8 +30,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Verification
 
-- `.venv/bin/pytest -q`: `98 passed in 2.81s`.
-- Nested changed Python compilation and `git diff --check` pass. Root integration tests and the consolidated finding-by-finding record are maintained in `../docs/20260831-PLAN.md`.
+- `uv run pytest -q`: `108 passed`.
+- Nested changed Python compilation and `git diff --check` pass. Root integration tests and the consolidated finding-by-finding record are maintained in `../docs/archive/20260831-PLAN.md`.
 
 Live provider calls, authenticated integrations, and broad Morphling owner mode were not exercised in this remediation pass.
 

@@ -1,5 +1,4 @@
-# To use this script, you need to install the requests library:
-# pip install requests
+# Dependency: requests (provided by the project environment; run `uv sync`).
 
 import requests
 

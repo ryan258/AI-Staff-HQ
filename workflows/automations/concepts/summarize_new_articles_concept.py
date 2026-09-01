@@ -7,7 +7,7 @@ import time
 import sys
 
 # --- This is a conceptual script --- #
-# It demonstrates a workflow that could be run by the Gemini CLI.
+# It demonstrates a workflow that could be adapted to a local Python runner.
 # It does not have actual access to external APIs or file systems beyond
 # what the user grants it at runtime.
 
@@ -19,7 +19,8 @@ def gemini_summarize(text):
     """Conceptual function to represent an API call to Gemini for summarization."""
     # In a real scenario, this would involve an HTTP request to a Gemini API endpoint.
     print(f"--- CONCEPTUAL: Asking Gemini to summarize: {text[:80]}... ---")
-    summary = f"Summary of the text: {text[:30].replace('\n', ' ')}..."
+    preview = text[:30].replace("\n", " ")
+    summary = f"Summary of the text: {preview}..."
     return summary
 
 def watch_directory(path, output_log):

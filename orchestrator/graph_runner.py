@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import sys
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
@@ -192,29 +193,47 @@ class GraphRunner:
             state["run_id"] = f"{timestamp}_{short_uuid}"
 
         result: GraphState = state
+        graph_error: Optional[BaseException] = None
         try:
-            result = graph.invoke(state)
-            if isinstance(result, dict):
-                existing_status = result.get("status")
-                if existing_status in {"BLOCKED", "FAILED", "COMPLETED"}:
-                    result["status"] = existing_status
-                elif result.get("approval_required") and not result.get("approved", False):
-                    result["status"] = "BLOCKED"
-                elif result.get("error") or str(result.get("final_output", "")).startswith("[ERROR]"):
-                    result["status"] = "FAILED"
-                else:
-                    result["status"] = "COMPLETED"
+            invoked_result = graph.invoke(state)
+            if not isinstance(invoked_result, dict):
+                raise TypeError("graph.invoke must return a mapping state")
+            result = invoked_result
+            existing_status = result.get("status")
+            if existing_status in {"BLOCKED", "FAILED", "COMPLETED"}:
+                result["status"] = existing_status
+            elif result.get("approval_required") and not result.get("approved", False):
+                result["status"] = "BLOCKED"
+            elif result.get("error") or str(result.get("final_output", "")).startswith("[ERROR]"):
+                result["status"] = "FAILED"
+            else:
+                result["status"] = "COMPLETED"
             return result
-        except Exception as e:
-            state["error"] = str(e)
+        except BaseException as error:
+            graph_error = error
+            state["error"] = str(error)
             state["status"] = "FAILED"
             result = state
             raise
         finally:
             try:
                 self._persist_log(result)
-            except Exception:
-                pass
+            except Exception as persistence_error:
+                persistence_message = f"run log persistence failed: {persistence_error}"
+                # Keep the fallback safe even if a future caller changes the
+                # graph-result validation above.
+                if isinstance(result, dict):
+                    result["logging_error"] = persistence_message
+                else:
+                    state["logging_error"] = persistence_message
+                    result = state
+                if graph_error is None:
+                    result["status"] = "FAILED"
+                    result["error"] = persistence_message
+                    raise RuntimeError(persistence_message) from persistence_error
+                # Preserve the graph's original exception while making the
+                # secondary durability failure visible to the caller's logs.
+                print(persistence_message, file=sys.stderr)
 
     def _resolve_log_path(self, state: GraphState) -> Path:
         """Build a semantic log filename from workflow metadata and the run subject."""

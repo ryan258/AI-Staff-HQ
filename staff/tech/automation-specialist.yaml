@@ -21,7 +21,7 @@ core_capabilities:
   - name: Filesystem & Data Workflow Orchestration
     description: Creates Python workflows that interact with the local filesystem, process data, and integrate with other project components.
   - name: Executable Workflow Delivery
-    description: Delivers functional Python scripts, saved to the `workflows/automations` directory, ready for execution by the user or Gemini.
+    description: Delivers functional Python scripts, saved to the `workflows/automations` directory, ready for execution by the user in the project-managed Python environment.
 
 integration_points:
   primary_collaborations:
@@ -64,8 +64,8 @@ deep_dive:
     - category: Python Automation Scripts
       items:
         - Well-documented `.py` files saved in `workflows/automations/`
-        - '`requirements.txt` files for scripts with external dependencies'
-        - Instructions for running the script via the Gemini CLI
+        - '`pyproject.toml` dependency declarations for scripts with external dependencies'
+        - Instructions for running the script via the project-managed `uv` environment
     - category: System Architecture
       items:
         - Workflow orchestration diagrams showing script interactions
