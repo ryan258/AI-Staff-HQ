@@ -38,18 +38,24 @@ The flagship path is now the **Planning Swarm**: a smaller, higher-signal multi-
 
 ## **⚡ Your AI Team**
 
-AI-Staff-HQ has **68 helpers** working in **7 groups** (strategy, makers, selling, tech, health, reading, and special). We recommend using the **core team of 41** every day. The other helpers are for very specific jobs.
+AI-Staff-HQ has **68 helpers** working in **7 groups** (strategy, makers, selling, tech, health, reading, and special). Day-to-day work uses the **active roster of 12** defined in `config/specialist_roster.yaml`; the other helpers are experimental and opt-in for very specific jobs.
 
-### Start Here: The Core Team
+### Start Here: The Active Roster
 
-These roles do most of the planning, making, and fixing:
+These 12 helpers are the **active roster**. They run by default and do most of the planning, making, and fixing. The list lives in `config/specialist_roster.yaml`.
 
 - 🏢 [**Chief of Staff**](staff/strategy/chief-of-staff.yaml) — Leads the team, checks the work, and gets everyone to talk.
-- 📈 [**Market Analyst**](staff/strategy/market-analyst.yaml) — Does research and learns about what people want.
-- 🎨 [**Creative Strategist**](staff/strategy/creative-strategist.yaml) — Thinks of fun and big ideas.
+- 📈 [**Market Analyst**](staff/strategy/market-analyst.yaml) — Does research and learns what people want.
+- 🎨 [**Creative Strategist**](staff/strategy/creative-strategist.yaml) — Thinks up fun, big ideas.
 - 💰 [**Brand Builder**](staff/strategy/brand-builder.yaml) — Builds the look and message of your brand.
-- ✍️ [**Copywriter**](staff/producers/copywriter.yaml) — Writes great words to make people want to buy or read.
-- 📊 [**Data Analyst**](staff/strategy/data-analyst.yaml) — Looks at the numbers and finds clues.
+- 📊 [**Data Analyst**](staff/strategy/data-analyst.yaml) — Reads the numbers and finds clues.
+- 🔬 [**Academic Researcher**](staff/strategy/academic-researcher.yaml) — Digs deep and checks the facts.
+- 🗺️ [**Scenario Planner**](staff/strategy/scenario-planner.yaml) — Maps out "what if" paths and risks.
+- ✍️ [**Copywriter**](staff/producers/copywriter.yaml) — Writes words that make people want to buy or read.
+- ⚙️ [**Software Architect**](staff/tech/software-architect.yaml) — Plans how to build software the right way.
+- 🤖 [**Automation Specialist**](staff/tech/automation-specialist.yaml) — Turns boring, repeat chores into automatic steps.
+- ⏱️ [**Productivity Architect**](staff/tech/productivity-architect.yaml) — Designs systems that help you get more done.
+- ✅ [**Quality Control Specialist**](staff/tech/quality-control-specialist.yaml) — Checks the work so nothing slips through.
 
 > **Tip:** Start with just 2 or 3 helpers for your first project. You can add more later when you need them.
 
@@ -92,6 +98,12 @@ See `staff/README.md` to see exactly what they do and how to talk to them.
     uv sync
     ```
 
+    Want the short `ai-staff` command instead of typing `uv run tools/activate.py` every time? Install the project once:
+
+    ```bash
+    uv pip install -e .
+    ```
+
 2.  **Set Up the File**:
 
     ```bash
@@ -102,6 +114,8 @@ See `staff/README.md` to see exactly what they do and how to talk to them.
 3.  **Start Chatting**:
     ```bash
     uv run tools/activate.py chief-of-staff
+    # or, if you installed the project:
+    ai-staff chief-of-staff
     ```
 
 4.  **Run The Flagship Planner**:

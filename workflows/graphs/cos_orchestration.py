@@ -17,6 +17,7 @@ from langgraph.graph import END
 
 from orchestrator.graph_runner import GraphRunner, build_state_graph, GraphState
 from tools.engine.roster import list_specialists_by_department
+from tools.engine.utils import extract_json_array
 from workflows.constants import SpecialistSlugs
 
 
@@ -35,16 +36,8 @@ def get_available_specialists(
 
 
 def extract_json(text: str) -> list:
-    """Extract JSON list from text (naive)."""
-    try:
-        # Find first [ and last ]
-        start = text.find('[')
-        end = text.rfind(']') + 1
-        if start != -1 and end != -1:
-            return json.loads(text[start:end])
-    except (json.JSONDecodeError, ValueError):
-        pass
-    return []
+    """Extract a JSON list of tasks from a model response."""
+    return extract_json_array(text) or []
 
 
 def build_graph(runner: GraphRunner, *, include_experimental: bool = False):
@@ -227,20 +220,15 @@ def build_graph(runner: GraphRunner, *, include_experimental: bool = False):
     graph.add_node("synthesis", synthesis_step)
 
     # Add Edges
-    graph.add_edge("planning", "worker") # Start loop (or skip if queue empty checked inside?)
-    # Actually we need a conditional edge after planning to handle empty queue immediately
-    # But for simplicity, let's route Planning -> Worker -> Check
-    # If Planning returns empty queue, Worker checks queue, finds empty, returns.
-    # Then we check again?
-    # Better: Planning -> Check -> Worker/Synthesis
-    
-    # Creating a router node/function
+    # Route planning -> worker/synthesis conditionally so an empty task queue
+    # goes straight to synthesis. A second unconditional planning->worker edge
+    # here would make LangGraph fan out concurrently and raise InvalidUpdateError.
     graph.add_conditional_edges(
         "planning",
         check_queue,
         {"worker": "worker", "synthesis": "synthesis"}
     )
-    
+
     graph.add_conditional_edges(
         "worker",
         check_queue,

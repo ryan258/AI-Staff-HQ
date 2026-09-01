@@ -23,8 +23,16 @@ from .config import get_config
 from .utils import build_semantic_run_filename, normalize_slug
 
 
-class AgentExecutionError(RuntimeError):
-    """Raised when an AI model invocation fails during agent query."""
+class SpecialistQueryError(RuntimeError):
+    """Raised when a specialist fails to produce a model response.
+
+    Orchestration layers rely on this propagating so they can fall back to an
+    alternative specialist instead of treating a failed call as a valid answer.
+    """
+
+
+class AgentExecutionError(SpecialistQueryError):
+    """Backward-compatible specific error for an AI model invocation failure."""
     pass
 
 
@@ -299,7 +307,6 @@ class SpecialistAgent:
             if raise_errors:
                 raise AgentExecutionError(error_msg) from e
             return f"⚠️ Error: {error_msg}"
-        
         end_time = time.time()
         latency = end_time - start_time
 

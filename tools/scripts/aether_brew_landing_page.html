@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aether Brew: Engineer Your Perfect Cup</title>
     <style>
-        body { font-family: sans-serif; background-color: #0a0f1f; color: #ffffff; text-align: center; padding: 50px; }
-        h1 { font-family: serif; font-size: 3em; color: #ffffff; margin-bottom: 10px; }
-        p { font-size: 1.2em; color: #cccccc; max-width: 600px; margin: 0 auto 30px; }
-        .logo { font-family: monospace; font-size: 2em; color: #9f5dff; margin-bottom: 30px; }
-        .cta-button { background-color: #9f5dff; color: #ffffff; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        :root {
+            --bg-color: #121212;
+            --text-color: #EBD2BE;
+            --accent-primary: #A6ACCD;
+            --accent-success: #98C379;
+            --accent-danger: #E06C75;
+        }
+        body { font-family: sans-serif; background-color: var(--bg-color); color: var(--text-color); text-align: center; padding: 50px; }
+        h1 { font-family: serif; font-size: 3em; color: var(--text-color); margin-bottom: 10px; }
+        p { font-size: 1.2em; color: var(--accent-primary); max-width: 600px; margin: 0 auto 30px; }
+        .logo { font-family: monospace; font-size: 2em; color: var(--accent-primary); margin-bottom: 30px; }
+        .cta-button { background-color: var(--accent-primary); color: var(--bg-color); padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; }
     </style>
 </head>
 <body>

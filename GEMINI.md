@@ -215,13 +215,13 @@ All new features must include tests:
 
 ```bash
 # Run full test suite
-pytest tests/ -v
+uv run pytest tests/ -v
 
 # Run with coverage
-pytest tests/ --cov=tools --cov=orchestrator --cov=workflows
+uv run pytest tests/ --cov=tools --cov=orchestrator --cov=workflows
 
 # Run specific tests
-pytest tests/test_state.py::test_clear_session -v
+uv run pytest tests/test_state.py::test_clear_session -v
 ```
 
 ### 3. UI Development
@@ -273,32 +273,42 @@ st.markdown(candlelite_css, unsafe_allow_html=True)
 cp templates/persona/new-staff-member-template.md staff/tech/new-specialist.yaml
 ```
 
-2. Edit with required fields:
+2. Edit with required fields (the slug comes from the filename; department comes from the folder):
 
 ```yaml
+version: 1.2
 specialist: "Full Name"
-role: "Role Title"
-slug: "slug-name"
-department: tech
-expertise:
-  - Area 1
-  - Area 2
-collaboration:
-  reports_to: chief-of-staff
-  works_with:
-    - other-specialist
+motto: "Memorable phrase or philosophy"
+
+core_identity:
+  role: "Primary function"
+  personality: "Key character traits"
+  expertise:
+    - Area 1
+    - Area 2
+  communication_style: "How they express ideas"
+
+core_capabilities:
+  - name: "Capability Name"
+    description: "Action-oriented summary"
+    tasks:
+      - "Specific deliverable"
+
+integration_points:
+  primary_collaborations:
+    - chief-of-staff
 ```
 
 3. Validate:
 
 ```bash
-python tools/validate_specialist.py staff/tech/new-specialist.yaml
+uv run tools/validate_specialist.py staff/tech/new-specialist.yaml
 ```
 
 4. Test:
 
 ```bash
-python tools/activate.py new-specialist
+uv run tools/activate.py new-specialist
 ```
 
 ### Creating a Workflow
@@ -345,7 +355,7 @@ When updating `ui/app.py`:
 1. **Always maintain Candlelite theme**
 2. Add custom CSS in a centralized location
 3. Use Streamlit components with theme overrides
-4. Test locally: `streamlit run ui/app.py`
+4. Test locally: `uv run streamlit run ui/app.py`
 
 ---
 
@@ -455,7 +465,7 @@ except Exception:
 
 Before submitting changes:
 
-- [ ] All tests pass: `pytest tests/ -v`
+- [ ] All tests pass: `uv run pytest tests/ -v`
 - [ ] Type hints present on new functions
 - [ ] No magic strings (use `workflows/constants.py`)
 - [ ] Error handling logs to stderr
@@ -471,7 +481,7 @@ Before submitting changes:
 - **CLAUDE.md** - Claude-specific guide
 - **README.md** - Project overview
 - **GETTING-STARTED.md** - Setup instructions
-- **QUICK-REFERENCE.md** - All 68 specialists
+- **docs/QUICK-REFERENCE.md** - All 68 specialists
 - **docs/phase4.md** - Orchestration details
 - **ROADMAP.md** - Future plans
 

@@ -20,6 +20,8 @@ from orchestrator.graph_runner import GraphRunner, GraphState, build_state_graph
 from tools.engine.core import write_private_json_atomic
 from tools.engine.state import validate_identifier
 from orchestrator.task_analyzer import Task, TaskAnalyzer, TaskBreakdown
+from tools.engine.tokens import truncate_to_tokens
+from tools.engine.utils import redact_secrets
 from workflows.constants import GraphNodes, SpecialistSlugs
 from workflows.schemas.swarm import SwarmConfig, SwarmMetrics, SwarmState
 
@@ -324,6 +326,14 @@ class SwarmRunner(GraphRunner):
                     approved = self.require_approval("swarm:wave_execution", state)
                 except (EOFError, OSError, KeyboardInterrupt):
                     approved = False
+                except RuntimeError:
+                    # A configured gate without a handler cannot prompt from a
+                    # non-interactive runner. Treat that unavailable approval
+                    # as a safe blocked outcome; errors raised by an explicit
+                    # handler still propagate through the handler branch above.
+                    if self.approval_handler is not None:
+                        raise
+                    approved = False
             state['approved'] = approved
             self.record_step(state, "swarm:wave_execution", {"approved": approved})
             if not approved:
@@ -620,10 +630,10 @@ class SwarmRunner(GraphRunner):
             for dep_id in task.depends_on:
                 dep_task = task_map.get(dep_id)
                 if dep_task and dep_task.result:
-                    # Truncate result if needed
-                    result = dep_task.result
-                    if len(result) > self.config.max_context_tokens:
-                        result = result[:self.config.max_context_tokens] + "... [truncated]"
+                    # Truncate by actual token count (not characters).
+                    result = truncate_to_tokens(
+                        dep_task.result, self.config.max_context_tokens
+                    )
 
                     dependency_context += f"\n### Output from {dep_id} ({dep_task.assigned_specialist}):\n"
                     dependency_context += f"{result}\n"

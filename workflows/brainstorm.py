@@ -33,6 +33,7 @@ sys.path.insert(0, str(dotfiles_root))
 try:
     from tools.engine.core import load_specialist
     from workflows.constants import SpecialistSlugs
+    from ui.theme import RICH_THEME
 except ImportError as e:
     print(f"Error importing AI-Staff-HQ tools: {e}")
     sys.exit(1)
@@ -43,10 +44,10 @@ except ImportError:
     # Brain might not be configured or path is wrong
     memory = None
 
-console = Console()
+console = Console(theme=RICH_THEME)
 
 def main():
-    console.rule("[bold purple]🧠 Brainstorm Swarm[/bold purple]")
+    console.rule("[bold accent]🧠 Brainstorm Swarm[/bold accent]")
     
     if len(sys.argv) > 1:
         topic = " ".join(sys.argv[1:])
@@ -62,25 +63,25 @@ def main():
         chief_of_staff = load_specialist(SpecialistSlugs.CHIEF_OF_STAFF, staff_dir)
 
     # 2. Market Analysis
-    console.print(f"\n[bold blue]Phase 1: Market Analysis ({market_analyst.schema.specialist})[/bold blue]")
+    console.print(f"\n[bold accent]Phase 1: Market Analysis ({market_analyst.schema.specialist})[/bold accent]")
     with console.status("Analyzing market trends and risks...", spinner="dots"):
         analysis = market_analyst.query(
             f"Please analyze the current market trends, opportunities, and risks for: '{topic}'. "
             "Keep it concise and focus on strategic factors."
         )
-    console.print(Panel(Markdown(analysis), title="Market Analysis", border_style="blue"))
+    console.print(Panel(Markdown(analysis), title="Market Analysis", border_style="accent"))
 
     # 3. Creative Strategy
-    console.print(f"\n[bold magenta]Phase 2: Creative Strategy ({creative_strategist.schema.specialist})[/bold magenta]")
+    console.print(f"\n[bold accent]Phase 2: Creative Strategy ({creative_strategist.schema.specialist})[/bold accent]")
     with console.status("Developing strategic angles...", spinner="dots"):
         strategy = creative_strategist.query(
             f"Based on this market analysis:\n\n{analysis}\n\n"
             f"Propose 3 distinct strategic angles or campaign concepts for '{topic}'."
         )
-    console.print(Panel(Markdown(strategy), title="Creative Strategy", border_style="magenta"))
+    console.print(Panel(Markdown(strategy), title="Creative Strategy", border_style="accent"))
 
     # 4. Synthesis
-    console.print(f"\n[bold white]Phase 3: Executive Brief ({chief_of_staff.schema.specialist})[/bold white]")
+    console.print(f"\n[bold text]Phase 3: Executive Brief ({chief_of_staff.schema.specialist})[/bold text]")
     with console.status("Synthesizing executive brief...", spinner="dots"):
         brief = chief_of_staff.query(
             f"Context: We are exploring '{topic}'.\n\n"
@@ -91,18 +92,18 @@ def main():
         )
     
     console.print("\n")
-    console.print(Panel(Markdown(brief), title="Final Executive Brief", border_style="green"))
+    console.print(Panel(Markdown(brief), title="Final Executive Brief", border_style="success"))
 
     # 5. The Brain Integration
-    console.rule("[bold yellow]Hive Mind Integration[/bold yellow]")
+    console.rule("[bold warning]Hive Mind Integration[/bold warning]")
     
     if memory is None:
-        console.print("[yellow]Warning: Hive Mind library not found. Cannot save.[/yellow]")
+        console.print("[warning]Warning: Hive Mind library not found. Cannot save.[/warning]")
         return
 
     client = memory.get_client()
     if not client:
-        console.print("[red]Error: Could not connect to Hive Mind service (is start_brain.sh running?).[/red]")
+        console.print("[error]Error: Could not connect to Hive Mind service (is start_brain.sh running?).[/error]")
         return
 
     if Confirm.ask("[bold]Save this brief to The Brain?[/bold]"):
@@ -123,7 +124,7 @@ def main():
             
             memory.add_memory(client, content, metadata=metadata)
             
-        console.print("[bold green]Success! Memory stored in Hive Mind.[/bold green] 🧠")
+        console.print("[bold success]Success! Memory stored in Hive Mind.[/bold success] 🧠")
     else:
         console.print("[dim]Skipped saving to Brain.[/dim]")
 

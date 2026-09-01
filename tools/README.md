@@ -17,7 +17,7 @@ Contains functional scripts (e.g., Python, JavaScript) built by the **Toolmaker*
 
 ### Dependencies & Safety Defaults
 
-- Python scripts list their optional packages in `tools/requirements.txt` (`pandas`, `pillow`, `feedparser`).
+- The scripts need a few extra packages (`pandas`, `pillow`, `feedparser`). Install them with `uv sync --extra scripts` (or `pip install -e ".[scripts]"`). They're also listed in `tools/requirements.txt` for reference.
 - Destructive operations are disabled by default:
   - `csv_cleaner.py` creates backups when writing in place and supports `--output` destinations.
   - `image_resizer.py` writes resized assets to a `resized/` directory unless explicitly told to overwrite.

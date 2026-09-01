@@ -165,35 +165,39 @@ class CapabilityIndex:
 
         Returns:
             List of (specialist_slug, score) tuples, sorted by score descending
+
+        Scoring rewards *coverage*: a specialist's score is the mean of its best
+        match against each required capability, so a specialist that covers all
+        of a task's capabilities outranks one that only nails a single one. A
+        small bonus favors broader coverage when mean scores tie.
         """
         # Normalize required capabilities
-        required_capabilities = [c.lower().strip() for c in required_capabilities]
+        required_capabilities = [c.lower().strip() for c in required_capabilities if c and c.strip()]
+        if not required_capabilities:
+            return []
 
-        # Accumulate scores for each specialist
-        specialist_scores: Dict[str, float] = {}
-        match_details: Dict[str, List[CapabilityMatch]] = {}
+        # For each specialist, track the best score per required capability.
+        best_per_cap: Dict[str, Dict[int, float]] = {}
 
-        for req_cap in required_capabilities:
-            matches = self._match_single_capability(req_cap)
-
-            for match in matches:
+        for cap_idx, req_cap in enumerate(required_capabilities):
+            for match in self._match_single_capability(req_cap):
                 slug = match.specialist_slug
-                if slug not in specialist_scores:
-                    specialist_scores[slug] = 0.0
-                    match_details[slug] = []
+                per_cap = best_per_cap.setdefault(slug, {})
+                if match.score > per_cap.get(cap_idx, 0.0):
+                    per_cap[cap_idx] = match.score
 
-                # Accumulate score (max of any match for this specialist)
-                specialist_scores[slug] = max(specialist_scores[slug], match.score)
-                match_details[slug].append(match)
+        total_caps = len(required_capabilities)
+        results: List[Tuple[str, float]] = []
+        for slug, per_cap in best_per_cap.items():
+            covered = len(per_cap)
+            mean_score = sum(per_cap.values()) / total_caps
+            # Tie-breaker bonus (<=0.05) for covering more distinct capabilities.
+            coverage_bonus = 0.05 * (covered / total_caps)
+            score = min(1.0, mean_score + coverage_bonus)
+            if score >= min_score:
+                results.append((slug, score))
 
-        # Filter by min_score and sort
-        results = [
-            (slug, score)
-            for slug, score in specialist_scores.items()
-            if score >= min_score
-        ]
         results.sort(key=lambda x: x[1], reverse=True)
-
         return results[:max_results]
 
     def _match_single_capability(self, required_cap: str) -> List[CapabilityMatch]:

@@ -2,13 +2,13 @@
 
 This directory contains small Python examples designed by the **Automation Specialist**. The two top-level scripts are runnable examples; the `concepts/` subtree is illustrative prototype material and is not a production workflow.
 
-## Purpose
+## What These Are
 
-The runnable examples execute locally in the project-managed Python environment. They demonstrate RSS parsing and authenticated HTTP request handling, but they do not provide a complete scheduling, persistence, or provider integration layer.
+The runnable examples execute locally in the project-managed Python environment. They demonstrate RSS parsing and authenticated HTTP request handling, but they do not provide a complete scheduling, persistence, or provider integration layer. They are working examples rather than complete scheduling, persistence, or provider-integration products.
 
-This approach makes the AI-Staff-HQ system more self-contained and powerful, allowing the `Automation Specialist` to build solutions directly, rather than just designing them for others to implement on third-party platforms.
+## How to Run Them
 
-## Execution
+Run any script from the project root with `uv`:
 
 From the `ai-staff-hq/` project root, install the declared dependencies and run the scripts directly:
 
@@ -20,5 +20,16 @@ uv run python workflows/automations/social_media_trend_tracker.py <api-url> <api
 
 The conceptual example under `concepts/` is intentionally provider-agnostic and does not require the Gemini CLI; inspect it as a prototype rather than treating it as a verified external automation.
 
-**Example Use Case:**
-> "Automation Specialist, I need a Python workflow that monitors the `logs` directory. When a new `.md` file is added, the script should read the content, generate a one-sentence summary, and append it to a central `summary.log` file. Save the script as `workflows/automations/log_summarizer.py`."
+Some scripts need extra packages. Install them once with:
+
+```bash
+uv sync --extra scripts
+```
+
+Read the top of each script first to see what it does and which flags it takes.
+
+## Ask the Automation Specialist for a New One
+
+Describe the chore you want gone, and where to save the script. For example:
+
+> "Automation Specialist, write a Python script that watches the `logs` folder. When a new `.md` file shows up, read it, write a one-sentence summary, and add that line to `summary.log`. Save it as `workflows/automations/log_summarizer.py`."

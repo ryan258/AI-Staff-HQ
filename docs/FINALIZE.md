@@ -19,11 +19,11 @@ Run these commands in your terminal to make sure you didn't break any links or m
 - **Link check:** `npx markdown-link-check README.md`
 - **Spell check:** `npx cspell "README.md" "docs/**/*.md" "meta/**/*.md" "polish.md"`
 - **Code validation:** Run this to make sure your yaml files aren't broken:  
-  `python -c "import yaml, pathlib; [yaml.safe_load(p.read_text()) for p in pathlib.Path('.').rglob('*.yaml')]"`
+  `uv run python -c "import yaml, pathlib; [yaml.safe_load(p.read_text()) for p in pathlib.Path('.').rglob('*.yaml')]"`
 - Make sure to check the boxes in `polish.md` when you finish!
 
 ## 4. Save and Upload
 - Check your git status (`git status`).
-- Save your work, send it to the internet, and add a shiny version sticker (`git tag v2.0.0 && git push --tags`).
+- Save your work, send it to the internet, and add a shiny version sticker. Use the version number from `pyproject.toml` (for example `git tag v0.2.0 && git push --tags`).
 
 Keep this list where you can see it so you don’t forget anything important! You can copy it again the next time you launch a huge update.

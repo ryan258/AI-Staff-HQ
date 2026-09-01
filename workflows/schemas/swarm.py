@@ -28,6 +28,7 @@ class SwarmState(TypedDict, total=False):
     completed_task_ids: List[str]
     failed_task_ids: List[str]
     blocked_task_ids: List[str]
+    fallback_count: int  # number of times a fallback specialist was used
 
     # Wave tracking
     current_wave_id: int

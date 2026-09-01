@@ -118,7 +118,7 @@ When creating or modifying UI for specialist interaction, ensure you use the Can
 ### Adding a New Specialist
 1. Create YAML file in appropriate `staff/[department]/` directory
 2. Follow the template structure from existing specialists
-3. Test with `python tools/validate_specialist.py staff/[department]/[slug].yaml`
+3. Test with `uv run tools/validate_specialist.py staff/[department]/[slug].yaml`
 
 ### Creating a Workflow
 1. Use LangGraph for multi-agent workflows
@@ -144,5 +144,5 @@ The project supports multiple LLM providers via OpenRouter. See `.env.example` f
 Refer to:
 - **README.md** - Project overview
 - **GETTING-STARTED.md** - Setup instructions
-- **QUICK-REFERENCE.md** - Full 68 specialist directory
+- **docs/QUICK-REFERENCE.md** - Full 68 specialist directory
 - **docs/phase4.md** - Orchestration documentation

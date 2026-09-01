@@ -66,7 +66,7 @@ Use Chief of Staff when:
 
 ## Activation and CLI Usage
 
-Run from `/Users/ryanjohnson/dotfiles/ai-staff-hq`.
+Run these from the project root (the folder that holds `tools/` and `staff/`).
 
 ### Interactive Session
 

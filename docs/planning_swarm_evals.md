@@ -60,7 +60,7 @@ If a case falls back to `chief-of-staff` too often:
 
 Start with the scaffold file:
 
-- [planning_swarm_real_briefs.yaml](/Users/ryanjohnson/Projects/AI-Staff-HQ/evals/planning_swarm_real_briefs.yaml)
+- [planning_swarm_real_briefs.yaml](../evals/planning_swarm_real_briefs.yaml)
 
 Replace the placeholder brief with one of your real rough prompts, then capture the planner output and baseline expectations:
 
@@ -88,10 +88,10 @@ uv run workflows/planning_swarm_capture.py --case your-case-id
 
 ## Where To Edit
 
-- Eval cases: [planning_swarm_cases.yaml](/Users/ryanjohnson/Projects/AI-Staff-HQ/evals/planning_swarm_cases.yaml)
-- Real briefs: [planning_swarm_real_briefs.yaml](/Users/ryanjohnson/Projects/AI-Staff-HQ/evals/planning_swarm_real_briefs.yaml)
-- Eval runner: [planning_swarm_eval.py](/Users/ryanjohnson/Projects/AI-Staff-HQ/workflows/planning_swarm_eval.py)
-- Capture workflow: [planning_swarm_capture.py](/Users/ryanjohnson/Projects/AI-Staff-HQ/workflows/planning_swarm_capture.py)
-- Active roster: [specialist_roster.yaml](/Users/ryanjohnson/Projects/AI-Staff-HQ/config/specialist_roster.yaml)
+- Eval cases: [planning_swarm_cases.yaml](../evals/planning_swarm_cases.yaml)
+- Real briefs: [planning_swarm_real_briefs.yaml](../evals/planning_swarm_real_briefs.yaml)
+- Eval runner: [planning_swarm_eval.py](../workflows/planning_swarm_eval.py)
+- Capture workflow: [planning_swarm_capture.py](../workflows/planning_swarm_capture.py)
+- Active roster: [specialist_roster.yaml](../config/specialist_roster.yaml)
 
 Keep the suite small and opinionated. Add cases only when they represent a real planning pattern you care about preserving.

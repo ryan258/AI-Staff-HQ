@@ -3,6 +3,19 @@
 **Date**: 2026-01-04
 **Status**: ✅ Production Ready
 
+> **Heads up (current entry point):** This is a historical record of how the swarm
+> engine was first built. The old `bin/dhp-*` shell and Python wrappers have been
+> **removed**. Today you run the swarm through the flagship CLI:
+>
+> ```bash
+> uv run workflows/planning_swarm.py "Your brief"
+> ```
+>
+> The orchestrator engine described below (`capability_index.py`, `task_analyzer.py`,
+> `execution_planner.py`, `swarm_runner.py`) is still what powers it. For the current
+> guide, see [README.md](README.md), [docs/phase4.md](docs/phase4.md), and
+> [MODEL_CONTROL.md](MODEL_CONTROL.md).
+
 ---
 
 ## Summary
@@ -82,33 +95,32 @@ Successfully transformed the static squad-based dispatcher system into a dynamic
 ### Basic Usage
 
 ```bash
-# Via bash dispatcher (easiest)
-dhp-content.sh "Create a guide on Bash scripting"
+# Flagship planning swarm
+uv run workflows/planning_swarm.py "Create a guide on Bash scripting"
 
 # With model control
-dhp-content.sh "Write a tagline" --model "moonshotai/kimi-k2:free"
+uv run workflows/planning_swarm.py "Write a tagline" --model "moonshotai/kimi-k2:free"
 
-# Creative workflow
-dhp-creative.sh "Write a sci-fi story about AI"
+# Include experimental specialists in matching
+uv run workflows/planning_swarm.py "Write a sci-fi story about AI" --experimental
 ```
 
-### Python Wrapper (Advanced)
+### Useful Flags
 
 ```bash
-# Direct Python access
-uv run python bin/dhp-swarm-content.py "Brief" --debug --max-parallel 10
+# Show detailed progress, and cap parallel tasks
+uv run workflows/planning_swarm.py "Brief" --verbose --max-parallel 10
 
-# Control parallelism
-uv run python bin/dhp-swarm-content.py "Brief" --no-parallel
+# Stream task events as JSON on stderr
+uv run workflows/planning_swarm.py "Brief" --stream
 
-# Budget mode
-uv run python bin/dhp-swarm-content.py "Brief" --model "moonshotai/kimi-k2:free"
+# Require interactive approval gates
+uv run workflows/planning_swarm.py "Brief" --no-auto-approve
 ```
 
-### Test Script
+### Quick Smoke Test
 
 ```bash
-cd ai-staff-hq
 uv run python test_swarm_simple.py
 ```
 
@@ -121,7 +133,7 @@ Control which models are used via:
 1. **Runtime Override** (highest priority)
 
    ```bash
-   dhp-content.sh "Brief" --model "moonshotai/kimi-k2:free"
+   uv run workflows/planning_swarm.py "Brief" --model "moonshotai/kimi-k2:free"
    ```
 
 2. **Config File** (`config/model_routing.yaml`)
@@ -309,10 +321,7 @@ A: Add `--model "moonshotai/kimi-k2:free"` or see `MODEL_CONTROL.md`
 
 ```bash
 # Enable verbose output
-dhp-content.sh "Brief" --debug
-
-# Or with Python wrapper
-uv run python bin/dhp-swarm.py "Brief" --debug
+uv run workflows/planning_swarm.py "Brief" --verbose
 ```
 
 ---
@@ -331,9 +340,9 @@ uv run python bin/dhp-swarm.py "Brief" --debug
 
 ## Conclusion
 
-The AI Staff HQ Swarm Orchestration System is **production-ready** and fully integrated with your existing dotfiles workflow. You can now:
+The AI Staff HQ Swarm Orchestration System is **production-ready**. Today you run it through the flagship CLI (`uv run workflows/planning_swarm.py "Your brief"`). You can:
 
-1. ✅ Use `dhp-content.sh` and `dhp-creative.sh` as before
+1. ✅ Run the flagship planning swarm on any brief
 2. ✅ Benefit from dynamic specialist selection
 3. ✅ Get parallel execution for performance
 4. ✅ Control models at multiple levels
@@ -345,4 +354,4 @@ The system successfully executed a 7-task swarm with 5 execution waves, demonstr
 
 ---
 
-_For questions or issues, see `swarm-plan.md` or `MODEL_CONTROL.md`_
+_For the current guide, see [README.md](README.md), [docs/phase4.md](docs/phase4.md), and [MODEL_CONTROL.md](MODEL_CONTROL.md)._

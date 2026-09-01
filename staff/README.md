@@ -1,227 +1,180 @@
 # 👥 AI Staff Directory
 
-> _Your extensible AI workforce, organized by MtG color-coded departments._
+> _Your AI workforce, sorted into 7 color-coded departments (a nod to Magic: The Gathering colors)._
 
-## 🏢 Current Workforce: 68 Specialists Across 7 Departments
+## How the Team Is Organized
 
-Current operating model:
+You have **68 helpers** in total, split into three tiers:
 
-- **Active roster:** 12 specialists used by default for the flagship planning swarm
-- **Experimental roster:** preserved for opt-in use
-- **Archived roster:** only the weakest or most redundant roles, kept for future reference
+- ⭐ **Active roster (12):** The default team. These run automatically and power the flagship planning swarm. The list lives in `config/specialist_roster.yaml`.
+- 🧪 **Experimental (56):** Kept for niche or special jobs. They still work, but you turn them on yourself with `--tier experimental` or the `--experimental` flag.
+- 🗄️ **Archived:** A handful of the weakest or most redundant roles, kept inside the experimental set for reference only.
 
-Your AI Staff HQ has been expanded with specialists across strategy, producers, commerce, tech, health-lifestyle, knowledge, and meta domains.
+See the whole team on the command line:
 
-The active roster is listed first; experimental specialists follow after the main department sections.
-
----
-
-## Active Roster
-
-- **[Chief of Staff](strategy/chief-of-staff.yaml)**
-- **[Market Analyst](strategy/market-analyst.yaml)**
-- **[Creative Strategist](strategy/creative-strategist.yaml)**
-- **[Brand Builder](strategy/brand-builder.yaml)**
-- **[Data Analyst](strategy/data-analyst.yaml)**
-- **[Academic Researcher](strategy/academic-researcher.yaml)**
-- **[Scenario Planner](strategy/scenario-planner.yaml)**
-- **[Copywriter](producers/copywriter.yaml)**
-- **[Software Architect](tech/software-architect.yaml)**
-- **[Automation Specialist](tech/automation-specialist.yaml)**
-- **[Productivity Architect](tech/productivity-architect.yaml)**
-- **[Quality Control Specialist](tech/quality-control-specialist.yaml)**
+```bash
+uv run tools/activate.py --list                       # active roster
+uv run tools/activate.py --list --tier experimental   # experimental
+uv run tools/activate.py --list --tier all            # everyone
+```
 
 ---
 
-## 📊 Experimental Roster By Department
+## ⭐ Active Roster (12)
 
-### Strategy Department (Blue - Strategy & Insights)
+| Helper | Department |
+|--------|------------|
+| [Chief of Staff](strategy/chief-of-staff.yaml) | Strategy |
+| [Market Analyst](strategy/market-analyst.yaml) | Strategy |
+| [Creative Strategist](strategy/creative-strategist.yaml) | Strategy |
+| [Brand Builder](strategy/brand-builder.yaml) | Strategy |
+| [Data Analyst](strategy/data-analyst.yaml) | Strategy |
+| [Academic Researcher](strategy/academic-researcher.yaml) | Strategy |
+| [Scenario Planner](strategy/scenario-planner.yaml) | Strategy |
+| [Copywriter](producers/copywriter.yaml) | Producers |
+| [Software Architect](tech/software-architect.yaml) | Tech |
+| [Automation Specialist](tech/automation-specialist.yaml) | Tech |
+| [Productivity Architect](tech/productivity-architect.yaml) | Tech |
+| [Quality Control Specialist](tech/quality-control-specialist.yaml) | Tech |
 
+---
+
+## 📂 Full Directory by Department
+
+A ⭐ means the helper is on the active roster. Everything else is experimental (opt-in).
+
+### 🟦 Strategy (13) — Planning & Insights
 **Path:** `staff/strategy/`
 
-Core strategic and analytical specialists who provide insights, research, and strategic direction.
+- ⭐ [Chief of Staff](strategy/chief-of-staff.yaml) — Leads projects and coordinates the team.
+- ⭐ [Market Analyst](strategy/market-analyst.yaml) — Market research and competition.
+- ⭐ [Creative Strategist](strategy/creative-strategist.yaml) — Big ideas and campaign concepts.
+- ⭐ [Brand Builder](strategy/brand-builder.yaml) — Brand identity and messaging.
+- ⭐ [Data Analyst](strategy/data-analyst.yaml) — Reads numbers and finds patterns.
+- ⭐ [Academic Researcher](strategy/academic-researcher.yaml) — Deep, fact-checked research.
+- ⭐ [Scenario Planner](strategy/scenario-planner.yaml) — "What if" paths and risk maps.
+- 🧪 [Trend Forecaster](strategy/trend-forecaster.yaml) — Spots what's coming next.
+- 🧪 [Learning Scientist](strategy/learning-scientist.yaml) — How people learn best.
+- 🧪 [Ethicist](strategy/ethicist.yaml) — Right-and-wrong questions.
+- 🧪 [Alchemist](strategy/alchemist.yaml) — Mixes unrelated ideas together.
+- 🧪 [Cartographer Invisible](strategy/cartographer-invisible.yaml) — Maps what others miss.
+- 🧪 [Etymologist Decay](strategy/etymologist-decay.yaml) — How words and meanings shift.
 
-- **[Chief of Staff](strategy/chief-of-staff.yaml)** - Project coordination and strategic oversight
-- **[Market Analyst](strategy/market-analyst.yaml)** - Market research and competitive analysis
-- **[Creative Strategist](strategy/creative-strategist.yaml)** - Creative strategy and campaign architecture
-- **[Brand Builder](strategy/brand-builder.yaml)** - Brand architecture and identity development
-- **[Data Analyst](strategy/data-analyst.yaml)** - Data intelligence and analytics
-- **[Trend Forecaster](strategy/trend-forecaster.yaml)** - Trend analysis and future insights
-- **[Academic Researcher](strategy/academic-researcher.yaml)** - Scholarly research and literature analysis
-- **[Learning Scientist](strategy/learning-scientist.yaml)** - Learning design and cognitive science
-
----
-
-## 🎨 Producers Department (Red - Creative & Production)
-
+### 🟥 Producers (15) — Creative & Production
 **Path:** `staff/producers/`
 
-Creative specialists who produce content, experiences, and narratives across all mediums.
+- ⭐ [Copywriter](producers/copywriter.yaml) — Words that sell or persuade.
+- 🧪 [Art Director](producers/art-director.yaml) — Visual look and feel.
+- 🧪 [Narrative Designer](producers/narrative-designer.yaml) — Story structure and worlds.
+- 🧪 [Community Manager](producers/community-manager.yaml) — Talking with your audience.
+- 🧪 [Event Planner](producers/event-planner.yaml) — Events and experiences.
+- 🧪 [Beta Reader](producers/beta-reader.yaml) — Early feedback on writing.
+- 🧪 [Creative Writer](producers/creative-writer.yaml) — Fiction and creative prose.
+- 🧪 [Dialect Coach](producers/dialect-coach.yaml) — Makes voices sound real.
+- 🧪 [Dream Navigator](producers/dream-navigator.yaml) — Works with dream imagery.
+- 🧪 [Forensic Consultant](producers/forensic-consultant.yaml) — Realistic crime detail for stories.
+- 🧪 [Mirror Maker](producers/mirror-maker.yaml) — Flips ideas to see them anew.
+- 🧪 [Mythologist](producers/mythologist.yaml) — Myths and legends.
+- 🧪 [Narrator](producers/narrator.yaml) — Reads and voices the story.
+- 🧪 [Symbolist](producers/symbolist.yaml) — Hidden meaning and symbols.
+- 🧪 [Translator Silence](producers/translator-silence.yaml) — Reads what's left unsaid.
 
-- **[Art Director](producers/art-director.yaml)** - Visual strategy and brand aesthetics
-- **[Copywriter](producers/copywriter.yaml)** - Conversion copy and brand messaging
-- **[Narrative Designer](producers/narrative-designer.yaml)** - Story architecture and narrative systems
-- **[Community Manager](producers/community-manager.yaml)** - Community building and engagement
-- **[Event Planner](producers/event-planner.yaml)** - Event strategy and experience design
-
- 
-
----
-
-## 💰 Commerce Department (Black - Growth & Commerce)
-
+### ⬛ Commerce (10) — Growth & Selling
 **Path:** `staff/commerce/`
 
-Growth, marketing, and revenue-focused specialists who drive business results.
+- 🧪 [Social Media Strategist](commerce/social-media-strategist.yaml) — Growth on social platforms.
+- 🧪 [SEO Specialist](commerce/seo-specialist.yaml) — Getting found on search.
+- 🧪 [Conversion Optimizer](commerce/conversion-optimizer.yaml) — More clicks to "buy".
+- 🧪 [Customer Acquisition Specialist](commerce/customer-acquisition-specialist.yaml) — Finds new customers.
+- 🧪 [Influencer Strategist](commerce/influencer-strategist.yaml) — Partnerships and influencers.
+- 🧪 [Pricing Strategist](commerce/pricing-strategist.yaml) — What to charge.
+- 🧪 [Commercial Real Estate Analyst](commerce/commercial-real-estate-analyst.yaml) — Commercial property analysis.
+- 🧪 [Interior Designer](commerce/interior-designer.yaml) — Indoor space design.
+- 🧪 [Landscape Architect](commerce/landscape-architect.yaml) — Outdoor space design.
+- 🧪 [Real Estate Investor](commerce/real-estate-investor.yaml) — Property investing.
 
-- **[Social Media Strategist](commerce/social-media-strategist.yaml)** - Social media strategy and growth
-- **[SEO Specialist](commerce/seo-specialist.yaml)** - Search engine optimization and organic growth
-- **[Conversion Optimizer](commerce/conversion-optimizer.yaml)** - Conversion rate and revenue optimization
-- **[Customer Acquisition Specialist](commerce/customer-acquisition-specialist.yaml)** - Growth marketing and customer acquisition
-- **[Influencer Strategist](commerce/influencer-strategist.yaml)** - Influencer marketing and partnerships
-- **[Pricing Strategist](commerce/pricing-strategist.yaml)** - Pricing strategy and revenue optimization
-- **[Commercial Real Estate Analyst](commerce/commercial-real-estate-analyst.yaml)** - Commercial property analysis and investment
-- **[Interior Designer](commerce/interior-designer.yaml)** - Interior space design and styling
-- **[Landscape Architect](commerce/landscape-architect.yaml)** - Landscape design and outdoor space planning
-- **[Real Estate Investor](commerce/real-estate-investor.yaml)** - Real estate investment strategy and execution
-
----
-
-## ⚙️ Tech Department (Grey/Artifact - Systems & Technology)
-
+### 💿 Tech (12) — Systems & Technology
 **Path:** `staff/tech/`
 
-Technical specialists who build systems, ensure security, and optimize operations.
+- ⭐ [Software Architect](tech/software-architect.yaml) — Plans software the right way.
+- ⭐ [Automation Specialist](tech/automation-specialist.yaml) — Automates repeat chores.
+- ⭐ [Productivity Architect](tech/productivity-architect.yaml) — Systems for getting more done.
+- ⭐ [Quality Control Specialist](tech/quality-control-specialist.yaml) — Catches bugs and mistakes.
+- 🧪 [Prompt Engineer](tech/prompt-engineer.yaml) — Better instructions for AI.
+- 🧪 [Toolmaker](tech/toolmaker.yaml) — Builds custom tools and scripts.
+- 🧪 [Operations Manager](tech/operations-manager.yaml) — Smooth day-to-day operations.
+- 🧪 [Cybersecurity Specialist](tech/cybersecurity-specialist.yaml) — Security and risk.
+- 🧪 [Supply Chain Coordinator](tech/supply-chain-coordinator.yaml) — Logistics and supply.
+- 🧪 [Handyman](tech/handyman.yaml) — Fixes broken things.
+- 🧪 [Infinite Looper](tech/infinite-looper.yaml) — Repeats a task until it's right.
+- 🧪 [Irony Detector](tech/irony-detector.yaml) — Spots sarcasm and irony.
 
-- **[Automation Specialist](tech/automation-specialist.yaml)** - Workflow optimization and tech solutions
-- **[Prompt Engineer](tech/prompt-engineer.yaml)** - AI optimization and prompt design
-- **[Software Architect](tech/software-architect.yaml)** - Software system design and technical strategy
-- **[Productivity Architect](tech/productivity-architect.yaml)** - Workflow design and personal systems
-- **[Toolmaker](tech/toolmaker.yaml)** - Custom tool and solution development
-- **[Operations Manager](tech/operations-manager.yaml)** - Business operations and process optimization
-- **[Quality Control Specialist](tech/quality-control-specialist.yaml)** - Quality assurance and standards enforcement
-- **[Cybersecurity Specialist](tech/cybersecurity-specialist.yaml)** - Information security and risk management
-- **[Supply Chain Coordinator](tech/supply-chain-coordinator.yaml)** - Supply chain management and logistics optimization
-
----
-
-## 🌿 Health & Lifestyle Department (Green - Health & Lifestyle)
-
+### 🟩 Health & Lifestyle (9) — Wellness & Mindset
 **Path:** `staff/health-lifestyle/`
 
-Wellness and personal development specialists who optimize health, habits, and mindset.
+- 🧪 [Habit Architect](health-lifestyle/habit-architect.yaml) — Builds good daily habits.
+- 🧪 [Cognitive Behavioral Therapist](health-lifestyle/cognitive-behavioral-therapist.yaml) — Helpful thinking patterns.
+- 🧪 [Stoic Coach](health-lifestyle/stoic-coach.yaml) — Calm and resilience.
+- 🧪 [Health Coach](health-lifestyle/health-coach.yaml) — Food, movement, and wellness.
+- 🧪 [Meditation Instructor](health-lifestyle/meditation-instructor.yaml) — Mindfulness and breathing.
+- 🧪 [Active Imagination Guide](health-lifestyle/active-imagination-guide.yaml) — Inner reflection work.
+- 🧪 [Humanist](health-lifestyle/humanist.yaml) — Growth and meaning.
+- 🧪 [Shadow Worker](health-lifestyle/shadow-worker.yaml) — Facing hard inner stuff.
+- 🧪 [Xenobiologist](health-lifestyle/xenobiologist.yaml) — Thinks from a truly alien view.
 
-- **[Habit Architect](health-lifestyle/habit-architect.yaml)** - Behavior design and habit formation
-- **[Cognitive Behavioral Therapist](health-lifestyle/cognitive-behavioral-therapist.yaml)** - Cognitive restructuring and mental wellness
-- **[Stoic Coach](health-lifestyle/stoic-coach.yaml)** - Stoic philosophy and resilience building
-- **[Health Coach](health-lifestyle/health-coach.yaml)** - Holistic health and wellness optimization
-- **[Meditation Instructor](health-lifestyle/meditation-instructor.yaml)** - Mindfulness and meditation practice
-
----
-
-## 📚 Knowledge Department (White - Specialized Knowledge)
-
+### ⬜ Knowledge (8) — Legal, Money & Records
 **Path:** `staff/knowledge/`
 
-Specialized experts in legal, financial, and professional knowledge domains.
+- 🧪 [Business Lawyer](knowledge/business-lawyer.yaml) — Contracts and business law.
+- 🧪 [Tax Strategist](knowledge/tax-strategist.yaml) — Tax planning.
+- 🧪 [Investment Advisor](knowledge/investment-advisor.yaml) — Investing and wealth.
+- 🧪 [Financial Therapist](knowledge/financial-therapist.yaml) — Your relationship with money.
+- 🧪 [Antiquarian](knowledge/antiquarian.yaml) — Old and rare objects.
+- 🧪 [Archivist Silence](knowledge/archivist-silence.yaml) — Lost or hidden records.
+- 🧪 [Librarian Babel](knowledge/librarian-babel.yaml) — Finds the right source.
+- 🧪 [Local Historian](knowledge/local-historian.yaml) — Local history and place.
 
-- **[Business Lawyer](knowledge/business-lawyer.yaml)** - Business law and legal strategy
-- **[Tax Strategist](knowledge/tax-strategist.yaml)** - Tax planning and optimization
-- **[Investment Advisor](knowledge/investment-advisor.yaml)** - Investment strategy and wealth management
-- **[Financial Therapist](knowledge/financial-therapist.yaml)** - Financial psychology and money mindset
+### 🟪 Meta (1) — Shapeshifter
+**Path:** `staff/meta/`
 
----
-
-## Archived Roster
-
-- **[Cartographer Invisible](strategy/cartographer-invisible.yaml)**
-- **[Etymologist Decay](strategy/etymologist-decay.yaml)**
-- **[Infinite Looper](tech/infinite-looper.yaml)**
-- **[Irony Detector](tech/irony-detector.yaml)**
-- **[Xenobiologist](health-lifestyle/xenobiologist.yaml)**
+- 🧪 [Morphling](meta/morphling.yaml) — Adapts to any job that doesn't fit the others. (See [meta/README.md](meta/README.md) for its extra abilities.)
 
 ---
 
-## 🧩 Extended / Experimental Roster
+## 📈 Add Your Own Helper
 
-These specialists are available for niche or experimental use. Full roster includes paths for each role:
+The team is meant to grow. To add a new helper:
 
-### 🟦 Strategy (5)
-- **[Alchemist](strategy/alchemist.yaml)**
-- **[Cartographer Invisible](strategy/cartographer-invisible.yaml)**
-- **[Ethicist](strategy/ethicist.yaml)**
-- **[Etymologist Decay](strategy/etymologist-decay.yaml)**
-- **[Scenario Planner](strategy/scenario-planner.yaml)**
+1. **Copy the template:** `templates/persona/new-staff-member-template.md` into the right department folder under `staff/`, and rename it `your-helper.yaml`.
+2. **Fill it in:** role, personality, expertise, capabilities, and activation patterns. (Match the structure in the template.)
+3. **Learn from examples:** Read a few existing helpers to see the depth and tone expected.
+4. **Validate it:**
 
-### 🎨 Producers (10)
-- **[Beta Reader](producers/beta-reader.yaml)**
-- **[Creative Writer](producers/creative-writer.yaml)**
-- **[Dialect Coach](producers/dialect-coach.yaml)**
-- **[Dream Navigator](producers/dream-navigator.yaml)**
-- **[Forensic Consultant](producers/forensic-consultant.yaml)**
-- **[Mirror Maker](producers/mirror-maker.yaml)**
-- **[Mythologist](producers/mythologist.yaml)**
-- **[Narrator](producers/narrator.yaml)**
-- **[Symbolist](producers/symbolist.yaml)**
-- **[Translator Silence](producers/translator-silence.yaml)**
+   ```bash
+   uv run tools/validate_specialist.py
+   ```
 
-### ⚙️ Tech (3)
-- **[Handyman](tech/handyman.yaml)**
-- **[Infinite Looper](tech/infinite-looper.yaml)**
-- **[Irony Detector](tech/irony-detector.yaml)**
+   (This checks every helper in `staff/`, including your new one.)
 
-### 🌿 Health & Lifestyle (4)
-- **[Active Imagination Guide](health-lifestyle/active-imagination-guide.yaml)**
-- **[Humanist](health-lifestyle/humanist.yaml)**
-- **[Shadow Worker](health-lifestyle/shadow-worker.yaml)**
-- **[Xenobiologist](health-lifestyle/xenobiologist.yaml)**
+### Department Color Map (Magic: The Gathering)
 
-### 📚 Knowledge (4)
-- **[Antiquarian](knowledge/antiquarian.yaml)**
-- **[Archivist Silence](knowledge/archivist-silence.yaml)**
-- **[Librarian Babel](knowledge/librarian-babel.yaml)**
-- **[Local Historian](knowledge/local-historian.yaml)**
+- 🟦 **Blue** → `strategy/` — Planning & Insights
+- 🟥 **Red** → `producers/` — Creative & Production
+- ⬛ **Black** → `commerce/` — Growth & Commerce
+- 💿 **Grey/Artifact** → `tech/` — Systems & Technology
+- 🟩 **Green** → `health-lifestyle/` — Health & Lifestyle
+- ⬜ **White** → `knowledge/` — Specialized Knowledge
+- 🟪 **Colorless** → `meta/` — Meta and orchestration
 
-### 🟪 Meta (1)
-- **[Morphling](meta/morphling.yaml)**
+Older roster-planning notes live in `archive/legacy-docs/` if you want the history.
 
 ---
 
-## 📈 Workforce Expansion & Customization
+## 🎯 What Every Helper Includes
 
-Your specialist workforce is designed to be extended. You can create new specialists and departments to suit your needs.
-
-### **Creating a New Specialist**
-
-1. **Copy the template:** Start by copying the `new-staff-member-template.md` from the `templates/persona` directory to the appropriate department in the `staff` directory.
-2. **Define the specialist:** Fill out the `yaml` file with the specialist's role, skills, activation patterns, and performance standards.
-3. **Use existing specialists as examples:** Review implemented specialists to understand the depth and structure expected.
-
-### **Department Structure (MtG Color Mapping)**
-
-- 🟦 **Blue** → `strategy/` - Strategy & Insights
-- 🟥 **Red** → `producers/` - Creative & Production
-- ⬛ **Black** → `commerce/` - Growth & Commerce
-- 💿 **Grey/Artifact** → `tech/` - Systems & Technology
-- 🟩 **Green** → `health-lifestyle/` - Health & Lifestyle
-- ⬜ **White** → `knowledge/` - Specialized Knowledge
-- 🟪 **Colorless** → `meta/` - Meta and orchestration support
-
-### **Planned Expansions**
-
-- Add new specialists using `templates/persona/new-staff-member-template.md` and place them in the correct department.
-- Legacy roster planning docs are archived in `archive/legacy-docs/` if you need historical context.
-
----
-
-## 🎯 Quality Standards
-
-All specialists include:
-- **Core Identity:** Role, personality, expertise, and communication style
-- **Core Capabilities:** 3-5 major capability areas with detailed descriptions
-- **Integration Points:** Primary and secondary collaboration networks
-- **Activation Patterns:** Example prompts with specific use cases
-- **Performance Standards:** Quality indicators, success metrics, and KPIs
-- **Deep Dive:** Deliverables, specialized knowledge areas, and detailed workflows
-
----
+- **Core Identity:** Role, personality, expertise, and communication style.
+- **Core Capabilities:** 3–5 major capability areas with descriptions.
+- **Integration Points:** Who they work with.
+- **Activation Patterns:** Example prompts that trigger them.
+- **Performance Standards:** Quality markers and success metrics.
+- **Deep Dive:** Deliverables, knowledge areas, and workflows.
