@@ -98,9 +98,14 @@ def test_repo_budget_mode_is_disabled_without_budget_model():
     assert budget_mode["model"] == ""
 
 
-def test_anthropic_only_configuration_is_rejected_explicitly():
+def test_anthropic_only_configuration_is_rejected_explicitly(monkeypatch):
     """A configured but unsupported provider must not pass key validation."""
-    config = Config(anthropic_api_key="anthropic-key")
+    # This test exercises explicit constructor values, not the developer's
+    # local credentials.  Disable both process-environment and dotenv
+    # sources so a sibling checkout .env cannot make the test pass falsely.
+    monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+    config = Config(anthropic_api_key="anthropic-key", _env_file=None)
     assert config.validate_api_keys() is False
     with pytest.raises(ValueError, match="Anthropic.*not supported"):
         ModelRouter(config=config).create_llm("claude-3")
