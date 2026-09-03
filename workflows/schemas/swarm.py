@@ -147,12 +147,12 @@ class SwarmConfig:
 
     # Context management
     context_strategy: str = 'dependencies_only'  # 'dependencies_only', 'full', 'summary'
-    max_context_tokens: int = 500  # Truncate individual results
+    max_context_tokens: int = 2000  # Truncate individual results
 
     # Cost control
     max_budget_tokens: Optional[int] = None  # Halt if exceeded
     budget_warning_threshold: float = 0.8  # Warn at 80% budget
-    max_completion_tokens_per_call: int = 512
+    max_completion_tokens_per_call: int = 4096
 
     # Error handling
     max_retries: int = 2

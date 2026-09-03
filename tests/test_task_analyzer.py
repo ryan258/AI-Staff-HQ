@@ -104,3 +104,98 @@ def test_task_analyzer_rejects_unsafe_task_identifier():
         ])
     )
     assert tasks == []
+
+
+def test_task_analyzer_normalizes_numeric_task_ids():
+    """Numeric IDs like '1' should normalize to 'task_1' and match dependencies."""
+    analyzer = TaskAnalyzer(MagicMock())
+    tasks = analyzer._parse_task_json(
+        json.dumps([
+            {
+                "id": "1",
+                "description": "Step one",
+                "required_capabilities": ["research"],
+                "depends_on": [],
+                "priority": 1,
+            },
+            {
+                "id": "2",
+                "description": "Step two",
+                "required_capabilities": ["copywriting"],
+                "depends_on": ["1"],
+                "priority": 2,
+            },
+        ])
+    )
+    assert len(tasks) == 2
+    assert tasks[0].id == "task_1"
+    assert tasks[1].id == "task_2"
+    assert tasks[1].depends_on == ["task_1"]
+
+
+def test_task_analyzer_prefers_structured_output():
+    """When agent LLM supports with_structured_output, analyze_brief should use it."""
+    from orchestrator.task_analyzer import TaskItem, TaskPlan
+
+    from orchestrator.swarm_runner import SwarmRunner
+    runner = MagicMock(spec=SwarmRunner)
+    runner.query_agent_with_budget.side_effect = lambda agent, prompt, state=None, label="", invoker=None: (
+        invoker(prompt, None) if invoker else agent.query(prompt)
+    )
+    mock_agent = MagicMock()
+    mock_structured_llm = MagicMock()
+
+    mock_plan = TaskPlan(
+        tasks=[
+            TaskItem(
+                id="task_1",
+                description="Structured task description",
+                required_capabilities=["analysis"],
+                depends_on=[],
+                priority=1,
+            )
+        ]
+    )
+    mock_structured_llm.invoke.return_value = mock_plan
+    mock_agent.llm.with_structured_output.return_value = mock_structured_llm
+    runner.get_agent.return_value = mock_agent
+
+    analyzer = TaskAnalyzer(runner)
+    breakdown = analyzer.analyze_brief("Perform structured analysis")
+
+    assert breakdown.parse_success is True
+    assert len(breakdown.tasks) == 1
+    assert breakdown.tasks[0].id == "task_1"
+    assert breakdown.tasks[0].description == "Structured task description"
+    mock_agent.llm.with_structured_output.assert_called_once_with(TaskPlan)
+    runner.query_agent_with_budget.assert_called_once()
+
+
+def test_task_analyzer_falls_back_when_structured_output_fails():
+    """When structured output fails, analyze_brief should fall back to JSON text parsing."""
+    runner = MagicMock()
+    mock_agent = MagicMock()
+    mock_structured_llm = MagicMock()
+    mock_structured_llm.invoke.side_effect = RuntimeError("Provider does not support tools")
+    mock_agent.llm.with_structured_output.return_value = mock_structured_llm
+
+    valid_json = json.dumps([
+        {
+            "id": "task_1",
+            "description": "Fallback parsed task",
+            "required_capabilities": ["writing"],
+            "depends_on": [],
+            "priority": 1,
+        }
+    ])
+    mock_agent.query.return_value = valid_json
+    runner.get_agent.return_value = mock_agent
+
+    analyzer = TaskAnalyzer(runner)
+    breakdown = analyzer.analyze_brief("Perform fallback analysis")
+
+    assert breakdown.parse_success is True
+    assert len(breakdown.tasks) == 1
+    assert breakdown.tasks[0].id == "task_1"
+    assert breakdown.tasks[0].description == "Fallback parsed task"
+

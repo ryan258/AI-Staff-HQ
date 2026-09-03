@@ -10,7 +10,7 @@ from threading import Lock
 from datetime import datetime, timezone
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Callable, Dict, List, Optional, Tuple
 
 from langgraph.graph import END, StateGraph
 
@@ -828,22 +828,38 @@ Please complete this task. Be thorough and specific in your response.
         state: Optional[SwarmState] = None,
         *,
         label: str = "provider call",
-    ) -> str:
+        invoker: Optional[Callable[[str, Optional[int]], Any]] = None,
+    ) -> Any:
         """Query an agent through the shared per-run budget ledger."""
         if state is None:
+            if invoker is not None:
+                return invoker(prompt, None)
             return agent.query(prompt)
 
         reservation = self._reserve_budget(state, prompt, label)
         try:
-            if self._budget_limit(state) is None:
+            if invoker is not None:
+                response = invoker(
+                    prompt,
+                    None if self._budget_limit(state) is None else reservation.completion_tokens,
+                )
+            elif self._budget_limit(state) is None:
                 response = agent.query(prompt)
             else:
                 response = agent.query(prompt, max_tokens=reservation.completion_tokens)
-            response_text = response if isinstance(response, str) else str(response)
-            if len(response_text) > reservation.completion_tokens * 4:
+            response_text = (
+                response
+                if isinstance(response, str)
+                else (
+                    response.model_dump_json()
+                    if hasattr(response, "model_dump_json")
+                    else str(response)
+                )
+            )
+            if self._budget_limit(state) is not None and len(response_text) > reservation.completion_tokens * 4:
                 response_text = response_text[: reservation.completion_tokens * 4]
             self._settle_budget(state, reservation, agent, response_text)
-            return response_text
+            return response_text if isinstance(response, str) else response
         except Exception:
             self._settle_budget(state, reservation, agent, "", failed=True)
             raise
