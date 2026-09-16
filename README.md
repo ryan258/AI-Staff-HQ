@@ -23,7 +23,8 @@ Welcome to AI-Staff-HQ! This is a toolkit to help you build your very own team o
 - ✅ **A Clean System** - Keep all your rules and notes in one place.
 - ✅ **Example Steps** - Use our easy guides to help you get started.
 - ✅ **Great Templates** - Use our safe templates to make new helpers.
-- ✅ **Great Work Every Time** - Get clear, high-quality answers from your AI team.
+- **Reviewable drafts** - Specialists provide structured output; verify evidence,
+  completeness, and task-specific acceptance criteria before relying on it.
 
 **This is a personal AI system.** It helps your brain work better!
 
@@ -143,6 +144,21 @@ uv run tools/activate.py creative-strategist
 - **Chats**: Everything you say is saved to `~/.ai-staff-hq/sessions/`.
 - **Come Back Later**: Type `--resume last` to pick up where you left off.
 - **Stop Chatting**: Type `/exit` to close the chat.
+
+Saved sessions retain the complete appended transcript; the model receives the
+configured recent-history window. Repeated messages are separate events, and
+concurrent saves preserve both writers' appends. Older session files remain
+readable and receive event IDs when next saved.
+Configure session persistence before creating a conversation state and keep that
+setting fixed for its lifetime. Disabled persistence retains only the bounded
+model context, with no pending transcript queue. If a caller disables saving
+mid-session, the next add or save discards pending events; reenabling it does not
+reconstruct the discarded transcript. Start a new state to change persistence
+mode intentionally.
+
+The Planning Swarm CLI preserves its final output on stdout and exits with `0`
+only for a `COMPLETED` run. Failed, blocked, or unrecognized outcomes exit with
+`1`, so shell callers can distinguish an available result from successful work.
 
 ### Fast Questions
 
