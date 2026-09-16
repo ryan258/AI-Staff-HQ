@@ -90,7 +90,7 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def main() -> None:
+def main() -> int:
     """CLI entrypoint."""
     args = build_parser().parse_args()
     result = run_planning_swarm(
@@ -106,7 +106,8 @@ def main() -> None:
         stream=args.stream,
     )
     print(result.get("final_output", "[No output generated]"))
+    return 0 if result.get("status") == "COMPLETED" else 1
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
