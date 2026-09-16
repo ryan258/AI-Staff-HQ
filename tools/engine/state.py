@@ -68,10 +68,9 @@ class ConversationState:
         self.messages: List[BaseMessage] = []
         self.created_at = datetime.now().isoformat()
         self.updated_at = self.created_at
-        # Snapshot used to merge appends made by another state instance while
-        # this instance was working.  A process-wide lock alone prevents
-        # torn replacements; the snapshot prevents lost messages.
-        self._base_message_dicts: List[dict] = []
+        # Pending events are independent of the trimmed provider context.
+        # Stable IDs make retries idempotent without collapsing repeated text.
+        self._pending_messages: List[tuple[str, dict]] = []
         
         # Ensure session directory exists and is contained within config.session_dir
         base_dir = self.config.session_dir.resolve()
@@ -92,6 +91,13 @@ class ConversationState:
     def add_message(self, message: BaseMessage) -> None:
         """Add message to history and update timestamp."""
         self.messages.append(message)
+        if self.config.save_sessions:
+            self._pending_messages.append((uuid.uuid4().hex, messages_to_dict([message])[0]))
+        else:
+            # Persistence is configured for the state lifetime. If a caller
+            # disables it mid-session, discard unsaved events as well; never
+            # retain a hidden, unbounded transcript behind the trimmed context.
+            self._pending_messages = []
         self.updated_at = datetime.now().isoformat()
         self._trim_history()
         
@@ -132,9 +138,9 @@ class ConversationState:
     def save(self) -> None:
         """Save session to disk atomically with private permissions."""
         if not self.config.save_sessions:
+            self._pending_messages = []
             return
 
-        current_messages = messages_to_dict(self.messages)
         temp_file: Optional[Path] = None
         with self._session_lock():
             existing_data = None
@@ -146,22 +152,18 @@ class ConversationState:
                     )
                 existing_data, existing_messages = self._read_payload_locked()
 
-            if existing_data is None:
-                merged_messages = current_messages
-            elif self._base_message_dicts and current_messages[: len(self._base_message_dicts)] == self._base_message_dicts:
-                # This instance loaded a snapshot and only appended messages.
-                # Preserve anything another instance committed in the meantime.
-                delta = current_messages[len(self._base_message_dicts) :]
-                merged_messages = existing_messages + delta
-            elif current_messages == existing_messages:
-                merged_messages = existing_messages
-            else:
-                # A trimmed or independently-created state has no safe common
-                # prefix.  Preserve the durable file and append only messages
-                # not already present verbatim.
-                merged_messages = existing_messages + [
-                    message for message in current_messages if message not in existing_messages
-                ]
+            # Legacy files receive event identities while holding the same lock
+            # as the append. Other readers keep their own pending identities.
+            message_ids = list((existing_data or {}).get("message_ids", []))
+            if not message_ids:
+                message_ids = [uuid.uuid4().hex for _ in existing_messages]
+            known_ids = set(message_ids)
+            merged_messages = list(existing_messages)
+            for event_id, message in self._pending_messages:
+                if event_id not in known_ids:
+                    message_ids.append(event_id)
+                    merged_messages.append(message)
+                    known_ids.add(event_id)
 
             now = datetime.now().isoformat()
             data = {
@@ -170,6 +172,7 @@ class ConversationState:
                 "created_at": (existing_data or {}).get("created_at", self.created_at),
                 "updated_at": now,
                 "messages": merged_messages,
+                "message_ids": message_ids,
             }
 
             try:
@@ -193,7 +196,8 @@ class ConversationState:
                 self.created_at = data["created_at"]
                 self.updated_at = now
                 self.messages = messages_from_dict(merged_messages)
-                self._base_message_dicts = merged_messages
+                self._trim_history()
+                self._pending_messages = []
             finally:
                 if temp_file is not None:
                     temp_file.unlink(missing_ok=True)
@@ -212,7 +216,8 @@ class ConversationState:
             self.created_at = data["created_at"]
             self.updated_at = data.get("updated_at", self.created_at)
             self.messages = messages_from_dict(restored_message_dicts)
-            self._base_message_dicts = messages_to_dict(self.messages)
+            self._trim_history()
+            self._pending_messages = []
             return True
 
     @contextmanager
@@ -262,6 +267,15 @@ class ConversationState:
             raise SessionCorruptError(f"Session {self.session_id} is corrupt: invalid updated_at")
         if not isinstance(data.get("messages"), list):
             raise SessionCorruptError(f"Session {self.session_id} is corrupt: messages is not a list")
+        if "message_ids" in data:
+            message_ids = data["message_ids"]
+            if (
+                not isinstance(message_ids, list)
+                or len(message_ids) != len(data["messages"])
+                or any(not isinstance(value, str) or not value for value in message_ids)
+                or len(set(message_ids)) != len(message_ids)
+            ):
+                raise SessionCorruptError(f"Session {self.session_id} is corrupt: invalid message_ids")
 
         try:
             restored_messages = messages_from_dict(data["messages"])
@@ -293,7 +307,9 @@ class ConversationState:
         # Update timestamps
         self.created_at = datetime.now().isoformat()
         self.updated_at = self.created_at
-        self._base_message_dicts = []
+        self._pending_messages = [
+            (uuid.uuid4().hex, message) for message in messages_to_dict(self.messages)
+        ] if self.config.save_sessions else []
 
         # Update session file path
         self.session_file = (self.session_dir / f"{self.session_id}.json").resolve()

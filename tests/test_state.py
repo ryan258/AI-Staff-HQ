@@ -208,3 +208,117 @@ def test_concurrent_state_saves_preserve_appended_messages(mock_env):
     contents = [item["data"]["content"] for item in saved["messages"]]
     assert "first message" in contents
     assert "second message" in contents
+
+
+def test_trimmed_sessions_preserve_repeated_turns_and_bounded_context(mock_env):
+    from langchain_core.messages import SystemMessage
+    from tools.engine.config import get_config
+
+    get_config().max_history_turns = 1
+    state = ConversationState("repeated-turns")
+    state.add_message(SystemMessage(content="system"))
+    for question, answer in [("again", "first"), ("different", "second"), ("again", "third")]:
+        state.add_message(HumanMessage(content=question))
+        state.add_message(AIMessage(content=answer))
+        state.save()
+        assert len(state.messages) == 3
+    state.save()  # An unchanged save must not duplicate events.
+    saved = json.loads(state.session_file.read_text())
+    assert [item["data"]["content"] for item in saved["messages"]] == [
+        "system", "again", "first", "different", "second", "again", "third"
+    ]
+    loaded = ConversationState("repeated-turns", session_id=state.session_id)
+    assert loaded.load()
+    assert [item.content for item in loaded.messages] == ["system", "again", "third"]
+
+
+def test_legacy_session_concurrent_identical_appends_are_distinct_events(mock_env):
+    from langchain_core.messages import SystemMessage, messages_to_dict
+    from tools.engine.config import get_config
+
+    get_config().max_history_turns = 1
+    first = ConversationState("legacy-repeat")
+    first.session_file.write_text(json.dumps({
+        "session_id": first.session_id, "specialist": first.specialist_slug,
+        "created_at": first.created_at,
+        "messages": messages_to_dict([SystemMessage(content="system"), HumanMessage(content="old"), AIMessage(content="old answer")]),
+    }))
+    second = ConversationState(first.specialist_slug, session_id=first.session_id)
+    assert first.load() and second.load()
+    for state in (first, second):
+        state.add_message(HumanMessage(content="same question"))
+        state.add_message(AIMessage(content="same answer"))
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        list(executor.map(lambda state: state.save(), (first, second)))
+    first.save()
+    saved = json.loads(first.session_file.read_text())
+    contents = [item["data"]["content"] for item in saved["messages"]]
+    assert contents == ["system", "old", "old answer", "same question", "same answer", "same question", "same answer"]
+    assert len(first.messages) == len(second.messages) == 3
+
+
+def test_save_retry_after_replacement_does_not_duplicate_events(mock_env, monkeypatch):
+    import os
+
+    state = ConversationState("retry-event")
+    state.add_message(HumanMessage(content="repeatable"))
+    original_chmod = os.chmod
+
+    def fail_after_replace(path, mode):
+        if path == state.session_file:
+            raise OSError("post-replace failure")
+        return original_chmod(path, mode)
+
+    with monkeypatch.context() as patch:
+        patch.setattr(os, "chmod", fail_after_replace)
+        with pytest.raises(OSError, match="post-replace"):
+            state.save()
+    state.save()
+    saved = json.loads(state.session_file.read_text())
+    assert len(saved["messages"]) == len(saved["message_ids"]) == 1
+
+
+def test_disabled_persistence_keeps_only_bounded_context(mock_env):
+    from langchain_core.messages import SystemMessage
+    from tools.engine.config import get_config
+
+    config = get_config()
+    config.save_sessions = False
+    config.max_history_turns = 1
+    state = ConversationState("ephemeral-context")
+    state.add_message(SystemMessage(content="system"))
+    for index in range(100):
+        state.add_message(HumanMessage(content=f"question {index}"))
+        state.add_message(AIMessage(content=f"answer {index}"))
+        state.save()
+    assert len(state.messages) == 3
+    assert state._pending_messages == []
+    assert not state.session_file.exists()
+    state.clear()
+    assert len(state.messages) == 1
+    assert state._pending_messages == []
+    assert not state.session_file.exists()
+
+
+def test_disabling_persistence_discards_previously_pending_events(mock_env):
+    state = ConversationState("disabled-pending")
+    state.add_message(HumanMessage(content="unsaved"))
+    assert state._pending_messages
+    state.config.save_sessions = False
+    state.save()
+    assert state._pending_messages == []
+    assert not state.session_file.exists()
+
+
+@pytest.mark.parametrize("identities", [[], ["same", "same"], [None], [["invalid"]]])
+def test_invalid_event_id_metadata_preserves_corrupt_evidence(mock_env, identities):
+    state = ConversationState("invalid-event-ids")
+    state.add_message(HumanMessage(content="message"))
+    state.save()
+    data = json.loads(state.session_file.read_text())
+    data["message_ids"] = identities
+    state.session_file.write_text(json.dumps(data))
+    original = state.session_file.read_text()
+    with pytest.raises(SessionCorruptError, match="message_ids"):
+        state.load()
+    assert state.session_file.read_text() == original
