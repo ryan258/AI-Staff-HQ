@@ -91,7 +91,7 @@ uv run tools/activate.py morphling --resume 20260205_203015_ab12cd34
 
 ```bash
 uv run tools/activate.py morphling \
-  --model "openai/gpt-4.1" \
+  --model "openai/gpt-6.1-sol" \
   --temperature 0.3 \
   -q "Review this architecture proposal and identify failure modes."
 ```
@@ -311,7 +311,7 @@ uv run tools/activate.py morphling -q "..."
 uv run tools/activate.py morphling --resume last
 
 # Override model
-uv run tools/activate.py morphling --model "openai/gpt-4.1"
+uv run tools/activate.py morphling --model "openai/gpt-6.1-sol"
 
 # Override temperature
 uv run tools/activate.py morphling --temperature 0.3

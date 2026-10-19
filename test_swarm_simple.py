@@ -23,7 +23,7 @@ def main():
         enable_parallel=True,
     )
 
-    model_override = os.getenv("DEFAULT_MODEL", "moonshotai/kimi-k2:free")
+    model_override = os.getenv("DEFAULT_MODEL", "nvidia/nemotron-3-super-120b-a12b:free")
     runner = SwarmRunner(
         staff_dir,
         config=config,

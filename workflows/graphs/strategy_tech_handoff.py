@@ -120,7 +120,7 @@ def main():
     )
     parser.add_argument(
         "--model",
-        help="Override model routing for this run (e.g., moonshotai/kimi-k2:free).",
+        help="Override model routing for this run (e.g., nvidia/nemotron-3-super-120b-a12b:free).",
     )
     parser.add_argument(
         "--temperature",

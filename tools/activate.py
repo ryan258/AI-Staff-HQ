@@ -170,7 +170,7 @@ Examples:
     # Model selection
     parser.add_argument(
         '--model',
-        help='Override model routing (e.g., moonshotai/kimi-k2:free)'
+        help='Override model routing (e.g., nvidia/nemotron-3-super-120b-a12b:free)'
     )
 
     parser.add_argument(
