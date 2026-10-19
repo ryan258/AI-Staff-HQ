@@ -12,7 +12,7 @@ def test_create_llm_preserves_zero_temperature(monkeypatch):
     config = Config(openrouter_api_key="test-key")
     router = ModelRouter(config=config)
 
-    llm = router.create_llm("openai/gpt-4o", temperature=0.0)
+    llm = router.create_llm("nvidia/nemotron-3-super-120b-a12b:free", temperature=0.0)
     assert llm.temperature == 0.0
 
 
@@ -20,7 +20,7 @@ def test_create_llm_uses_default_temperature_when_none():
     config = Config(openrouter_api_key="test-key", default_temperature=0.7)
     router = ModelRouter(config=config)
 
-    llm = router.create_llm("openai/gpt-4o", temperature=None)
+    llm = router.create_llm("nvidia/nemotron-3-super-120b-a12b:free", temperature=None)
     assert llm.temperature == 0.7
 
 
@@ -37,7 +37,7 @@ def test_create_llm_rejects_out_of_range_temperature():
     router = ModelRouter(config=config)
 
     with pytest.raises(ValueError, match="Temperature must be between 0.0 and 2.0"):
-        router.create_llm("openai/gpt-4o", temperature=3.5)
+        router.create_llm("nvidia/nemotron-3-super-120b-a12b:free", temperature=3.5)
 
 
 def test_create_llm_rejects_openrouter_model_when_only_openai_key():
@@ -45,7 +45,7 @@ def test_create_llm_rejects_openrouter_model_when_only_openai_key():
     router = ModelRouter(config=config)
 
     with pytest.raises(ValueError, match="appears to require OpenRouter"):
-        router.create_llm("anthropic/claude-3-opus")
+        router.create_llm("anthropic/claude-sonnet-5.5")
 
 
 def test_model_router_defaults_when_missing_routing(mock_env):
@@ -108,4 +108,24 @@ def test_anthropic_only_configuration_is_rejected_explicitly(monkeypatch):
     config = Config(anthropic_api_key="anthropic-key", _env_file=None)
     assert config.validate_api_keys() is False
     with pytest.raises(ValueError, match="Anthropic.*not supported"):
-        ModelRouter(config=config).create_llm("claude-3")
+        ModelRouter(config=config).create_llm("claude-sonnet-5.5")
+
+
+def test_create_llm_bounds_requests_and_sends_openrouter_fallbacks(tmp_path):
+    routing_yaml = tmp_path / "routing.yaml"
+    routing_yaml.write_text("fallback_models:\n  - primary/model\n  - backup/model\n")
+    config = Config(openrouter_api_key="test-key", request_timeout_seconds=30, max_retries=1)
+    llm = ModelRouter(routing_config_path=routing_yaml, config=config).create_llm("primary/model")
+
+    assert llm.request_timeout == 30
+    assert llm.max_retries == 1
+    assert llm.extra_body == {"models": ["primary/model", "backup/model"]}
+
+
+def test_create_llm_skips_fallbacks_for_direct_openai(tmp_path):
+    routing_yaml = tmp_path / "routing.yaml"
+    routing_yaml.write_text("fallback_models:\n  - backup/model\n")
+    config = Config(openrouter_api_key="", openai_api_key="sk-openai-key", _env_file=None)
+    llm = ModelRouter(routing_config_path=routing_yaml, config=config).create_llm("gpt-test")
+
+    assert llm.extra_body is None

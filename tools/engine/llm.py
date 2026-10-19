@@ -110,6 +110,13 @@ class ModelRouter:
                 "or OPENAI_API_KEY in your .env file."
             )
 
+        # OpenRouter retries the next model when the primary is down,
+        # rate-limited, or retired (free models disappear without notice).
+        extra_body = None
+        fallbacks = [m for m in self.routing.get('fallback_models') or [] if m and m != model]
+        if base_url and fallbacks:
+            extra_body = {"models": [model, *fallbacks]}
+
         resolved_temp = self.config.default_temperature if temperature is None else float(temperature)
         if not (0.0 <= resolved_temp <= 2.0):
             raise ValueError(f"Temperature must be between 0.0 and 2.0, got {resolved_temp}")
@@ -119,7 +126,10 @@ class ModelRouter:
             openai_api_key=api_key,
             openai_api_base=base_url,
             temperature=resolved_temp,
-            default_headers=default_headers
+            default_headers=default_headers,
+            timeout=self.config.request_timeout_seconds,
+            max_retries=self.config.max_retries,
+            extra_body=extra_body,
         )
 
     def get_model_info(self, model_id: str) -> Optional[dict]:

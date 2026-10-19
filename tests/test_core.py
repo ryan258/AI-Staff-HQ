@@ -187,6 +187,18 @@ def test_agent_query_raises_on_llm_failure(mock_env, mock_yaml, mock_llm, mock_r
         agent.query("Hello")
 
 
+def test_agent_query_raises_on_empty_reply(mock_env, mock_yaml, mock_llm, mock_router):
+    """A reasoning model that spends its whole budget thinking must not count as an answer."""
+    from tools.engine.core import AgentExecutionError
+
+    agent = SpecialistAgent(mock_yaml)
+    mock_llm.invoke.return_value = AIMessage(content="")
+
+    with pytest.raises(AgentExecutionError, match="empty reply"):
+        agent.query("Hello", max_tokens=16)
+    assert not any(isinstance(m, AIMessage) for m in agent.state.messages)
+
+
 def test_load_specialist_outside_staff_dir_rejected(mock_env, mock_yaml, mock_llm):
     """Test that load_specialist rejects paths outside the staff directory."""
     outside_dir = mock_env / "outside"

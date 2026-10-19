@@ -27,6 +27,9 @@ class Config(BaseSettings):
     max_history_turns: int = 20
     max_context_tokens: int = 32000
     default_temperature: float = 0.7
+    # Bound every model call so a hung provider cannot stall a swarm.
+    request_timeout_seconds: float = 120.0
+    max_retries: int = 2
 
     # Session Storage
     # We use a factory or validator to allow dynamic Home resolution

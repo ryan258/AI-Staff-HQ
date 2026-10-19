@@ -16,22 +16,40 @@ budget_mode:
   enabled: false
   model: ""
 
+# OpenRouter fallback chain: tried in order when the selected model is down,
+# rate-limited, or retired. Ignored for direct OpenAI keys.
+fallback_models:
+  - "nvidia/nemotron-3-ultra-550b-a55b:free"
+  - "google/gemma-4-31b-it:free"
+
 # Model metadata (for display and validation)
 available_models:
-  - id: "openrouter/hunter-alpha"
-    name: "Hunter Alpha"
-    context_window: 200000
-    cost_per_1k_input: 0.0
-    strengths: ["reasoning", "code", "analysis", "free"]
-
-  - id: "openrouter/healer-alpha"
-    name: "Healer Alpha"
-    context_window: 200000
-    cost_per_1k_input: 0.0
-    strengths: ["reasoning", "code", "analysis", "free"]
-
   - id: "nvidia/nemotron-3-super-120b-a12b:free"
-    name: "Nemotron 120b"
-    context_window: 128000
-    cost_per_1k_input: 0.005
-    strengths: ["creativity", "multimodal", "code"]
+    name: "Nemotron 3 Super 120B (free)"
+    context_window: 262144
+    cost_per_1k_input: 0.0
+    strengths: ["reasoning", "tools", "structured-output", "free"]
+
+  - id: "nvidia/nemotron-3-ultra-550b-a55b:free"
+    name: "Nemotron 3 Ultra 550B (free)"
+    context_window: 1000000
+    cost_per_1k_input: 0.0
+    strengths: ["reasoning", "long-context", "tools", "free"]
+
+  - id: "google/gemma-4-31b-it:free"
+    name: "Gemma 4 31B (free)"
+    context_window: 262144
+    cost_per_1k_input: 0.0
+    strengths: ["writing", "tools", "free"]
+
+  - id: "anthropic/claude-sonnet-5.5"
+    name: "Claude Sonnet 5.5"
+    context_window: 1000000
+    cost_per_1k_input: 0.002
+    strengths: ["reasoning", "code", "writing", "orchestration"]
+
+  - id: "anthropic/claude-haiku-5.5"
+    name: "Claude Haiku 5.5"
+    context_window: 1000000
+    cost_per_1k_input: 0.0001
+    strengths: ["fast", "cheap", "structured-output"]
