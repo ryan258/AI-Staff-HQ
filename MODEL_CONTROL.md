@@ -3,7 +3,7 @@
 ## Overview
 
 AI Staff HQ supports multiple ways to control which models are used by specialists.
-The default model is configured in `.env` (currently `moonshotai/kimi-k2:free`). Examples below show optional overrides.
+The default model is configured in `.env` (currently `nvidia/nemotron-3-super-120b-a12b:free`). Examples below show optional overrides.
 
 ## Model Control Hierarchy
 
@@ -26,7 +26,7 @@ from orchestrator.swarm_runner import SwarmRunner
 
 runner = SwarmRunner(
     staff_dir,
-    model_override="anthropic/claude-3.5-sonnet",  # All agents use this
+    model_override="anthropic/claude-sonnet-5.5",  # All agents use this
     temperature=0.7,
 )
 ```
@@ -36,11 +36,11 @@ runner = SwarmRunner(
 ```bash
 # Override model for all specialists
 uv run workflows/planning_swarm.py "Write a tagline" \
-    --model "anthropic/claude-3.5-sonnet"
+    --model "anthropic/claude-sonnet-5.5"
 
 # With temperature
 uv run workflows/planning_swarm.py "Write a tagline" \
-    --model "anthropic/claude-3.5-sonnet" \
+    --model "anthropic/claude-sonnet-5.5" \
     --temperature 0.9
 ```
 
@@ -50,7 +50,7 @@ uv run workflows/planning_swarm.py "Write a tagline" \
 runner = SwarmRunner(
     staff_dir,
     config=config,
-    model_override="anthropic/claude-opus-4",  # Override
+    model_override="anthropic/claude-opus-5.5",  # Override
     auto_approve=True,
 )
 ```
@@ -64,7 +64,7 @@ Edit `ai-staff-hq/config/model_routing.yaml`:
 ```yaml
 budget_mode:
   enabled: true
-  model: "moonshotai/kimi-k2:free" # Free/cheap model
+  model: "nvidia/nemotron-3-super-120b-a12b:free" # Free/cheap model
 ```
 
 When enabled, ALL specialists use the budget model (overrides everything except direct override).
@@ -78,13 +78,13 @@ Edit `ai-staff-hq/config/model_routing.yaml`:
 ```yaml
 role_routing:
   # Chief of Staff gets the best model
-  "Strategic Coordinator & Project Orchestrator": "anthropic/claude-opus-4"
+  "Strategic Coordinator & Project Orchestrator": "anthropic/claude-opus-5.5"
 
   # Copywriters get creative models
-  "Conversion Copy & Brand Messaging Specialist": "anthropic/claude-3.5-sonnet"
+  "Conversion Copy & Brand Messaging Specialist": "anthropic/claude-sonnet-5.5"
 
   # Analysts get reasoning models
-  "Market Research & Competitive Intelligence Specialist": "openai/o1-mini"
+  "Market Research & Competitive Intelligence Specialist": "openai/gpt-6.1-sol"
 ```
 
 **Note**: Use the full role name from the specialist's YAML `core_identity.role` field.
@@ -97,12 +97,12 @@ Edit `ai-staff-hq/config/model_routing.yaml`:
 
 ```yaml
 department_routing:
-  strategy: "anthropic/claude-opus-4" # Best reasoning
-  producers: "anthropic/claude-3.5-sonnet" # Creative writing
-  commerce: "anthropic/claude-3.5-sonnet" # Marketing
-  tech: "openai/o1-mini" # Technical reasoning
-  health-lifestyle: "anthropic/claude-3.5-sonnet"
-  knowledge: "anthropic/claude-opus-4" # Expert knowledge
+  strategy: "anthropic/claude-opus-5.5" # Best reasoning
+  producers: "anthropic/claude-sonnet-5.5" # Creative writing
+  commerce: "anthropic/claude-sonnet-5.5" # Marketing
+  tech: "openai/gpt-6.1-sol" # Technical reasoning
+  health-lifestyle: "anthropic/claude-sonnet-5.5"
+  knowledge: "anthropic/claude-opus-5.5" # Expert knowledge
 ```
 
 **Departments**:
@@ -122,7 +122,7 @@ Set default in `ai-staff-hq/.env`:
 
 ```bash
 # Default model for all specialists
-DEFAULT_MODEL="moonshotai/kimi-k2:free"
+DEFAULT_MODEL="nvidia/nemotron-3-super-120b-a12b:free"
 
 # OpenRouter API key
 OPENROUTER_API_KEY="your-key-here"
@@ -135,26 +135,28 @@ OPENROUTER_API_KEY="your-key-here"
 ### Best Quality (Expensive)
 
 ```yaml
-anthropic/claude-opus-4         # Best overall
-openai/o1                        # Best reasoning
-anthropic/claude-3.7-sonnet      # Latest Sonnet
+anthropic/claude-opus-5.5        # Strongest reasoning and orchestration
+openai/gpt-6.1-sol-pro           # Deep reasoning
 ```
 
 ### Balanced (Recommended)
 
 ```yaml
-anthropic/claude-3.5-sonnet      # Great quality/price
-openai/gpt-4o                    # Fast and capable
-google/gemini-pro-1.5            # Good value
+anthropic/claude-sonnet-5.5      # Great quality/price
+openai/gpt-6.1-sol               # Fast and capable
+google/gemini-4-argon            # Long context, good value
 ```
 
 ### Budget (Cheap/Free)
 
 ```yaml
-google/gemini-flash-1.5          # Free
-anthropic/claude-3-haiku         # Cheapest Anthropic
-openai/gpt-4o-mini               # Cheap OpenAI
+nvidia/nemotron-3-super-120b-a12b:free  # Free default; tools + structured output
+google/gemma-4-31b-it:free              # Free
+anthropic/claude-haiku-5.5              # Cheapest Anthropic
 ```
+
+Free models are retired without notice. Check `https://openrouter.ai/api/v1/models`
+and keep `fallback_models` in `config/model_routing.yaml` pointed at live IDs.
 
 ---
 
@@ -165,17 +167,17 @@ openai/gpt-4o-mini               # Cheap OpenAI
 ```yaml
 # Best models for critical roles
 role_routing:
-  "Strategic Coordinator & Project Orchestrator": "anthropic/claude-opus-4"
-  "Conversion Copy & Brand Messaging Specialist": "anthropic/claude-3.5-sonnet"
+  "Strategic Coordinator & Project Orchestrator": "anthropic/claude-opus-5.5"
+  "Conversion Copy & Brand Messaging Specialist": "anthropic/claude-sonnet-5.5"
 
 # Departments use balanced models
 department_routing:
-  strategy: "anthropic/claude-3.5-sonnet"
-  producers: "anthropic/claude-3.5-sonnet"
-  commerce: "anthropic/claude-3.5-sonnet"
-  tech: "anthropic/claude-3.5-sonnet"
-  health-lifestyle: "anthropic/claude-3-haiku" # Cheaper for wellness
-  knowledge: "anthropic/claude-opus-4" # Expensive for legal/tax
+  strategy: "anthropic/claude-sonnet-5.5"
+  producers: "anthropic/claude-sonnet-5.5"
+  commerce: "anthropic/claude-sonnet-5.5"
+  tech: "anthropic/claude-sonnet-5.5"
+  health-lifestyle: "anthropic/claude-haiku-5.5" # Cheaper for wellness
+  knowledge: "anthropic/claude-opus-5.5" # Expensive for legal/tax
 
 # Budget mode disabled (use real models)
 budget_mode:
@@ -188,16 +190,16 @@ budget_mode:
 
 ### 1. Hybrid Approach
 
-- Chief of Staff: `claude-opus-4` (planning & synthesis)
-- Task execution: `claude-3.5-sonnet` (balance)
-- Simple tasks: `claude-3-haiku` (cheap)
+- Chief of Staff: `claude-opus-5.5` (planning & synthesis)
+- Task execution: `claude-sonnet-5.5` (balance)
+- Simple tasks: `claude-haiku-5.5` (cheap)
 
 ### 2. Budget Mode for Development
 
 ```yaml
 budget_mode:
   enabled: true
-  model: "moonshotai/kimi-k2:free"
+  model: "nvidia/nemotron-3-super-120b-a12b:free"
 ```
 
 ### 3. Override During Testing
@@ -206,7 +208,7 @@ budget_mode:
 # Use cheap model for testing
 runner = SwarmRunner(
     staff_dir,
-    model_override="anthropic/claude-3-haiku",
+    model_override="anthropic/claude-haiku-5.5",
     config=config,
 )
 ```
@@ -235,12 +237,12 @@ cat ai-staff-hq/config/model_routing.yaml
 
 Use OpenRouter model names:
 
-- `anthropic/claude-opus-4`
-- `anthropic/claude-3.5-sonnet`
-- `anthropic/claude-3-haiku`
-- `openai/gpt-4o`
-- `openai/o1`
-- `google/gemini-pro-1.5`
+- `anthropic/claude-opus-5.5`
+- `anthropic/claude-sonnet-5.5`
+- `anthropic/claude-haiku-5.5`
+- `openai/gpt-6.1-sol`
+- `openai/gpt-6.1-sol-pro`
+- `google/gemini-4-argon`
 
 See full list: https://openrouter.ai/models
 
@@ -261,7 +263,7 @@ config = SwarmConfig(
 runner = SwarmRunner(
     staff_dir,
     config=config,
-    model_override="anthropic/claude-3.5-sonnet",  # HERE
+    model_override="anthropic/claude-sonnet-5.5",  # HERE
 )
 ```
 
@@ -274,7 +276,7 @@ runner = SwarmRunner(
 ```python
 runner = SwarmRunner(
     staff_dir,
-    model_override="anthropic/claude-3-haiku",
+    model_override="anthropic/claude-haiku-5.5",
 )
 ```
 
@@ -283,7 +285,7 @@ runner = SwarmRunner(
 ```python
 runner = SwarmRunner(
     staff_dir,
-    model_override="anthropic/claude-3.5-sonnet",
+    model_override="anthropic/claude-sonnet-5.5",
 )
 ```
 
@@ -292,7 +294,7 @@ runner = SwarmRunner(
 ```python
 runner = SwarmRunner(
     staff_dir,
-    model_override="anthropic/claude-opus-4",
+    model_override="anthropic/claude-opus-5.5",
 )
 ```
 

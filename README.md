@@ -270,8 +270,11 @@ graph TD
 
 ### Choosing the Brain
 
-- To tell the helpers which AI brain to use, we use a file called `config/model_routing.yaml`. If you don't have one here, the system will look in the folder you are working in.
-- If you don't have this file, the helpers will just use the `default_model` you set up.
+- **Model Routing**: Configure models per role or department in `config/model_routing.yaml`, or override globally via `DEFAULT_MODEL` in `.env` (defaults to `nvidia/nemotron-3-super-120b-a12b:free`). You can also pass `--model <model_id>` at runtime.
+- **Fallback Chains**: OpenRouter requests automatically fall back to configured backup models (`fallback_models` in `config/model_routing.yaml`) if a primary model is down, rate-limited, or retired.
+- **Bounded Execution**: Every model call enforces bounded timeouts (`REQUEST_TIMEOUT_SECONDS`, default 120s) and retries (`MAX_RETRIES`, default 2) so hung providers cannot block swarm runs.
+- **Reasoning Guard**: Empty replies are rejected with actionable errors, preventing reasoning models that spend their token budget purely on internal thinking from being treated as answers.
+- See [`MODEL_CONTROL.md`](MODEL_CONTROL.md) for full details on routing, fallback chains, and current model IDs.
 
 ## **🚀 Your First Steps**
 

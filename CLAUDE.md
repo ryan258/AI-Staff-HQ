@@ -141,8 +141,7 @@ When reviewing or refactoring code:
 When adding features:
 1. Read existing patterns first (don't propose changes to code you haven't read)
 2. Use EnterPlanMode for non-trivial changes
-3. Follow the TodoWrite workflow for tracking
-4. Run tests after implementation: `pytest tests/ -v`
+3. Run tests after implementation: `uv run pytest tests/ -q`
 
 ### 3. UI Development
 
@@ -190,14 +189,6 @@ node = runner.make_agent_node(
 
 ## Claude-Specific Patterns
 
-### Tool Usage
-
-- Use **Read** before Edit/Write (required)
-- Use **Glob** for file pattern matching
-- Use **Grep** for code search
-- Use **Task** tool with Explore agent for codebase exploration
-- Prefer parallel tool calls when operations are independent
-
 ### Planning
 
 - Use EnterPlanMode for:
@@ -224,13 +215,13 @@ node = runner.make_agent_node(
 
 ```bash
 # Run all tests
-pytest tests/ -v
+uv run pytest tests/ -q
 
 # Run specific test file
-pytest tests/test_state.py -v
+uv run pytest tests/test_state.py -v
 
 # Run specific test
-pytest tests/test_state.py::test_clear_session -v
+uv run pytest tests/test_state.py::test_clear_session -v
 ```
 
 ---
@@ -242,6 +233,10 @@ pytest tests/test_state.py::test_clear_session -v
   - **Budget mode is DISABLED by default** (enabled: false)
   - Role-based routing takes precedence
   - Department fallback routing
+  - `fallback_models`: OpenRouter retry chain for down or retired models.
+    Free model IDs disappear without notice; verify against
+    `https://openrouter.ai/api/v1/models` before changing defaults.
+- `REQUEST_TIMEOUT_SECONDS` / `MAX_RETRIES` in `.env` bound every model call.
 
 ---
 
@@ -257,17 +252,9 @@ Clear session in interactive mode: `/clear`
 
 ## Git Workflow
 
-When committing changes:
-1. Small, focused commits (1 issue per commit)
-2. Run tests before committing
-3. Follow commit message format:
-   ```
-   type: description
-
-   🤖 Generated with Claude Code
-
-   Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
-   ```
+Commit only when Ryan explicitly asks. Then: one issue per commit, tests
+green first, `type: description` subject. Use the attribution trailer the
+harness supplies rather than a hardcoded model name.
 
 ---
 
@@ -277,4 +264,50 @@ Refer to:
 - **AGENTS.md** - General AI agent guide
 - **README.md** - Project overview
 - **GETTING-STARTED.md** - Setup
-- **QUICK-REFERENCE.md** - Specialist directory
+- **docs/QUICK-REFERENCE.md** - Specialist directory
+- **MODEL_CONTROL.md** - Model selection and routing
+
+<!-- gitnexus:start -->
+# GitNexus — Code Intelligence
+
+This project is indexed by GitNexus as **AI-Staff-HQ** (2322 symbols, 3817 relationships, 134 execution flows).
+
+> Index stale? Run `node .gitnexus/run.cjs analyze --index-only` from the project root — it auto-selects an available runner. No `.gitnexus/run.cjs` yet? Bootstrap with `npx`, `bunx`, or `pnpm dlx` — e.g. `bunx gitnexus@latest analyze` (npm 11 npx crash; #1939).
+
+## Always Do
+
+- **MUST run impact before editing.** Use `impact({target: "symbolName", direction: "upstream"})` or `node .gitnexus/run.cjs impact "symbolName" --direction upstream --repo .`; report callers, processes, and risk. Never substitute grep for graph analysis.
+- **MUST analyze graph changes before committing.** Use `detect_changes({scope: "all"})` (MCP) or `node .gitnexus/run.cjs detect-changes --scope all --repo .` (CLI fallback). `partial: true` or `truncated: true` is not a clean check — a zero means unseen, not unaffected; re-run it. For regression review: `detect_changes({scope: "compare", base_ref: "main"})` or `node .gitnexus/run.cjs detect-changes --scope compare --base-ref "main" --repo .`.
+- MUST warn on HIGH/CRITICAL `risk` pre-edit; never use `riskSharedAxes` to waive a HIGH/CRITICAL `risk` warning. Compare File/symbol: MCP File omits axes; Graph-RAG expands File.
+- **MUST treat `risk: UNKNOWN` as unresolved, not as low.** An empty caller set is not evidence the symbol is unused — it can also mean the callers are not resolvable by the index (plain-object property access, dynamic dispatch, cross-language calls). `impact` pairs `UNKNOWN` with a `riskNote` saying so. Confirm with a text search before treating the symbol as safe to change or delete; do not proceed on the strength of a zero.
+- **MUST use `query({search_query: "concept"})` for concepts/flows, `context({name: "symbolName"})` for a named symbol, or `impact` for blast radius, on read-only callers, dependencies, imports, or execution flow.** Graph first; text search only for empty/`UNKNOWN`/literals.
+- For security review, `explain({target: "fileOrSymbol"})` lists taint findings (source→sink flows; needs `analyze --pdg`).
+
+## Never Do
+
+- NEVER edit a function, class, or method before MCP/CLI impact analysis.
+- NEVER ignore HIGH or CRITICAL risk warnings from impact analysis, and never read `UNKNOWN` as an all-clear — it means the walk could not answer, which is the one verdict that requires confirming by other means.
+- NEVER rename symbols with find-and-replace — use `rename` which understands the call graph.
+- NEVER commit before MCP/CLI graph change analysis.
+
+## Resources
+
+| Resource | Use for |
+| --- | --- |
+| `gitnexus://repo/AI-Staff-HQ/context` | Codebase overview, check index freshness |
+| `gitnexus://repo/AI-Staff-HQ/clusters` | All functional areas |
+| `gitnexus://repo/AI-Staff-HQ/processes` | All execution flows |
+| `gitnexus://repo/AI-Staff-HQ/process/{name}` | Step-by-step execution trace |
+
+## CLI
+
+| Task | Read this skill file |
+| --- | --- |
+| Understand architecture / "How does X work?" | `.claude/skills/gitnexus-exploring/SKILL.md` |
+| Blast radius / "What breaks if I change X?" | `.claude/skills/gitnexus-impact-analysis/SKILL.md` |
+| Trace bugs / "Why is X failing?" | `.claude/skills/gitnexus-debugging/SKILL.md` |
+| Rename / extract / split / refactor | `.claude/skills/gitnexus-refactoring/SKILL.md` |
+| Tools, resources, schema reference | `.claude/skills/gitnexus-guide/SKILL.md` |
+| Index, status, clean, wiki CLI commands | `.claude/skills/gitnexus-cli/SKILL.md` |
+
+<!-- gitnexus:end -->

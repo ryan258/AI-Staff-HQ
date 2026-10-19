@@ -50,6 +50,8 @@ As of March 28, 2026:
 - The active, experimental, and archived roster tiers exist.
 - The flagship planning swarm is live.
 - Real-brief capture and eval scaffolding exist.
+- Model routing resilience is active: bounded execution (configurable timeout/retries), OpenRouter fallback chains (`fallback_models`), and reasoning model empty-reply rejection.
+- Dependency pruning: removed unused `chromadb`; aligned agent executor with modern `langchain.agents.create_agent`.
 - Semantic log naming exists for new runs, and the old backlog has been migrated.
 - Dynamic CoS orchestration and Streamlit exist, but they are secondary.
 - Phase 1 gaps: planner variance, parser brittleness, and thin real-brief coverage.
@@ -69,6 +71,7 @@ Goal: Make the planning swarm reliable enough that it becomes the default way to
 - Reduce planner variance so similar briefs produce similar task structures.
 - Expand real-brief eval coverage with at least 10 recurring prompt types from actual use.
 - Tighten capability matching and fallback behavior.
+- Resilient model execution: automatic OpenRouter provider fallbacks, bounded per-call timeouts/retries, and reasoning-token guards (completed).
 - Keep the active roster small and evidence-based.
 - Ensure every flagship run persists a useful semantic log and a clear final output.
 
@@ -77,6 +80,7 @@ Goal: Make the planning swarm reliable enough that it becomes the default way to
 - Structured planner contract for the flagship path.
 - Real-brief eval suite with at least 10 cases.
 - Stable active roster definition with documented promotion and demotion rules.
+- Model routing resilience layer with fallback chains, bounded retries/timeouts, and empty-reply guards.
 - Clear failure reporting for parse errors, fallback use, and synthesis failures.
 
 ### Exit Criteria

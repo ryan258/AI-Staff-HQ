@@ -374,7 +374,7 @@ OPENAI_API_KEY=sk-...
 ANTHROPIC_API_KEY=sk-ant-...
 
 # Model settings
-DEFAULT_MODEL=moonshotai/kimi-k2:free
+DEFAULT_MODEL=nvidia/nemotron-3-super-120b-a12b:free
 MAX_HISTORY_TURNS=20
 MAX_CONTEXT_TOKENS=32000
 ```
@@ -387,16 +387,16 @@ Edit `config/model_routing.yaml`:
 # Budget mode (disabled by default)
 budget_mode:
   enabled: false # Change to true to use free models
-  model: "moonshotai/kimi-k2:free"
+  model: "nvidia/nemotron-3-super-120b-a12b:free"
 
 # Role-based routing (highest precedence)
 role_routing:
-  "Market Research & Competitive Analysis Specialist": "moonshotai/kimi-k2:free"
+  "Market Research & Competitive Analysis Specialist": "nvidia/nemotron-3-super-120b-a12b:free"
 
 # Department fallback
 department_routing:
-  strategy: "moonshotai/kimi-k2:free"
-  tech: "moonshotai/kimi-k2:free"
+  strategy: "nvidia/nemotron-3-super-120b-a12b:free"
+  tech: "nvidia/nemotron-3-super-120b-a12b:free"
 ```
 
 ---

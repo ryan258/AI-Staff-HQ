@@ -38,6 +38,8 @@ uv run workflows/graphs/strategy_tech_handoff.py "Build an AI fitness coach app"
 ```
 - Use `--auto-approve` to skip interactive approval gates.
 - `--model` and `--temperature` propagate to all specialists.
+- Model calls inherit OpenRouter fallback chains (`fallback_models` in `config/model_routing.yaml`), bounded timeouts, and retries via `ModelRouter.create_llm`.
+- Tool-using agents execute via modern `langchain.agents.create_agent` (LangGraph v1).
 - Logs: `logs/graphs/<workflow>__<brief>__<run_id>.json`.
 
 ## Run the Streamlit UI

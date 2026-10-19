@@ -99,7 +99,7 @@ Successfully transformed the static squad-based dispatcher system into a dynamic
 uv run workflows/planning_swarm.py "Create a guide on Bash scripting"
 
 # With model control
-uv run workflows/planning_swarm.py "Write a tagline" --model "moonshotai/kimi-k2:free"
+uv run workflows/planning_swarm.py "Write a tagline" --model "nvidia/nemotron-3-super-120b-a12b:free"
 
 # Include experimental specialists in matching
 uv run workflows/planning_swarm.py "Write a sci-fi story about AI" --experimental
@@ -133,22 +133,22 @@ Control which models are used via:
 1. **Runtime Override** (highest priority)
 
    ```bash
-   uv run workflows/planning_swarm.py "Brief" --model "moonshotai/kimi-k2:free"
+   uv run workflows/planning_swarm.py "Brief" --model "nvidia/nemotron-3-super-120b-a12b:free"
    ```
 
 2. **Config File** (`config/model_routing.yaml`)
 
    ```yaml
    role_routing:
-     "Strategic Coordinator & Project Orchestrator": "moonshotai/kimi-k2:free"
+     "Strategic Coordinator & Project Orchestrator": "nvidia/nemotron-3-super-120b-a12b:free"
 
    department_routing:
-     strategy: "moonshotai/kimi-k2:free"
+     strategy: "nvidia/nemotron-3-super-120b-a12b:free"
    ```
 
 3. **Environment** (`.env`)
    ```bash
-   DEFAULT_MODEL="moonshotai/kimi-k2:free"
+   DEFAULT_MODEL="nvidia/nemotron-3-super-120b-a12b:free"
    ```
 
 See `MODEL_CONTROL.md` for full details.
@@ -315,7 +315,7 @@ A: Use `uv run python` instead of plain `python`
 A: This is a known issue - prompts need tuning for simplicity
 
 **Q: "How do I use cheaper models?"**
-A: Add `--model "moonshotai/kimi-k2:free"` or see `MODEL_CONTROL.md`
+A: Add `--model "nvidia/nemotron-3-super-120b-a12b:free"` or see `MODEL_CONTROL.md`
 
 ### Debug Mode
 
